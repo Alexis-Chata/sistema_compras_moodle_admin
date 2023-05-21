@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('dominio')->nullable();
             $table->string('token')->nullable();
-            $table->timestamps();
+            $table->softDeletes();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

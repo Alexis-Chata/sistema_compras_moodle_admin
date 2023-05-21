@@ -17,7 +17,9 @@ return new class extends Migration
             $table->unsignedBigInteger('grupo_id');
             $table->foreign('cmatricula_id')->references('id')->on('cmatriculas')->onDelete('cascade');
             $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete('cascade');
-            $table->timestamps();
+            $table->softDeletes();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

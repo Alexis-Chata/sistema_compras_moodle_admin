@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
         $usuarioadmin->name = 'alexis';
         $usuarioadmin->ap_paterno = 'Chata';
         $usuarioadmin->ap_materno = 'Baltazar';
-        $usuarioadmin->email = 'alexis@jademlearning.com';
+        $usuarioadmin->email = 'alexizz.19.ac@gmail.com';
         $usuarioadmin->password = bcrypt('123456789');
         $usuarioadmin->save();
         $usuarioadmin->assignRole('Administrador');
