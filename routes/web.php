@@ -13,9 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('silicon-front.index');
+})->name('index');
+
+Route::get('/carrito', function () {
+    return view('silicon-front.cart');
+})->name('carrito');
+
+Route::get('/cursos', function () {
+    $cursos = Curso::all();
+    return view('silicon-front.cursos', compact('cursos'));
+})->name('cursos');
 
 Route::middleware([
     'auth:sanctum',
