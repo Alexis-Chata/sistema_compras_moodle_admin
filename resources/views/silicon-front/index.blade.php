@@ -519,11 +519,13 @@
                         aria-labelledby="course-pills-tab-1">
                         <div class="row g-4">
 
+                            @foreach ($cursos as $curso)
                             <!-- Card item START -->
                             <div class="col-sm-6 col-lg-4 col-xl-3">
                                 <div class="card shadow h-100">
                                     <!-- Image -->
-                                    <img src="./silicon-front/silicon/08.jpg" class="card-img-top" alt="course image">
+                                    <img src="./silicon-front/silicon/{{ isset($curso->imagen) && $curso->imagen != '' ? $curso->imagen : '08.jpg' }}"
+                                            class="card-img-top" alt="course image">
                                     <!-- Card body -->
                                     <div class="card-body pb-0">
                                         <!-- Badge and favorite -->
@@ -533,8 +535,7 @@
                                             <a href="#" class="h6 mb-0"><i class="far fa-heart"></i></a>
                                         </div>
                                         <!-- Title -->
-                                        <h5 class="card-title fw-normal"><a href="#">Sketch from A to Z: for app
-                                                designer</a></h5>
+                                        <h5 class="card-title fw-normal"><a href="#">{{ $curso->name }}</a></h5>
                                         <p class="mb-2 text-truncate-2">Proposal indulged no do sociable he throwing
                                             settling.</p>
                                         <!-- Rating star -->
@@ -549,7 +550,7 @@
                                                     class="fas fa-star text-warning"></i></li>
                                             <li class="list-inline-item me-0 small"><i
                                                     class="far fa-star text-warning"></i></li>
-                                            <li class="list-inline-item ms-2 h6 fw-light mb-0">4.0/5.0</li>
+                                            <li class="list-inline-item ms-2 h6 fw-light mb-0">{{ $curso->calificacion }}/5.0</li>
                                         </ul>
                                     </div>
                                     <!-- Card footer -->
@@ -557,15 +558,14 @@
                                         <hr>
                                         <div class="d-flex justify-content-between">
                                             <span class="h6 fw-light mb-0"><i
-                                                    class="far fa-clock text-danger me-2"></i>12h 56m</span>
-                                            <span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i>15
-                                                lectures</span>
+                                                    class="far fa-clock text-danger me-2"></i>{{ $curso->hora . 'h ' . $curso->min . 'm' }}</span>
+                                            <span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i>{{ $curso->lecturas . ' lecturas' }}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Card item END -->
-
+                            @endforeach
                             <!-- Card item START -->
                             <div class="col-sm-6 col-lg-4 col-xl-3">
                                 <div class="card shadow h-100">
