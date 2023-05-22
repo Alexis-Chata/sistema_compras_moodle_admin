@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('shortname');
+            $table->string('descripcion')->nullable();
             $table->char('id_moodle_course')->nullable();
             $table->string("imagen")->nullable();
             $table->string("calificacion")->nullable();

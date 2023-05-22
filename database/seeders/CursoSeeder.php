@@ -16,6 +16,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = 'curso 1';
         $curso->shortname = 'curso_1';
+        $curso->descripcion = null;
         $curso->id_moodle_course = 710;
         $curso->imagen = "08.jpg";
         $curso->calificacion = "4.0";
@@ -28,6 +29,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = 'curso 2';
         $curso->shortname = 'curso_2';
+        $curso->descripcion = null;
         $curso->id_moodle_course = 709;
         $curso->imagen = "08.jpg";
         $curso->calificacion = "4.0";
@@ -40,6 +42,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "Sketch from A to Z: for app designer";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = 'Proposal indulged no do sociable he throwing settling.';
         $curso->imagen = "08.jpg";
         $curso->calificacion = "4.0";
         $curso->hora = 12;
@@ -51,6 +54,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "Graphic Design Masterclass";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = 'Rooms oh fully taken by worse do Points afraid but may end Rooms Points afraid but may end Rooms';
         $curso->imagen = "ps.jpg";
         $curso->calificacion = "4.5";
         $curso->hora = 9;
@@ -62,6 +66,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "Create a Design System in Figma";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = 'Rooms oh fully taken by worse do. Points afraid but may end';
         $curso->imagen = "figma.jpg";
         $curso->calificacion = "4.5";
         $curso->hora = 5;
@@ -73,6 +78,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "Deep Learning with React-Native";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = 'Far advanced settling say finished raillery. Offered chiefly farther';
         $curso->imagen = "07.jpg";
         $curso->calificacion = "4.0";
         $curso->hora = 18;
@@ -84,6 +90,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "Build Responsive Websites with HTML";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = 'Far advanced settling say finished raillery. Offered chiefly';
         $curso->imagen = "11.jpg";
         $curso->calificacion = "4.0";
         $curso->hora = 15;
@@ -95,6 +102,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "Build Websites with CSS";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = 'Far advanced settling say finished raillery. Offered chiefly farther';
         $curso->imagen = "12.jpg";
         $curso->calificacion = "4.5";
         $curso->hora = 36;
@@ -106,6 +114,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "The Complete Web Development in python";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = null;
         $curso->imagen = "05.jpg";
         $curso->calificacion = "4.5";
         $curso->hora = 10;
@@ -117,6 +126,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "Angular – The Complete Guider";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = null;
         $curso->imagen = "06.jpg";
         $curso->calificacion = "4.5";
         $curso->hora = 9;
@@ -128,6 +138,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "Bootstrap 5 From Scratch";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = null;
         $curso->imagen = "10.jpg";
         $curso->calificacion = "4.5";
         $curso->hora = 25;
@@ -139,6 +150,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "PHP with - CMS Project";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = null;
         $curso->imagen = "13.jpg";
         $curso->calificacion = "4.0";
         $curso->hora = 21;
@@ -150,6 +162,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "Digital Marketing Masterclass";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = null;
         $curso->imagen = "01(1).jpg";
         $curso->calificacion = "4.5";
         $curso->hora = 6;
@@ -161,6 +174,7 @@ class CursoSeeder extends Seeder
         $curso = new Curso();
         $curso->name = "Learn Invision";
         $curso->shortname = 'curso_2';
+        $curso->descripcion = 'Arrived off she elderly beloved him Course regard to up he hardly.';
         $curso->imagen = "in.jpg";
         $curso->calificacion = "3.5";
         $curso->hora = 6;

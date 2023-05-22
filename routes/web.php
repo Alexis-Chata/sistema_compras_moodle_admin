@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    $cursos = Curso::latest()->take(9)->get();
+    $cursos = Curso::latest()->take(8)->get();
     //return $cursos;
     return view('silicon-front.index', compact('cursos'));
 })->name('index');
