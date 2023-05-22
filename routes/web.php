@@ -27,7 +27,8 @@ Route::get('/carrito', function () {
 })->name('carrito');
 
 Route::get('/cursos', function () {
-    $cursos = Curso::all();
+    $cursos = Curso::paginate(12);
+    //return $cursos;
     return view('silicon-front.cursos', compact('cursos'));
 })->name('cursos');
 

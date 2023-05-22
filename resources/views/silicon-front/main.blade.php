@@ -48,7 +48,8 @@
 
         gtag('config', 'G-7N7LGGGWT1');
     </script>
-
+    {{-- <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     @livewireStyles
     <style></style>
     @php
