@@ -26,7 +26,7 @@
                 <!-- Nav category menu START -->
                 <ul class="navbar-nav navbar-nav-scroll me-auto">
                     <!-- Nav item 1 Demos -->
-                    <li class="nav-item dropdown dropdown-menu-shadow-stacked">
+                    <li class="nav-item dropdown dropdown-menu-shadow-stacked" style="display: none;">
                         <a class="nav-link bg-primary bg-opacity-10 rounded-3 text-primary px-3 py-3 py-xl-0"
                             href="#" id="categoryMenu" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class="bi bi-ui-radios-grid me-2"></i><span>Category</span></a>
@@ -260,6 +260,16 @@
 
                 <!-- Nav Main menu START -->
                 <ul class="navbar-nav navbar-nav-scroll me-auto">
+                    <!-- Nav item 1 Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link {{ Route::currentRouteName() == 'index' ? 'active' : '' }}"
+                            href="{{ route('index') }}">Home</a>
+                    </li>
+                    <!-- Nav item 2 Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link {{ Route::currentRouteName() == 'cursos' ? 'active' : '' }}"
+                            href="{{ route('cursos') }}">Cursos</a>
+                    </li>
                     <!-- Nav item 1 Demos -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle {{ Route::currentRouteName() == 'index' ? 'active' : '' }}"

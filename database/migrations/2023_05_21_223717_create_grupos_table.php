@@ -14,9 +14,15 @@ return new class extends Migration
         Schema::create('grupos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->double('precio');
             $table->char('id_moodle_group')->unique()->nullable();
             $table->unsignedBigInteger('curso_id');
+            $table->string('descripcion')->nullable();
+            $table->string("imagen")->nullable();
+            $table->string("calificacion")->nullable();
+            $table->string("hora");
+            $table->string("min");
+            $table->string("lecturas");
+            $table->string("costo");
             $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();

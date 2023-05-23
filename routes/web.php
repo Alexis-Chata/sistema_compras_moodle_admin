@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Curso;
+use App\Models\Grupo;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +30,7 @@ Route::get('/carrito', function () {
 })->name('carrito');
 
 Route::get('/cursos', function () {
-    $cursos = Curso::paginate(12);
+    $cursos = Grupo::paginate(12);
     //return $cursos;
     return view('silicon-front.cursos', compact('cursos'));
 })->name('cursos');
