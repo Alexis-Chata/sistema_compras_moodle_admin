@@ -321,7 +321,7 @@
                                 <div class="card shadow h-100">
                                     <!-- Image -->
                                     <a href="#">
-                                        <img src="./silicon-front/silicon/{{ isset($curso->imagen) && $curso->imagen != '' ? $curso->imagen : '08.jpg' }}"
+                                        <img src="{{ asset($curso->imagen)}}"
                                             class="card-img-top" alt="course image"></a>
                                     <!-- Card body -->
                                     <div class="card-body pb-0">

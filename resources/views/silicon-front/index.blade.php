@@ -532,7 +532,7 @@
                             <div class="col-sm-6 col-lg-4 col-xl-3">
                                 <div class="card shadow h-100">
                                     <!-- Image -->
-                                    <img src="{{ isset($curso->imagen) && $curso->imagen != '' ? './silicon-front/silicon/'.$curso->imagen : asset($curso->imagen) }}"
+                                    <img src="{{ isset($curso->imagen) && $curso->imagen != '' ? './silicon-front/silicon/'.$curso->imagen : './silicon-front/silicon/08.jpg' }}"
                                             class="card-img-top" alt="course image">
                                     <!-- Card body -->
                                     <div class="card-body pb-0">
