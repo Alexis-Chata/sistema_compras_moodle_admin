@@ -271,7 +271,7 @@
                             href="{{ route('cursos') }}">Cursos</a>
                     </li>
                     <!-- Nav item 1 Demos -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown"  style="display: none;">
                         <a class="nav-link dropdown-toggle {{ Route::currentRouteName() == 'index' ? 'active' : '' }}"
                             href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">Demos</a>
@@ -314,7 +314,7 @@
                     </li>
 
                     <!-- Nav item 2 Pages -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" style="display: none;">
                         <a class="nav-link dropdown-toggle {{ in_array(request()->route()->getName(),['profile', 'cursos'])? 'active': '' }}"
                             href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">Pages</a>
@@ -463,7 +463,7 @@
                     </li>
 
                     <!-- Nav item 3 Account -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown"  style="display: none;">
                         <a class="nav-link dropdown-toggle" href="#" id="accounntMenu"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a>
                         <ul class="dropdown-menu" aria-labelledby="accounntMenu">
@@ -589,7 +589,7 @@
                     </li>
 
                     <!-- Nav item 4 Megamenu-->
-                    <li class="nav-item dropdown dropdown-fullwidth">
+                    <li class="nav-item dropdown dropdown-fullwidth"  style="display: none;">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Megamenu</a>
                         <div class="dropdown-menu dropdown-menu-end pb-0" data-bs-popper="none">
@@ -729,7 +729,7 @@
                     </li>
 
                     <!-- Nav item 5 link-->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown"  style="display: none;">
                         <a class="nav-link" href="#" id="advanceMenu" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-ellipsis-h"></i>
@@ -775,7 +775,7 @@
                 <!-- Nav Main menu END -->
 
                 <!-- Nav Search START -->
-                <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
+                <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center"  style="display: none;"dra>
                     <div class="nav-item w-100">
                         <form class="position-relative">
                             <input class="form-control pe-5 bg-transparent" type="search" placeholder="Search"
@@ -833,7 +833,7 @@
                         <hr class="dropdown-divider">
                     </li>
                     <!-- Dark mode switch START -->
-                    <li>
+                    <li  style="display: none;">
                         <div class="modeswitch-wrap" id="darkModeSwitch">
                             <div class="modeswitch-item">
                                 <div class="modeswitch-icon"></div>

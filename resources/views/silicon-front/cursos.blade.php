@@ -315,7 +315,7 @@
                     <!-- Course Grid START -->
                     <div class="row g-4">
 
-                        @foreach ($cursos as $curso)
+                        @foreach ($grupos as $curso)
                             <!-- Card item START -->
                             <div class="col-sm-6 col-lg-4 col-xl-3">
                                 <div class="card shadow h-100">
@@ -380,7 +380,7 @@
 
                     <!-- Pagination START -->
                     <div class="col-12">
-                        {{ $cursos->links('vendor.pagination.silicon-front') }}
+                        {{ $grupos->links('vendor.pagination.silicon-front') }}
                     </div>
                     <!-- Pagination END -->
                 </div>

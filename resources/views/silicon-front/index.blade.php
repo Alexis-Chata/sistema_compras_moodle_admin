@@ -479,32 +479,40 @@
                 <!-- Tabs START -->
                 <ul class="nav nav-pills nav-pills-bg-soft justify-content-sm-center mb-4 px-3" id="course-pills-tab"
                     role="tablist">
+                    @foreach ($cursos as $curso)
+                        <!-- Tab item -->
+                        <li class="nav-item me-2 me-sm-5">
+                            <button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-{{ $curso->id }}" data-bs-toggle="pill"
+                                data-bs-target="#course-pills-tabs-{{ $curso->id }}" type="button" role="tab"
+                                aria-controls="course-pills-tabs-{{ $curso->id }}" aria-selected="false">{{ $curso->name }}</button>
+                        </li>
+                    @endforeach
                     <!-- Tab item -->
-                    <li class="nav-item me-2 me-sm-5">
+                    <li class="nav-item me-2 me-sm-5" style="display: none">
                         <button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-1" data-bs-toggle="pill"
                             data-bs-target="#course-pills-tabs-1" type="button" role="tab"
                             aria-controls="course-pills-tabs-1" aria-selected="false">Web Design</button>
                     </li>
                     <!-- Tab item -->
-                    <li class="nav-item me-2 me-sm-5">
+                    <li class="nav-item me-2 me-sm-5" style="display: none">
                         <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-2" data-bs-toggle="pill"
                             data-bs-target="#course-pills-tabs-2" type="button" role="tab"
                             aria-controls="course-pills-tabs-2" aria-selected="false">Development</button>
                     </li>
                     <!-- Tab item -->
-                    <li class="nav-item me-2 me-sm-5">
+                    <li class="nav-item me-2 me-sm-5" style="display: none">
                         <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-3" data-bs-toggle="pill"
                             data-bs-target="#course-pills-tabs-3" type="button" role="tab"
                             aria-controls="course-pills-tabs-3" aria-selected="false">Graphic Design</button>
                     </li>
                     <!-- Tab item -->
-                    <li class="nav-item me-2 me-sm-5">
+                    <li class="nav-item me-2 me-sm-5" style="display: none">
                         <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-4" data-bs-toggle="pill"
                             data-bs-target="#course-pills-tabs-4" type="button" role="tab"
                             aria-controls="course-pills-tabs-4" aria-selected="false">Marketing</button>
                     </li>
                     <!-- Tab item -->
-                    <li class="nav-item me-2 me-sm-5">
+                    <li class="nav-item me-2 me-sm-5" style="display: none">
                         <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-5" data-bs-toggle="pill"
                             data-bs-target="#course-pills-tabs-5" type="button" role="tab"
                             aria-controls="course-pills-tabs-5" aria-selected="false">Finance</button>
@@ -519,12 +527,12 @@
                         aria-labelledby="course-pills-tab-1">
                         <div class="row g-4">
 
-                            @foreach ($cursos as $curso)
+                            @foreach ($grupos as $curso)
                             <!-- Card item START -->
                             <div class="col-sm-6 col-lg-4 col-xl-3">
                                 <div class="card shadow h-100">
                                     <!-- Image -->
-                                    <img src="./silicon-front/silicon/{{ isset($curso->imagen) && $curso->imagen != '' ? $curso->imagen : '08.jpg' }}"
+                                    <img src="{{ isset($curso->imagen) && $curso->imagen != '' ? './silicon-front/silicon/'.$curso->imagen : asset($curso->imagen) }}"
                                             class="card-img-top" alt="course image">
                                     <!-- Card body -->
                                     <div class="card-body pb-0">

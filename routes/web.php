@@ -20,9 +20,10 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    $cursos = Curso::latest()->take(8)->get();
+    $cursos = Curso::latest()->take(5)->get();
+    $grupos = Grupo::latest()->take(8)->get();
     //return $cursos;
-    return view('silicon-front.index', compact('cursos'));
+    return view('silicon-front.index', compact('cursos', 'grupos'));
 })->name('index');
 
 Route::get('/carrito', function () {
@@ -30,9 +31,8 @@ Route::get('/carrito', function () {
 })->name('carrito');
 
 Route::get('/cursos', function () {
-    $cursos = Grupo::paginate(12);
-    //return $cursos;
-    return view('silicon-front.cursos', compact('cursos'));
+    $grupos = Grupo::paginate(12);
+    return view('silicon-front.cursos', compact('grupos'));
 })->name('cursos');
 
 Route::middleware([
