@@ -18,7 +18,7 @@ class GrupoSeeder extends Seeder
         $n_grupo->id_moodle_group = 30;
         $n_grupo->curso_id = 1;
         $n_grupo->descripcion = 'Arrived off she elderly beloved him Course regard to up he hardly.';
-        $n_grupo->imagen = "08.jpg";
+        $n_grupo->imagen = "/storage/grupos/08.jpg";
         $n_grupo->calificacion = "4.0";
         $n_grupo->hora = 12;
         $n_grupo->min = 56;
@@ -32,7 +32,7 @@ class GrupoSeeder extends Seeder
         $n_grupo->id_moodle_group = 31;
         $n_grupo->curso_id = 1;
         $n_grupo->descripcion = 'Far advanced settling say finished raillery. Offered chiefly farther';
-        $n_grupo->imagen = "08.jpg";
+        $n_grupo->imagen = "/storage/grupos/08.jpg";
         $n_grupo->calificacion = "4.0";
         $n_grupo->hora = 12;
         $n_grupo->min = 56;
@@ -46,7 +46,7 @@ class GrupoSeeder extends Seeder
         $n_grupo->id_moodle_group = 32;
         $n_grupo->curso_id = 1;
         $n_grupo->descripcion = 'Proposal indulged no do sociable he throwing settling.';
-        $n_grupo->imagen = "08.jpg";
+        $n_grupo->imagen = "/storage/grupos/08.jpg";
         $n_grupo->calificacion = "3.0";
         $n_grupo->hora = 12;
         $n_grupo->min = 56;
@@ -60,7 +60,7 @@ class GrupoSeeder extends Seeder
         $n_grupo->id_moodle_group = 33;
         $n_grupo->curso_id = 2;
         $n_grupo->descripcion = 'Rooms oh fully taken by worse do Points afraid but may end Rooms Points afraid but may end Rooms';
-        $n_grupo->imagen = "ps.jpg";
+        $n_grupo->imagen = "/storage/grupos/ps.jpg";
         $n_grupo->calificacion = "4.5";
         $n_grupo->hora = 9;
         $n_grupo->min = 56;
@@ -74,7 +74,7 @@ class GrupoSeeder extends Seeder
         $n_grupo->id_moodle_group = 34;
         $n_grupo->curso_id = 2;
         $n_grupo->descripcion = 'Far advanced settling say finished raillery. Offered chiefly farther';
-        $n_grupo->imagen = "figma.jpg";
+        $n_grupo->imagen = "/storage/grupos/figma.jpg";
         $n_grupo->calificacion = "4.5";
         $n_grupo->hora = 5;
         $n_grupo->min = 56;
@@ -88,7 +88,7 @@ class GrupoSeeder extends Seeder
         $n_grupo->id_moodle_group = 35;
         $n_grupo->curso_id = 2;
         $n_grupo->descripcion = 'Arrived off she elderly beloved him Course regard to up he hardly.';
-        $n_grupo->imagen = "07.jpg";
+        $n_grupo->imagen = "/storage/grupos/07.jpg";
         $n_grupo->calificacion = "4.0";
         $n_grupo->hora = 18;
         $n_grupo->min = 56;
