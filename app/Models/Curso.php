@@ -10,4 +10,9 @@ class Curso extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    public function grupos()
+    {
+        return $this->hasMany(Grupo::class);
+    }
 }

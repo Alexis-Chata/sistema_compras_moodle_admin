@@ -304,6 +304,12 @@ return [
             'icon' => 'fas fa-user-graduate',
         ],
         [
+            'text' => 'Cursos',
+            'route'  => 'admin.cursos.index',
+            'can' => 'admin.usuarios.index',
+            'icon' => 'fas fa-book',
+        ],
+        [
             'text' => 'Cambiar Contraseña',
             'route'  => 'admin.usuarios.cambiar',
             'can' => 'admin.usuarios.index',
