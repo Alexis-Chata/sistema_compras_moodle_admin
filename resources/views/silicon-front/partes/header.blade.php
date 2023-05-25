@@ -271,7 +271,7 @@
                             href="{{ route('cursos') }}">Cursos</a>
                     </li>
                     <!-- Nav item 1 Demos -->
-                    <li class="nav-item dropdown"  style="display: none;">
+                    <li class="nav-item dropdown" style="display: none;">
                         <a class="nav-link dropdown-toggle {{ Route::currentRouteName() == 'index' ? 'active' : '' }}"
                             href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">Demos</a>
@@ -463,7 +463,7 @@
                     </li>
 
                     <!-- Nav item 3 Account -->
-                    <li class="nav-item dropdown"  style="display: none;">
+                    <li class="nav-item dropdown" style="display: none;">
                         <a class="nav-link dropdown-toggle" href="#" id="accounntMenu"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a>
                         <ul class="dropdown-menu" aria-labelledby="accounntMenu">
@@ -589,7 +589,7 @@
                     </li>
 
                     <!-- Nav item 4 Megamenu-->
-                    <li class="nav-item dropdown dropdown-fullwidth"  style="display: none;">
+                    <li class="nav-item dropdown dropdown-fullwidth" style="display: none;">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Megamenu</a>
                         <div class="dropdown-menu dropdown-menu-end pb-0" data-bs-popper="none">
@@ -729,7 +729,7 @@
                     </li>
 
                     <!-- Nav item 5 link-->
-                    <li class="nav-item dropdown"  style="display: none;">
+                    <li class="nav-item dropdown" style="display: none;">
                         <a class="nav-link" href="#" id="advanceMenu" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-ellipsis-h"></i>
@@ -775,7 +775,7 @@
                 <!-- Nav Main menu END -->
 
                 <!-- Nav Search START -->
-                <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center"  style="display: none;"dra>
+                <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center" style="display: none;"dra>
                     <div class="nav-item w-100">
                         <form class="position-relative">
                             <input class="form-control pe-5 bg-transparent" type="search" placeholder="Search"
@@ -794,57 +794,87 @@
             @include('silicon-front.partes.carrito-dropdown')
             <!-- Cart dropdown END -->
 
-
-
-            <!-- Profile START -->
-            <div class="dropdown ms-1 ms-lg-0">
-                <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button"
-                    data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <img class="avatar-img rounded-circle" src="./silicon-front/silicon/01.jpg" alt="avatar">
-                </a>
-                <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
-                    aria-labelledby="profileDropdown">
-                    <!-- Profile info -->
-                    <li class="px-3">
-                        <div class="d-flex align-items-center">
-                            <!-- Avatar -->
-                            <div class="avatar me-3">
-                                <img class="avatar-img rounded-circle shadow" src="./silicon-front/silicon/01.jpg"
-                                    alt="avatar">
+            @auth
+                <!-- Profile START -->
+                <div class="dropdown ms-1 ms-lg-0">
+                    <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button"
+                        data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img class="avatar-img rounded-circle"
+                            src="{{ 'https://ui-avatars.com/api/' .
+                                implode('/', [
+                                    //IMPORTANT: Do not change this order
+                                    urlencode(auth()->user()->name), // name
+                                    200, // image size
+                                    'EBF4FF', // background color
+                                    '7F9CF5', // font color
+                                ]) }}"
+                            alt="avatar">
+                    </a>
+                    <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
+                        aria-labelledby="profileDropdown">
+                        <!-- Profile info -->
+                        <li class="px-3">
+                            <div class="d-flex align-items-center">
+                                <!-- Avatar -->
+                                <div class="avatar me-3">
+                                    <img class="avatar-img rounded-circle shadow"
+                                        src="{{ 'https://ui-avatars.com/api/' .
+                                            implode('/', [
+                                                //IMPORTANT: Do not change this order
+                                                urlencode(auth()->user()->name), // name
+                                                200, // image size
+                                                'EBF4FF', // background color
+                                                '7F9CF5', // font color
+                                            ]) }}"
+                                        alt="avatar">
+                                </div>
+                                <div>
+                                    <a class="h6" href="#">{{ auth()->user()->name }}</a>
+                                    <p class="small m-0">{{ auth()->user()->email }}</p>
+                                </div>
                             </div>
-                            <div>
-                                <a class="h6" href="#">Lori Ferguson</a>
-                                <p class="small m-0">example@gmail.com</p>
+                            <hr>
+                        </li>
+                        <!-- Links -->
+                        <li><a class="dropdown-item" href="{{ route('profile.show') }}"><i
+                                    class="bi bi-person fa-fw me-2"></i>Editar Perfil</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account
+                                Settings</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a>
+                        </li>
+                        <li>
+                            <form method="POST" action="http://sistema_compras_moodle.test/logout"
+                                x-data="">
+                                @csrf
+                                <a class="dropdown-item bg-danger-soft-hover" href="#"
+                                    onclick="this.parentElement.submit()"><i class="bi bi-power fa-fw me-2"></i>Cerrar
+                                    Sesion</a>
+                            </form>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <!-- Dark mode switch START -->
+                        <li style="display: none;">
+                            <div class="modeswitch-wrap" id="darkModeSwitch">
+                                <div class="modeswitch-item">
+                                    <div class="modeswitch-icon"></div>
+                                </div>
+                                <span>Dark mode</span>
                             </div>
-                        </div>
-                        <hr>
-                    </li>
-                    <!-- Links -->
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit
-                            Profile</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account
-                            Settings</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a>
-                    </li>
-                    <li><a class="dropdown-item bg-danger-soft-hover" href="#"><i
-                                class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <!-- Dark mode switch START -->
-                    <li  style="display: none;">
-                        <div class="modeswitch-wrap" id="darkModeSwitch">
-                            <div class="modeswitch-item">
-                                <div class="modeswitch-icon"></div>
-                            </div>
-                            <span>Dark mode</span>
-                        </div>
-                    </li>
-                    <!-- Dark mode switch END -->
-                </ul>
-            </div>
-            <!-- Profile START -->
+                        </li>
+                        <!-- Dark mode switch END -->
+                    </ul>
+                </div>
+                <!-- Profile START -->
+            @endauth
+            @guest
+                <div class="navbar-nav">
+                    <a href="{{ route('login') }}" class="btn btn-sm btn-dark mb-0"><i
+                            class="bi bi-power me-2"></i>Iniciar Sesion</a>
+                </div>
+            @endguest
         </div>
     </nav>
     <!-- Logo Nav END -->

@@ -482,7 +482,7 @@
                     @foreach ($cursos as $curso)
                         <!-- Tab item -->
                         <li class="nav-item me-2 me-sm-5">
-                            <button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-{{ $curso->id }}" data-bs-toggle="pill"
+                            <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-{{ $curso->id }}" data-bs-toggle="pill"
                                 data-bs-target="#course-pills-tabs-{{ $curso->id }}" type="button" role="tab"
                                 aria-controls="course-pills-tabs-{{ $curso->id }}" aria-selected="false">{{ $curso->name }}</button>
                         </li>
@@ -527,12 +527,12 @@
                         aria-labelledby="course-pills-tab-1">
                         <div class="row g-4">
 
-                            @foreach ($grupos as $curso)
+                            @foreach ($grupos as $grupo)
                             <!-- Card item START -->
                             <div class="col-sm-6 col-lg-4 col-xl-3">
                                 <div class="card shadow h-100">
                                     <!-- Image -->
-                                    <img src="{{ asset($curso->imagen)}}"
+                                    <img src="{{ asset($grupo->imagen)}}"
                                             class="card-img-top" alt="course image">
                                     <!-- Card body -->
                                     <div class="card-body pb-0">
@@ -543,8 +543,8 @@
                                             <a href="#" class="h6 mb-0"><i class="far fa-heart"></i></a>
                                         </div>
                                         <!-- Title -->
-                                        <h5 class="card-title fw-normal"><a href="#">{{ $curso->name }}</a></h5>
-                                        <p class="mb-2 text-truncate-2">{{ $curso->descripcion ?? "Proposal indulged no do sociable he throwing
+                                        <h5 class="card-title fw-normal"><a href="#">{{ $grupo->name }}</a></h5>
+                                        <p class="mb-2 text-truncate-2">{{ $grupo->descripcion ?? "Proposal indulged no do sociable he throwing
                                             settling." }}</p>
                                         <!-- Rating star -->
                                         <ul class="list-inline mb-0">
@@ -558,7 +558,7 @@
                                                     class="fas fa-star text-warning"></i></li>
                                             <li class="list-inline-item me-0 small"><i
                                                     class="far fa-star text-warning"></i></li>
-                                            <li class="list-inline-item ms-2 h6 fw-light mb-0">{{ $curso->calificacion }}/5.0</li>
+                                            <li class="list-inline-item ms-2 h6 fw-light mb-0">{{ $grupo->calificacion }}/5.0</li>
                                         </ul>
                                     </div>
                                     <!-- Card footer -->
@@ -566,8 +566,8 @@
                                         <hr>
                                         <div class="d-flex justify-content-between">
                                             <span class="h6 fw-light mb-0"><i
-                                                    class="far fa-clock text-danger me-2"></i>{{ $curso->hora . 'h ' . $curso->min . 'm' }}</span>
-                                            <span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i>{{ $curso->lecturas . ' lecturas' }}</span>
+                                                    class="far fa-clock text-danger me-2"></i>{{ $grupo->hora . 'h ' . $grupo->min . 'm' }}</span>
+                                            <span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i>{{ $grupo->lecturas . ' lecturas' }}</span>
                                         </div>
                                     </div>
                                 </div>
