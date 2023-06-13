@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('comprobantes', function (Blueprint $table) {
             $table->id();
             $table->softDeletes();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

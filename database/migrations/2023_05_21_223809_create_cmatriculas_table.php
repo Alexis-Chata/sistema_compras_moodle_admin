@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('cmatriculas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('curso_id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('modalidad_id')->nullable();
             $table->char('rol');
-            $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
+            $table->char('estado')->default(1);
+            $table->foreign('modalidad_id')->references('id')->on('modalidads')->onDelete('set null');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();

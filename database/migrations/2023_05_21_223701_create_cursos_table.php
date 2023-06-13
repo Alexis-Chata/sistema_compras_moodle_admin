@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('shortname');
+            $table->string('imagen')->nullable();
+            $table->string('descripcion')->nullable();
             $table->char('id_moodle_course')->nullable();
-            $table->char('estado')->nullable();
+            $table->char('estado')->default(1)->nullable();
             $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
