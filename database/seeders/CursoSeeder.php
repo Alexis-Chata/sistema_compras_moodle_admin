@@ -22,13 +22,10 @@ class CursoSeeder extends Seeder
             $n_curso->imagen = "/storage/grupos/08.jpg";
             $n_curso->save();
 
-        #curso 2
-            $n_curso = new Curso();
-            $n_curso->name = 'curso 2';
-            $n_curso->shortname = 'curso_2';
-            $n_curso->id_moodle_course = 12;
-            $n_curso->descripcion = 'Far advanced settling say finished raillery. Offered chiefly farther';
-            $n_curso->imagen = "/storage/grupos/08.jpg";
-            $n_curso->save();
+        $n_curso = new Curso();
+        $n_curso->name = 'curso 2';
+        $n_curso->shortname = 'curso_2';
+        $n_curso->id_moodle_course = 709;
+        $n_curso->save();
     }
 }

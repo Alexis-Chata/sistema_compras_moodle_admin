@@ -80,17 +80,18 @@ class GrupoSeeder extends Seeder
             $n_grupo->created_at = now()->addMinute(5);
             $n_grupo->save();
 
-            $n_grupo = new Grupo();
-            $n_grupo->name = 'grupo 3';
-            $n_grupo->descripcion = 'Arrived off she elderly beloved him Course regard to up he hardly.';
-            $n_grupo->imagen = "/storage/grupos/08.jpg";
-            $n_grupo->calificacion = "4.0";
-            $n_grupo->hora = 12;
-            $n_grupo->min = 56;
-            $n_grupo->lecturas = 15;
-            $n_grupo->id_moodle_group = 6;
-            $n_grupo->curso_id = 2;
-            $n_grupo->created_at = now()->addMinute(6);
-            $n_grupo->save();
+        $n_grupo = new Grupo();
+        $n_grupo->name = 'grupo 3';
+        $n_grupo->id_moodle_group = 35;
+        $n_grupo->curso_id = 2;
+        $n_grupo->descripcion = 'Arrived off she elderly beloved him Course regard to up he hardly.';
+        $n_grupo->imagen = "/storage/grupos/07.jpg";
+        $n_grupo->calificacion = "4.0";
+        $n_grupo->hora = 18;
+        $n_grupo->min = 56;
+        $n_grupo->lecturas = 99;
+        $n_grupo->costo = 104;
+        $n_grupo->created_at = now()->addMinute(6);
+        $n_grupo->save();
     }
 }

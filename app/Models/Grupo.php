@@ -11,6 +11,9 @@ class Grupo extends Model
     use HasFactory;
     use SoftDeletes;
 
-     #estudiantes - cursos
-     public function gmatriculas(){return $this->hasMany(Gmatricula::class);}
+    #estudiantes - cursos
+    public function gmatriculas()
+    {
+        return $this->hasMany(Gmatricula::class);
+    }
 }
