@@ -21,9 +21,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $cursos = Curso::latest()->take(5)->get();
-    $grupos = Grupo::latest()->take(8)->get();
+
+    $cursos->each(function ($item, $key) {
+        return $item->push($item->gruposlastlimit);
+    });
+
     //return $cursos;
-    return view('silicon-front.index', compact('cursos', 'grupos'));
+    return view('silicon-front.index', compact('cursos'));
 })->name('index');
 
 Route::get('/carrito', function () {
@@ -44,3 +48,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+
+

@@ -84,7 +84,7 @@ class GrupoSeeder extends Seeder
         $n_grupo->save();
 
         $n_grupo = new Grupo();
-        $n_grupo->name = 'grupo 3';
+        $n_grupo->name = 'grupo 4';
         $n_grupo->id_moodle_group = 35;
         $n_grupo->curso_id = 2;
         $n_grupo->descripcion = 'Arrived off she elderly beloved him Course regard to up he hardly.';
@@ -95,6 +95,90 @@ class GrupoSeeder extends Seeder
         $n_grupo->lecturas = 99;
         $n_grupo->costo = 104;
         $n_grupo->created_at = now()->addMinute(6);
+        $n_grupo->save();
+
+        $n_grupo = new Grupo();
+        $n_grupo->name = 'grupo 4';
+        $n_grupo->id_moodle_group = 36;
+        $n_grupo->curso_id = 1;
+        $n_grupo->descripcion = 'Arrived off she elderly beloved him Course regard to up he hardly.';
+        $n_grupo->imagen = "/storage/grupos/08.jpg";
+        $n_grupo->calificacion = "4.0";
+        $n_grupo->hora = 12;
+        $n_grupo->min = 56;
+        $n_grupo->lecturas = 15;
+        $n_grupo->costo = 84;
+        $n_grupo->created_at = now()->addMinute(7);
+        $n_grupo->save();
+
+        $n_grupo = new Grupo();
+        $n_grupo->name = 'grupo 5';
+        $n_grupo->id_moodle_group = 37;
+        $n_grupo->curso_id = 1;
+        $n_grupo->descripcion = 'Far advanced settling say finished raillery. Offered chiefly farther';
+        $n_grupo->imagen = "/storage/grupos/08.jpg";
+        $n_grupo->calificacion = "4.0";
+        $n_grupo->hora = 12;
+        $n_grupo->min = 56;
+        $n_grupo->lecturas = 15;
+        $n_grupo->costo = 84;
+        $n_grupo->created_at = now()->addMinute(8);
+        $n_grupo->save();
+
+        $n_grupo = new Grupo();
+        $n_grupo->name = 'grupo 5';
+        $n_grupo->id_moodle_group = 38;
+        $n_grupo->curso_id = 1;
+        $n_grupo->descripcion = 'Proposal indulged no do sociable he throwing settling.';
+        $n_grupo->imagen = "/storage/grupos/08.jpg";
+        $n_grupo->calificacion = "3.0";
+        $n_grupo->hora = 12;
+        $n_grupo->min = 56;
+        $n_grupo->lecturas = 15;
+        $n_grupo->costo = 84;
+        $n_grupo->created_at = now()->addMinute(9);
+        $n_grupo->save();
+
+        $n_grupo = new Grupo();
+        $n_grupo->name = 'grupo 6';
+        $n_grupo->id_moodle_group = 39;
+        $n_grupo->curso_id = 2;
+        $n_grupo->descripcion = 'Rooms oh fully taken by worse do Points afraid but may end Rooms Points afraid but may end Rooms';
+        $n_grupo->imagen = "/storage/grupos/ps.jpg";
+        $n_grupo->calificacion = "4.5";
+        $n_grupo->hora = 9;
+        $n_grupo->min = 56;
+        $n_grupo->lecturas = 65;
+        $n_grupo->costo = 94;
+        $n_grupo->created_at = now()->addMinute(10);
+        $n_grupo->save();
+
+        $n_grupo = new Grupo();
+        $n_grupo->name = 'grupo 6';
+        $n_grupo->id_moodle_group = 40;
+        $n_grupo->curso_id = 2;
+        $n_grupo->descripcion = 'Far advanced settling say finished raillery. Offered chiefly farther';
+        $n_grupo->imagen = "/storage/grupos/figma.jpg";
+        $n_grupo->calificacion = "4.5";
+        $n_grupo->hora = 5;
+        $n_grupo->min = 56;
+        $n_grupo->lecturas = 32;
+        $n_grupo->costo = 54;
+        $n_grupo->created_at = now()->addMinute(11);
+        $n_grupo->save();
+
+        $n_grupo = new Grupo();
+        $n_grupo->name = 'grupo 1';
+        $n_grupo->id_moodle_group = 41;
+        $n_grupo->curso_id = 3;
+        $n_grupo->descripcion = 'Arrived off she elderly beloved him Course regard to up he hardly.';
+        $n_grupo->imagen = "/storage/grupos/07.jpg";
+        $n_grupo->calificacion = "4.0";
+        $n_grupo->hora = 18;
+        $n_grupo->min = 56;
+        $n_grupo->lecturas = 99;
+        $n_grupo->costo = 104;
+        $n_grupo->created_at = now()->addMinute(12);
         $n_grupo->save();
     }
 }

@@ -24,5 +24,17 @@ class CursoSeeder extends Seeder
         $n_curso->shortname = 'curso_2';
         $n_curso->id_moodle_course = 709;
         $n_curso->save();
+
+        $n_curso = new Curso();
+        $n_curso->name = 'curso 3';
+        $n_curso->shortname = 'curso_3';
+        $n_curso->id_moodle_course = 710;
+        $n_curso->save();
+
+        $n_curso = new Curso();
+        $n_curso->name = 'curso 4';
+        $n_curso->shortname = 'curso_4';
+        $n_curso->id_moodle_course = 709;
+        $n_curso->save();
     }
 }
