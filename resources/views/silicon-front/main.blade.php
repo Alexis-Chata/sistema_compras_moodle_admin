@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0030)https://eduport.webestica.com/ -->
 <html lang="es" data-theme="light">
 
 <head>
@@ -29,7 +28,7 @@
         <link rel="stylesheet" type="text/css" href="./silicon-front/silicon/glightbox.css">
     @endif
 
-    @if (in_array(request()->route()->getName(), ['cursos', 'carrito']))
+    @if (in_array(request()->route()->getName(), ['mycursos', 'cursos', 'carrito']))
         <link rel="stylesheet" type="text/css" href="./silicon-front/silicon/choices.min.css">
     @endif
 
@@ -38,16 +37,6 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="" src="./silicon-front/silicon/js"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-7N7LGGGWT1');
-    </script>
     {{-- <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     @livewireStyles

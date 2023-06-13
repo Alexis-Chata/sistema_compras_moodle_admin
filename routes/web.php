@@ -39,6 +39,11 @@ Route::get('/cursos', function () {
     return view('silicon-front.cursos', compact('grupos'));
 })->name('cursos');
 
+Route::get('/mycursos', function () {
+    $grupos = Grupo::paginate(12);
+    return view('silicon-front.mycursos', compact('grupos'));
+})->name('mycursos');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
