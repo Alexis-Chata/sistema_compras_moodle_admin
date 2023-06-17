@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
+    //$cursos = null;
     $cursos = Curso::latest()->take(5)->get();
 
     $cursos->each(function ($item, $key) {
@@ -27,7 +28,7 @@ Route::get('/', function () {
     });
 
     //return $cursos;
-    return view('silicon-front.index', compact('cursos'));
+    return view('silicon-front.index2', compact('cursos'));
 })->name('index');
 
 Route::get('/carrito', function () {

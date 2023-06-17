@@ -1,8 +1,8 @@
 /**
 * Eduport- LMS, Education and Course Theme
 *
-* @author jademlearning (https://www.jademlearning.com/)
-* @version 1.2.0
+* @author Webestica (https://www.webestica.com/)
+* @version 1.4.0
 **/
 
 
@@ -17,24 +17,24 @@ Table Of Content
 06 TOOLTIP
 07 POPOVER
 08 BACK TO TOP
-10 GLIGHTBOX
-11 ISOTOPE
-12 CHOICES
-13 AOS ANIMATION
-14 DASHBOARD CHART
-15 EARNING CHART
-16 EARNING CHART 2
-17 TRAFFIC CHART
-18 ACTIVE STUDENT CHART
-19 ACTIVE STUDENT CHART 2
-20 REVIEW CHART
-21 QUILL EDITOR
-22 STEPPER
-23 VIDEO PLAYER
-24 DARK MODE
-25 PRICING
-26 STICKY ELEMENT
-27 OVERLAY SCROLLBARS
+09 GLIGHTBOX
+10 ISOTOPE
+11 CHOICES
+12 AOS ANIMATION
+13 DASHBOARD CHART
+14 EARNING CHART
+15 EARNING CHART 2
+16 TRAFFIC CHART
+17 ACTIVE STUDENT CHART
+18 ACTIVE STUDENT CHART 2
+19 REVIEW CHART
+20 QUILL EDITOR
+21 STEPPER
+22 VIDEO PLAYER
+23 PRICING
+24 STICKY ELEMENT
+24 OVERLAY SCROLLBARS
+26 FLATPICKER
 ====================== */
 
 "use strict";
@@ -77,43 +77,43 @@ Table Of Content
 
 // Get CSS var value
 var ThemeColor = function () {
-    return {
-        getCssVariableValue: function (e) {
-            var t = getComputedStyle(document.documentElement).getPropertyValue(e);
-            return t && t.length > 0 && (t = t.trim()), t;
-        }
-    };
+  return {
+    getCssVariableValue: function (e) {
+      var t = getComputedStyle(document.documentElement).getPropertyValue(e);
+      return t && t.length > 0 && (t = t.trim()), t;
+    }
+  };
 }();
 
 var e = {
     init: function () {
         e.preLoader(),
-            e.megaMenu(),
-            e.stickyHeader(),
-            e.tinySlider(),
-            e.stickyBar(),
-            e.toolTipFunc(),
-            e.popOverFunc(),
-            e.backTotop(),
-            e.lightBox(),
-            e.enableIsotope(),
-            e.choicesSelect(),
-            e.aosFunc(),
-            e.dashboardChart(),
-            e.earningChart(),
-            e.earningChart2(),
-            e.trafficChart(),
-            e.activeChart(),
-            e.activeChart2(),
-            e.reviewChart(),
-            e.quill(),
-            e.stepper(),
-            e.videoPlyr(),
-            e.darkMode(),
-            e.pricing(),
-            e.stickyElement(),
-            e.overlayScrollbars();
-
+        e.megaMenu(),
+        e.stickyHeader(),
+        e.tinySlider(),
+        e.stickyBar(),
+        e.toolTipFunc(),
+        e.popOverFunc(),
+        e.backTotop(),
+        e.lightBox(),
+        e.enableIsotope(),
+        e.choicesSelect(),
+        e.aosFunc(),
+        e.dashboardChart(),
+        e.earningChart(),
+        e.earningChart2(),
+        e.trafficChart(),
+        e.activeChart(),
+        e.activeChart2(),
+        e.reviewChart(),
+        e.quill(),
+        e.stepper(),
+        e.videoPlyr(),
+        e.pricing(),
+        e.stickyElement(),
+        e.overlayScrollbars(),
+        e.flatPicker();
+        
     },
     isVariableDefined: function (el) {
         return typeof !!el && (el) != 'undefined' && el != null;
@@ -220,7 +220,7 @@ var e = {
         }
     },
     toggleAllClass: function (selectors, className) {
-        if (e.isVariableDefined(selectors) && (selectors instanceof HTMLElement)) {
+        if (e.isVariableDefined(selectors)  && (selectors instanceof HTMLElement)) {
             document.querySelectorAll(selectors).forEach((element) => {
                 element.toggleClass(className);
             });
@@ -241,7 +241,7 @@ var e = {
         return document.querySelectorAll(selectors);
     },
 
-
+    
 
     // START: 01 Preloader
     preLoader: function () {
@@ -249,7 +249,7 @@ var e = {
             var preloader = e.select('.preloader');
             if (e.isVariableDefined(preloader)) {
                 preloader.className += ' animate__animated animate__fadeOut';
-                setTimeout(function () {
+                setTimeout(function(){
                     preloader.style.display = 'none';
                 }, 200);
             }
@@ -266,7 +266,7 @@ var e = {
             if (e.isVariableDefined(element.nextElementSibling) && !element.nextElementSibling.classList.contains("show")) {
                 const parents = e.getParents(element, '.dropdown-menu');
                 e.removeClass(parents.querySelector('.show'), "show");
-                if (e.isVariableDefined(parents.querySelector('.dropdown-opened'))) {
+                if(e.isVariableDefined(parents.querySelector('.dropdown-opened'))){
                     e.removeClass(parents.querySelector('.dropdown-opened'), "dropdown-opened");
                 }
 
@@ -313,96 +313,96 @@ var e = {
     tinySlider: function () {
         var $carousel = e.select('.tiny-slider-inner');
         if (e.isVariableDefined($carousel)) {
-            var tnsCarousel = e.selectAll('.tiny-slider-inner');
-            tnsCarousel.forEach(slider => {
-                var slider1 = slider;
-                var sliderMode = slider1.getAttribute('data-mode') ? slider1.getAttribute('data-mode') : 'carousel';
-                var sliderAxis = slider1.getAttribute('data-axis') ? slider1.getAttribute('data-axis') : 'horizontal';
-                var sliderSpace = slider1.getAttribute('data-gutter') ? slider1.getAttribute('data-gutter') : 30;
-                var sliderEdge = slider1.getAttribute('data-edge') ? slider1.getAttribute('data-edge') : 0;
+          var tnsCarousel = e.selectAll('.tiny-slider-inner');
+          tnsCarousel.forEach(slider => {
+              var slider1 = slider;
+              var sliderMode = slider1.getAttribute('data-mode') ? slider1.getAttribute('data-mode') : 'carousel';
+              var sliderAxis = slider1.getAttribute('data-axis') ? slider1.getAttribute('data-axis') : 'horizontal';
+              var sliderSpace = slider1.getAttribute('data-gutter') ? slider1.getAttribute('data-gutter') : 30;
+              var sliderEdge = slider1.getAttribute('data-edge') ? slider1.getAttribute('data-edge') : 0;
 
-                var sliderItems = slider1.getAttribute('data-items') ? slider1.getAttribute('data-items') : 4; //option: number (items in all device)
-                var sliderItemsXl = slider1.getAttribute('data-items-xl') ? slider1.getAttribute('data-items-xl') : Number(sliderItems); //option: number (items in 1200 to end )
-                var sliderItemsLg = slider1.getAttribute('data-items-lg') ? slider1.getAttribute('data-items-lg') : Number(sliderItemsXl); //option: number (items in 992 to 1199 )
-                var sliderItemsMd = slider1.getAttribute('data-items-md') ? slider1.getAttribute('data-items-md') : Number(sliderItemsLg); //option: number (items in 768 to 991 )
-                var sliderItemsSm = slider1.getAttribute('data-items-sm') ? slider1.getAttribute('data-items-sm') : Number(sliderItemsMd); //option: number (items in 576 to 767 )
-                var sliderItemsXs = slider1.getAttribute('data-items-xs') ? slider1.getAttribute('data-items-xs') : Number(sliderItemsSm); //option: number (items in start to 575 )
+              var sliderItems = slider1.getAttribute('data-items') ? slider1.getAttribute('data-items') : 4; //option: number (items in all device)
+              var sliderItemsXl = slider1.getAttribute('data-items-xl') ? slider1.getAttribute('data-items-xl') : Number(sliderItems); //option: number (items in 1200 to end )
+              var sliderItemsLg = slider1.getAttribute('data-items-lg') ? slider1.getAttribute('data-items-lg') : Number(sliderItemsXl); //option: number (items in 992 to 1199 )
+              var sliderItemsMd = slider1.getAttribute('data-items-md') ? slider1.getAttribute('data-items-md') : Number(sliderItemsLg); //option: number (items in 768 to 991 )
+              var sliderItemsSm = slider1.getAttribute('data-items-sm') ? slider1.getAttribute('data-items-sm') : Number(sliderItemsMd); //option: number (items in 576 to 767 )
+              var sliderItemsXs = slider1.getAttribute('data-items-xs') ? slider1.getAttribute('data-items-xs') : Number(sliderItemsSm); //option: number (items in start to 575 )
 
-                var sliderSpeed = slider1.getAttribute('data-speed') ? slider1.getAttribute('data-speed') : 500;
-                var sliderautoWidth = slider1.getAttribute('data-autowidth') === 'true'; //option: true or false
-                var sliderArrow = slider1.getAttribute('data-arrow') !== 'false'; //option: true or false
-                var sliderDots = slider1.getAttribute('data-dots') !== 'false'; //option: true or false
+              var sliderSpeed = slider1.getAttribute('data-speed') ? slider1.getAttribute('data-speed') : 500;
+              var sliderautoWidth = slider1.getAttribute('data-autowidth') === 'true'; //option: true or false
+              var sliderArrow = slider1.getAttribute('data-arrow') !== 'false'; //option: true or false
+              var sliderDots = slider1.getAttribute('data-dots') !== 'false'; //option: true or false
 
-                var sliderAutoPlay = slider1.getAttribute('data-autoplay') !== 'false'; //option: true or false
-                var sliderAutoPlayTime = slider1.getAttribute('data-autoplaytime') ? slider1.getAttribute('data-autoplaytime') : 4000;
-                var sliderHoverPause = slider1.getAttribute('data-hoverpause') === 'true'; //option: true or false
-                if (e.isVariableDefined(e.select('.custom-thumb'))) {
-                    var sliderNavContainer = e.select('.custom-thumb');
-                }
-                var sliderLoop = slider1.getAttribute('data-loop') !== 'false'; //option: true or false
-                var sliderRewind = slider1.getAttribute('data-rewind') === 'true'; //option: true or false
-                var sliderAutoHeight = slider1.getAttribute('data-autoheight') === 'true'; //option: true or false
-                var sliderfixedWidth = slider1.getAttribute('data-fixedwidth') === 'true'; //option: true or false
-                var sliderTouch = slider1.getAttribute('data-touch') !== 'false'; //option: true or false
-                var sliderDrag = slider1.getAttribute('data-drag') !== 'false'; //option: true or false
-                // Check if document DIR is RTL
-                var ifRtl = document.getElementsByTagName("html")[0].getAttribute("dir");
-                var sliderDirection;
-                if (ifRtl === 'rtl') {
-                    sliderDirection = 'rtl';
-                }
+              var sliderAutoPlay = slider1.getAttribute('data-autoplay') !== 'false'; //option: true or false
+              var sliderAutoPlayTime = slider1.getAttribute('data-autoplaytime') ? slider1.getAttribute('data-autoplaytime') : 4000;
+              var sliderHoverPause = slider1.getAttribute('data-hoverpause') === 'true'; //option: true or false
+              if (e.isVariableDefined(e.select('.custom-thumb'))) {
+                var sliderNavContainer = e.select('.custom-thumb');
+              } 
+              var sliderLoop = slider1.getAttribute('data-loop') !== 'false'; //option: true or false
+              var sliderRewind = slider1.getAttribute('data-rewind') === 'true'; //option: true or false
+              var sliderAutoHeight = slider1.getAttribute('data-autoheight') === 'true'; //option: true or false
+              var sliderfixedWidth = slider1.getAttribute('data-fixedwidth') === 'true'; //option: true or false
+              var sliderTouch = slider1.getAttribute('data-touch') !== 'false'; //option: true or false
+              var sliderDrag = slider1.getAttribute('data-drag') !== 'false'; //option: true or false
+              // Check if document DIR is RTL
+              var ifRtl = document.getElementsByTagName("html")[0].getAttribute("dir");
+              var sliderDirection;
+              if (ifRtl === 'rtl') {
+                  sliderDirection = 'rtl';
+              }
 
-                var tnsSlider = tns({
-                    container: slider,
-                    mode: sliderMode,
-                    axis: sliderAxis,
-                    gutter: sliderSpace,
-                    edgePadding: sliderEdge,
-                    speed: sliderSpeed,
-                    autoWidth: sliderautoWidth,
-                    controls: sliderArrow,
-                    nav: sliderDots,
-                    autoplay: sliderAutoPlay,
-                    autoplayTimeout: sliderAutoPlayTime,
-                    autoplayHoverPause: sliderHoverPause,
-                    autoplayButton: false,
-                    autoplayButtonOutput: false,
-                    controlsPosition: top,
-                    navContainer: sliderNavContainer,
-                    navPosition: top,
-                    autoplayPosition: top,
-                    controlsText: [
-                        '<i class="fas fa-chevron-left"></i>',
-                        '<i class="fas fa-chevron-right"></i>'
-                    ],
-                    loop: sliderLoop,
-                    rewind: sliderRewind,
-                    autoHeight: sliderAutoHeight,
-                    fixedWidth: sliderfixedWidth,
-                    touch: sliderTouch,
-                    mouseDrag: sliderDrag,
-                    arrowKeys: true,
-                    items: sliderItems,
-                    textDirection: sliderDirection,
-                    responsive: {
-                        0: {
-                            items: Number(sliderItemsXs)
-                        },
-                        576: {
-                            items: Number(sliderItemsSm)
-                        },
-                        768: {
-                            items: Number(sliderItemsMd)
-                        },
-                        992: {
-                            items: Number(sliderItemsLg)
-                        },
-                        1200: {
-                            items: Number(sliderItemsXl)
-                        }
-                    }
-                });
-            });
+              var tnsSlider = tns({
+                  container: slider,
+                  mode: sliderMode,
+                  axis: sliderAxis,
+                  gutter: sliderSpace,
+                  edgePadding: sliderEdge,
+                  speed: sliderSpeed,
+                  autoWidth: sliderautoWidth,
+                  controls: sliderArrow,
+                  nav: sliderDots,
+                  autoplay: sliderAutoPlay,
+                  autoplayTimeout: sliderAutoPlayTime,
+                  autoplayHoverPause: sliderHoverPause,
+                  autoplayButton: false,
+                  autoplayButtonOutput: false,
+                  controlsPosition: top,
+                  navContainer: sliderNavContainer,
+                  navPosition: top,
+                  autoplayPosition: top,
+                  controlsText: [
+                      '<i class="fas fa-chevron-left"></i>',
+                      '<i class="fas fa-chevron-right"></i>'
+                  ],
+                  loop: sliderLoop,
+                  rewind: sliderRewind,
+                  autoHeight: sliderAutoHeight,
+                  fixedWidth: sliderfixedWidth,
+                  touch: sliderTouch,
+                  mouseDrag: sliderDrag,
+                  arrowKeys: true,
+                  items: sliderItems,
+                  textDirection: sliderDirection,
+                  responsive: {
+                      0: {
+                          items: Number(sliderItemsXs)
+                      },
+                      576: {
+                          items: Number(sliderItemsSm)
+                      },
+                      768: {
+                          items: Number(sliderItemsMd)
+                      },
+                      992: {
+                          items: Number(sliderItemsLg)
+                      },
+                      1200: {
+                          items: Number(sliderItemsXl)
+                      }
+                  }
+              });
+          }); 
         }
     },
     // END: Tiny Slider
@@ -421,7 +421,7 @@ var e = {
     toolTipFunc: function () {
         var tooltipTriggerList = [].slice.call(e.selectAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
+          return new bootstrap.Tooltip(tooltipTriggerEl)
         })
     },
     // END: Tooltip
@@ -431,7 +431,7 @@ var e = {
     popOverFunc: function () {
         var popoverTriggerList = [].slice.call(e.selectAll('[data-bs-toggle="popover"]'))
         var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-            return new bootstrap.Popover(popoverTriggerEl)
+          return new bootstrap.Popover(popoverTriggerEl)
         })
     },
     // END: Popover
@@ -461,7 +461,7 @@ var e = {
     },
     // END: Back to Top
 
-    // START: 10 GLightbox
+    // START: 09 GLightbox
     lightBox: function () {
         var light = e.select('[data-glightbox]');
         if (e.isVariableDefined(light)) {
@@ -474,7 +474,7 @@ var e = {
     },
     // END: GLightbox
 
-    // START: 11 Isotope
+    // START: 10 Isotope
     enableIsotope: function () {
         var isGridItem = e.select('.grid-item');
         if (e.isVariableDefined(isGridItem)) {
@@ -518,7 +518,7 @@ var e = {
                     menuItems.forEach(menuItem => {
                         menuItem.addEventListener('click', function (event) {
                             var filterValue = menuItem.getAttribute('data-filter');
-                            filter.arrange({ filter: filterValue });
+                            filter.arrange({filter: filterValue});
                             menuItems.forEach((control) => control.removeClass('active'));
                             menuItem.addClass('active');
                         });
@@ -534,34 +534,34 @@ var e = {
     },
     // END: Isotope
 
-    // START: 12 Choices
+    // START: 11 Choices
     choicesSelect: function () {
-        var choice = e.select('.js-choice');
+       var choice = e.select('.js-choice');
+       
+       if (e.isVariableDefined(choice)) {
+         var element = document.querySelectorAll('.js-choice');
 
-        if (e.isVariableDefined(choice)) {
-            var element = document.querySelectorAll('.js-choice');
+         element.forEach(function (item) {
+           var removeItemBtn = item.getAttribute('data-remove-item-button') == 'true' ? true : false;
+           var placeHolder = item.getAttribute('data-placeholder') == 'false' ? false : true;
+           var placeHolderVal = item.getAttribute('data-placeholder-val') ? item.getAttribute('data-placeholder-val') : 'Type and hit enter';
+           var maxItemCount = item.getAttribute('data-max-item-count') ? item.getAttribute('data-max-item-count') : 3;
+           var searchEnabled = item.getAttribute('data-search-enabled') == 'false' ? false : true;
 
-            element.forEach(function (item) {
-                var removeItemBtn = item.getAttribute('data-remove-item-button') == 'true' ? true : false;
-                var placeHolder = item.getAttribute('data-placeholder') == 'false' ? false : true;
-                var placeHolderVal = item.getAttribute('data-placeholder-val') ? item.getAttribute('data-placeholder-val') : 'Type and hit enter';
-                var maxItemCount = item.getAttribute('data-max-item-count') ? item.getAttribute('data-max-item-count') : 3;
-                var searchEnabled = item.getAttribute('data-search-enabled') == 'false' ? false : true;
+           var choices = new Choices(item, {
+               removeItemButton: removeItemBtn,
+               placeholder: placeHolder,
+               placeholderValue: placeHolderVal,
+               maxItemCount: maxItemCount,
+               searchEnabled: searchEnabled
+           });
 
-                var choices = new Choices(item, {
-                    removeItemButton: removeItemBtn,
-                    placeholder: placeHolder,
-                    placeholderValue: placeHolderVal,
-                    maxItemCount: maxItemCount,
-                    searchEnabled: searchEnabled
-                });
-
-            });
-        }
+         });
+       }
     },
     // END: Choices
 
-    // START: 13 AOS Animation
+    // START: 12 AOS Animation
     aosFunc: function () {
         var aos = e.select('.aos');
         if (e.isVariableDefined(aos)) {
@@ -574,389 +574,389 @@ var e = {
     },
     // END: AOS Animation
 
-    // START: 14 Dashboard Chart
+    // START: 13 Dashboard Chart
     dashboardChart: function () {
         var ac = e.select('#ChartPayout');
         if (e.isVariableDefined(ac)) {
-            var options = {
-                series: [{
-                    name: 'Payout',
-                    data: [2909, 1259, 950, 1563, 1825, 2526, 2010, 3260, 3005, 3860, 4039]
-                }],
-                chart: {
-                    height: 300,
-                    type: 'area',
-                    toolbar: {
-                        show: false
-                    },
-                },
-
-                dataLabels: {
-                    enabled: true
-                },
-                stroke: {
-                    curve: 'smooth'
-                },
-                colors: [ThemeColor.getCssVariableValue('--bs-primary')],
-                xaxis: {
-                    type: 'Payout',
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct ', 'Nov', 'Dec'],
-                    axisBorder: {
-                        show: false
-                    },
-                    axisTicks: {
-                        show: false
-                    },
-                },
-                yaxis: [{
-                    axisTicks: {
-                        show: false
-                    },
-                    axisBorder: {
-                        show: false
-                    },
-                }],
-                tooltip: {
-                    y: {
-                        title: {
-                            formatter: function (e) {
-                                return "" + "$";
-                            }
-                        }
-                    },
-                    marker: {
-                        show: !1
-                    }
+        var options = {
+          series: [{
+            name: 'Payout',
+            data: [2909, 1259, 950, 1563, 1825, 2526, 2010, 3260, 3005, 3860, 4039]
+          }],
+          chart: {
+            height: 300,
+            type: 'area',
+            toolbar: {
+              show: false
+            },
+          },
+          
+          dataLabels: {
+            enabled: true
+          },
+          stroke: {
+            curve: 'smooth'
+          },
+          colors: [ThemeColor.getCssVariableValue('--bs-primary')],
+          xaxis: {
+            type: 'Payout',
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct ', 'Nov', 'Dec'],
+            axisBorder: {
+               show: false
+            },
+            axisTicks: {
+                show: false
+            },
+          },
+          yaxis: [{
+              axisTicks: {
+                show: false
+              },
+              axisBorder: {
+                show: false
+              },
+            }],
+          tooltip: {
+            y: {
+              title: {
+                formatter: function (e) {
+                  return "" + "$";
                 }
-            };
-            var chart = new ApexCharts(document.querySelector("#ChartPayout"), options);
-            chart.render();
+              }
+            },
+            marker: {
+              show: !1
+            }
+          }
+        };
+        var chart = new ApexCharts(document.querySelector("#ChartPayout"), options);
+        chart.render();
         }
     },
     // END: Dashboard Chart
 
-    // START: 15 Earning Chart
+    // START: 14 Earning Chart
     earningChart: function () {
         var cpe = e.select('#ChartPayoutEarning');
         if (e.isVariableDefined(cpe)) {
-            var options = {
-                series: [{
-                    name: 'Payout',
-                    data: [500, 700, 900, 1500, 1800, 1000, 0, 2000, 3200, 3000, 4800, 4000]
-                }],
-                chart: {
-                    height: 300,
-                    type: 'area',
-                    sparkline: {
-                        enabled: !0
-                    }
-                },
-                dataLabels: {
-                    enabled: false
-                },
-                stroke: {
-                    curve: 'smooth'
-                },
-                colors: [ThemeColor.getCssVariableValue('--bs-primary')],
-                xaxis: {
-                    type: 'Payout',
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct ', 'Nov', 'Dec']
-                },
-                grid: {
-
-                },
-                tooltip: {
-                    y: {
-                        title: {
-                            formatter: function (e) {
-                                return "" + "$";
-                            }
-                        }
-                    },
-                    marker: {
-                        show: !1
-                    }
+        var options = {
+          series: [{
+            name: 'Payout',
+            data: [500, 700, 900, 1500, 1800, 1000, 0, 2000, 3200, 3000, 4800, 4000]
+          }],
+          chart: {
+            height: 300,
+            type: 'area',
+            sparkline: {
+              enabled: !0
+            }
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            curve: 'smooth'
+          },
+          colors: [ThemeColor.getCssVariableValue('--bs-primary')],
+          xaxis: {
+            type: 'Payout',
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct ', 'Nov', 'Dec']
+          },
+          grid: {
+            
+          },
+          tooltip: {
+            y: {
+              title: {
+                formatter: function (e) {
+                  return "" + "$";
                 }
-            };
-            var chart = new ApexCharts(document.querySelector("#ChartPayoutEarning"), options);
-            chart.render();
+              }
+            },
+            marker: {
+              show: !1
+            }
+          }
+        };
+        var chart = new ApexCharts(document.querySelector("#ChartPayoutEarning"), options);
+        chart.render();
         }
     },
     // END: Earning Chart
 
-    // START: 16 Earning Chart 2
+    // START: 15 Earning Chart 2
     earningChart2: function () {
         var cpv = e.select('#ChartPageViews');
         if (e.isVariableDefined(cpv)) {
-            // CHART: Page Views
-            var options = {
-                series: [50, 20, 20, 10, 10],
-                labels: ['Course-1', 'Course-2', 'Course-3', 'Course-4', 'Course-5'],
+          // CHART: Page Views
+          var options = {
+            series: [50, 20, 20, 10, 10],
+            labels: ['Course-1', 'Course-2', 'Course-3', 'Course-4', 'Course-5'],
+            chart: {
+              height: 300,
+              width: 300,
+              offsetX: 50,
+              type: 'donut',
+              sparkline: {
+                enabled: !0
+              }
+            },
+            colors: [
+              ThemeColor.getCssVariableValue('--bs-success'),
+              ThemeColor.getCssVariableValue('--bs-warning'),
+              ThemeColor.getCssVariableValue('--bs-danger'),
+              ThemeColor.getCssVariableValue('--bs-primary'),
+              ThemeColor.getCssVariableValue('--bs-secondary')
+            ],
+            tooltip: {
+              theme: "dark"
+            },
+            responsive: [{
+              breakpoint: 480,
+              options: {
                 chart: {
-                    height: 300,
-                    width: 300,
-                    offsetX: 50,
-                    type: 'donut',
-                    sparkline: {
-                        enabled: !0
-                    }
+                  width: 200,
+                  height: 200,
                 },
-                colors: [
-                    ThemeColor.getCssVariableValue('--bs-success'),
-                    ThemeColor.getCssVariableValue('--bs-warning'),
-                    ThemeColor.getCssVariableValue('--bs-danger'),
-                    ThemeColor.getCssVariableValue('--bs-primary'),
-                    ThemeColor.getCssVariableValue('--bs-secondary')
-                ],
-                tooltip: {
-                    theme: "dark"
-                },
-                responsive: [{
-                    breakpoint: 480,
-                    options: {
-                        chart: {
-                            width: 200,
-                            height: 200,
-                        },
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }]
-            };
-            var chart = new ApexCharts(document.querySelector("#ChartPageViews"), options);
-            chart.render();
+                legend: {
+                  position: 'bottom'
+                }
+              }
+            }]
+          };
+          var chart = new ApexCharts(document.querySelector("#ChartPageViews"), options);
+          chart.render();
         }
     },
     // END: Earning Chart 2
 
-    // START: 17 Traffic Chart 2
+    // START: 16 Traffic Chart
     trafficChart: function () {
-        var cpv = e.select('#ChartTrafficViews');
-        if (e.isVariableDefined(cpv)) {
-            // CHART: Page Views
-            var options = {
-                series: [70, 15, 10, 5],
-                labels: ['Course-1', 'Course-2', 'Course-3', 'Course-4'],
-                chart: {
-                    height: 200,
-                    width: 200,
-                    offsetX: 0,
-                    type: 'donut',
-                    sparkline: {
-                        enabled: !0
-                    }
-                },
-                colors: [
-                    ThemeColor.getCssVariableValue('--bs-primary'),
-                    ThemeColor.getCssVariableValue('--bs-success'),
-                    ThemeColor.getCssVariableValue('--bs-warning'),
-                    ThemeColor.getCssVariableValue('--bs-danger')
-                ],
-                tooltip: {
-                    theme: "dark"
-                },
-                responsive: [{
-                    breakpoint: 480,
-                    options: {
-                        chart: {
-                            width: 200,
-                            height: 200,
-                        },
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }]
-            };
-            var chart = new ApexCharts(document.querySelector("#ChartTrafficViews"), options);
-            chart.render();
-        }
+      var cpv = e.select('#ChartTrafficViews');
+      if (e.isVariableDefined(cpv)) {
+        // CHART: Page Views
+        var options = {
+          series: [70, 15, 10, 5],
+          labels: ['Course-1', 'Course-2', 'Course-3', 'Course-4'],
+          chart: {
+            height: 200,
+            width: 200,
+            offsetX: 0,
+            type: 'donut',
+            sparkline: {
+              enabled: !0
+            }
+          },
+          colors: [
+            ThemeColor.getCssVariableValue('--bs-primary'),
+            ThemeColor.getCssVariableValue('--bs-success'),
+            ThemeColor.getCssVariableValue('--bs-warning'),
+            ThemeColor.getCssVariableValue('--bs-danger')
+          ],
+          tooltip: {
+            theme: "dark"
+          },
+          responsive: [{
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200,
+                height: 200,
+              },
+              legend: {
+                position: 'bottom'
+              }
+            }
+          }]
+        };
+        var chart = new ApexCharts(document.querySelector("#ChartTrafficViews"), options);
+        chart.render();
+      }
     },
-    // END: Traffic Chart 2
+    // END: Traffic Chart
 
-    // START: 18 Active student Chart
+    // START: 17 Active student Chart
     activeChart: function () {
-        var jj = document.querySelector("#activeChartstudent");
-        if (typeof (jj) != 'undefined' && jj != null) {
-            var options = {
-                series: [{
-                    name: 'Conversion',
-                    data: [200, 290, 500, 500, 430, 316, 478, 700]
-                }],
-                chart: {
-                    height: 130,
-                    type: 'area',
-                    sparkline: {
-                        enabled: !0
-                    }
-                },
-                dataLabels: {
-                    enabled: false
-                },
-                stroke: {
-                    curve: 'smooth'
-                },
-                colors: [ThemeColor.getCssVariableValue('--bs-success')],
-                xaxis: {
-                    type: 'category',
-                    categories: ['Dec 01', 'Dec 02', 'Dec 03', 'Dec 04', 'Dec 05', 'Dec 06', 'Dec 07', 'Dec 08', 'Dec 09 ', 'Dec 10', 'Dec 11']
-                },
-                grid: {
-
-                },
-                tooltip: {
-                    y: {
-                        title: {
-                            formatter: function (e) {
-                                return "";
-                            }
-                        }
-                    },
-                    marker: {
-                        show: !1
-                    }
-                }
-            };
-            var chart = new ApexCharts(document.querySelector("#activeChartstudent"), options);
-            chart.render();
+      var jj = document.querySelector("#activeChartstudent");
+      if(typeof(jj) != 'undefined' && jj != null){
+      var options = {
+        series: [{
+          name: 'Conversion',
+          data: [200, 290, 500, 500, 430, 316, 478, 700]
+        }],
+        chart: {
+          height: 130,
+          type: 'area',
+          sparkline: {
+            enabled: !0
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        colors: [ThemeColor.getCssVariableValue('--bs-success')],
+        xaxis: {
+          type: 'category',
+          categories: ['Dec 01', 'Dec 02', 'Dec 03', 'Dec 04', 'Dec 05', 'Dec 06', 'Dec 07', 'Dec 08', 'Dec 09 ', 'Dec 10', 'Dec 11']
+        },
+        grid: {
+          
+        },
+        tooltip: {
+          y: {
+            title: {
+              formatter: function (e) {
+                return "";
+              }
+            }
+          },
+          marker: {
+            show: !1
+          }
         }
+      };
+      var chart = new ApexCharts(document.querySelector("#activeChartstudent"), options);
+      chart.render();
+      }
     },
     // END: Active student Chart
 
-    // START: 19 Active student Chart 2
+    // START: 18 Active student Chart 2
     activeChart2: function () {
-        var jj = document.querySelector("#activeChartstudent2");
-        if (typeof (jj) != 'undefined' && jj != null) {
-            var options = {
-                series: [{
-                    name: 'Conversion',
-                    data: [200, 290, 325, 500, 600, 316, 478, 700]
-                }],
-                chart: {
-                    height: 130,
-                    type: 'area',
-                    sparkline: {
-                        enabled: !0
-                    }
-                },
-                dataLabels: {
-                    enabled: false
-                },
-                stroke: {
-                    curve: 'smooth'
-                },
-                colors: [ThemeColor.getCssVariableValue('--bs-purple')],
-                xaxis: {
-                    type: 'category',
-                    categories: ['Dec 01', 'Dec 02', 'Dec 03', 'Dec 04', 'Dec 05', 'Dec 06', 'Dec 07', 'Dec 08', 'Dec 09 ', 'Dec 10', 'Dec 11']
-                },
-                grid: {
-
-                },
-                tooltip: {
-                    y: {
-                        title: {
-                            formatter: function (e) {
-                                return "";
-                            }
-                        }
-                    },
-                    marker: {
-                        show: !1
-                    }
-                }
-            };
-            var chart = new ApexCharts(document.querySelector("#activeChartstudent2"), options);
-            chart.render();
+      var jj = document.querySelector("#activeChartstudent2");
+      if(typeof(jj) != 'undefined' && jj != null){
+      var options = {
+        series: [{
+          name: 'Conversion',
+          data: [200, 290, 325, 500, 600, 316, 478, 700]
+        }],
+        chart: {
+          height: 130,
+          type: 'area',
+          sparkline: {
+            enabled: !0
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        colors: [ThemeColor.getCssVariableValue('--bs-purple')],
+        xaxis: {
+          type: 'category',
+          categories: ['Dec 01', 'Dec 02', 'Dec 03', 'Dec 04', 'Dec 05', 'Dec 06', 'Dec 07', 'Dec 08', 'Dec 09 ', 'Dec 10', 'Dec 11']
+        },
+        grid: {
+          
+        },
+        tooltip: {
+          y: {
+            title: {
+              formatter: function (e) {
+                return "";
+              }
+            }
+          },
+          marker: {
+            show: !1
+          }
         }
+      };
+      var chart = new ApexCharts(document.querySelector("#activeChartstudent2"), options);
+      chart.render();
+      }
     },
     // END: Active student Chart 2
 
-    // START: 20 Review chart START
-    reviewChart: function () {
-        var ff = document.querySelector("#apexChartPageViews");
-        if (typeof (ff) != 'undefined' && ff != null) {
-            var options = {
-                series: [80, 30],
-                labels: ['Positive', 'Negative'],
-                chart: {
-                    height: 300,
-                    width: 300,
-                    type: 'donut',
-                    sparkline: {
-                        enabled: !0
-                    }
-                },
-                stroke: {
-                    colors: 'transparent',
-                },
-                colors: [
-                    ThemeColor.getCssVariableValue('--bs-success'),
-                    ThemeColor.getCssVariableValue('--bs-danger'),
-                ],
-                tooltip: {
-                    theme: "dark"
-                },
-                responsive: [{
-                    breakpoint: 480,
-                    options: {
-                        chart: {
-                            height: 100,
-                            width: 100
-                        },
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }]
-            };
-            var chart = new ApexCharts(document.querySelector("#apexChartPageViews"), options);
-            chart.render();
-        }
+    // START: 19 Review chart
+    reviewChart: function (){
+      var ff = document.querySelector("#apexChartPageViews");
+      if(typeof(ff) != 'undefined' && ff != null){
+      var options = {
+        series: [80, 30],
+        labels: ['Positive', 'Negative'],
+        chart: {
+          height: 300,
+          width: 300,
+          type: 'donut',
+          sparkline: {
+            enabled: !0
+          }
+        },
+        stroke: {
+          colors: 'transparent',
+        },
+        colors: [
+          ThemeColor.getCssVariableValue('--bs-success'),
+          ThemeColor.getCssVariableValue('--bs-danger'),
+        ],
+        tooltip: {
+          theme: "dark"
+        },
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              height: 100,
+              width: 100
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+      };
+      var chart = new ApexCharts(document.querySelector("#apexChartPageViews"), options);
+      chart.render();
+      }
     },
-    // END: Review chart END
+    // END: Review chart
 
-    // START: 21 Quill Editor
+    // START: 20 Quill Editor
     quill: function () {
         var ql = e.select('#quilleditor');
         if (e.isVariableDefined(ql)) {
-            var editor = new Quill('#quilleditor', {
-                modules: { toolbar: '#quilltoolbar' },
-                theme: 'snow'
-            });
+          var editor = new Quill('#quilleditor', {
+            modules: { toolbar: '#quilltoolbar' },
+            theme: 'snow'
+          });
         }
     },
     // END: Quill Editor
 
-    // START: 22 Stepper
+    // START: 21 Stepper
     stepper: function () {
         var stp = e.select('#stepper');
         if (e.isVariableDefined(stp)) {
-            var nxtBtn = document.querySelectorAll('.next-btn');
-            var prvBtn = document.querySelectorAll('.prev-btn');
+          var nxtBtn = document.querySelectorAll('.next-btn');
+          var prvBtn = document.querySelectorAll('.prev-btn');
 
-            var stepper = new Stepper(document.querySelector('#stepper'), {
-                linear: false,
-                animation: true
-            });
+          var stepper = new Stepper(document.querySelector('#stepper'), {
+            linear: false,
+            animation: true
+          });
 
-            nxtBtn.forEach(function (button) {
-                button.addEventListener("click", () => {
-                    stepper.next()
-                })
-            });
+          nxtBtn.forEach(function (button) {
+            button.addEventListener("click", () =>{
+            stepper.next()
+          })
+          });
 
-            prvBtn.forEach(function (button) {
-                button.addEventListener("click", () => {
-                    stepper.previous()
-                })
-            });
+          prvBtn.forEach(function (button) {
+            button.addEventListener("click", () =>{
+            stepper.previous()
+          })
+          });
         }
     },
     // END: Stepper
 
-    // START: 23 Video player
+    // START: 22 Video player
     videoPlyr: function () {
         var vdp = e.select('.video-player');
         if (e.isVariableDefined(vdp)) {
@@ -967,141 +967,121 @@ var e = {
             // Vimeo
             const playerVimeo = new Plyr('#player-vimeo', {});
             window.player = playerVimeo;
-
+            
             // HTML video
             const playerHtmlvideo = new Plyr('video', {
-                captions: { active: true }
+                captions: {active: true}
             });
             window.player = playerHtmlvideo;
 
             // HTML audio
             const playerHtmlaudio = new Plyr('audio', {
-                captions: { active: true }
+                captions: {active: true}
             });
             window.player = playerHtmlaudio;
         }
     },
     // END: Video player
 
-    // START: 24 Dark mode
-    darkMode: function () {
-
-        let theme = localStorage.getItem('data-theme');
-        var style = document.getElementById("style-switch");
-        var dir = document.getElementsByTagName("html")[0].getAttribute('dir');
-
-        var changeThemeToDark = () => {
-            document.documentElement.setAttribute("data-theme", "dark") // set theme to dark
-            if (dir == 'rtl') {
-                style.setAttribute('href', 'silicon-front/assets/css/style-dark-rtl.css');
-            } else {
-                style.setAttribute('href', 'silicon-front/assets/css/style-dark.css');
-            }
-            localStorage.setItem("data-theme", "dark") // save theme to local storage
-        }
-
-        var changeThemeToLight = () => {
-            document.documentElement.setAttribute("data-theme", "light") // set theme light
-            if (dir == 'rtl') {
-                style.setAttribute('href', 'silicon-front/assets/css/style-rtl.css');
-            } else {
-                style.setAttribute('href', 'silicon-front/assets/css/style.css');
-            }
-
-            localStorage.setItem("data-theme", 'light') // save theme to local storage
-        }
-
-        if (theme === 'dark') {
-            changeThemeToDark()
-        } else if (theme == null || theme === 'light') {
-            changeThemeToLight();
-        }
-
-        const dms = e.select('#darkModeSwitch');
-        if (e.isVariableDefined(dms)) {
-            dms.addEventListener('click', () => {
-                let theme = localStorage.getItem('data-theme'); // Retrieve saved them from local storage
-                if (theme === 'dark') {
-                    changeThemeToLight()
-                } else {
-                    changeThemeToDark()
-                }
-            });
-        }
-    },
-    // END: Dark mode
-
-    // START: 25 Pricing
+    // START: 23 Pricing
     pricing: function () {
         var p = e.select('.price-wrap');
         if (e.isVariableDefined(p)) {
-            var pWrap = e.selectAll(".price-wrap");
-            pWrap.forEach(item => {
+          var pWrap = e.selectAll(".price-wrap");
+          pWrap.forEach(item => {
 
-                var priceSwitch = item.querySelector('.price-toggle'),
-                    priceElement = item.querySelectorAll('.plan-price');
+            var priceSwitch = item.querySelector('.price-toggle'),
+            priceElement = item.querySelectorAll('.plan-price');
 
-                priceSwitch.addEventListener('change', function () {
-                    if (priceSwitch.checked) {
-                        priceElement.forEach(pItem => {
-                            var dd = pItem.getAttribute('data-annual-price');
-                            pItem.innerHTML = dd;
-                        });
-                    } else {
-                        priceElement.forEach(pItem => {
-                            var ee = pItem.getAttribute('data-monthly-price');
-                            pItem.innerHTML = ee;
-                        });
-                    }
+            priceSwitch.addEventListener('change', function () {
+              if (priceSwitch.checked) {
+                priceElement.forEach(pItem => {
+                  var dd = pItem.getAttribute('data-annual-price');
+                  pItem.innerHTML = dd;
                 });
+              } else {
+                priceElement.forEach(pItem => {
+                  var ee = pItem.getAttribute('data-monthly-price');
+                  pItem.innerHTML = ee;
+                });
+              }
             });
+          });
         }
     },
     // END: Pricing
 
-    // START: 26 Sticky element
+    // START: 24 Sticky element
     stickyElement: function () {
-        var scrollpos = window.scrollY;
-        var sp = e.select('.sticky-element');
-        if (e.isVariableDefined(sp)) {
-            var add_class_on_scroll = () => sp.addClass("sticky-element-sticked");
-            var remove_class_on_scroll = () => sp.removeClass("sticky-element-sticked");
+    var scrollpos = window.scrollY;
+    var sp = e.select('.sticky-element');
+    if (e.isVariableDefined(sp)) {
+        var add_class_on_scroll = () => sp.addClass("sticky-element-sticked");
+        var remove_class_on_scroll = () => sp.removeClass("sticky-element-sticked");
 
-            window.addEventListener('scroll', function () {
-                scrollpos = window.scrollY;
-                if (scrollpos >= 800) {
-                    add_class_on_scroll()
-                } else {
-                    remove_class_on_scroll()
-                }
-            });
-        }
+        window.addEventListener('scroll', function () {
+            scrollpos = window.scrollY;
+            if (scrollpos >= 800) {
+                add_class_on_scroll()
+            } else {
+                remove_class_on_scroll()
+            }
+        });
+    }
     },
     // END: Sticky element
-
-
-    // START: 27 Overlay scrollbars
+ 
+    // START: 25 Overlay scrollbars
     overlayScrollbars: function () {
-        var os = e.select('.custom-scrollbar');
-        if (os) {
-            document.addEventListener("DOMContentLoaded", function () {
-                var cs = document.querySelectorAll('.custom-scrollbar');
-                cs.forEach(c => {
-                    OverlayScrollbars(c, {
-                        scrollbars: {
-                            autoHide: 'leave',
-                            autoHideDelay: 200
-                        },
-                        overflowBehavior: {
-                            x: "visible-hidden",
-                            y: "scroll"
-                        }
-                    });
-                });
-            });
-        }
-    }
+      var os = e.select('.custom-scrollbar');
+      if (os) {
+        document.addEventListener("DOMContentLoaded", function() {
+          var cs = document.querySelectorAll('.custom-scrollbar');
+          cs.forEach(c => {
+              OverlayScrollbars(c, {
+                scrollbars: {
+                  autoHide: 'leave',
+                  autoHideDelay: 200
+                },
+                overflowBehavior : {
+                    x : "visible-hidden",
+                    y : "scroll"
+                }
+               });
+          });
+        });
+      }
+    },
     // END: Overlay scrollbars
+
+    // START: 26 Flatpicker
+    flatPicker: function () {
+
+      var picker = e.select('.flatpickr');
+      if (e.isVariableDefined(picker)) {
+        var element = e.selectAll('.flatpickr');
+        element.forEach(function (item) {
+          var mode = item.getAttribute('data-mode') == 'multiple' ? 'multiple' : item.getAttribute('data-mode') == 'range' ? 'range' : 'single';
+          var enableTime = item.getAttribute('data-enableTime') == 'true' ? true : false;
+          var noCalendar = item.getAttribute('data-noCalendar') == 'true' ? true : false;
+          var inline = item.getAttribute('data-inline') == 'true' ? true : false;
+          var dateFormat = item.getAttribute('data-date-format') ? item.getAttribute('data-date-format') : item.getAttribute('data-enableTime') == 'true' ? "h:i K" : "d M";
+
+          flatpickr(item, {
+            mode: mode,
+            enableTime: enableTime,
+            noCalendar: noCalendar,
+            inline: inline,
+            animate: "false",
+            position: "top",
+            dateFormat: dateFormat, //Check supported characters here: https://flatpickr.js.org/formatting/
+            disableMobile: "true"
+          });
+
+        });
+      }
+    },
+    // END: Flatpicker
 
 };
 e.init();
