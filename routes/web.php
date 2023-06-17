@@ -28,7 +28,7 @@ Route::get('/', function () {
     });
 
     //return $cursos;
-    return view('silicon-front.index2', compact('cursos'));
+    return view('silicon-front.index', compact('cursos'));
 })->name('index');
 
 Route::get('/carrito', function () {

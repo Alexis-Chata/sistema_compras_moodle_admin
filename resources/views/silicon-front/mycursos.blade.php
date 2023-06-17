@@ -19,7 +19,7 @@
                             <!-- Avatar -->
                             <div class="col-auto">
                                 <div class="avatar avatar-xxl position-relative mt-n3">
-                                    <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/09.jpg" alt="">
+                                    <img class="avatar-img rounded-circle border border-white border-3 shadow" src="silicon-front/assets/images/avatar/09.jpg" alt="">
                                     <span class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <!-- Image -->
                                                     <div class="w-100px">
-                                                        <img src="assets/images/courses/4by3/08.jpg" class="rounded" alt="">
+                                                        <img src="silicon-front/assets/images/courses/4by3/08.jpg" class="rounded" alt="">
                                                     </div>
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
@@ -207,7 +207,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <!-- Image -->
                                                     <div class="w-100px">
-                                                        <img src="assets/images/courses/4by3/03.jpg" class="rounded" alt="">
+                                                        <img src="silicon-front/assets/images/courses/4by3/03.jpg" class="rounded" alt="">
                                                     </div>
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
@@ -244,7 +244,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <!-- Image -->
                                                     <div class="w-100px">
-                                                        <img src="assets/images/courses/4by3/05.jpg" class="rounded" alt="">
+                                                        <img src="silicon-front/assets/images/courses/4by3/05.jpg" class="rounded" alt="">
                                                     </div>
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
@@ -280,7 +280,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <!-- Image -->
                                                     <div class="w-100px">
-                                                        <img src="assets/images/courses/4by3/01.jpg" class="rounded" alt="">
+                                                        <img src="silicon-front/assets/images/courses/4by3/01.jpg" class="rounded" alt="">
                                                     </div>
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
@@ -315,7 +315,7 @@
                                                 <div class="d-flex align-items-center">
                                                     <!-- Image -->
                                                     <div class="w-100px">
-                                                        <img src="assets/images/courses/4by3/02.jpg" class="rounded" alt="">
+                                                        <img src="silicon-front/assets/images/courses/4by3/02.jpg" class="rounded" alt="">
                                                     </div>
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->

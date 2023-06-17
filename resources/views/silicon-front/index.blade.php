@@ -5,92 +5,118 @@
     <main>
 
         <!-- =======================
-                    Main Banner START -->
+                                    Main Banner START -->
         <section class="position-relative overflow-hidden pt-5 pt-lg-3">
             <!-- SVG START -->
             <figure class="position-absolute top-50 start-0 translate-middle-y ms-n7 d-none d-xxl-block">
                 <svg class="rotate-74 fill-danger opacity-1">
                     <circle cx="180.4" cy="15.5" r="7.7"></circle>
-                    <path d="m159.9 22.4c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+                    <path d="m159.9 22.4c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z">
+                    </path>
                     <ellipse transform="matrix(.3862 -.9224 .9224 .3862 71.25 138.08)" cx="139.4" cy="15.5"
                         rx="6.1" ry="6.1"></ellipse>
                     <circle cx="118.9" cy="15.5" r="5.4"></circle>
-                    <path d="m98.4 20.1c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z"></path>
-                    <path d="m77.9 19.3c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
-                    <path d="m57.3 18.6c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
+                    <path d="m98.4 20.1c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z">
+                    </path>
+                    <path d="m77.9 19.3c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z">
+                    </path>
+                    <path d="m57.3 18.6c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z">
+                    </path>
                     <path d="m36.8 17.8c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
                     <circle cx="16.3" cy="15.5" r="1.6"></circle>
                     <circle cx="180.4" cy="38.5" r="7.7"></circle>
-                    <path d="m159.9 45.3c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+                    <path d="m159.9 45.3c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z">
+                    </path>
                     <ellipse transform="matrix(.8486 -.5291 .5291 .8486 .7599 79.566)" cx="139.4" cy="38.5"
                         rx="6.1" ry="6.1"></ellipse>
                     <circle cx="118.9" cy="38.5" r="5.4"></circle>
-                    <path d="m98.4 43.1c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z"></path>
+                    <path d="m98.4 43.1c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z">
+                    </path>
                     <circle cx="77.9" cy="38.5" r="3.8"></circle>
                     <path d="m57.3 41.5c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1c0 1.8-1.4 3.1-3.1 3.1z">
                     </path>
                     <path d="m36.8 40.8c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
                     <circle cx="16.3" cy="38.5" r="1.6"></circle>
                     <circle cx="180.4" cy="61.4" r="7.7"></circle>
-                    <path d="m159.9 68.3c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+                    <path d="m159.9 68.3c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z">
+                    </path>
                     <ellipse transform="matrix(.3862 -.9224 .9224 .3862 28.902 166.26)" cx="139.4" cy="61.4"
                         rx="6.1" ry="6.1"></ellipse>
                     <circle cx="118.9" cy="61.4" r="5.4"></circle>
-                    <path d="m98.4 66c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z"></path>
-                    <path d="m77.9 65.2c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
-                    <path d="m57.3 64.5c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
+                    <path d="m98.4 66c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z">
+                    </path>
+                    <path d="m77.9 65.2c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z">
+                    </path>
+                    <path d="m57.3 64.5c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z">
+                    </path>
                     <path d="m36.8 63.7c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
                     <circle cx="16.3" cy="61.4" r="1.6"></circle>
                     <circle cx="180.4" cy="84.4" r="7.7"></circle>
-                    <path d="m159.9 91.3c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+                    <path d="m159.9 91.3c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z">
+                    </path>
                     <path d="m139.4 90.5c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1 6.1 2.7 6.1 6.1c0 3.3-2.7 6.1-6.1 6.1z">
                     </path>
                     <circle cx="118.9" cy="84.4" r="5.4"></circle>
                     <path d="m98.4 89c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z"></path>
-                    <path d="m77.9 88.2c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
+                    <path d="m77.9 88.2c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z">
+                    </path>
                     <path d="m57.3 87.4c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1c0 1.8-1.4 3.1-3.1 3.1z">
                     </path>
                     <path d="m36.8 86.7c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
                     <circle cx="16.3" cy="84.4" r="1.6"></circle>
                     <circle cx="180.4" cy="107.3" r="7.7"></circle>
-                    <path d="m159.9 114.2c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
-                    <path d="m139.4 113.4c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1 6.1 2.7 6.1 6.1-2.7 6.1-6.1 6.1z"></path>
+                    <path d="m159.9 114.2c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z">
+                    </path>
+                    <path d="m139.4 113.4c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1 6.1 2.7 6.1 6.1-2.7 6.1-6.1 6.1z">
+                    </path>
                     <circle cx="118.9" cy="107.3" r="5.4"></circle>
                     <path d="m98.4 111.9c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z">
                     </path>
-                    <path d="m77.9 111.2c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
-                    <path d="m57.3 110.4c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
-                    <path d="m36.8 109.6c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3c0.1 1.3-1 2.3-2.3 2.3z"></path>
+                    <path d="m77.9 111.2c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z">
+                    </path>
+                    <path d="m57.3 110.4c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z">
+                    </path>
+                    <path d="m36.8 109.6c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3c0.1 1.3-1 2.3-2.3 2.3z">
+                    </path>
                     <circle cx="16.3" cy="107.3" r="1.6"></circle>
                     <circle cx="180.4" cy="130.3" r="7.7"></circle>
-                    <path d="m159.9 137.2c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+                    <path d="m159.9 137.2c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z">
+                    </path>
                     <ellipse transform="matrix(.3862 -.9224 .9224 .3862 -34.62 208.52)" cx="139.4" cy="130.3"
                         rx="6.1" ry="6.1"></ellipse>
                     <circle cx="118.9" cy="130.3" r="5.4"></circle>
-                    <path d="m98.4 134.9c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z"></path>
-                    <path d="m77.9 134.1c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
-                    <path d="m57.3 133.4c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
+                    <path d="m98.4 134.9c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z">
+                    </path>
+                    <path d="m77.9 134.1c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z">
+                    </path>
+                    <path d="m57.3 133.4c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z">
+                    </path>
                     <path d="m36.8 132.6c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
                     <circle cx="16.3" cy="130.3" r="1.6"></circle>
                     <circle cx="180.4" cy="153.2" r="7.7"></circle>
-                    <path d="m159.9 160.1c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+                    <path d="m159.9 160.1c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z">
+                    </path>
                     <ellipse transform="matrix(.3862 -.9224 .9224 .3862 -55.794 222.61)" cx="139.4" cy="153.2"
                         rx="6.1" ry="6.1"></ellipse>
                     <circle cx="118.9" cy="153.2" r="5.4"></circle>
                     <path d="m98.4 157.8c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z">
                     </path>
                     <circle cx="77.9" cy="153.2" r="3.8"></circle>
-                    <path d="m57.3 156.3c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
+                    <path d="m57.3 156.3c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z">
+                    </path>
                     <path d="m36.8 155.5c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
                     <circle cx="16.3" cy="153.2" r="1.6"></circle>
                     <circle cx="180.4" cy="176.2" r="7.7"></circle>
-                    <path d="m159.9 183.1c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+                    <path d="m159.9 183.1c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z">
+                    </path>
                     <ellipse transform="matrix(.3862 -.9224 .9224 .3862 -76.968 236.7)" cx="139.4" cy="176.2"
                         rx="6.1" ry="6.1"></ellipse>
                     <circle cx="118.9" cy="176.2" r="5.4"></circle>
-                    <path d="m98.4 180.8c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z"></path>
+                    <path d="m98.4 180.8c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z">
+                    </path>
                     <path d="m77.9 180c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
-                    <path d="m57.3 179.3c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
+                    <path d="m57.3 179.3c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z">
+                    </path>
                     <path d="m36.8 178.5c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
                     <circle cx="16.3" cy="176.2" r="1.6"></circle>
                 </svg>
@@ -216,13 +242,13 @@
                         </h1>
 
                         <!-- Content -->
-                        <p class="my-4 lead">Online learning and teaching marketplace with 5K+ courses &amp; 10M students.
-                            Taught by experts to help you acquire new skills.</p>
+                        <p class="my-4 lead">Online learning and teaching marketplace with 5K+ courses &amp; 10M
+                            students. Taught by experts to help you acquire new skills.</p>
 
                         <!-- Info -->
                         <ul class="list-inline position-relative justify-content-center justify-content-lg-start mb-4">
-                            <li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>Learn with
-                                experts</li>
+                            <li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>Learn
+                                with experts</li>
                             <li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>Get
                                 certificate</li>
                             <li class="list-inline-item"> <i class="bi bi-patch-check-fill h6 me-1"></i>Get membership
@@ -233,19 +259,20 @@
                             <!-- Button -->
                             <a href="#" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Get Started</a>
                             <!-- Video button -->
-                            <a data-glightbox="" data-gallery="office-tour"
-                                href="https://www.youtube.com/embed/tXHviS-4ygo" class="ms-0 ms-sm-4 d-block"
-                                savefrom_lm_index="0" savefrom_lm="1">
-                                <div class="btn btn-round btn-primary-shadow mb-0 me-3 align-middle d-inline-block"> <i
-                                        class="fas fa-play"></i></div>
-                                <div class="align-middle d-inline-block">
-                                    <h6 class="mb-0 fw-normal">Watch video</h6>
-                                </div>
-                            </a><span style="padding: 0; margin: 0; margin-left: 5px;"><a
-                                    href="http://savefrom.net/?url=https%3A%2F%2Fwww.youtube.com%2Fembed%2FtXHviS-4ygo&amp;utm_source=chrome&amp;utm_medium=extensions&amp;utm_campaign=link_modifier"
-                                    target="_blank" title="Obtener un enlace directo" savefrom_lm="1"
-                                    savefrom_lm_is_link="1"
-                                    style="background-image: url(&quot;data:image/gif;base64,R0lGODlhEAAQAOZ3APf39+Xl5fT09OPj4/Hx8evr6/3+/u7u7uDh4OPi497e3t7e3/z8/P79/X3GbuXl5ubl5eHg4WzFUfb39+Pj4lzGOV7LOPz7+/n6+vn5+ZTLj9/e387Ozt7f3/7+/vv7/ISbePn5+m/JV1nRKXmVbkCnKVrSLDqsCuDh4d/e3uDn3/z7/H6TdVeaV1uSW+bn5v39/eXm5eXm5kyHP/f39pzGmVy7J3yRd9/f3mLEKkXCHJbka2TVM5vaZn6Wdfn6+YG/c/r5+ZO/jeLi41aHTIeageLn4f39/vr6+kzNG2PVM5i+lomdf2CXYKHVmtzo2YXNeDqsBebl5uHh4HDKWN3g3kKqEH6WeZHTXIPKdnSPbv79/pfmbE7PHpe1l4O8dTO5DODg4VDLIlKUUtzo2J7SmEWsLlG4NJbFjkrJHP7+/VK5Nfz8+zmnC3KKa+Hg4OHh4Y63j/3+/eDg4Ojo6P///8DAwP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAHcALAAAAAAQABAAAAfWgHd2g4SFhYJzdYqLjIpzgx5bBgYwHg1Hk2oNDXKDFwwfDF5NLmMtcStsn4MhGT8YS04aGmU1QRhIGYMTADQAQlAODlloAMYTgwICRmRfVBISIkBPKsqDBAREZmcVFhYVayUz2IMHB1dWOmImI2lgUVrmgwUFLzdtXTxKSSduMfSD6Aik48MGlx05SAykM0gKhAAPAhTB0oNFABkPHg5KMIBCxzlMQFQZMGBIggSDpsCJgGDOmzkIUCAIM2dOhEEcNijQuQDHgg4KOqRYwMGOIENIB90JBAA7&quot;); background-repeat: no-repeat; width: 16px; height: 16px; display: inline-block; border: none; text-decoration: none; padding: 0px; position: relative;"></a></span>
+                            <div class="d-flex align-items-center justify-content-center py-2 ms-0 ms-sm-4">
+                                <a data-glightbox="" data-gallery="office-tour"
+                                    href="https://www.youtube.com/embed/tXHviS-4ygo"
+                                    class="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7"
+                                    savefrom_lm_index="0" savefrom_lm="1">
+                                    <i class="fas fa-play"></i>
+                                    <h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">
+                                        Watch video</h6>
+                                </a><span style="padding: 0; margin: 0; margin-left: 5px;"><a
+                                        href="http://savefrom.net/?url=https%3A%2F%2Fwww.youtube.com%2Fembed%2FtXHviS-4ygo&amp;utm_source=chrome&amp;utm_medium=extensions&amp;utm_campaign=link_modifier"
+                                        target="_blank" title="Obtener un enlace directo" savefrom_lm="1"
+                                        savefrom_lm_is_link="1"
+                                        style="background-image: url(&quot;data:image/gif;base64,R0lGODlhEAAQAOZ3APf39+Xl5fT09OPj4/Hx8evr6/3+/u7u7uDh4OPi497e3t7e3/z8/P79/X3GbuXl5ubl5eHg4WzFUfb39+Pj4lzGOV7LOPz7+/n6+vn5+ZTLj9/e387Ozt7f3/7+/vv7/ISbePn5+m/JV1nRKXmVbkCnKVrSLDqsCuDh4d/e3uDn3/z7/H6TdVeaV1uSW+bn5v39/eXm5eXm5kyHP/f39pzGmVy7J3yRd9/f3mLEKkXCHJbka2TVM5vaZn6Wdfn6+YG/c/r5+ZO/jeLi41aHTIeageLn4f39/vr6+kzNG2PVM5i+lomdf2CXYKHVmtzo2YXNeDqsBebl5uHh4HDKWN3g3kKqEH6WeZHTXIPKdnSPbv79/pfmbE7PHpe1l4O8dTO5DODg4VDLIlKUUtzo2J7SmEWsLlG4NJbFjkrJHP7+/VK5Nfz8+zmnC3KKa+Hg4OHh4Y63j/3+/eDg4Ojo6P///8DAwP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAHcALAAAAAAQABAAAAfWgHd2g4SFhYJzdYqLjIpzgx5bBgYwHg1Hk2oNDXKDFwwfDF5NLmMtcStsn4MhGT8YS04aGmU1QRhIGYMTADQAQlAODlloAMYTgwICRmRfVBISIkBPKsqDBAREZmcVFhYVayUz2IMHB1dWOmImI2lgUVrmgwUFLzdtXTxKSSduMfSD6Aik48MGlx05SAykM0gKhAAPAhTB0oNFABkPHg5KMIBCxzlMQFQZMGBIggSDpsCJgGDOmzkIUCAIM2dOhEEcNijQuQDHgg4KOqRYwMGOIENIB90JBAA7&quot;); background-repeat: no-repeat; width: 16px; height: 16px; display: inline-block; border: none; text-decoration: none; padding: 0px; position: relative;"></a></span>
+                            </div>
                         </div>
                     </div>
                     <!-- Left content END -->
@@ -264,9 +291,9 @@
 
                         <!-- SVG decoration -->
                         <figure class="position-absolute bottom-0 start-50 translate-middle-x mb-n5 z-index-9">
-                            <svg width="686px" height="298px">
+                            <svg width="686px" height="298px" viewBox="0 0 686 298">
                                 <path class="fill-body"
-                                    d="M60.971,0.000 L-0.000,0.000 C-0.000,0.000 80.068,266.854 184.934,294.154 C184.934,294.154 568.841,306.828 588.786,286.150 C588.786,286.150 698.888,112.106 684.750,0.000 L611.777,0.000 C611.777,0.000 569.027,161.864 505.816,209.110 C505.816,209.110 394.427,296.341 195.930,203.102 C195.930,203.102 66.072,143.180 60.971,0.000 Z">
+                                    d="M60.9,0L0.1,0C0,0,0,0,0,0.1c1.5,5,0,249.5,11.5,297.9c0,0,649.1,16.1,669-4.6c0,0,0,0,0,0c0.2-0.4,1.2-177.2,4.2-293.3 c0,0,0-0.1-0.1-0.1l-72.9,0c0,0-0.1,0-0.1,0c-0.8,3-43.3,162.3-105.9,209.1c0,0-111.4,87.2-309.9-6C195.9,203.1,66.1,143.2,60.9,0 C61,0,60.9,0,60.9,0z">
                                 </path>
                             </svg>
                         </figure>
@@ -389,10 +416,10 @@
             <!-- Content END -->
         </section>
         <!-- =======================
-                    Main Banner END -->
+                                    Main Banner END -->
 
         <!-- =======================
-                    Counter START -->
+                                    Counter START -->
         <section class="py-0 py-xl-5">
             <div class="container">
                 <div class="row g-4">
@@ -462,10 +489,10 @@
             </div>
         </section>
         <!-- =======================
-                    Counter END -->
+                                    Counter END -->
 
         <!-- =======================
-                    Popular course START -->
+                                    Popular course START -->
         <section>
             <div class="container">
                 <!-- Title -->
@@ -481,13 +508,13 @@
                     role="tablist">
                     @foreach ($cursos as $key => $curso)
                         <!-- Tab item -->
-                        <li class="nav-item me-2 me-sm-5">
+                        <li class="nav-item me-2 me-sm-5" role="presentation">
                             <button
                                 class="nav-link mb-2 mb-md-0 {{ $key == array_key_first($cursos->toArray()) ? 'active' : '' }}"
                                 id="course-pills-tab-{{ $curso->id }}" data-bs-toggle="pill"
                                 data-bs-target="#course-pills-tabs-{{ $curso->id }}" type="button" role="tab"
                                 aria-controls="course-pills-tabs-{{ $curso->id }}"
-                                aria-selected="false">{{ $curso->name }}</button>
+                                aria-selected="true">{{ $curso->name }}</button>
                         </li>
                     @endforeach
                 </ul>
@@ -515,8 +542,7 @@
                                                 <!-- Badge and favorite -->
                                                 <div class="d-flex justify-content-between mb-2">
                                                     <a href="#"
-                                                        class="badge bg-purple bg-opacity-10 text-purple">All
-                                                        level</a>
+                                                        class="badge bg-purple bg-opacity-10 text-purple">All level</a>
                                                     <a href="#" class="h6 mb-0"><i class="far fa-heart"></i></a>
                                                 </div>
                                                 <!-- Title -->
@@ -565,10 +591,10 @@
             </div>
         </section>
         <!-- =======================
-                    Popular course END -->
+                                    Popular course END -->
 
         <!-- =======================
-                    Action box START -->
+                                    Action box START -->
         <section class="pt-0 pt-lg-5">
             <div class="container position-relative">
                 <!-- SVG decoration START -->
@@ -608,9 +634,9 @@
                                         <!-- Title -->
                                         <div class="col-lg-7">
                                             <h3 class="text-white">Become an Instructor!</h3>
-                                            <p class="text-white mb-3 mb-lg-0">Speedily say has suitable disposal add boy.
-                                                On forth doubt miles of child. Exercise joy man children rejoiced. Yet
-                                                uncommonly his ten who diminution astonished.</p>
+                                            <p class="text-white mb-3 mb-lg-0">Speedily say has suitable disposal add
+                                                boy. On forth doubt miles of child. Exercise joy man children rejoiced.
+                                                Yet uncommonly his ten who diminution astonished.</p>
                                         </div>
                                         <!-- Content and input -->
                                         <div class="col-lg-5 text-lg-end">
@@ -626,10 +652,10 @@
             </div>
         </section>
         <!-- =======================
-                    Action box END -->
+                                    Action box END -->
 
         <!-- =======================
-                    Trending courses START -->
+                                    Trending courses START -->
         <section class="pb-5 pt-0 pt-lg-5">
             <div class="container">
                 <!-- Title -->
@@ -644,13 +670,13 @@
                     <div class="tiny-slider arrow-round arrow-blur arrow-hover">
                         <div class="tns-outer" id="tns1-ow">
                             <div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">
-                                slide <span class="current">12 to 16</span> of 4</div>
+                                slide <span class="current">10 to 14</span> of 4</div>
                             <div id="tns1-mw" class="tns-ovh">
                                 <div class="tns-inner" id="tns1-iw">
                                     <div class="tiny-slider-inner pb-1  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
                                         data-autoplay="true" data-arrow="true" data-edge="2" data-dots="false"
                                         data-items="3" data-items-lg="2" data-items-sm="1" id="tns1"
-                                        style="transform: translate3d(-66.6667%, 0px, 0px);">
+                                        style="transform: translate3d(-55.5556%, 0px, 0px); transition-duration: 0s;">
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
@@ -663,15 +689,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Development</a>
-                                                            <a href="#" class="badge bg-dark text-white">All
-                                                                level</a>
+                                                            <a href="#" class="badge text-bg-dark">All level</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Angular – The Complete
-                                                            Guide (2021 Edition)</a></h5>
+                                                    <h5 class="card-title"><a href="#">Angular –
+                                                            The Complete Guide (2021 Edition)</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -687,7 +712,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>12h 45m</span>
+                                                                class="far fa-clock text-danger me-2"></i>12h
+                                                            45m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>65
                                                             lectures</span>
@@ -711,8 +737,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$255</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -730,15 +757,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Time Management Mastery: Do
-                                                            More, Stress Less</a></h5>
+                                                    <h5 class="card-title"><a href="#">Time
+                                                            Management Mastery: Do More, Stress Less</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -754,7 +780,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>24h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>24h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>55
                                                             lectures</span>
@@ -778,8 +805,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$500</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -797,15 +825,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Time Management Mastery: Do
-                                                            More, Stress Less</a></h5>
+                                                    <h5 class="card-title"><a href="#">Time
+                                                            Management Mastery: Do More, Stress Less</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -821,7 +848,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>09h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>09h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>21
                                                             lectures</span>
@@ -845,8 +873,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$200</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -866,15 +895,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">The complete Digital
-                                                            Marketing Course - 8 Course in 1</a></h5>
+                                                    <h5 class="card-title"><a href="#">The
+                                                            complete Digital Marketing Course - 8 Course in 1</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -890,7 +918,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>6h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>6h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>82
                                                             lectures</span>
@@ -915,8 +944,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">Free</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -934,15 +964,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Development</a>
-                                                            <a href="#" class="badge bg-dark text-white">All
-                                                                level</a>
+                                                            <a href="#" class="badge text-bg-dark">All level</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Angular – The Complete
-                                                            Guide (2021 Edition)</a></h5>
+                                                    <h5 class="card-title"><a href="#">Angular –
+                                                            The Complete Guide (2021 Edition)</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -958,7 +987,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>12h 45m</span>
+                                                                class="far fa-clock text-danger me-2"></i>12h
+                                                            45m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>65
                                                             lectures</span>
@@ -982,8 +1012,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$255</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1001,15 +1032,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Time Management Mastery: Do
-                                                            More, Stress Less</a></h5>
+                                                    <h5 class="card-title"><a href="#">Time
+                                                            Management Mastery: Do More, Stress Less</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1025,7 +1055,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>24h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>24h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>55
                                                             lectures</span>
@@ -1049,8 +1080,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$500</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1068,15 +1100,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Time Management Mastery: Do
-                                                            More, Stress Less</a></h5>
+                                                    <h5 class="card-title"><a href="#">Time
+                                                            Management Mastery: Do More, Stress Less</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1092,7 +1123,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>09h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>09h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>21
                                                             lectures</span>
@@ -1116,8 +1148,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$200</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1138,15 +1171,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">The complete Digital
-                                                            Marketing Course - 8 Course in 1</a></h5>
+                                                    <h5 class="card-title"><a href="#">The
+                                                            complete Digital Marketing Course - 8 Course in 1</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1162,7 +1194,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>6h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>6h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>82
                                                             lectures</span>
@@ -1187,8 +1220,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">Free</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1209,15 +1243,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Development</a>
-                                                            <a href="#" class="badge bg-dark text-white">All
-                                                                level</a>
+                                                            <a href="#" class="badge text-bg-dark">All level</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Angular – The Complete
-                                                            Guide (2021 Edition)</a></h5>
+                                                    <h5 class="card-title"><a href="#">Angular –
+                                                            The Complete Guide (2021 Edition)</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1233,7 +1266,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>12h 45m</span>
+                                                                class="far fa-clock text-danger me-2"></i>12h
+                                                            45m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>65
                                                             lectures</span>
@@ -1257,8 +1291,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$255</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1267,7 +1302,7 @@
                                         <!-- Card item END -->
 
                                         <!-- Card item START -->
-                                        <div class="tns-item" id="tns1-item2" aria-hidden="true" tabindex="-1">
+                                        <div class="tns-item tns-slide-active" id="tns1-item2">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
                                                 <img src="./silicon-front/silicon/17.jpg" class="card-img-top"
@@ -1279,15 +1314,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Time Management Mastery: Do
-                                                            More, Stress Less</a></h5>
+                                                    <h5 class="card-title"><a href="#">Time
+                                                            Management Mastery: Do More, Stress Less</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1303,7 +1337,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>24h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>24h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>55
                                                             lectures</span>
@@ -1327,8 +1362,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$500</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1337,7 +1373,7 @@
                                         <!-- Card item END -->
 
                                         <!-- Card item START -->
-                                        <div class="tns-item" id="tns1-item3" aria-hidden="true" tabindex="-1">
+                                        <div class="tns-item tns-slide-active" id="tns1-item3">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
                                                 <img src="./silicon-front/silicon/16.jpg" class="card-img-top"
@@ -1349,15 +1385,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Time Management Mastery: Do
-                                                            More, Stress Less</a></h5>
+                                                    <h5 class="card-title"><a href="#">Time
+                                                            Management Mastery: Do More, Stress Less</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1373,7 +1408,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>09h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>09h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>21
                                                             lectures</span>
@@ -1397,8 +1433,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$200</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1419,15 +1456,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">The complete Digital
-                                                            Marketing Course - 8 Course in 1</a></h5>
+                                                    <h5 class="card-title"><a href="#">The
+                                                            complete Digital Marketing Course - 8 Course in 1</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1443,7 +1479,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>6h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>6h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>82
                                                             lectures</span>
@@ -1468,8 +1505,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">Free</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1487,15 +1525,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Development</a>
-                                                            <a href="#" class="badge bg-dark text-white">All
-                                                                level</a>
+                                                            <a href="#" class="badge text-bg-dark">All level</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Angular – The Complete
-                                                            Guide (2021 Edition)</a></h5>
+                                                    <h5 class="card-title"><a href="#">Angular –
+                                                            The Complete Guide (2021 Edition)</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1511,7 +1548,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>12h 45m</span>
+                                                                class="far fa-clock text-danger me-2"></i>12h
+                                                            45m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>65
                                                             lectures</span>
@@ -1535,8 +1573,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$255</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1554,15 +1593,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Time Management Mastery: Do
-                                                            More, Stress Less</a></h5>
+                                                    <h5 class="card-title"><a href="#">Time
+                                                            Management Mastery: Do More, Stress Less</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1578,7 +1616,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>24h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>24h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>55
                                                             lectures</span>
@@ -1602,14 +1641,15 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$500</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tns-item tns-slide-cloned tns-slide-active">
+                                        <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
                                                 <img src="./silicon-front/silicon/16.jpg" class="card-img-top"
@@ -1621,15 +1661,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Time Management Mastery: Do
-                                                            More, Stress Less</a></h5>
+                                                    <h5 class="card-title"><a href="#">Time
+                                                            Management Mastery: Do More, Stress Less</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1645,7 +1684,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>09h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>09h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>21
                                                             lectures</span>
@@ -1669,14 +1709,15 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$200</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tns-item tns-slide-cloned tns-slide-active">
+                                        <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
                                                 <img src="./silicon-front/silicon/14.jpg" class="card-img-top"
@@ -1690,15 +1731,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">The complete Digital
-                                                            Marketing Course - 8 Course in 1</a></h5>
+                                                    <h5 class="card-title"><a href="#">The
+                                                            complete Digital Marketing Course - 8 Course in 1</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1714,7 +1754,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>6h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>6h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>82
                                                             lectures</span>
@@ -1739,8 +1780,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">Free</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1758,15 +1800,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Development</a>
-                                                            <a href="#" class="badge bg-dark text-white">All
-                                                                level</a>
+                                                            <a href="#" class="badge text-bg-dark">All level</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Angular – The Complete
-                                                            Guide (2021 Edition)</a></h5>
+                                                    <h5 class="card-title"><a href="#">Angular –
+                                                            The Complete Guide (2021 Edition)</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1782,7 +1823,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>12h 45m</span>
+                                                                class="far fa-clock text-danger me-2"></i>12h
+                                                            45m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>65
                                                             lectures</span>
@@ -1806,8 +1848,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$255</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1825,15 +1868,14 @@
                                                         <span class="hstack gap-2">
                                                             <a href="#"
                                                                 class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                                            <a href="#"
-                                                                class="badge bg-dark text-white">Beginner</a>
+                                                            <a href="#" class="badge text-bg-dark">Beginner</a>
                                                         </span>
                                                         <a href="#" class="h6 fw-light mb-0"><i
                                                                 class="far fa-bookmark"></i></a>
                                                     </div>
                                                     <!-- Title -->
-                                                    <h5 class="card-title"><a href="#">Time Management Mastery: Do
-                                                            More, Stress Less</a></h5>
+                                                    <h5 class="card-title"><a href="#">Time
+                                                            Management Mastery: Do More, Stress Less</a></h5>
                                                     <!-- Rating -->
                                                     <div class="d-flex justify-content-between mb-2">
                                                         <div class="hstack gap-2">
@@ -1849,7 +1891,8 @@
                                                     <!-- Time -->
                                                     <div class="hstack gap-3">
                                                         <span class="h6 fw-light mb-0"><i
-                                                                class="far fa-clock text-danger me-2"></i>24h 56m</span>
+                                                                class="far fa-clock text-danger me-2"></i>24h
+                                                            56m</span>
                                                         <span class="h6 fw-light mb-0"><i
                                                                 class="fas fa-table text-orange me-2"></i>55
                                                             lectures</span>
@@ -1873,8 +1916,9 @@
                                                         <div>
                                                             <h4 class="text-success mb-0 item-show">$500</h4>
                                                             <a href="#"
-                                                                class="btn-sm btn-success-soft item-show-hover"><i
-                                                                    class="fas fa-shopping-cart me-2"></i>Add to cart</a>
+                                                                class="btn btn-sm btn-success-soft item-show-hover"><i
+                                                                    class="fas fa-shopping-cart me-2"></i>Add to
+                                                                cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1895,10 +1939,10 @@
             </div>
         </section>
         <!-- =======================
-                    Trending courses END -->
+                                    Trending courses END -->
 
         <!-- =======================
-                    Reviews START -->
+                                    Reviews START -->
         <section class="bg-light">
             <div class="container">
                 <div class="row g-4 g-lg-5 align-items-center">
@@ -1926,8 +1970,8 @@
                                     <blockquote>
                                         <p>
                                             <span class="me-1 small"><i class="fas fa-quote-left"></i></span>
-                                            Moonlight newspaper up its enjoyment agreeable depending. Timed voice share led
-                                            him to widen noisy young. At weddings believed laughing
+                                            Moonlight newspaper up its enjoyment agreeable depending. Timed voice share
+                                            led him to widen noisy young. At weddings believed laughing
                                             <span class="ms-1 small"><i class="fas fa-quote-right"></i></span>
                                         </p>
                                     </blockquote>
@@ -2175,8 +2219,8 @@
                                     <blockquote>
                                         <p>
                                             <span class="me-1 small"><i class="fas fa-quote-left"></i></span>
-                                            At weddings believed laughing although the Moonlight newspaper up its enjoyment
-                                            agreeable depending.
+                                            At weddings believed laughing although the Moonlight newspaper up its
+                                            enjoyment agreeable depending.
                                             <span class="ms-1 small"><i class="fas fa-quote-right"></i></span>
                                         </p>
                                     </blockquote>
@@ -2202,17 +2246,18 @@
                     <div class="col-xl-5 order-1 text-center text-xl-start">
                         <!-- Title -->
                         <h2 class="fs-1">Some valuable feedback from our students</h2>
-                        <p>Supposing so be resolving breakfast am or perfectly. It drew a hill from me. Valley by oh twenty
-                            direct me so. Departure defective arranging rapturous did believe him all had supported. Family
-                            months lasted simple set nature vulgar him. Picture for attempt joy excited ten carried manners
-                            talking how.</p>
-                        <a href="#" class="btn btn-primary mb-0">View Reviews</a>
+                        <p>Supposing so be resolving breakfast am or perfectly. It drew a hill from me. Valley by oh
+                            twenty direct me so. Departure defective arranging rapturous did believe him all had
+                            supported. Family months lasted simple set nature vulgar him. Picture for attempt joy
+                            excited ten carried manners talking how.</p>
+                        <a href="#" class="btn btn-primary mb-0">View
+                            Reviews</a>
                     </div>
                 </div> <!-- Row END -->
             </div>
         </section>
         <!-- =======================
-                    Reviews END -->
+                                    Reviews END -->
 
     </main>
 @stop
