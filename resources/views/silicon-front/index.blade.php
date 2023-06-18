@@ -514,7 +514,11 @@
                                 id="course-pills-tab-{{ $curso->id }}" data-bs-toggle="pill"
                                 data-bs-target="#course-pills-tabs-{{ $curso->id }}" type="button" role="tab"
                                 aria-controls="course-pills-tabs-{{ $curso->id }}"
-                                aria-selected="true">{{ $curso->name }}</button>
+                                aria-selected="true">{{ $curso->name }}
+                                @auth
+                                {{ Auth::user()->getRoleNames() }}
+                                @endauth
+                                </button>
                         </li>
                     @endforeach
                 </ul>

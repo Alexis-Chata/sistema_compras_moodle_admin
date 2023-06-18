@@ -98,6 +98,8 @@
     @php
         Cart::setGlobalTax(0);
     @endphp
+
+    @livewireStyles
 </head>
 
 <body>
@@ -139,7 +141,7 @@
     <!-- Template Functions -->
     <script src="./silicon-front/silicon/functions.js"></script>
 
-
+    @livewireScripts
 </body>
 
 </html>
