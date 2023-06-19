@@ -89,6 +89,10 @@
 
     @if (in_array(request()->route()->getName(), ['mycursos', 'cursos', 'carrito']))
         <link rel="stylesheet" type="text/css" href="./silicon-front/silicon/choices.min.css">
+        @endif
+
+        @if (in_array(request()->route()->getName(), ['mycursos']))
+        <link rel="stylesheet" type="text/css" href="./silicon-front/assets/vendor/aos/aos.css">
     @endif
 
     <!-- Theme CSS -->
@@ -136,6 +140,10 @@
 
     @if (in_array(request()->route()->getName(), ['mycursos', 'cursos', 'carrito']))
         <script src="./silicon-front/silicon/choices.min.js"></script>
+    @endif
+
+    @if (in_array(request()->route()->getName(), ['mycursos']))
+        <script src="./silicon-front/assets/vendor/aos/aos.js"></script>
     @endif
 
     <!-- Template Functions -->

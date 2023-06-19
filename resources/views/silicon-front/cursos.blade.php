@@ -48,261 +48,59 @@
                         <div class="row g-3">
                             <!-- Select items -->
                             <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
-                                <div class="choices" data-type="select-one" tabindex="0" role="combobox"
-                                    aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-                                    <div class="choices__inner"><select
-                                            class="form-select form-select-sm js-choice choices__input"
-                                            aria-label=".form-select-sm example" hidden="" tabindex="-1"
-                                            data-choice="active">
-                                            <option value="" data-custom-properties="[object Object]">
-                                                Categories</option>
-                                        </select>
-                                        <div class="choices__list choices__list--single">
-                                            <div class="choices__item choices__placeholder choices__item--selectable"
-                                                data-item="" data-id="1" data-value=""
-                                                data-custom-properties="[object Object]" aria-selected="true">
-                                                Categories</div>
-                                        </div>
-                                    </div>
-                                    <div class="choices__list choices__list--dropdown" aria-expanded="false">
-                                        <input type="search" name="search_terms"
-                                            class="choices__input choices__input--cloned" autocomplete="off"
-                                            autocapitalize="off" spellcheck="false" role="textbox"
-                                            aria-autocomplete="list" aria-label="Categories" placeholder="">
-                                        <div class="choices__list" role="listbox">
-                                            <div id="choices--2hkt-item-choice-3"
-                                                class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted"
-                                                role="option" data-choice="" data-id="3" data-value=""
-                                                data-select-text="Press to select" data-choice-selectable=""
-                                                aria-selected="true">Categories</div>
-                                            <div id="choices--2hkt-item-choice-1"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="1"
-                                                data-value="Accounting" data-select-text="Press to select"
-                                                data-choice-selectable="">Accounting</div>
-                                            <div id="choices--2hkt-item-choice-2"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="2" data-value="All"
-                                                data-select-text="Press to select" data-choice-selectable="">All
-                                            </div>
-                                            <div id="choices--2hkt-item-choice-4"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="4" data-value="Design"
-                                                data-select-text="Press to select" data-choice-selectable="">
-                                                Design</div>
-                                            <div id="choices--2hkt-item-choice-5"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="5"
-                                                data-value="Development" data-select-text="Press to select"
-                                                data-choice-selectable="">Development</div>
-                                            <div id="choices--2hkt-item-choice-6"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="6"
-                                                data-value="Finance" data-select-text="Press to select"
-                                                data-choice-selectable="">Finance</div>
-                                            <div id="choices--2hkt-item-choice-7"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="7" data-value="Legal"
-                                                data-select-text="Press to select" data-choice-selectable="">Legal
-                                            </div>
-                                            <div id="choices--2hkt-item-choice-8"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="8"
-                                                data-value="Marketing" data-select-text="Press to select"
-                                                data-choice-selectable="">Marketing</div>
-                                            <div id="choices--2hkt-item-choice-9"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="9"
-                                                data-value="Photography" data-select-text="Press to select"
-                                                data-choice-selectable="">Photography</div>
-                                            <div id="choices--2hkt-item-choice-10"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="10"
-                                                data-value="Translation" data-select-text="Press to select"
-                                                data-choice-selectable="">Translation</div>
-                                            <div id="choices--2hkt-item-choice-11"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="11"
-                                                data-value="Writing" data-select-text="Press to select"
-                                                data-choice-selectable="">Writing</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <select class="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
+                                    <option value="">Categories</option>
+                                    <option>All</option>
+                                    <option>Development</option>
+                                    <option>Design</option>
+                                    <option>Accounting</option>
+                                    <option>Translation</option>
+                                    <option>Finance</option>
+                                    <option>Legal</option>
+                                    <option>Photography</option>
+                                    <option>Writing</option>
+                                    <option>Marketing</option>
+                                </select>
                             </div>
 
                             <!-- Search item -->
                             <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
-                                <div class="choices" data-type="select-one" tabindex="0" role="combobox"
-                                    aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-                                    <div class="choices__inner"><select
-                                            class="form-select form-select-sm js-choice choices__input"
-                                            aria-label=".form-select-sm example" hidden="" tabindex="-1"
-                                            data-choice="active">
-                                            <option value="" data-custom-properties="[object Object]">Price
-                                                level</option>
-                                        </select>
-                                        <div class="choices__list choices__list--single">
-                                            <div class="choices__item choices__placeholder choices__item--selectable"
-                                                data-item="" data-id="1" data-value=""
-                                                data-custom-properties="[object Object]" aria-selected="true">
-                                                Price level</div>
-                                        </div>
-                                    </div>
-                                    <div class="choices__list choices__list--dropdown" aria-expanded="false">
-                                        <input type="search" name="search_terms"
-                                            class="choices__input choices__input--cloned" autocomplete="off"
-                                            autocapitalize="off" spellcheck="false" role="textbox"
-                                            aria-autocomplete="list" aria-label="Price level" placeholder="">
-                                        <div class="choices__list" role="listbox">
-                                            <div id="choices--r94e-item-choice-4"
-                                                class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted"
-                                                role="option" data-choice="" data-id="4" data-value=""
-                                                data-select-text="Press to select" data-choice-selectable=""
-                                                aria-selected="true">Price level</div>
-                                            <div id="choices--r94e-item-choice-1"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="1" data-value="All"
-                                                data-select-text="Press to select" data-choice-selectable="">All
-                                            </div>
-                                            <div id="choices--r94e-item-choice-2"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="2" data-value="Free"
-                                                data-select-text="Press to select" data-choice-selectable="">Free
-                                            </div>
-                                            <div id="choices--r94e-item-choice-3"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="3" data-value="Paid"
-                                                data-select-text="Press to select" data-choice-selectable="">Paid
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <select class="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
+                                    <option value="">Price level</option>
+                                    <option>All</option>
+                                    <option>Free</option>
+                                    <option>Paid</option>
+                                </select>
                             </div>
 
                             <!-- Search item -->
                             <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
-                                <div class="choices" data-type="select-one" tabindex="0" role="combobox"
-                                    aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-                                    <div class="choices__inner"><select
-                                            class="form-select form-select-sm js-choice choices__input"
-                                            aria-label=".form-select-sm example" hidden="" tabindex="-1"
-                                            data-choice="active">
-                                            <option value="" data-custom-properties="[object Object]">Skill
-                                                level</option>
-                                        </select>
-                                        <div class="choices__list choices__list--single">
-                                            <div class="choices__item choices__placeholder choices__item--selectable"
-                                                data-item="" data-id="1" data-value=""
-                                                data-custom-properties="[object Object]" aria-selected="true">
-                                                Skill level</div>
-                                        </div>
-                                    </div>
-                                    <div class="choices__list choices__list--dropdown" aria-expanded="false">
-                                        <input type="search" name="search_terms"
-                                            class="choices__input choices__input--cloned" autocomplete="off"
-                                            autocapitalize="off" spellcheck="false" role="textbox"
-                                            aria-autocomplete="list" aria-label="Skill level" placeholder="">
-                                        <div class="choices__list" role="listbox">
-                                            <div id="choices--7j4t-item-choice-5"
-                                                class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted"
-                                                role="option" data-choice="" data-id="5" data-value=""
-                                                data-select-text="Press to select" data-choice-selectable=""
-                                                aria-selected="true">Skill level</div>
-                                            <div id="choices--7j4t-item-choice-1"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="1"
-                                                data-value="Advanced" data-select-text="Press to select"
-                                                data-choice-selectable="">Advanced</div>
-                                            <div id="choices--7j4t-item-choice-2"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="2"
-                                                data-value="All levels" data-select-text="Press to select"
-                                                data-choice-selectable="">All levels</div>
-                                            <div id="choices--7j4t-item-choice-3"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="3"
-                                                data-value="Beginner" data-select-text="Press to select"
-                                                data-choice-selectable="">Beginner</div>
-                                            <div id="choices--7j4t-item-choice-4"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="4"
-                                                data-value="Intermediate" data-select-text="Press to select"
-                                                data-choice-selectable="">Intermediate</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <select class="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
+                                    <option value="">Skill level</option>
+                                    <option>All levels</option>
+                                    <option>Beginner</option>
+                                    <option>Intermediate</option>
+                                    <option>Advanced</option>
+                                </select>
                             </div>
 
                             <!-- Search item -->
                             <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
-                                <div class="choices" data-type="select-one" tabindex="0" role="combobox"
-                                    aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-                                    <div class="choices__inner"><select
-                                            class="form-select form-select-sm js-choice choices__input"
-                                            aria-label=".form-select-sm example" hidden="" tabindex="-1"
-                                            data-choice="active">
-                                            <option value="" data-custom-properties="[object Object]">
-                                                Language</option>
-                                        </select>
-                                        <div class="choices__list choices__list--single">
-                                            <div class="choices__item choices__placeholder choices__item--selectable"
-                                                data-item="" data-id="1" data-value=""
-                                                data-custom-properties="[object Object]" aria-selected="true">
-                                                Language</div>
-                                        </div>
-                                    </div>
-                                    <div class="choices__list choices__list--dropdown" aria-expanded="false">
-                                        <input type="search" name="search_terms"
-                                            class="choices__input choices__input--cloned" autocomplete="off"
-                                            autocapitalize="off" spellcheck="false" role="textbox"
-                                            aria-autocomplete="list" aria-label="Language" placeholder="">
-                                        <div class="choices__list" role="listbox">
-                                            <div id="choices--emom-item-choice-5"
-                                                class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted"
-                                                role="option" data-choice="" data-id="5" data-value=""
-                                                data-select-text="Press to select" data-choice-selectable=""
-                                                aria-selected="true">Language</div>
-                                            <div id="choices--emom-item-choice-1"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="1"
-                                                data-value="Bengali" data-select-text="Press to select"
-                                                data-choice-selectable="">Bengali</div>
-                                            <div id="choices--emom-item-choice-2"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="2"
-                                                data-value="English" data-select-text="Press to select"
-                                                data-choice-selectable="">English</div>
-                                            <div id="choices--emom-item-choice-3"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="3"
-                                                data-value="Francas" data-select-text="Press to select"
-                                                data-choice-selectable="">Francas</div>
-                                            <div id="choices--emom-item-choice-4"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="4"
-                                                data-value="Hindi" data-select-text="Press to select"
-                                                data-choice-selectable="">Hindi
-                                            </div>
-                                            <div id="choices--emom-item-choice-6"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="6"
-                                                data-value="Russian" data-select-text="Press to select"
-                                                data-choice-selectable="">Russian</div>
-                                            <div id="choices--emom-item-choice-7"
-                                                class="choices__item choices__item--choice choices__item--selectable"
-                                                role="option" data-choice="" data-id="7"
-                                                data-value="Spanish" data-select-text="Press to select"
-                                                data-choice-selectable="">Spanish</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <select class="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
+                                    <option value="">Language</option>
+                                    <option>English</option>
+                                    <option>Francas</option>
+                                    <option>Russian</option>
+                                    <option>Hindi</option>
+                                    <option>Bengali</option>
+                                    <option>Spanish</option>
+                                </select>
                             </div>
                         </div> <!-- Row END -->
                     </div>
                     <!-- Button -->
                     <div class="col-xl-1">
-                        <button type="button" class="btn btn-primary mb-0 rounded z-index-1 w-100"><i
-                                class="fas fa-search"></i></button>
+                        <button type="button" class="btn btn-primary mb-0 rounded z-index-1 w-100"><i class="fas fa-search"></i></button>
                     </div>
                 </div> <!-- Row END -->
             </form>

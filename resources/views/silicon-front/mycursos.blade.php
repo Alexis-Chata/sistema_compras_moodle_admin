@@ -180,7 +180,7 @@
                                                         <div class="overflow-hidden">
                                                             <h6 class="mb-0 text-end">85%</h6>
                                                             <div class="progress progress-sm bg-primary bg-opacity-10">
-                                                                <div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                                                <div class="progress-bar bg-primary aos " role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -216,7 +216,7 @@
                                                         <div class="overflow-hidden">
                                                             <h6 class="mb-0 text-end">100%</h6>
                                                             <div class="progress progress-sm bg-primary bg-opacity-10">
-                                                                <div class="progress-bar bg-primary aos aos-init" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                <div class="progress-bar bg-primary aos " role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                                                                 </div>
                                                             </div>
                                                         </div>
