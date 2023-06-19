@@ -42,19 +42,20 @@ Route::get('/cursos', function () {
 
 Route::get('/mycursos', function () {
     $grupos = Grupo::paginate(12);
-    return view('silicon-front.mycursos', compact('grupos'));
+    return view('silicon-front.estudiantes.mycursos', compact('grupos'));
 })->name('mycursos');
+
+Route::get('/dashboard', function () {
+    $grupos = Grupo::paginate(12);
+    return view('silicon-front.estudiantes.dashboard', compact('grupos'));
+})->name('dashboard');
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
 });
-
-
-
-

@@ -87,11 +87,11 @@
         <link rel="stylesheet" type="text/css" href="./silicon-front/silicon/glightbox.css">
     @endif
 
-    @if (in_array(request()->route()->getName(), ['mycursos', 'cursos', 'carrito']))
+    @if (in_array(request()->route()->getName(), ['mycursos', 'cursos', 'carrito', 'dashboard']))
         <link rel="stylesheet" type="text/css" href="./silicon-front/silicon/choices.min.css">
-        @endif
+    @endif
 
-        @if (in_array(request()->route()->getName(), ['mycursos']))
+    @if (in_array(request()->route()->getName(), ['mycursos', 'dashboard']))
         <link rel="stylesheet" type="text/css" href="./silicon-front/assets/vendor/aos/aos.css">
     @endif
 
@@ -138,11 +138,15 @@
         <script src="./silicon-front/silicon/purecounter_vanilla.js"></script>
     @endif
 
-    @if (in_array(request()->route()->getName(), ['mycursos', 'cursos', 'carrito']))
+    @if (in_array(request()->route()->getName(), ['mycursos', 'cursos', 'carrito', 'dashboard']))
         <script src="./silicon-front/silicon/choices.min.js"></script>
     @endif
 
-    @if (in_array(request()->route()->getName(), ['mycursos']))
+    @if (in_array(request()->route()->getName(), ['dashboard']))
+        <script src="./silicon-front/assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+    @endif
+
+    @if (in_array(request()->route()->getName(), ['mycursos', 'dashboard']))
         <script src="./silicon-front/assets/vendor/aos/aos.js"></script>
     @endif
 
