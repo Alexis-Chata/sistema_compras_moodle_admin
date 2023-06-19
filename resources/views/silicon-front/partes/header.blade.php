@@ -277,6 +277,11 @@
                         <a class="nav-link {{ Route::currentRouteName() == 'cursos' ? 'active' : '' }}"
                             href="{{ route('cursos') }}">Cursos</a>
                     </li>
+                    <!-- Nav item 3 Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link {{ Route::currentRouteName() == 'mycursos' ? 'active' : '' }}"
+                            href="{{ route('mycursos') }}">Mis Cursos</a>
+                    </li>
                     <!-- Nav item 1 Demos -->
                     <li class="nav-item dropdown" style="display: none;">
                         <a class="nav-link dropdown-toggle {{ Route::currentRouteName() == 'index' ? 'active' : '' }}"
@@ -899,6 +904,7 @@
                         <!-- Links -->
                         <li><a class="dropdown-item" href="{{ route('profile.show') }}"><i
                                     class="bi bi-person fa-fw me-2"></i>Editar Perfil</a></li>
+                        <li><a class="dropdown-item" href="{{ route('dashboard') }}"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a></li>
                         <li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account
                                 Settings</a></li>
                         <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a>

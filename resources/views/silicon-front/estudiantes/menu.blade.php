@@ -18,7 +18,7 @@
                         href="student-subscription.html"><i class="bi bi-card-checklist fa-fw me-2"></i>My
                         Subscriptions</a>
                     <a class="list-group-item {{ in_array(request()->route()->getName(),['mycursos'])? 'active': '' }}"
-                        href="{{ route('mycursos') }}"><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
+                        href="{{ route('mycursos') }}"><i class="bi bi-basket fa-fw me-2"></i>Mis Cursos</a>
                     <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"
                         href="student-course-resume.html"><i class="far fa-fw fa-file-alt me-2"></i>Course Resume</a>
                     <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"

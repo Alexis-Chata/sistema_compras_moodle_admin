@@ -47,8 +47,7 @@
                                     </div>
                                     <!-- Button -->
                                     <div class="mt-2 mt-sm-0">
-                                        <a href="student-course-list.html" class="btn btn-outline-primary mb-0">View my
-                                            courses</a>
+                                        <a href="{{ route('mycursos') }}" class="btn btn-outline-primary mb-0">Ver Mis Cursos</a>
                                     </div>
                                 </div>
                             </div>
