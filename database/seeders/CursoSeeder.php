@@ -20,12 +20,16 @@ class CursoSeeder extends Seeder
             $n_curso->id_moodle_course = 11;
             $n_curso->descripcion = 'Arrived off she elderly beloved him Course regard to up he hardly.';
             $n_curso->imagen = "/storage/grupos/08.jpg";
+            $n_curso->categoria_id = 1;
             $n_curso->save();
 
-        $n_curso = new Curso();
-        $n_curso->name = 'curso 2';
-        $n_curso->shortname = 'curso_2';
-        $n_curso->id_moodle_course = 709;
-        $n_curso->save();
+            $n_curso = new Curso();
+            $n_curso->name = 'curso 2';
+            $n_curso->shortname = 'curso_2';
+            $n_curso->id_moodle_course = 12;
+            $n_curso->descripcion = 'Arrived off she elderly beloved him Course regard to up he hardly.';
+            $n_curso->imagen = "/storage/grupos/08.jpg";
+            $n_curso->categoria_id = 1;
+            $n_curso->save();
     }
 }

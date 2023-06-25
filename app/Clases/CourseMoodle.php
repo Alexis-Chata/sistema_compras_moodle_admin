@@ -213,7 +213,6 @@ class CourseMoodle {
         .'&groups[0][description]='.$nombre
         .'&groups[0][descriptionformat]=1';
         $c_grupo = Http::get($consulta);
-
         if(isset(json_decode($c_grupo)->exception))
         {
             return false;

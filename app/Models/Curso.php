@@ -16,8 +16,25 @@ class Curso extends Model
         return $this->hasMany(Grupo::class);
     }
 
+    public function modalidads()
+    {
+        return $this->hasMany(Modalidad::class);
+    }
+
+
+
     public function gruposlastlimit()
     {
         return $this->hasMany(Grupo::class)->latest()->take(8);
+    }
+
+    public function getObtenerMatriculasAttribute()
+    {
+        $curso = Curso::find($this->id);
+        $total = 0;
+        foreach ($curso->modalidads as $mod) {
+           $total = $total + $mod->cmatriculas->count();
+        }
+        return $total;
     }
 }

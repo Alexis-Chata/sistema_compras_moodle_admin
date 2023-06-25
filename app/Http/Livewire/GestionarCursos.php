@@ -6,6 +6,7 @@ use App\Clases\CourseMoodle;
 use App\Clases\UserMoodle;
 use App\Models\Curso;
 use App\Models\Grupo;
+use App\Models\Modalidad;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -18,7 +19,9 @@ class GestionarCursos extends Component
     protected $paginationTheme = 'bootstrap';
     public Curso $curso;
     public Grupo $grupo;
+    public Modalidad $modalidad;
     public $scurso;
+    public $mensaje;
     public $imagen_curso,$iteration = 1;
     public $n_pagina = 5;
     public $search;
@@ -28,6 +31,8 @@ class GestionarCursos extends Component
     ];
     public $modal_titulo = 'Crear';
     public $modal_titulo_grupo = 'Crear';
+    public $modal_titulo_modalidad = 'Crear';
+
 
     #escuchador
     protected $listeners = ['eliminar','reiniciar'];
@@ -35,13 +40,15 @@ class GestionarCursos extends Component
     protected $rules = [
         'curso.name' => '',
         'curso.shortname' => '',
+        'curso.descripcion' => '',
         'grupo.name' => '',
         'grupo.descripcion' => '',
         'grupo.calificacion' => '',
         'grupo.hora' => '',
         'grupo.min' => '',
         'grupo.lecturas' => '',
-        'grupo.costo' => '',
+        'modalidad.name' => '',
+        'modalidad.descripcion' => '',
     ];
     protected $rules_curso = [
         'curso.name' => 'required|string',
@@ -55,9 +62,13 @@ class GestionarCursos extends Component
         'grupo.hora' => 'required',
         'grupo.min' => 'required',
         'grupo.lecturas' => 'required',
-        'grupo.costo' => 'required',
-
     ];
+
+    protected $rules_modalidad = [
+        'modalidad.name' => 'required',
+        'modalidad.descripcion' => 'required',
+    ];
+
     protected $validationAttributes = [
         'curso.name' => 'Nombre',
         'curso.shortname' => 'El nombre del curso no se puede repetir',
@@ -78,6 +89,7 @@ class GestionarCursos extends Component
     public function mount(){
         $this->curso = new Curso();
         $this->grupo = new Grupo();
+        $this->modalidad = new Modalidad();
     }
 
 
@@ -114,6 +126,18 @@ class GestionarCursos extends Component
         else {
             $this->grupo = Grupo::find($grupo_id);
             $this->modal_titulo_grupo = 'Modificar';
+        }
+    }
+
+    public function modal_modalidad($modalidad_id = null ){
+        if($modalidad_id == null)
+        {
+            $this->modalidad = new Modalidad();
+            $this->modal_titulo_modalidad = 'Crear';
+        }
+        else {
+            $this->modalidad = Modalidad::find($modalidad_id);
+            $this->modal_titulo_modalidad = 'Modificar';
         }
     }
 
@@ -169,6 +193,7 @@ class GestionarCursos extends Component
         $this->validate($this->rules_grupo);
         $this->grupo->curso_id = $this->scurso->id;
         $this->grupo->save();
+
         #crear curso en  moodle o modificar curso de moodle
         if ($this->modal_titulo_grupo == 'Crear') {
              //crear usuario moodle
@@ -178,9 +203,7 @@ class GestionarCursos extends Component
             $this->grupo->save();
         }
 
-        elseif($this->modal_titulo_grupo == 'Modificar'){
-            #
-        }
+        elseif($this->modal_titulo_grupo == 'Modificar'){}
 
         #subir imagen del usuario
         if($this->imagen_curso != null)
@@ -191,7 +214,7 @@ class GestionarCursos extends Component
         }
 
         #enviar respuesta
-        if ($this->modal_titulo == 'Crear') {
+        if ($this->modal_titulo_grupo == 'Crear') {
             if ($id_grupo)
             {
                 $this->emit('notificar_creacion_grupo','se creó el grupo');
@@ -201,13 +224,49 @@ class GestionarCursos extends Component
                 $this->emit('notificar_creacion_grupo','no se pudo crear el grupo');
             }
         }
-        elseif($this->modal_titulo == 'Modificar'){
+        elseif($this->modal_titulo_grupo == 'Modificar'){
             $this->emit('notificar_creacion_grupo','se modifico el grupo');
         }
+        #selecionar grupo
+        $this->seleccionar_curso($this->scurso);
+    }
+
+    public function save_modalidad()
+    {
+        $this->validate($this->rules_modalidad);
+        if ($this->modal_titulo_modalidad == 'Crear')
+        {
+            $this->modalidad->curso_id = $this->scurso->id;
+        }
+        $this->modalidad->save();
+        $this->seleccionar_curso($this->scurso);
+
+        #enviar respuesta
+        if ($this->modal_titulo_modalidad == 'Crear') {
+            $this->emit('notificar_accion_modalidad','Se creo el plan');
+        }
+
+        elseif($this->modal_titulo_modalidad == 'Modificar'){
+            $this->emit('notificar_accion_modalidad','se modifico el plan');
+        }
+
     }
 
     public function seleccionar_curso(Curso $curso){
+        $curso = Curso::find($curso->id);
         $this->scurso = $curso;
+    }
+
+    public function eliminar_grupo(Grupo $grupo)
+    {
+        $this->reset('mensaje');
+        if ($grupo->gmatriculas->count() == 0) {
+            $grupo->delete();
+        }
+        else {
+            $this->mensaje = "no se puede eliminar un grupo que tiene inscritos solicitar  administración";
+        }
+
     }
 
     public function eliminar_imagen()
@@ -240,6 +299,13 @@ class GestionarCursos extends Component
         $this->emit('notificar_eliminacion',$mensaje);
     }
 
+    public function eliminar_modalidad(Modalidad $modalidad){
+        if ($modalidad->cmatriculas->count() == 0)
+        {
+            $modalidad->delete();
+            $this->seleccionar_curso($this->scurso);
+        }
+    }
 
     public function render()
     {

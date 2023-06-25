@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CmoodleSeeder::class);
         $this->call(RolSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(CategoriaSeeder::class);
         $this->call(CursoSeeder::class);
         $this->call(GrupoSeeder::class);
         $this->call(ModalidadSeeder::class);

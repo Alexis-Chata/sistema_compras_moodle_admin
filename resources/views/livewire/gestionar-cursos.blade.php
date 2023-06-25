@@ -48,6 +48,7 @@
                             <th class="text-center">N°</th>
                             <th class="text-center">Nombres</th>
                             <th class="text-center">Grupos</th>
+                            <th class="text-center">Planes</th>
                             <th class="text-center">Acciones</th>
                         </tr>
                     </thead>
@@ -57,8 +58,13 @@
                                 <td class="text-center">{{ $key + 1 }}</td>
                                 <td class="text-center">{{$curso->name}}</td>
                                 <td class="text-center">
-                                    <button class="btn btn-success" id="editar-{{ $curso->id }}"
+                                    <button class="btn btn-success" id="grupos-{{ $curso->id }}"
                                         wire:click="seleccionar_curso({{ $curso->id }})">{{$curso->grupos->count()}}
+                                    </button>
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-success" id="modalidad-{{ $curso->id }}"
+                                        wire:click="seleccionar_curso({{ $curso->id }})">{{$curso->modalidads->count()}}
                                     </button>
                                 </td>
                                 <td class="text-center">
@@ -80,7 +86,7 @@
             </div>
         </div>
     </div>
-    <!---grupos matriculados-->
+    <!---grupos del curso-->
     @isset($scurso)
     <div class="card card-secondary" id="seleccionar_estudiante">
         <div class="card-header" id="seleccionar_estudiante_header" style="background: #0b4d87">
@@ -104,8 +110,6 @@
                             <th class="text-center">N°</th>
                             <th class="text-center">Nombre</th>
                             <th class="text-center">Detalles</th>
-                            <th class="text-center">Inscritos</th>
-                            <th class="text-center">costo</th>
                             <th class="text-center">Acciones</th>
                         </tr>
                     </thead>
@@ -115,11 +119,70 @@
                                 <td class="text-center">{{ $key2 + 1 }}</td>
                                 <td class="text-center">{{ $grupo->name}}</td>
                                 <td class="text-center">Calificación : {{ $grupo->calificacion}}, Duración : {{$grupo->hora." ".$grupo->min}} y Lecturas : {{$grupo->lecturas}}</td>
-                                <td class="text-center">{{ $grupo->gmatriculas->count()}}</td>
-                                <td class="text-center">{{ $grupo->costo}}</td>
-                                <th class="text-center">editar,eliminar</th>
+                                <th class="text-center">
+                                    <button data-bs-toggle="modal" data-bs-target="#grupo_modal"  id="editar-grupo-{{$grupo->id}}" class="btn btn-warning" wire:click="modal_grupo({{$grupo->id}})"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-danger" id='eliminar-grupo-{{$grupo->id}}' wire:click="eliminar_grupo({{$grupo->id}})"><i class="fas fa-trash"></i></button>
+                                </th>
                             </tr>
                         @endforeach
+                    </tbody>
+                </table>
+            </div>
+            @if ($mensaje)
+                {{$mensaje}}
+            @endif
+        </div>
+    </div>
+    @endisset
+    <!---->
+    @isset($scurso)
+    <div class="card card-secondary" id="seleccionar_estudiante">
+        <div class="card-header" id="seleccionar_estudiante_header" style="background: #0b4d87">
+            <div class="row align-items-center p-1">
+                <div class="col col-md-6">
+                    <h5>Lista de Planes del Curso : {{$scurso->name}}</h5>
+                </div>
+                <div id="crear_grupo" class="col col-md-3">
+                    <button class="btn btn-secondary" id="crear_plan" data-bs-toggle="modal"
+                        data-bs-target="#modalidad_modal"
+                        wire:click="modal_modalidad()"><i class="fas fa-plus-circle"></i> Crear Plan
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-inherit" id="seleccionar_estudiante_body">
+            <div id="selecio" class="container mt-4 table-responsive">
+                <table id='tabla_selecionar_estudiante' class="table">
+                    <thead class="table table-dark">
+                        <tr>
+                            <th class="text-center">N°</th>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Descripción</th>
+                            <th class="text-center">Inscritos</th>
+                            <th class="text-center">N° Cuotas</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-secondary">
+                        @foreach ($scurso->modalidads as $key2 => $lmodalidad   )
+                            <tr>
+                                <td class="text-center">{{ $key2 + 1 }}</td>
+                                <td class="text-center">{{ $lmodalidad->name}}</td>
+                                <td class="text-center">{{ $lmodalidad->descripcion}}</td>
+                                <td class="text-center">{{ $lmodalidad->cmatriculas->count()}}</td>
+                                <td class="text-center">{{ $lmodalidad->cuotas->count()}}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-warning" id="modalidad-editar-{{$lmodalidad->id}}" data-bs-toggle="modal" data-bs-target="#modalidad_modal" wire:click="modal_modalidad({{$lmodalidad->id}})" ><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-danger"  id="modalidad-eliminar-{{$lmodalidad->id}}" wire:click='eliminar_modalidad({{$lmodalidad->id}})'><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        @endforeach
+                            <tr>
+                                <td class="text-center table-dark" colspan="3" >Total</td>
+                                <td class="text-center">{{$scurso->obtener_matriculas}}</td>
+                                <td class="text-center table-dark"></td>
+                                <td class="text-center table-dark"></td>
+                            </tr>
                     </tbody>
                 </table>
             </div>
@@ -163,6 +226,13 @@
                                                     class="text-danger">(*)</span></label>
                                                 <input type="text" id="curso_shortname" class="form-control" wire:model="curso.shortname">
                                                 @error('curso.shortname')
+                                                    <div class="p-1"> {{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12 col-sm-12">
+                                                <label for="curso_name" class="fw-bold">Descripción del Curso : </label>
+                                                <textarea  id="" class="form-control" wire:model="curso.descripcion"></textarea>
+                                                @error('curso.descripcion')
                                                     <div class="p-1"> {{ $message }}</div>
                                                 @enderror
                                             </div>
@@ -246,14 +316,6 @@
                                                 @enderror
                                             </div>
                                             <div class="col-12 col-sm-4">
-                                                <label for="grupo_costo" class="fw-bold">costo : <span
-                                                    class="text-danger">(*)</span></label>
-                                                <input type="number" step="0.01" id="grupo_costo" class="form-control" wire:model="grupo.costo">
-                                                @error('grupo.costo')
-                                                    <div class="p-1"> {{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                            <div class="col-12 col-sm-4">
                                                 <label for="grupo_descripcion" class="fw-bold">Descripcion : <span
                                                     class="text-danger">(*)</span></label>
                                                     <textarea id="grupo_descripcion" class="form-control" wire:model="grupo.descripcion"  ></textarea>
@@ -288,10 +350,111 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" wire:target="imagen_curso, save_grupo" wire:click="save_grupo"
-                        wire:loading.attr="disabled">{{ $modal_titulo_grupo }} Curso</button>
+                        wire:loading.attr="disabled">{{ $modal_titulo_grupo }} Grupo</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <!--Modal vista Planes-->
+    <div wire:ignore.self class="modal fade" id="modalidad_modal" tabindex="-1" aria-labelledby="plan_label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="plan_label">{{ $modal_titulo_modalidad }} - Plan</h5>
+                    <button type="button" id="cerrar_modalidad_modal" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <!--datos del grupo-->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card card-secondary">
+                                    <div class="card-header" style="background: #0b4d87">
+                                        <div class="row align-items-center p-1">
+                                            <div class="col col-md-6">
+                                                <h5>Datos del Plan</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-inherit">
+                                        <div class="row m-4">
+                                            <div class="col-12 col-sm-4">
+                                                <label for="modalidad_name" class="fw-bold">Nombre : <span
+                                                    class="text-danger">(*)</span></label>
+                                                <input type="text" id="modalidad_name" class="form-control" wire:model="modalidad.name">
+                                                @error('modalidad.name')
+                                                    <div class="p-1"> {{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12 col-sm-4">
+                                                <label for="modalidad_descripcion" class="fw-bold">Descripción : <span
+                                                    class="text-danger">(*)</span></label>
+                                                <input type="text" id="modalidad_descripcion" class="form-control" wire:model="modalidad.descripcion">
+                                                @error('modalidad.descripcion')
+                                                    <div class="p-1"> {{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--cuotas-->
+                            @if ($modalidad->id != null)
+                            <div class="col-12">
+                                <div class="card card-secondary">
+                                    <div class="card-header" style="background: #0b4d87">
+                                        <div class="row align-items-center p-1">
+                                            <div class="col col-md-6">
+                                                <h5>Cuotas del Plan - {{$modalidad->name}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-inherit">
+                                        <div class="row m-4">
+                                            <div class="col-12">
+                                                <table class="table table-dark">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="text-center">N°</td>
+                                                            <td class="text-center">Nombre</td>
+                                                            <td class="text-center">Monto</td>
+                                                            <td class="text-center">Grupos</td>
+                                                            <td class="text-center">fvencimiento</td>
+                                                            <td class="text-center">Acciones</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-secondary">
+                                                        @foreach ($modalidad->cuotas as $key => $lcuota)
+                                                            <tr>
+                                                                <td class="text-center">{{$key+1}}</td>
+                                                                <td class="text-center">{{$lcuota->name}}</td>
+                                                                <td class="text-center">{{$lcuota->monto}}</td>
+                                                                <td class="text-center">{{$lcuota->descripcion}}</td>
+                                                                <td class="text-center">{{$lcuota->fvencimiento}}</td>
+                                                                <td class="text-center">
+                                                                    <button class="btn btn-warning" id="editar-cuota-{{$lcuota->id}}"><i class="fas fa-edit"></i></button>
+                                                                    <button class="btn btn-danger" id="eliminar-cuota-{{$lcuota->id}}"><i class="fas fa-trash"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" wire:target="save_modalidad" wire:click="save_modalidad"
+                        wire:loading.attr="disabled">{{ $modal_titulo_modalidad }} Crear Plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
