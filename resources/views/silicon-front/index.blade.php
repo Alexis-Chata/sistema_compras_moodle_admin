@@ -538,7 +538,7 @@
                                     <!-- Card item START -->
                                     <div class="col-sm-6 col-lg-4 col-xl-3">
                                         <div class="card shadow h-100">
-                                            <a href="#">
+                                            <a href="{{ route('curso', $curso->id) }}">
                                             <!-- Image -->
                                             <img src="{{ asset($curso->imagen) }}" class="card-img-top"
                                                 alt="course image">

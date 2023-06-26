@@ -118,7 +118,7 @@
                             <div class="col-sm-6 col-lg-4 col-xl-3">
                                 <div class="card shadow h-100">
                                     <!-- Image -->
-                                    <a href="#">
+                                    <a href="{{ route('curso', $curso->id) }}">
                                         <img src="{{ asset($curso->imagen)}}"
                                             class="card-img-top" alt="course image"></a>
                                     <!-- Card body -->
@@ -137,7 +137,7 @@
                                         </div>
                                         -->
                                         <!-- Title -->
-                                        <h5 class="card-title"><a href="#">{{ $curso->name }}</a>
+                                        <h5 class="card-title"><a href="{{ route('curso', $curso->id) }}">{{ $curso->name }}</a>
                                         </h5>
                                         <p class="mb-2 text-truncate-2">
                                             {{ $curso->descripcion ?? 'Proposal indulged no do sociable he throwing settling.' }}
