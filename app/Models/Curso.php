@@ -21,8 +21,6 @@ class Curso extends Model
         return $this->hasMany(Modalidad::class);
     }
 
-
-
     public function gruposlastlimit()
     {
         return $this->hasMany(Grupo::class)->latest()->take(8);
@@ -33,8 +31,13 @@ class Curso extends Model
         $curso = Curso::find($this->id);
         $total = 0;
         foreach ($curso->modalidads as $mod) {
-           $total = $total + $mod->cmatriculas->count();
+            $total = $total + $mod->cmatriculas->count();
         }
         return $total;
+    }
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
     }
 }

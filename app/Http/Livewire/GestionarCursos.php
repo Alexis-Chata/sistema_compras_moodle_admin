@@ -22,7 +22,7 @@ class GestionarCursos extends Component
     public Modalidad $modalidad;
     public $scurso;
     public $mensaje;
-    public $imagen_curso,$iteration = 1;
+    public $imagen_curso, $iteration = 1;
     public $n_pagina = 5;
     public $search;
     protected $queryString = [
@@ -35,7 +35,7 @@ class GestionarCursos extends Component
 
 
     #escuchador
-    protected $listeners = ['eliminar','reiniciar'];
+    protected $listeners = ['eliminar', 'reiniciar'];
 
     protected $rules = [
         'curso.name' => '',
@@ -86,7 +86,8 @@ class GestionarCursos extends Component
     }
 
     #metodo contructor
-    public function mount(){
+    public function mount()
+    {
         $this->curso = new Curso();
         $this->grupo = new Grupo();
         $this->modalidad = new Modalidad();
@@ -103,39 +104,36 @@ class GestionarCursos extends Component
         ]);
     }
 
-    public function modal($curso_id = null ){
-        if($curso_id == null)
-        {
+    public function modal($curso_id = null)
+    {
+        if ($curso_id == null) {
             $this->curso = new Curso();
             $this->modal_titulo = 'Crear';
-        }
-        else {
+        } else {
             $this->curso = Curso::find($curso_id);
             $this->modal_titulo = 'Modificar';
         }
     }
 
-    public function modal_grupo($grupo_id = null ){
+    public function modal_grupo($grupo_id = null)
+    {
         $this->iteration++;
         $this->reset('imagen_curso');
-        if($grupo_id == null)
-        {
+        if ($grupo_id == null) {
             $this->grupo = new Grupo();
             $this->modal_titulo_grupo = 'Crear';
-        }
-        else {
+        } else {
             $this->grupo = Grupo::find($grupo_id);
             $this->modal_titulo_grupo = 'Modificar';
         }
     }
 
-    public function modal_modalidad($modalidad_id = null ){
-        if($modalidad_id == null)
-        {
+    public function modal_modalidad($modalidad_id = null)
+    {
+        if ($modalidad_id == null) {
             $this->modalidad = new Modalidad();
             $this->modal_titulo_modalidad = 'Crear';
-        }
-        else {
+        } else {
             $this->modalidad = Modalidad::find($modalidad_id);
             $this->modal_titulo_modalidad = 'Modificar';
         }
@@ -144,27 +142,24 @@ class GestionarCursos extends Component
     public function save()
     {
         $nusuario = false;
-        if($this->modal_titulo == 'Crear'){
+        if ($this->modal_titulo == 'Crear') {
             $this->validate($this->rules_curso);
-        }
-        elseif($this->modal_titulo == 'Modificar'){
+        } elseif ($this->modal_titulo == 'Modificar') {
             $this->validando($this->curso->id);
         }
         $this->curso->save();
         #crear curso en  moodle o modificar curso de moodle
         if ($this->modal_titulo == 'Crear') {
-             //crear usuario moodle
-             $n_curso = new CourseMoodle();
-             $n_curso->name = $this->curso->name;
-             $n_curso->shortname = $this->curso->shortname;
-             $n_curso->categoryid = 1;
-             $idcurso = $n_curso->crear();
-             $this->curso->id_moodle_course = $idcurso;
-             $this->curso->estado = 1;
-             $this->curso->save();
-        }
-
-        elseif($this->modal_titulo == 'Modificar'){
+            //crear usuario moodle
+            $n_curso = new CourseMoodle();
+            $n_curso->name = $this->curso->name;
+            $n_curso->shortname = $this->curso->shortname;
+            $n_curso->categoryid = 1;
+            $idcurso = $n_curso->crear();
+            $this->curso->id_moodle_course = $idcurso;
+            $this->curso->estado = 1;
+            $this->curso->save();
+        } elseif ($this->modal_titulo == 'Modificar') {
             //modificar el curso en moodle
             $a_moodle = CourseMoodle::buscar($this->curso->id_course_moodle);
             $a_moodle->name = $this->curso->name;
@@ -174,17 +169,14 @@ class GestionarCursos extends Component
 
         #enviar respuesta
         if ($this->modal_titulo == 'Crear') {
-            if ($idcurso)
-            {
-                $this->emit('notificar_creacion','se creó el curso');
-            }
-            else {
+            if ($idcurso) {
+                $this->emit('notificar_creacion', 'se creó el curso');
+            } else {
                 $this->curso->delete();
-                $this->emit('notificar_creacion','no se pudo crear el curso');
+                $this->emit('notificar_creacion', 'no se pudo crear el curso');
             }
-        }
-        elseif($this->modal_titulo == 'Modificar'){
-            $this->emit('notificar_creacion','se modifico el curso');
+        } elseif ($this->modal_titulo == 'Modificar') {
+            $this->emit('notificar_creacion', 'se modifico el curso');
         }
     }
 
@@ -196,18 +188,16 @@ class GestionarCursos extends Component
 
         #crear curso en  moodle o modificar curso de moodle
         if ($this->modal_titulo_grupo == 'Crear') {
-             //crear usuario moodle
-             $curso_moodle = CourseMoodle::buscar($this->scurso->id_moodle_course);
+            //crear usuario moodle
+            $curso_moodle = CourseMoodle::buscar($this->scurso->id_moodle_course);
             $id_grupo = $curso_moodle->crear_grupo($this->grupo->name);
             $this->grupo->id_moodle_group = $id_grupo;
             $this->grupo->save();
+        } elseif ($this->modal_titulo_grupo == 'Modificar') {
         }
 
-        elseif($this->modal_titulo_grupo == 'Modificar'){}
-
         #subir imagen del usuario
-        if($this->imagen_curso != null)
-        {
+        if ($this->imagen_curso != null) {
             $extension =  $this->imagen_curso->extension();
             $this->eliminar_imagen();
             $this->subir_imagen($this->imagen_curso);
@@ -215,17 +205,14 @@ class GestionarCursos extends Component
 
         #enviar respuesta
         if ($this->modal_titulo_grupo == 'Crear') {
-            if ($id_grupo)
-            {
-                $this->emit('notificar_creacion_grupo','se creó el grupo');
-            }
-            else {
+            if ($id_grupo) {
+                $this->emit('notificar_creacion_grupo', 'se creó el grupo');
+            } else {
                 $this->grupo->delete();
-                $this->emit('notificar_creacion_grupo','no se pudo crear el grupo');
+                $this->emit('notificar_creacion_grupo', 'no se pudo crear el grupo');
             }
-        }
-        elseif($this->modal_titulo_grupo == 'Modificar'){
-            $this->emit('notificar_creacion_grupo','se modifico el grupo');
+        } elseif ($this->modal_titulo_grupo == 'Modificar') {
+            $this->emit('notificar_creacion_grupo', 'se modifico el grupo');
         }
         #selecionar grupo
         $this->seleccionar_curso($this->scurso);
@@ -234,8 +221,7 @@ class GestionarCursos extends Component
     public function save_modalidad()
     {
         $this->validate($this->rules_modalidad);
-        if ($this->modal_titulo_modalidad == 'Crear')
-        {
+        if ($this->modal_titulo_modalidad == 'Crear') {
             $this->modalidad->curso_id = $this->scurso->id;
         }
         $this->modalidad->save();
@@ -243,16 +229,14 @@ class GestionarCursos extends Component
 
         #enviar respuesta
         if ($this->modal_titulo_modalidad == 'Crear') {
-            $this->emit('notificar_accion_modalidad','Se creo el plan');
+            $this->emit('notificar_accion_modalidad', 'Se creo el plan');
+        } elseif ($this->modal_titulo_modalidad == 'Modificar') {
+            $this->emit('notificar_accion_modalidad', 'se modifico el plan');
         }
-
-        elseif($this->modal_titulo_modalidad == 'Modificar'){
-            $this->emit('notificar_accion_modalidad','se modifico el plan');
-        }
-
     }
 
-    public function seleccionar_curso(Curso $curso){
+    public function seleccionar_curso(Curso $curso)
+    {
         $curso = Curso::find($curso->id);
         $this->scurso = $curso;
     }
@@ -262,46 +246,44 @@ class GestionarCursos extends Component
         $this->reset('mensaje');
         if ($grupo->gmatriculas->count() == 0) {
             $grupo->delete();
-        }
-        else {
+        } else {
             $this->mensaje = "no se puede eliminar un grupo que tiene inscritos solicitar  administración";
         }
-
     }
 
     public function eliminar_imagen()
     {
-        if ($this->grupo->imagen == true)
-        {
-        $eliminar = str_replace('storage', 'public', $this->grupo->imagen);
-        Storage::delete([$eliminar]);
+        if ($this->grupo->imagen == true) {
+            $eliminar = str_replace('storage', 'public', $this->grupo->imagen);
+            Storage::delete([$eliminar]);
         }
     }
 
-    public function subir_imagen($imagen){
+    public function subir_imagen($imagen)
+    {
         $extension = $imagen->extension();
-        $imagenperfil = $imagen->storeAs('public/grupos', rand(1000,9999).'grupos'.$this->grupo->id. "." . $extension);
+        $imagenperfil = $imagen->storeAs('public/grupos', rand(1000, 9999) . 'grupos' . $this->grupo->id . "." . $extension);
         $this->grupo->imagen = Storage::url($imagenperfil);
         $this->grupo->save();
     }
 
-    public function eliminar(Curso $curso){
+    public function eliminar(Curso $curso)
+    {
 
-        if($curso->grupos->count() == 0){
+        if ($curso->grupos->count() == 0) {
             $curso->delete();
             $mensaje = "Se elimino el usuario correctamente.";
-        }
-        else{
+        } else {
             $mensaje = "No se elimino el Curso.";
         }
         $this->resetPage();
 
-        $this->emit('notificar_eliminacion',$mensaje);
+        $this->emit('notificar_eliminacion', $mensaje);
     }
 
-    public function eliminar_modalidad(Modalidad $modalidad){
-        if ($modalidad->cmatriculas->count() == 0)
-        {
+    public function eliminar_modalidad(Modalidad $modalidad)
+    {
+        if ($modalidad->cmatriculas->count() == 0) {
             $modalidad->delete();
             $this->seleccionar_curso($this->scurso);
         }
@@ -309,10 +291,10 @@ class GestionarCursos extends Component
 
     public function render()
     {
-        $cursos =Curso::Where(function($query) {
-                        $query->Where('name', 'like', '%' . $this->search.'%');
-                    })->paginate($this->n_pagina);
+        $cursos = Curso::Where(function ($query) {
+            $query->Where('name', 'like', '%' . $this->search . '%');
+        })->paginate($this->n_pagina);
 
-        return view('livewire.gestionar-cursos',compact('cursos'));
+        return view('livewire.gestionar-cursos', compact('cursos'));
     }
 }
