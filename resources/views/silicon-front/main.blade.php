@@ -76,27 +76,31 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link rel="stylesheet" href="./silicon-front/silicon/css2.css">
+    <link rel="stylesheet" href="{{ asset('silicon-front/silicon/css2.css') }}">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" type="text/css" href="./silicon-front/silicon/all.min.css">
-    <link rel="stylesheet" type="text/css" href="./silicon-front/silicon/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/all.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/bootstrap-icons.css') }}">
 
-    @if (Route::currentRouteName() == 'index')
-        <link rel="stylesheet" type="text/css" href="./silicon-front/silicon/tiny-slider.css">
-        <link rel="stylesheet" type="text/css" href="./silicon-front/silicon/glightbox.css">
+    @if (Route::currentRouteName() == 'index' or
+            in_array(request()->route()->getName(),
+                ['curso']))
+        <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/tiny-slider.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/glightbox.css') }}">
     @endif
 
-    @if (in_array(request()->route()->getName(), ['mycursos', 'cursos', 'carrito', 'dashboard']))
-        <link rel="stylesheet" type="text/css" href="./silicon-front/silicon/choices.min.css">
+    @if (in_array(request()->route()->getName(),
+            ['mycursos', 'cursos', 'curso', 'carrito', 'dashboard']))
+        <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/choices.min.css') }}">
     @endif
 
-    @if (in_array(request()->route()->getName(), ['mycursos', 'dashboard']))
-        <link rel="stylesheet" type="text/css" href="./silicon-front/assets/vendor/aos/aos.css">
+    @if (in_array(request()->route()->getName(),
+            ['mycursos', 'dashboard']))
+        <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/assets/vendor/aos/aos.css') }}">
     @endif
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" type="text/css" href="./silicon-front/silicon/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/style.css') }}">
 
     <style></style>
     @php
@@ -129,29 +133,35 @@
     </div>
 
     <!-- Bootstrap JS -->
-    <script src="./silicon-front/silicon/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('silicon-front/silicon/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Vendors -->
     @if (Route::currentRouteName() == 'index')
-        <script src="./silicon-front/silicon/tiny-slider.js"></script>
-        <script src="./silicon-front/silicon/glightbox.js"></script>
-        <script src="./silicon-front/silicon/purecounter_vanilla.js"></script>
+        <script src="{{ asset('silicon-front/silicon/purecounter_vanilla.js') }}"></script>
     @endif
 
-    @if (in_array(request()->route()->getName(), ['mycursos', 'cursos', 'carrito', 'dashboard']))
-        <script src="./silicon-front/silicon/choices.min.js"></script>
+    @if (Route::currentRouteName() == 'index' or in_array(request()->route()->getName(), ['curso']))
+        <script src="{{ asset('silicon-front/silicon/tiny-slider.js') }}"></script>
+        <script src="{{ asset('silicon-front/silicon/glightbox.js') }}"></script>
     @endif
 
-    @if (in_array(request()->route()->getName(), ['dashboard']))
-        <script src="./silicon-front/assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+    @if (in_array(request()->route()->getName(),
+            ['mycursos', 'curso', 'cursos', 'carrito', 'dashboard']))
+        <script src="{{ asset('silicon-front/silicon/choices.min.js') }}"></script>
     @endif
 
-    @if (in_array(request()->route()->getName(), ['mycursos', 'dashboard']))
-        <script src="./silicon-front/assets/vendor/aos/aos.js"></script>
+    @if (in_array(request()->route()->getName(),
+            ['dashboard']))
+        <script src="{{ asset('silicon-front/assets/vendor/purecounterjs/dist/purecounter_vanilla.js') }}"></script>
+    @endif
+
+    @if (in_array(request()->route()->getName(),
+            ['mycursos', 'dashboard']))
+        <script src="{{ asset('silicon-front/assets/vendor/aos/aos.js') }}"></script>
     @endif
 
     <!-- Template Functions -->
-    <script src="./silicon-front/silicon/functions.js"></script>
+    <script src="{{ asset('silicon-front/silicon/functions.js') }}"></script>
 
     @livewireScripts
 </body>

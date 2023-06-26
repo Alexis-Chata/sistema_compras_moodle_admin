@@ -16,4 +16,9 @@ class Grupo extends Model
     {
         return $this->hasMany(Gmatricula::class);
     }
+
+    public function gcuotas()
+    {
+        return $this->hasMany(Gcuota::class);
+    }
 }

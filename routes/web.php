@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Categoria;
 use App\Models\Curso;
 use App\Models\Grupo;
 use Illuminate\Support\Facades\Route;
@@ -20,15 +21,19 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    //$cursos = null;
-    $cursos = Curso::latest()->take(5)->get();
+    //$categorias = null;
+    $categorias = categoria::latest()->take(5)->get();
 
-    $cursos->each(function ($item, $key) {
-        return $item->push($item->gruposlastlimit);
+    $categorias->each(function ($item, $key) {
+        return $item->push($item->cursoslastlimit);
     });
 
-    //return $cursos;
-    return view('silicon-front.index', compact('cursos'));
+    $categorias = $categorias->filter(function ($item, $key) {
+        return $item->cursoslastlimit->count() > 0;
+    });
+
+    //return $categorias;
+    return view('silicon-front.index', compact('categorias'));
 })->name('index');
 
 Route::get('/carrito', function () {
@@ -36,9 +41,15 @@ Route::get('/carrito', function () {
 })->name('carrito');
 
 Route::get('/cursos', function () {
-    $grupos = Grupo::paginate(12);
-    return view('silicon-front.cursos', compact('grupos'));
+    $cursos = Curso::paginate(12);
+    return view('silicon-front.cursos', compact('cursos'));
 })->name('cursos');
+
+Route::get('/curso/{id}', function ($id) {
+    $curso = Curso::with('categoria', 'grupos', 'grupos.gcuotas', 'grupos.gcuotas.cuota', 'grupos.gcuotas.cuota.modalidad')->where('id','=', $id)->firstOrFail();
+    return $curso;
+    return view('silicon-front.curso', compact('curso'));
+})->name('curso');
 
 Route::get('/mycursos', function () {
     $grupos = Grupo::paginate(12);

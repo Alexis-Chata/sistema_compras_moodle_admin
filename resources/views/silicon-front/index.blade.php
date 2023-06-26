@@ -435,7 +435,7 @@
                                         data-purecounter-duration="0">10</h5>
                                     <span class="mb-0 h5">K</span>
                                 </div>
-                                <p class="mb-0">Online Courses</p>
+                                <p class="mb-0">Cursos Online</p>
                             </div>
                         </div>
                     </div>
@@ -450,7 +450,7 @@
                                         data-purecounter-duration="0">200</h5>
                                     <span class="mb-0 h5">+</span>
                                 </div>
-                                <p class="mb-0">Expert Tutors</p>
+                                <p class="mb-0">Tutores expertos</p>
                             </div>
                         </div>
                     </div>
@@ -466,7 +466,7 @@
                                         data-purecounter-duration="0">60</h5>
                                     <span class="mb-0 h5">K+</span>
                                 </div>
-                                <p class="mb-0">Online Students</p>
+                                <p class="mb-0">Estudiantes en línea</p>
                             </div>
                         </div>
                     </div>
@@ -481,7 +481,7 @@
                                         data-purecounter-duration="0">6</h5>
                                     <span class="mb-0 h5">K+</span>
                                 </div>
-                                <p class="mb-0">Certified Courses</p>
+                                <p class="mb-0">Cursos Certificados</p>
                             </div>
                         </div>
                     </div>
@@ -498,23 +498,23 @@
                 <!-- Title -->
                 <div class="row mb-4">
                     <div class="col-lg-8 mx-auto text-center">
-                        <h2 class="fs-1">Most Popular Courses</h2>
-                        <p class="mb-0">Choose from hundreds of courses from specialist organizations</p>
+                        <h2 class="fs-1">Cursos más populares</h2>
+                        <p class="mb-0">Elija entre cientos de cursos especializados</p>
                     </div>
                 </div>
 
                 <!-- Tabs START -->
                 <ul class="nav nav-pills nav-pills-bg-soft justify-content-sm-center mb-4 px-3" id="course-pills-tab"
                     role="tablist">
-                    @foreach ($cursos as $key => $curso)
+                    @foreach ($categorias as $key => $categoria)
                         <!-- Tab item -->
                         <li class="nav-item me-2 me-sm-5" role="presentation">
                             <button
-                                class="nav-link mb-2 mb-md-0 {{ $key == array_key_first($cursos->toArray()) ? 'active' : '' }}"
-                                id="course-pills-tab-{{ $curso->id }}" data-bs-toggle="pill"
-                                data-bs-target="#course-pills-tabs-{{ $curso->id }}" type="button" role="tab"
-                                aria-controls="course-pills-tabs-{{ $curso->id }}"
-                                aria-selected="true">{{ $curso->name }}
+                                class="nav-link mb-2 mb-md-0 {{ $key == array_key_first($categorias->toArray()) ? 'active' : '' }}"
+                                id="course-pills-tab-{{ $categoria->id }}" data-bs-toggle="pill"
+                                data-bs-target="#course-pills-tabs-{{ $categoria->id }}" type="button" role="tab"
+                                aria-controls="course-pills-tabs-{{ $categoria->id }}"
+                                aria-selected="true">{{ $categoria->name }}
                                 @auth
                                 {{ Auth::user()->getRoleNames() }}
                                 @endauth
@@ -527,36 +527,38 @@
                 <!-- Tabs content START -->
                 <div class="tab-content" id="course-pills-tabContent">
 
-                    @foreach ($cursos as $key => $curso)
+                    @foreach ($categorias as $key => $categoria)
                         <!-- Content START -->
-                        <div class="tab-pane fade {{ $key == array_key_first($cursos->toArray()) ? 'show active' : '' }}"
-                            id="course-pills-tabs-{{ $curso->id }}" role="tabpanel"
-                            aria-labelledby="course-pills-tab-{{ $curso->id }}">
+                        <div class="tab-pane fade {{ $key == array_key_first($categorias->toArray()) ? 'show active' : '' }}"
+                            id="course-pills-tabs-{{ $categoria->id }}" role="tabpanel"
+                            aria-labelledby="course-pills-tab-{{ $categoria->id }}">
                             <div class="row g-4">
 
-                                @foreach ($curso->gruposlastlimit as $grupo)
+                                @foreach ($categoria->cursoslastlimit as $curso)
                                     <!-- Card item START -->
                                     <div class="col-sm-6 col-lg-4 col-xl-3">
                                         <div class="card shadow h-100">
+                                            <a href="#">
                                             <!-- Image -->
-                                            <img src="{{ asset($grupo->imagen) }}" class="card-img-top"
+                                            <img src="{{ asset($curso->imagen) }}" class="card-img-top"
                                                 alt="course image">
+                                            </a>
                                             <!-- Card body -->
                                             <div class="card-body pb-0">
                                                 <!-- Badge and favorite -->
-                                                <div class="d-flex justify-content-between mb-2">
+                                                {{-- <div class="d-flex justify-content-between mb-2">
                                                     <a href="#"
                                                         class="badge bg-purple bg-opacity-10 text-purple">All level</a>
                                                     <a href="#" class="h6 mb-0"><i class="far fa-heart"></i></a>
-                                                </div>
+                                                </div> --}}
                                                 <!-- Title -->
-                                                <h5 class="card-title fw-normal"><a href="#">{{ $grupo->name }}</a>
+                                                <h5 class="card-title fw-normal"><a href="#">{{ $curso->name }}</a>
                                                 </h5>
                                                 <p class="mb-2 text-truncate-2">
-                                                    {{ $grupo->descripcion ?? 'Proposal indulged no do sociable he throwing settling.' }}
+                                                    {{ $curso->descripcion ?? 'Proposal indulged no do sociable he throwing settling.' }}
                                                 </p>
                                                 <!-- Rating star -->
-                                                <ul class="list-inline mb-0">
+                                                {{-- <ul class="list-inline mb-0">
                                                     <li class="list-inline-item me-0 small"><i
                                                             class="fas fa-star text-warning"></i></li>
                                                     <li class="list-inline-item me-0 small"><i
@@ -568,18 +570,18 @@
                                                     <li class="list-inline-item me-0 small"><i
                                                             class="far fa-star text-warning"></i></li>
                                                     <li class="list-inline-item ms-2 h6 fw-light mb-0">
-                                                        {{ $grupo->calificacion }}/5.0</li>
-                                                </ul>
+                                                        {{ $curso->calificacion }}/5.0</li>
+                                                </ul> --}}
                                             </div>
                                             <!-- Card footer -->
                                             <div class="card-footer pt-0 pb-3">
-                                                <hr>
+                                                {{-- <hr>
                                                 <div class="d-flex justify-content-between">
                                                     <span class="h6 fw-light mb-0"><i
-                                                            class="far fa-clock text-danger me-2"></i>{{ $grupo->hora . 'h ' . $grupo->min . 'm' }}</span>
+                                                            class="far fa-clock text-danger me-2"></i>{{ $curso->hora . 'h ' . $curso->min . 'm' }}</span>
                                                     <span class="h6 fw-light mb-0"><i
-                                                            class="fas fa-table text-orange me-2"></i>{{ $grupo->lecturas . ' lecturas' }}</span>
-                                                </div>
+                                                            class="fas fa-table text-orange me-2"></i>{{ $curso->lecturas . ' lecturas' }}</span>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -1947,7 +1949,7 @@
 
         <!-- =======================
                                     Reviews START -->
-        <section class="bg-light">
+        {{-- <section class="bg-light">
             <div class="container">
                 <div class="row g-4 g-lg-5 align-items-center">
                     <div class="col-xl-7 order-2 order-xl-1">
@@ -2259,7 +2261,7 @@
                     </div>
                 </div> <!-- Row END -->
             </div>
-        </section>
+        </section> --}}
         <!-- =======================
                                     Reviews END -->
 

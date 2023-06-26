@@ -113,7 +113,7 @@
                     <!-- Course Grid START -->
                     <div class="row g-4">
 
-                        @foreach ($grupos as $curso)
+                        @foreach ($cursos as $curso)
                             <!-- Card item START -->
                             <div class="col-sm-6 col-lg-4 col-xl-3">
                                 <div class="card shadow h-100">
@@ -124,12 +124,12 @@
                                     <!-- Card body -->
                                     <div class="card-body pb-0">
                                         <!-- Badge and favorite -->
-                                        <div class="d-flex justify-content-between mb-2">
+                                        {{-- <div class="d-flex justify-content-between mb-2">
                                             <a href="#"
                                                 class="badge bg-purple bg-opacity-10 text-purple">All level</a>
                                             <a href="#" class="h6 fw-light mb-0"><i
                                                     class="far fa-heart"></i></a>
-                                        </div>
+                                        </div> --}}
                                         <!--
                                         <div class="d-flex justify-content-between mb-2">
                                             <a href="#" class="badge bg-success bg-opacity-10 text-success">Beginner</a>
@@ -139,8 +139,11 @@
                                         <!-- Title -->
                                         <h5 class="card-title"><a href="#">{{ $curso->name }}</a>
                                         </h5>
+                                        <p class="mb-2 text-truncate-2">
+                                            {{ $curso->descripcion ?? 'Proposal indulged no do sociable he throwing settling.' }}
+                                        </p>
                                         <!-- Rating star -->
-                                        <ul class="list-inline mb-0">
+                                        {{-- <ul class="list-inline mb-0">
                                             @for ($i = 1; $i <= 5; $i++)
                                                 @if ($i <= $curso->calificacion)
                                                     <li class="list-inline-item me-0 small"><i
@@ -155,11 +158,11 @@
                                             @endfor
                                             <li class="list-inline-item ms-2 h6 fw-light mb-0">
                                                 {{ $curso->calificacion }}/5.0</li>
-                                        </ul>
+                                        </ul> --}}
                                     </div>
                                     <!-- Card footer -->
                                     <div class="card-footer pt-0 pb-3">
-                                        <hr>
+                                        {{-- <hr>
                                         <div class="d-flex justify-content-between">
                                             <span class="h6 fw-light mb-0"><i
                                                     class="far fa-clock text-danger me-2"></i>{{ $curso->hora . 'h ' . $curso->min . 'm' }}</span>
@@ -167,7 +170,7 @@
                                                     class="fas fa-table text-orange me-2"></i>{{ $curso->lecturas . ' lecturas' }}</span>
                                         </div>
                                         <hr>
-                                        @livewire('additem', ['curso' => $curso])
+                                        @livewire('additem', ['curso' => $curso]) --}}
                                     </div>
                                 </div>
                             </div>
@@ -178,7 +181,7 @@
 
                     <!-- Pagination START -->
                     <div class="col-12">
-                        {{ $grupos->links('vendor.pagination.silicon-front') }}
+                        {{ $cursos->links('vendor.pagination.silicon-front') }}
                     </div>
                     <!-- Pagination END -->
                 </div>
