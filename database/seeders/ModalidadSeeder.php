@@ -42,7 +42,7 @@ class ModalidadSeeder extends Seeder
                 $n_modalidad->save();
             #2 cuotas
                 $n_modalidad = new Modalidad();
-                $n_modalidad->name = "Regular e";
+                $n_modalidad->name = "Regular E";
                 $n_modalidad->descripcion = "Pago del Curso en 2 cuotas";
                 $n_modalidad->curso_id = 1;
                 $n_modalidad->save();

@@ -13,4 +13,9 @@ class Gcuota extends Model
     {
         return $this->belongsTo(Cuota::class);
     }
+
+    public function grupo()
+    {
+        return $this->belongsTo(Grupo::class);
+    }
 }

@@ -46,8 +46,8 @@ Route::get('/cursos', function () {
 })->name('cursos');
 
 Route::get('/curso/{id}', function ($id) {
-    $curso = Curso::with('categoria', 'grupos', 'grupos.gcuotas', 'grupos.gcuotas.cuota', 'grupos.gcuotas.cuota.modalidad')->where('id','=', $id)->firstOrFail();
-    return $curso;
+    $curso = Curso::with('categoria', 'grupos.gcuotas.cuota.modalidad', 'modalidads.cuotas.gcuotas.grupo')->where('id','=', $id)->first();
+    //return $curso;
     return view('silicon-front.curso', compact('curso'));
 })->name('curso');
 
