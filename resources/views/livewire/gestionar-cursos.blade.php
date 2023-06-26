@@ -444,9 +444,12 @@
                                                                 <td class="text-center">{{$key+1}}</td>
                                                                 <td class="text-center">{{$lcuota->name}}</td>
                                                                 <td class="text-center">{{$lcuota->monto}}</td>
-                                                                <td class="text-center">{{$lcuota->descripcion}}</td>
+                                                                <td class="text-center">@foreach ($lcuota->gcuotas as $rcuota)
+                                                                    <button class="btn btn-secondary" wire:click="$emit('ventana_eliminar_gcuota',{{$rcuota->id}})">{{$rcuota->grupo->name}}</button>
+                                                                @endforeach</td>
                                                                 <td class="text-center">{{$lcuota->fvencimiento}}</td>
                                                                 <td class="text-center">
+                                                                    <button class="btn btn-secondary" id="agregar-grupo-{{$lcuota->id}}" wire:click='agregar_gcuota({{$lcuota->id}})'><i class="fas fa-file"></i></button>
                                                                     <button class="btn btn-warning" id="editar-cuota-{{$lcuota->id}}" wire:click='editar_cuota({{$lcuota->id}})'><i class="fas fa-edit"></i></button>
                                                                     <button class="btn btn-danger" id="eliminar-cuota-{{$lcuota->id}}"><i class="fas fa-trash"></i></button>
                                                                 </td>
@@ -479,6 +482,26 @@
                                                 </button>
                                             </div>
                                         </div>
+                                        @if ($lista_grupos)
+                                        <div class="row m-4 align-items-end">
+                                            <div class="col-12 col-sm-3">
+                                                <label for="curso_categoria_id" class="fw-bold">Elegir Grupo : <span
+                                                    class="text-danger">(*)</span></label>
+                                                <select id="curso_categoria_id" class="form-select" wire:model="gcuota.grupo_id">
+                                                    <option value="">Elegir</option>
+                                                    @foreach ($lista_grupos as $grupo)
+                                                    <option value="{{$grupo->id}}">{{$grupo->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                                @error('gcuota.grupo_id')
+                                                    <div class="p-1"> {{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12 col-sm-3">
+                                                <button class="btn btn-primary" wire:click='save_gcuota()'>Agregar Grupo</button>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

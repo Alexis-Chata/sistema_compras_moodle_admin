@@ -9,10 +9,11 @@ class Cuota extends Model
 {
     use HasFactory;
 
-    public function grupos()
+    public function gcuotas()
     {
-        return $this->hasMany(Grupo::class);
+        return $this->hasMany(Gcuota::class);
     }
+
 
     public function modalidad()
     {

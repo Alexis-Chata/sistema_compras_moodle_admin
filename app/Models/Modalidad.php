@@ -18,4 +18,9 @@ class Modalidad extends Model
     {
         return $this->hasMany(Cmatricula::class);
     }
+
+    public function curso()
+    {
+        return $this->belongsTo(Curso::class);
+    }
 }

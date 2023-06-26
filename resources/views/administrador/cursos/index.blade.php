@@ -65,6 +65,22 @@
                 }
             })
         })
+
+        livewire.on('ventana_eliminar_gcuota', gcuota_id => {
+            Swal.fire({
+                title: 'Estas Seguro',
+                text: "una vez se elimine no se podra restaurar",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, !eliminar esto!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    livewire.emitTo('gestionar-cursos', 'eliminar_gcuota', gcuota_id);
+                }
+            })
+        })
     </script>
     <script>
         livewire.on('notificar_eliminacion', accion => {
