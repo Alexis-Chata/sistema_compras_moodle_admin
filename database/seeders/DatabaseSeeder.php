@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Gcuota;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GrupoSeeder::class);
         $this->call(ModalidadSeeder::class);
         $this->call(CuotaSeeder::class);
+        $this->call(GcuotaSeeder::class);
         $this->call(CmatriculaSeeder::class);
     }
 }

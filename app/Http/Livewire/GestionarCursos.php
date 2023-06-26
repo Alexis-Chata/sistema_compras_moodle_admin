@@ -4,9 +4,12 @@ namespace App\Http\Livewire;
 
 use App\Clases\CourseMoodle;
 use App\Clases\UserMoodle;
+use App\Models\Categoria;
+use App\Models\Cuota;
 use App\Models\Curso;
 use App\Models\Grupo;
 use App\Models\Modalidad;
+use App\Models\Mpago;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -20,6 +23,7 @@ class GestionarCursos extends Component
     public Curso $curso;
     public Grupo $grupo;
     public Modalidad $modalidad;
+    public Cuota $cuota;
     public $scurso;
     public $mensaje;
     public $imagen_curso,$iteration = 1;
@@ -32,6 +36,7 @@ class GestionarCursos extends Component
     public $modal_titulo = 'Crear';
     public $modal_titulo_grupo = 'Crear';
     public $modal_titulo_modalidad = 'Crear';
+    public $modal_titulo_cuota = 'Crear';
 
 
     #escuchador
@@ -41,6 +46,7 @@ class GestionarCursos extends Component
         'curso.name' => '',
         'curso.shortname' => '',
         'curso.descripcion' => '',
+        'curso.categoria_id' => '',
         'grupo.name' => '',
         'grupo.descripcion' => '',
         'grupo.calificacion' => '',
@@ -49,6 +55,9 @@ class GestionarCursos extends Component
         'grupo.lecturas' => '',
         'modalidad.name' => '',
         'modalidad.descripcion' => '',
+        'cuota.name' => '',
+        'cuota.monto' => '',
+        'cuota.fvencimiento' => '',
     ];
     protected $rules_curso = [
         'curso.name' => 'required|string',
@@ -69,8 +78,14 @@ class GestionarCursos extends Component
         'modalidad.descripcion' => 'required',
     ];
 
+    protected $rules_cuota = [
+        'cuota.name' => 'required',
+        'cuota.monto' => 'required',
+        'cuota.fvencimiento' => 'required',
+    ];
     protected $validationAttributes = [
         'curso.name' => 'Nombre',
+        'curso.categoria_id' => 'Categoria',
         'curso.shortname' => 'El nombre del curso no se puede repetir',
         'grupo.name' => 'Nombre',
     ];
@@ -90,6 +105,7 @@ class GestionarCursos extends Component
         $this->curso = new Curso();
         $this->grupo = new Grupo();
         $this->modalidad = new Modalidad();
+        $this->cuota = new Cuota();
     }
 
 
@@ -130,6 +146,7 @@ class GestionarCursos extends Component
     }
 
     public function modal_modalidad($modalidad_id = null ){
+        $this->cuota = new Cuota();
         if($modalidad_id == null)
         {
             $this->modalidad = new Modalidad();
@@ -139,6 +156,10 @@ class GestionarCursos extends Component
             $this->modalidad = Modalidad::find($modalidad_id);
             $this->modal_titulo_modalidad = 'Modificar';
         }
+    }
+    public function editar_cuota($cuota_id){
+            $this->cuota = Cuota::find($cuota_id);
+            $this->modal_titulo_cuota = 'Modificar';
     }
 
     public function save()
@@ -252,6 +273,15 @@ class GestionarCursos extends Component
 
     }
 
+    public function save_cuota(){
+        $this->validate($this->rules_cuota);
+        $this->cuota->modalidad_id = $this->modalidad->id;
+        $this->cuota->save();
+        $this->cuota = new Cuota();
+        $this->modal_titulo_cuota = 'Crear';
+        $this->modal_modalidad($this->modalidad->id);
+    }
+
     public function seleccionar_curso(Curso $curso){
         $curso = Curso::find($curso->id);
         $this->scurso = $curso;
@@ -267,6 +297,14 @@ class GestionarCursos extends Component
             $this->mensaje = "no se puede eliminar un grupo que tiene inscritos solicitar  administración";
         }
 
+    }
+
+    public function eliminar_cuota(Cuota $cuota)
+    {
+        $mpagos = Mpago::where('cuota_id',$cuota->id)->get();
+        if ($mpagos->count() == 0) {
+            $cuota->delete();
+        }
     }
 
     public function eliminar_imagen()
@@ -309,10 +347,11 @@ class GestionarCursos extends Component
 
     public function render()
     {
+        $categorias = Categoria::all();
         $cursos =Curso::Where(function($query) {
                         $query->Where('name', 'like', '%' . $this->search.'%');
                     })->paginate($this->n_pagina);
 
-        return view('livewire.gestionar-cursos',compact('cursos'));
+        return view('livewire.gestionar-cursos',compact('cursos','categorias'));
     }
 }
