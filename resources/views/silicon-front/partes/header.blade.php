@@ -4,8 +4,8 @@
         <div class="container-fluid px-3 px-xl-5">
             <!-- Logo START -->
             <a class="navbar-brand" href="{{ env('APP_URL', 'http://localhost') }}">
-                <img class="light-mode-item navbar-brand-item" src="./silicon-front/silicon/logo.svg" alt="logo">
-                <img class="dark-mode-item navbar-brand-item" src="./silicon-front/silicon/logo-light.svg" alt="logo">
+                <img class="light-mode-item navbar-brand-item" src="{{ asset('silicon-front/silicon/logo.svg') }}" alt="logo">
+                <img class="dark-mode-item navbar-brand-item" src="{{ asset('silicon-front/silicon/logo-light.svg') }}" alt="logo">
             </a>
             <!-- Logo END -->
 
@@ -99,7 +99,7 @@
                                             <hr> <!-- Divider -->
                                             <!-- Dropdown item -->
                                             <div class="d-flex mb-4 position-relative">
-                                                <img src="./silicon-front/silicon/uni-logo-01.svg" class="icon-md"
+                                                <img src="{{ asset('silicon-front/silicon/uni-logo-01.svg') }}" class="icon-md"
                                                     alt="">
                                                 <div class="ms-3">
                                                     <a class="stretched-link h6 mb-0" href="#">American
@@ -109,7 +109,7 @@
                                             </div>
                                             <!-- Dropdown item -->
                                             <div class="d-flex mb-4 position-relative">
-                                                <img src="./silicon-front/silicon/uni-logo-02.svg" class="icon-md"
+                                                <img src="{{ asset('silicon-front/silicon/uni-logo-02.svg') }}" class="icon-md"
                                                     alt="">
                                                 <div class="ms-3">
                                                     <a class="stretched-link h6 mb-0" href="#">Indiana
@@ -119,7 +119,7 @@
                                             </div>
                                             <!-- Dropdown item -->
                                             <div class="d-flex mb-4 position-relative">
-                                                <img src="./silicon-front/silicon/uni-logo-03.svg" class="icon-md"
+                                                <img src="{{ asset('silicon-front/silicon/uni-logo-03.svg') }}" class="icon-md"
                                                     alt="">
                                                 <div class="ms-3">
                                                     <a class="stretched-link h6 mb-0" href="#">College of
@@ -129,7 +129,7 @@
                                             </div>
                                             <!-- Dropdown item -->
                                             <div class="d-flex mb-4 position-relative">
-                                                <img src="./silicon-front/silicon/uni-logo-01.svg" class="icon-md"
+                                                <img src="{{ asset('silicon-front/silicon/uni-logo-01.svg') }}" class="icon-md"
                                                     alt="">
                                                 <div class="ms-3">
                                                     <a class="stretched-link h6 mb-0" href="#">Andeerson
@@ -139,7 +139,7 @@
                                             </div>
                                             <!-- Dropdown item -->
                                             <div class="d-flex position-relative">
-                                                <img src="./silicon-front/silicon/uni-logo-04.svg" class="icon-md"
+                                                <img src="{{ asset('silicon-front/silicon/uni-logo-04.svg') }}" class="icon-md"
                                                     alt="">
                                                 <div class="ms-3">
                                                     <a class="stretched-link h6 mb-0" href="#">University
@@ -201,7 +201,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="card bg-blue rounded-0 rounded-bottom p-3 position-relative overflow-hidden"
-                                                style="background:url(silicon-front/assets/images/pattern/05.png) no-repeat center center; background-size:cover;">
+                                                style="background:url({{ asset('silicon-front/assets/images/pattern/05.png') }}) no-repeat center center; background-size:cover;">
                                                 <!-- SVG decoration -->
                                                 <figure
                                                     class="position-absolute bottom-0 end-0 mb-n4 d-none d-md-block">
@@ -748,18 +748,18 @@
                                     <h6 class="mb-0">Download Eduport</h6>
                                     <hr>
                                     <!-- Image -->
-                                    <img src="./silicon-front/silicon/14.svg" alt="">
+                                    <img src="{{ asset('silicon-front/silicon/14.svg') }}" alt="">
 
                                     <!-- Download button -->
                                     <div class="row g-2 justify-content-center mt-3">
                                         <!-- Google play store button -->
                                         <div class="col-6 col-sm-4 col-xxl-6">
-                                            <a href="#"> <img src="./silicon-front/silicon/google-play.svg"
+                                            <a href="#"> <img src="{{ asset('silicon-front/silicon/google-play.svg') }}"
                                                     class="btn-transition" alt="google-store"> </a>
                                         </div>
                                         <!-- App store button -->
                                         <div class="col-6 col-sm-4 col-xxl-6">
-                                            <a href="#"> <img src="./silicon-front/silicon/app-store.svg"
+                                            <a href="#"> <img src="{{ asset('silicon-front/silicon/app-store.svg') }}"
                                                     class="btn-transition" alt="app-store"> </a>
                                         </div>
                                     </div>
@@ -772,7 +772,7 @@
                                         <!-- Avatar -->
                                         <div class="avatar avatar-xs me-2">
                                             <img class="avatar-img rounded-circle"
-                                                src="./silicon-front/silicon/09.jpg" alt="avatar">
+                                                src="{{ asset('silicon-front/silicon/09.jpg') }}" alt="avatar">
                                         </div>
                                         <!-- Info -->
                                         The personality development class starts at 2:00 pm, click to <a href="#"
