@@ -12,10 +12,10 @@
                 <div class="col-lg-8">
                     <!-- Badge -->
                     <h6 class="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">{{
-                        $curso->categoria->name }}</h6>
+                        $modalidads->first()->curso->categoria->name }}</h6>
                     <!-- Title -->
-                    <h1>{{ $curso->name }}</h1>
-                    <p>{{ $curso->descripcion }}</p>
+                    <h1>{{ $modalidads->first()->curso->name }}</h1>
+                    <p>{{ $modalidads->first()->curso->descripcion }}</p>
                     <!-- Content -->
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i
@@ -48,11 +48,11 @@
                             <ul class="nav nav-pills nav-tabs-line py-0" id="course-pills-tab" role="tablist">
                                 <!-- Tab item -->
                                 <li class="nav-item me-2 me-sm-4" role="presentation">
-                                    <button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-1"
-                                        data-bs-toggle="pill" data-bs-target="#course-pills-1" type="button" role="tab"
-                                        aria-controls="course-pills-1" aria-selected="true">Overview</button>
+                                    <button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-0"
+                                        data-bs-toggle="pill" data-bs-target="#course-pills-0" type="button" role="tab"
+                                        aria-controls="course-pills-0" aria-selected="true">Overview</button>
                                 </li>
-                                @foreach ($curso->modalidads as $modalidad)
+                                @foreach ($modalidads as $modalidad)
                                 <!-- Tab item -->
                                 <li class="nav-item me-2 me-sm-4" role="presentation">
                                     <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-{{ $modalidad->id }}"
@@ -61,7 +61,7 @@
                                         aria-selected="false">{{ $modalidad->name }}</button>
                                 </li>
                                 @endforeach
-                                <!-- Tab item -->
+                                {{-- <!-- Tab item -->
                                 <li class="nav-item me-2 me-sm-4" role="presentation">
                                     <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-2" data-bs-toggle="pill"
                                         data-bs-target="#course-pills-2" type="button" role="tab"
@@ -90,7 +90,7 @@
                                     <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-6" data-bs-toggle="pill"
                                         data-bs-target="#course-pills-6" type="button" role="tab"
                                         aria-controls="course-pills-6" aria-selected="false">Comment</button>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                         <!-- Tabs END -->
@@ -99,8 +99,8 @@
                         <div class="card-body p-4">
                             <div class="tab-content pt-2" id="course-pills-tabContent">
                                 <!-- Content START -->
-                                <div class="tab-pane fade show active" id="course-pills-1" role="tabpanel"
-                                    aria-labelledby="course-pills-tab-1">
+                                <div class="tab-pane fade show active" id="course-pills-0" role="tabpanel"
+                                    aria-labelledby="course-pills-tab-0">
                                     <!-- Course detail START -->
                                     <h5 class="mb-3">Course Description</h5>
                                     <p class="mb-3">Welcome to the <strong> Digital Marketing Ultimate Course Bundle -
@@ -165,7 +165,7 @@
                                 </div>
                                 <!-- Content END -->
 
-                                @foreach ($curso->modalidads as $modalidad)
+                                @foreach ($modalidads as $modalidad)
                                 <!-- Content START -->
                                 <div class="tab-pane fade" id="course-pills-{{ $modalidad->id }}" role="tabpanel"
                                     aria-labelledby="course-pills-tab-{{ $modalidad->id }}">

@@ -21,6 +21,11 @@ class Curso extends Model
         return $this->hasMany(Modalidad::class);
     }
 
+    public function cuotas()
+    {
+        return $this->hasManyThrough(Cuota::class, Modalidad::class);
+    }
+
     public function gruposlastlimit()
     {
         return $this->hasMany(Grupo::class)->latest()->take(8);
