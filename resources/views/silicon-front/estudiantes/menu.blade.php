@@ -35,8 +35,11 @@
                         href="instructor-setting.html"><i class="bi bi-gear fa-fw me-2"></i>Settings</a>
                     <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"
                         href="instructor-delete-account.html"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
-                    <a class="list-group-item text-danger bg-danger-soft-hover" href="#"><i
+                        <form method="POST" action="{{ route('logout') }}" x-data>
+                            @csrf
+                    <a class="list-group-item text-danger bg-danger-soft-hover" href="{{ route('logout') }}" @click.prevent="$root.submit();"><i
                             class="fas fa-sign-out-alt fa-fw me-2"></i>Sign Out</a>
+                        </form>
                     <!-- Collapse menu -->
                     <a class="list-group-item" data-bs-toggle="collapse" href="#collapseauthentication" role="button"
                         aria-expanded="false" aria-controls="collapseauthentication">
