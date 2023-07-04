@@ -348,14 +348,14 @@
                         <!-- Icon logos START -->
                         <div
                             class="p-2 bg-white shadow rounded-3 position-absolute top-50 start-0 translate-middle-y mt-n7 d-none d-sm-block">
-                            <img src="./silicon-front/silicon/science.svg" alt="Icon">
+                            <img src="{{ asset('silicon-front/silicon/science.svg') }}" alt="Icon">
                         </div>
                         <div class="p-2 bg-white shadow rounded-3 position-absolute top-0 end-0 me-5">
-                            <img src="./silicon-front/silicon/angular.svg" alt="Icon">
+                            <img src="{{ asset('silicon-front/silicon/angular.svg') }}" alt="Icon">
                         </div>
                         <div
                             class="p-2 bg-white shadow rounded-3 position-absolute top-50 end-0 translate-middle-y mt-5 ms-5 d-none d-lg-block z-index-9">
-                            <img src="./silicon-front/silicon/figma.svg" alt="Icon">
+                            <img src="{{ asset('silicon-front/silicon/figma.svg') }}" alt="Icon">
                         </div>
                         <!-- Icon logos END -->
 
@@ -377,25 +377,25 @@
 
                         <!-- Active student -->
                         <div class="p-3 bg-success d-inline-block rounded-4 shadow-lg position-absolute top-50 end-0 translate-middle-y mt-n7 z-index-1 d-none d-md-block"
-                            style="background:url(silicon-front/assets/images/pattern/01.png) no-repeat center center; background-size:cover;">
+                            style="background:url({{ asset('silicon-front/assets/images/pattern/01.png') }}) no-repeat center center; background-size:cover;">
                             <p class="text-white">Our daily new students</p>
                             <!-- Avatar group -->
                             <ul class="avatar-group mb-0">
                                 <li class="avatar avatar-sm">
                                     <img class="avatar-img rounded-circle border-white"
-                                        src="./silicon-front/silicon/01.jpg" alt="avatar">
+                                        src="{{ asset('silicon-front/silicon/01.jpg') }}" alt="avatar">
                                 </li>
                                 <li class="avatar avatar-sm">
                                     <img class="avatar-img rounded-circle border-white"
-                                        src="./silicon-front/silicon/02.jpg" alt="avatar">
+                                        src="{{ asset('silicon-front/silicon/02.jpg') }}" alt="avatar">
                                 </li>
                                 <li class="avatar avatar-sm">
                                     <img class="avatar-img rounded-circle border-white"
-                                        src="./silicon-front/silicon/03.jpg" alt="avatar">
+                                        src="{{ asset('silicon-front/silicon/03.jpg') }}" alt="avatar">
                                 </li>
                                 <li class="avatar avatar-sm">
                                     <img class="avatar-img rounded-circle border-white"
-                                        src="./silicon-front/silicon/04.jpg" alt="avatar">
+                                        src="{{ asset('silicon-front/silicon/04.jpg') }}" alt="avatar">
                                 </li>
                                 <li class="avatar avatar-sm">
                                     <div class="avatar-img rounded-circle border-white bg-primary">
@@ -407,7 +407,7 @@
                         </div>
                         <!-- Image -->
                         <div class="position-relative">
-                            <img src="./silicon-front/silicon/07.png" alt="">
+                            <img src="{{ asset('silicon-front/silicon/07.png') }}" alt="">
                         </div>
                     </div>
                     <!-- Right content END -->
@@ -686,7 +686,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/15.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/15.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -734,7 +734,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/04.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/04.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Billy Vasquez</a></p>
@@ -754,7 +754,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/17.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/17.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -802,7 +802,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/09.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/09.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Lori Stevens</a></p>
@@ -822,7 +822,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/16.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/16.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -870,7 +870,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/01.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/01.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Frances Guerrero</a></p>
@@ -890,7 +890,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/14.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/14.jp') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Ribbon -->
                                                 <div class="ribbon mt-3"><span>Free</span></div>
@@ -940,7 +940,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/10(1).jpg"
+                                                                    src="{{ asset('silicon-front/silicon/10(1).jpg') }}"
                                                                     alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
@@ -961,7 +961,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/15.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/15.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -1009,7 +1009,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/04.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/04.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Billy Vasquez</a></p>
@@ -1029,7 +1029,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/17.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/17.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -1077,7 +1077,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/09.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/09.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Lori Stevens</a></p>
@@ -1097,7 +1097,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/16.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/16.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -1145,7 +1145,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/01.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/01.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Frances Guerrero</a></p>
@@ -1166,7 +1166,7 @@
                                         <div class="tns-item" id="tns1-item0" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/14.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/14.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Ribbon -->
                                                 <div class="ribbon mt-3"><span>Free</span></div>
@@ -1216,7 +1216,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/10(1).jpg"
+                                                                    src="{{ asset('silicon-front/silicon/10(1).jpg') }}"
                                                                     alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
@@ -1240,7 +1240,7 @@
                                         <div class="tns-item" id="tns1-item1" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/15.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/15.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -1288,7 +1288,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/04.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/04.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Billy Vasquez</a></p>
@@ -1311,7 +1311,7 @@
                                         <div class="tns-item tns-slide-active" id="tns1-item2">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/17.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/17.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -1359,7 +1359,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/09.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/09.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Lori Stevens</a></p>
@@ -1382,7 +1382,7 @@
                                         <div class="tns-item tns-slide-active" id="tns1-item3">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/16.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/16.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -1430,7 +1430,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/01.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/01.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Frances Guerrero</a></p>
@@ -1451,7 +1451,7 @@
                                         <div class="tns-item tns-slide-cloned tns-slide-active">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/14.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/14.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Ribbon -->
                                                 <div class="ribbon mt-3"><span>Free</span></div>
@@ -1501,7 +1501,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/10(1).jpg"
+                                                                    src="{{ asset('silicon-front/silicon/10(1).jpg') }}"
                                                                     alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
@@ -1522,7 +1522,7 @@
                                         <div class="tns-item tns-slide-cloned tns-slide-active">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/15.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/15.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -1570,7 +1570,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/04.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/04.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Billy Vasquez</a></p>
@@ -1590,7 +1590,7 @@
                                         <div class="tns-item tns-slide-cloned tns-slide-active">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/17.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/17.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -1658,7 +1658,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/16.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/16.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -1706,7 +1706,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/01.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/01.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Frances Guerrero</a></p>
@@ -1726,7 +1726,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/14.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/14.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Ribbon -->
                                                 <div class="ribbon mt-3"><span>Free</span></div>
@@ -1776,7 +1776,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/10(1).jpg"
+                                                                    src="{{ asset('silicon-front/silicon/10(1).jpg') }}"
                                                                     alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
@@ -1797,7 +1797,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/15.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/15.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -1845,7 +1845,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/04.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/04.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Billy Vasquez</a></p>
@@ -1865,7 +1865,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="./silicon-front/silicon/17.jpg" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/17.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Card body -->
                                                 <div class="card-body pb-0">
@@ -1913,7 +1913,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <div class="avatar avatar-sm">
                                                                 <img class="avatar-img rounded-1"
-                                                                    src="./silicon-front/silicon/09.jpg" alt="avatar">
+                                                                    src="{{ asset('silicon-front/silicon/09.jpg') }}" alt="avatar">
                                                             </div>
                                                             <p class="mb-0 ms-2"><a href="#"
                                                                     class="h6 fw-light mb-0">Lori Stevens</a></p>

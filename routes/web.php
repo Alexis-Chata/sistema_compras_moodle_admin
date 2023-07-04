@@ -48,7 +48,7 @@ Route::get('/cursos', function () {
 
 Route::get('/curso/{id}', function ($id) {
     $modalidads = Modalidad::with('curso.categoria', 'curso.grupos', 'cuotas', 'gcuotas.grupo')->has('gcuotas', '>', 0)->whereCursoId($id)->get();
-    return $modalidads;
+    // return $modalidads;
     return view('silicon-front.curso', compact('modalidads'));
 })->name('curso');
 
