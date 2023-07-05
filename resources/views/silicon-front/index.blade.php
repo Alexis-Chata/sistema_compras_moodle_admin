@@ -890,7 +890,7 @@
                                         <div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
                                             <div class="card action-trigger-hover border bg-transparent">
                                                 <!-- Image -->
-                                                <img src="{{ asset('silicon-front/silicon/14.jp') }}" class="card-img-top"
+                                                <img src="{{ asset('silicon-front/silicon/14.jpg') }}" class="card-img-top"
                                                     alt="course image">
                                                 <!-- Ribbon -->
                                                 <div class="ribbon mt-3"><span>Free</span></div>
