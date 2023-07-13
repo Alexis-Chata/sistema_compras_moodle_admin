@@ -12,10 +12,10 @@
                 <div class="col-lg-8">
                     <!-- Badge -->
                     <h6 class="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">{{
-                        $curso->categoria->name }}</h6>
+                        $modalidads->first()->curso->categoria->name }}</h6>
                     <!-- Title -->
-                    <h1>{{ $curso->name }}</h1>
-                    <p>{{ $curso->descripcion }}</p>
+                    <h1>{{ $modalidads->first()->curso->name }}</h1>
+                    <p>{{ $modalidads->first()->curso->descripcion }}</p>
                     <!-- Content -->
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i
@@ -48,20 +48,20 @@
                             <ul class="nav nav-pills nav-tabs-line py-0" id="course-pills-tab" role="tablist">
                                 <!-- Tab item -->
                                 <li class="nav-item me-2 me-sm-4" role="presentation">
-                                    <button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-1"
-                                        data-bs-toggle="pill" data-bs-target="#course-pills-1" type="button" role="tab"
-                                        aria-controls="course-pills-1" aria-selected="true">Overview</button>
+                                    <button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-0"
+                                        data-bs-toggle="pill" data-bs-target="#course-pills-0" type="button" role="tab"
+                                        aria-controls="course-pills-0" aria-selected="true">Overview</button>
                                 </li>
-                                @foreach ($curso->modalidads as $modalidad)
+                                @foreach ($modalidads as $modalidad)
                                 <!-- Tab item -->
                                 <li class="nav-item me-2 me-sm-4" role="presentation">
-                                    <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-2" data-bs-toggle="pill"
-                                        data-bs-target="#course-pills-2" type="button" role="tab"
-                                        aria-controls="course-pills-2" aria-selected="false">{{ $modalidad->name
-                                        }}</button>
+                                    <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-{{ $modalidad->id }}"
+                                        data-bs-toggle="pill" data-bs-target="#course-pills-{{ $modalidad->id }}"
+                                        type="button" role="tab" aria-controls="course-pills-{{ $modalidad->id }}"
+                                        aria-selected="false">{{ $modalidad->name }}</button>
                                 </li>
                                 @endforeach
-                                <!-- Tab item -->
+                                {{-- <!-- Tab item -->
                                 <li class="nav-item me-2 me-sm-4" role="presentation">
                                     <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-2" data-bs-toggle="pill"
                                         data-bs-target="#course-pills-2" type="button" role="tab"
@@ -90,7 +90,7 @@
                                     <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-6" data-bs-toggle="pill"
                                         data-bs-target="#course-pills-6" type="button" role="tab"
                                         aria-controls="course-pills-6" aria-selected="false">Comment</button>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                         <!-- Tabs END -->
@@ -99,8 +99,8 @@
                         <div class="card-body p-4">
                             <div class="tab-content pt-2" id="course-pills-tabContent">
                                 <!-- Content START -->
-                                <div class="tab-pane fade show active" id="course-pills-1" role="tabpanel"
-                                    aria-labelledby="course-pills-tab-1">
+                                <div class="tab-pane fade show active" id="course-pills-0" role="tabpanel"
+                                    aria-labelledby="course-pills-tab-0">
                                     <!-- Course detail START -->
                                     <h5 class="mb-3">Course Description</h5>
                                     <p class="mb-3">Welcome to the <strong> Digital Marketing Ultimate Course Bundle -
@@ -164,6 +164,63 @@
 
                                 </div>
                                 <!-- Content END -->
+
+                                @foreach ($modalidads as $modalidad)
+                                <!-- Content START -->
+                                <div class="tab-pane fade" id="course-pills-{{ $modalidad->id }}" role="tabpanel"
+                                    aria-labelledby="course-pills-tab-{{ $modalidad->id }}">
+                                    <div class="card">
+                                        <!-- Card header -->
+                                        <div class="card-header border-bottom p-0 pb-3">
+                                            <!-- Title and select -->
+                                            <div class="d-sm-flex justify-content-between align-items-center">
+                                                <h4 class="mb-0">{{ $modalidad->name }}</h4>
+
+                                                <form class="col-sm-6 col-lg-3 bg-light-input">
+                                                    <!-- Buttons -->
+                                                    <div class="d-sm-flex justify-content-sm-between">
+                                                        <a href="#" class="btn btn-success mb-0">Comprar</a>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!-- Card body -->
+                                        <div class="card-body p-0 pt-3">
+                                            @foreach ( $modalidad->cuotas as $cuota)
+                                            @foreach ( $cuota->gcuotas as $gcuota)
+                                            <!-- Note item -->
+                                            <div class="row g-4">
+                                                <!-- Image -->
+                                                <div class="col-sm-2 col-xl-1">
+                                                    <img src="{{ asset('silicon-front/assets/images/courses/4by3/01.jpg') }}"
+                                                        class="rounded flex-shrink-0" alt="">
+                                                </div>
+                                                <!-- Content -->
+                                                <div class="col-sm-10 col-xl-11">
+                                                    <h5>{{ ($gcuota->grupo->name) }} - {{ $cuota->name }}</h5>
+                                                    <p>{{ ($gcuota->grupo->descripcion) }}</p>
+                                                    <!-- Buttons -->
+                                                    {{-- <div class="hstack gap-3 flex-wrap">
+                                                        <a href="#" class="btn btn-sm btn-primary mb-0"><i
+                                                                class="bi bi-play-fill me-2"></i>Play</a>
+                                                        <a href="#" class="text-success mb-0"><i
+                                                                class="bi bi-pencil-square me-2"></i>Edit</a>
+                                                        <a href="#" class="text-danger mb-0"><i
+                                                                class="bi bi-trash me-2"></i>Delete</a>
+                                                    </div> --}}
+                                                </div>
+                                            </div>
+
+                                            <hr> <!-- Divider -->
+
+                                            @endforeach
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content END -->
+                                @endforeach
 
                                 <!-- Content START -->
                                 <div class="tab-pane fade" id="course-pills-2" role="tabpanel"
@@ -1791,6 +1848,7 @@
                                     </div>
                                 </div>
 
+                                {{--
                                 <!-- Card body -->
                                 <div class="card-body px-3">
                                     <!-- Info -->
@@ -1833,14 +1891,14 @@
                                         <a href="#" class="btn btn-outline-primary mb-0">Free trial</a>
                                         <a href="#" class="btn btn-success mb-0">Buy course</a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <!-- Video END -->
 
                             <!-- Course info START -->
                             <div class="card card-body shadow p-4 mb-4">
                                 <!-- Title -->
-                                <h4 class="mb-3">This course includes</h4>
+                                <h4 class="mb-3">Este curso incluye</h4>
                                 <ul class="list-group list-group-borderless">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         <span class="h6 fw-light mb-0"><i
@@ -1931,7 +1989,7 @@
                             <!-- Recently Viewed END -->
 
                             <!-- Tags START -->
-                            <div class="card card-body shadow p-4">
+                            {{-- <div class="card card-body shadow p-4">
                                 <h4 class="mb-3">Popular Tags</h4>
                                 <ul class="list-inline mb-0">
                                     <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm"
@@ -1951,7 +2009,7 @@
                                     <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm"
                                             href="#">machine learning</a> </li>
                                 </ul>
-                            </div>
+                            </div> --}}
                             <!-- Tags END -->
                         </div>
                     </div><!-- Row End -->

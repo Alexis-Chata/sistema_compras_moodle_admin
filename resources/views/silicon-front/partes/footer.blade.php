@@ -7,8 +7,8 @@
             <div class="col-lg-3">
                 <!-- logo -->
                 <a class="me-0" href="{{ env('APP_URL', 'http://localhost') }}">
-                    <img class="light-mode-item h-40px" src="./silicon-front/silicon/logo.svg" alt="logo">
-                    <img class="dark-mode-item h-40px" src="./silicon-front/silicon/logo-light.svg" alt="logo">
+                    <img class="light-mode-item h-40px" src="{{ asset('silicon-front/silicon/logo.svg') }}" alt="logo">
+                    <img class="dark-mode-item h-40px" src="{{ asset('silicon-front/silicon/logo-light.svg') }}" alt="logo">
                 </a>
                 <p class="my-3">Eduport education theme, built specifically for the education centers which is
                     dedicated to teaching and involve learners.</p>
@@ -80,11 +80,11 @@
                 <div class="row g-2 mt-2">
                     <!-- Google play store button -->
                     <div class="col-6 col-sm-4 col-md-3 col-lg-6">
-                        <a href="#"> <img src="./silicon-front/silicon/google-play.svg" alt=""> </a>
+                        <a href="#"> <img src="{{ asset('silicon-front/silicon/google-play.svg') }}" alt=""> </a>
                     </div>
                     <!-- App store button -->
                     <div class="col-6 col-sm-4 col-md-3 col-lg-6">
-                        <a href="#"> <img src="./silicon-front/silicon/app-store.svg" alt="app-store"> </a>
+                        <a href="#"> <img src="{{ asset('silicon-front/silicon/app-store.svg') }}" alt="app-store"> </a>
                     </div>
                 </div> <!-- Row END -->
             </div>
@@ -113,13 +113,13 @@
                                     </a>
                                     <ul class="dropdown-menu min-w-auto" aria-labelledby="languageSwitcher">
                                         <li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2"
-                                                    src="./silicon-front/silicon/uk.svg" alt="">English</a>
+                                                    src="{{ asset('silicon-front/silicon/uk.svg') }}" alt="">English</a>
                                         </li>
                                         <li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2"
-                                                    src="./silicon-front/silicon/gr.svg" alt="">German </a>
+                                                    src="{{ asset('silicon-front/silicon/gr.svg') }}" alt="">German </a>
                                         </li>
                                         <li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2"
-                                                    src="./silicon-front/silicon/sp.svg" alt="">French</a>
+                                                    src="{{ asset('silicon-front/silicon/sp.svg') }}" alt="">French</a>
                                         </li>
                                     </ul>
                                 </div>

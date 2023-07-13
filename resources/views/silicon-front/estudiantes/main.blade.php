@@ -9,7 +9,7 @@
         <section class="pt-0">
             <div class="container-fluid px-0">
                 <div class="card bg-blue h-100px h-md-200px rounded-0"
-                    style="background:url(silicon-front/assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
+                    style="background:url({{ asset('silicon-front/assets/images/pattern/04.png') }}) no-repeat center center; background-size:cover;">
                 </div>
             </div>
             <div class="container mt-n4">
@@ -21,7 +21,7 @@
                                 <div class="col-auto">
                                     <div class="avatar avatar-xxl position-relative mt-n3">
                                         <img class="avatar-img rounded-circle border border-white border-3 shadow"
-                                            src="silicon-front/assets/images/avatar/09.jpg" alt="">
+                                            src="{{ asset('silicon-front/assets/images/avatar/09.jpg') }}" alt="">
                                         <span
                                             class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
                                     </div>

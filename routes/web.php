@@ -3,6 +3,7 @@
 use App\Models\Categoria;
 use App\Models\Curso;
 use App\Models\Grupo;
+use App\Models\Modalidad;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,9 +47,9 @@ Route::get('/cursos', function () {
 })->name('cursos');
 
 Route::get('/curso/{id}', function ($id) {
-    $curso = Curso::with('categoria', 'grupos.gcuotas.cuota.modalidad', 'modalidads.cuotas.gcuotas.grupo')->where('id','=', $id)->first();
-    //return $curso;
-    return view('silicon-front.curso', compact('curso'));
+    $modalidads = Modalidad::with('curso.categoria', 'curso.grupos', 'cuotas', 'gcuotas.grupo')->has('gcuotas', '>', 0)->whereCursoId($id)->get();
+    // return $modalidads;
+    return view('silicon-front.curso', compact('modalidads'));
 })->name('curso');
 
 Route::get('/mycursos', function () {

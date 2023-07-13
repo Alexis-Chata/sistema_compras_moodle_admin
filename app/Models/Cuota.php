@@ -14,6 +14,7 @@ class Cuota extends Model
         return $this->hasMany(Gcuota::class);
     }
 
+
     public function modalidad()
     {
         return $this->belongsTo(Modalidad::class);

@@ -10,7 +10,7 @@ class LoginResponse implements LoginResponseContract
 {
     public function toResponse($request): RedirectResponse {
         if (in_array("Estudiante", Auth::user()->getRoleNames()->toArray())) {
-            return redirect(route("mycursos"));
+            return redirect(route("dashboard"));
         }
         // otro caso
         return redirect(route("profile.show"));
