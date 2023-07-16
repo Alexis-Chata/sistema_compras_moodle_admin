@@ -37,6 +37,10 @@ Route::get('/', function () {
     return view('silicon-front.index', compact('categorias'));
 })->name('index');
 
+Route::get('/login', function () {
+    return view('silicon-front.login');
+})->name('login');
+
 Route::get('/carrito', function () {
     return view('silicon-front.cart');
 })->name('carrito');
@@ -52,15 +56,6 @@ Route::get('/curso/{id}', function ($id) {
     return view('silicon-front.curso', compact('modalidads'));
 })->name('curso');
 
-Route::get('/mycursos', function () {
-    $grupos = Grupo::paginate(12);
-    return view('silicon-front.estudiantes.mycursos', compact('grupos'));
-})->name('mycursos');
-
-Route::get('/dashboard', function () {
-    $grupos = Grupo::paginate(12);
-    return view('silicon-front.estudiantes.dashboard', compact('grupos'));
-})->name('dashboard');
 
 Route::middleware([
     'auth:sanctum',
@@ -70,4 +65,14 @@ Route::middleware([
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
+
+    Route::get('/mycursos', function () {
+        $grupos = Grupo::paginate(12);
+        return view('silicon-front.estudiantes.mycursos', compact('grupos'));
+    })->name('mycursos')->middleware('role:Estudiante');
+
+    Route::get('/dashboard', function () {
+        $grupos = Grupo::paginate(12);
+        return view('silicon-front.estudiantes.dashboard', compact('grupos'));
+    })->name('dashboard')->middleware('role:Estudiante');
 });
