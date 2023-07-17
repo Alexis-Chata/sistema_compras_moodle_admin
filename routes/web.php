@@ -5,6 +5,7 @@ use App\Models\Cuota;
 use App\Models\Curso;
 use App\Models\Grupo;
 use App\Models\Modalidad;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,6 +68,8 @@ Route::middleware([
     // })->name('dashboard');
 
     Route::get('/mycursos', function () {
+        $user = User::with('cmatriculas.modalidad.curso')->find(3);
+        return ($user);
         $grupos = Grupo::paginate(12);
         return view('silicon-front.estudiantes.mycursos', compact('grupos'));
     })->name('mycursos')->middleware('role:Estudiante');

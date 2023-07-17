@@ -62,6 +62,11 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-     #estudiantes - cursos
-     public function cmatriculas(){return $this->hasMany(Cmatricula::class);}
+
+    #estudiantes - cursos
+    public function cmatriculas()
+    {
+        return $this->hasMany(Cmatricula::class);
+    }
+
 }
