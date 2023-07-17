@@ -176,12 +176,8 @@
                                             <div class="d-sm-flex justify-content-between align-items-center">
                                                 <h4 class="mb-0">{{ $modalidad->name }}</h4>
 
-                                                <form class="col-sm-6 col-lg-3 bg-light-input">
-                                                    <!-- Buttons -->
-                                                    <div class="d-sm-flex justify-content-sm-between">
-                                                        <a href="#" class="btn btn-success mb-0">Comprar</a>
-                                                    </div>
-                                                </form>
+                                                <!-- Buttons -->
+                                                @livewire('additem', ['curso' => $modalidad->curso, 'modalidad' => $modalidad->name])
                                             </div>
                                         </div>
 
@@ -198,7 +194,7 @@
                                                 </div>
                                                 <!-- Content -->
                                                 <div class="col-sm-10 col-xl-11">
-                                                    <h5>{{ ($gcuota->grupo->name) }} - {{ $cuota->name }}</h5>
+                                                    <h5>{{ ($gcuota->grupo->name) }} - {{ $cuota->name }} <span>( $ {{ number_format($cuota->monto, 2) }} )</span></h5>
                                                     <p>{{ ($gcuota->grupo->descripcion) }}</p>
                                                     <!-- Buttons -->
                                                     {{-- <div class="hstack gap-3 flex-wrap">

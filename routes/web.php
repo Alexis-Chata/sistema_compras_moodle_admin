@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Categoria;
+use App\Models\Cuota;
 use App\Models\Curso;
 use App\Models\Grupo;
 use App\Models\Modalidad;
@@ -56,11 +57,10 @@ Route::get('/curso/{id}', function ($id) {
     return view('silicon-front.curso', compact('modalidads'));
 })->name('curso');
 
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
 ])->group(function () {
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
