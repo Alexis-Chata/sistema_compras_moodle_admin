@@ -149,7 +149,8 @@
                                 <p class="lead mb-4">¡Me alegro de verte! Inicie sesión con su cuenta.</p>
 
                                 <!-- Form START -->
-                                <form>
+                                <form method="POST" action="{{ route('login') }}">
+                                    @csrf
                                     <!-- Email -->
                                     <div class="mb-4">
                                         <label for="exampleInputEmail1" class="form-label">Email *</label>
@@ -157,9 +158,9 @@
                                             <span
                                                 class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                                                     class="bi bi-envelope-fill"></i></span>
-                                            <input type="email"
+                                            <input type="email" name="email"
                                                 class="form-control border-0 bg-light rounded-end ps-1"
-                                                placeholder="E-mail" id="exampleInputEmail1">
+                                                placeholder="E-mail" id="exampleInputEmail1" required autofocus autocomplete="username">
                                         </div>
                                     </div>
                                     <!-- Password -->
@@ -171,7 +172,7 @@
                                                     class="fas fa-lock"></i></span>
                                             <input type="password"
                                                 class="form-control border-0 bg-light rounded-end ps-1"
-                                                placeholder="password" id="inputPassword5">
+                                                placeholder="password" id="inputPassword5" name="password" required autocomplete="current-password" />
                                         </div>
                                         <div id="passwordHelpBlock" class="form-text">
                                             Su contraseña debe tener al menos 8 caracteres
@@ -180,19 +181,21 @@
                                     <!-- Check box -->
                                     <div class="mb-4 d-flex justify-content-between mb-4">
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
                                             <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
                                         </div>
+                                        @if (Route::has('password.request'))
                                         <div class="text-primary-hover">
-                                            <a href="forgot-password.html" class="text-secondary">
+                                            <a href="{{ route('password.request') }}" class="text-secondary">
                                                 <u>¿Olvidó su contraseña?</u>
                                             </a>
                                         </div>
+                                        @endif
                                     </div>
                                     <!-- Button -->
                                     <div class="align-items-center mt-0">
                                         <div class="d-grid">
-                                            <button class="btn btn-primary mb-0" type="button">Iniciar Sesión</button>
+                                            <button class="btn btn-primary mb-0" type="submit">Iniciar Sesión</button>
                                         </div>
                                     </div>
                                 </form>
@@ -222,7 +225,7 @@
 							--}}
                                 <!-- Sign up link -->
                                 <div class="mt-4 text-center">
-                                    <span>¿No tienes una cuenta? <a href="sign-up.html">Regístrese aquí</a></span>
+                                    <span>¿No tienes una cuenta? <a href="{{ route('register') }}">Regístrese aquí</a></span>
                                 </div>
                             </div>
                         </div> <!-- Row END -->
