@@ -94,48 +94,6 @@
 
                         <!-- Table body START -->
                         <tbody>
-                            <!-- Table item -->
-                            <tr>
-                                <!-- Table data -->
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <!-- Image -->
-                                        <div class="w-100px">
-                                            <img src="silicon-front/assets/images/courses/4by3/08.jpg" class="rounded"
-                                                alt="">
-                                        </div>
-                                        <div class="mb-0 ms-2">
-                                            <!-- Title -->
-                                            <h6 class="table-responsive-title"><a href="#">Building Scalable APIs
-                                                    with GraphQL</a></h6>
-                                            <!-- Info -->
-                                            <div class="overflow-hidden">
-                                                <h6 class="mb-0 text-end">85%</h6>
-                                                <div class="progress progress-sm bg-primary bg-opacity-10">
-                                                    <div class="progress-bar bg-primary aos " role="progressbar"
-                                                        data-aos="slide-right" data-aos-delay="200"
-                                                        data-aos-duration="1000" data-aos-easing="ease-in-out"
-                                                        style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-                                                        aria-valuemax="100">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <!-- Table data -->
-                                <td>56</td>
-
-                                <!-- Table data -->
-                                <td>40</td>
-
-                                <!-- Table data -->
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i
-                                            class="bi bi-play-circle me-1"></i>Continue</a>
-                                </td>
-                            </tr>
 
                             <!-- Table item -->
                             <tr>
@@ -225,89 +183,6 @@
                                 </tr>
                             @endforeach
 
-                            <!-- Table item -->
-                            <tr>
-                                <!-- Table data -->
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <!-- Image -->
-                                        <div class="w-100px">
-                                            <img src="silicon-front/assets/images/courses/4by3/01.jpg" class="rounded"
-                                                alt="">
-                                        </div>
-                                        <div class="mb-0 ms-2">
-                                            <!-- Title -->
-                                            <h6 class="table-responsive-title"><a href="#">Digital Marketing
-                                                    Masterclass</a></h6>
-                                            <!-- Info -->
-                                            <div class="overflow-hidden">
-                                                <h6 class="mb-0 text-end">40%</h6>
-                                                <div class="progress progress-sm bg-primary bg-opacity-10">
-                                                    <div class="progress-bar bg-primary aos aos-init" role="progressbar"
-                                                        data-aos="slide-right" data-aos-delay="200"
-                                                        data-aos-duration="1000" data-aos-easing="ease-in-out"
-                                                        style="width: 40%" aria-valuenow="40" aria-valuemin="0"
-                                                        aria-valuemax="100">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <!-- Table data -->
-                                <td>32</td>
-
-                                <!-- Table data -->
-                                <td>18</td>
-
-                                <!-- Table data -->
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i
-                                            class="bi bi-play-circle me-1"></i>Continue</a>
-                                </td>
-                            </tr>
-
-                            <!-- Table item -->
-                            <tr>
-                                <!-- Table data -->
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <!-- Image -->
-                                        <div class="w-100px">
-                                            <img src="silicon-front/assets/images/courses/4by3/02.jpg" class="rounded"
-                                                alt="">
-                                        </div>
-                                        <div class="mb-0 ms-2">
-                                            <!-- Title -->
-                                            <h6 class="table-responsive-title"><a href="#">Graphic Design
-                                                    Masterclass</a></h6>
-                                            <!-- Info -->
-                                            <div class="overflow-hidden">
-                                                <h6 class="mb-0 text-end">90%</h6>
-                                                <div class="progress progress-sm bg-primary bg-opacity-10">
-                                                    <div class="progress-bar bg-primary aos aos-init" role="progressbar"
-                                                        data-aos="slide-right" data-aos-delay="200"
-                                                        data-aos-duration="1000" data-aos-easing="ease-in-out"
-                                                        style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <!-- Table data -->
-                                <td>16</td>
-
-                                <!-- Table data -->
-                                <td>14</td>
-
-                                <!-- Table data -->
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i
-                                            class="bi bi-play-circle me-1"></i>Continue</a>
-                                </td>
-                            </tr>
                         </tbody>
                         <!-- Table body END -->
                     </table>
@@ -330,6 +205,12 @@
                                         class="fas fa-angle-right"></i></a></li>
                         </ul>
                     </nav>
+                </div>
+                <!-- Pagination END -->
+
+                <!-- Pagination START -->
+                <div class="col-12">
+                    {{ $grupos->links('vendor.pagination.tailwind') }}
                 </div>
                 <!-- Pagination END -->
             </div>

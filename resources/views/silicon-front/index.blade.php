@@ -515,9 +515,6 @@
                                 data-bs-target="#course-pills-tabs-{{ $categoria->id }}" type="button" role="tab"
                                 aria-controls="course-pills-tabs-{{ $categoria->id }}"
                                 aria-selected="true">{{ $categoria->name }}
-                                @auth
-                                {{ Auth::user()->getRoleNames() }}
-                                @endauth
                                 </button>
                         </li>
                     @endforeach

@@ -6,6 +6,7 @@ use App\Models\Curso;
 use App\Models\Grupo;
 use App\Models\Modalidad;
 use App\Models\User;
+use App\Utils\PaginateCollection;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,7 +73,7 @@ Route::middleware([
         //return $user->cmatriculas;
         $cursos = ($user->cmatriculas->pluck('modalidad.curso'));
         $grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
-        //return $grupos;
+        $grupos = PaginateCollection::paginate($grupos, 1);
         return view('silicon-front.estudiantes.mycursos', compact('grupos', 'cursos'));
     })->name('mycursos')->middleware('role:Estudiante');
 
