@@ -107,6 +107,7 @@
         Cart::setGlobalTax(0);
     @endphp
 
+    @vite('resources/css/app.css')
     @livewireStyles
 </head>
 
