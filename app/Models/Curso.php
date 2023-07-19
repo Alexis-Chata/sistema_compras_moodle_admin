@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -44,5 +45,16 @@ class Curso extends Model
     public function categoria()
     {
         return $this->belongsTo(Categoria::class);
+    }
+
+    protected $appends = [
+        'modalidad_name'
+    ];
+
+    protected function modalidadName(): Attribute
+    {
+        return new Attribute(
+            get: fn () => 'yes',
+        );
     }
 }

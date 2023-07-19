@@ -21,4 +21,9 @@ class Grupo extends Model
     {
         return $this->hasMany(Gcuota::class);
     }
+
+    public function curso()
+    {
+        return $this->belongsTo(Curso::class);
+    }
 }

@@ -119,7 +119,7 @@
                                 <div class="card shadow h-100">
                                     <!-- Image -->
                                     <a href="{{ route('curso', $curso->id) }}">
-                                        <img src="{{ asset($curso->imagen)}}"
+                                        <img src="{{ asset($curso->imagen) }}"
                                             class="card-img-top" alt="course image"></a>
                                     <!-- Card body -->
                                     <div class="card-body pb-0">
