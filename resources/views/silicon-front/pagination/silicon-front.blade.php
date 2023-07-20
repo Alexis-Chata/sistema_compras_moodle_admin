@@ -31,11 +31,6 @@
                     @endforeach
                 @endif
             @endforeach
-            {{-- <li class="page-item mb-0 active"><a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item mb-0"><a class="page-link" href="#">2</a></li>
-            <li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
-            <li class="page-item mb-0"><a class="page-link" href="#">6</a></li> --}}
 
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())

@@ -210,7 +210,7 @@
 
                 <!-- Pagination START -->
                 <div class="col-12">
-                    {{ $grupos->links('vendor.pagination.tailwind') }}
+                    {{ $grupos->links('silicon-front.pagination.silicon-front-tailwind') }}
                 </div>
                 <!-- Pagination END -->
             </div>

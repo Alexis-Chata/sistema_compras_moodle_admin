@@ -181,7 +181,7 @@
 
                     <!-- Pagination START -->
                     <div class="col-12">
-                        {{ $cursos->links('vendor.pagination.silicon-front') }}
+                        {{ $cursos->links('silicon-front.pagination.silicon-front') }}
                     </div>
                     <!-- Pagination END -->
                 </div>
