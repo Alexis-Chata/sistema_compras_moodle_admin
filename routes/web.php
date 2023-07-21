@@ -73,12 +73,16 @@ Route::middleware([
         //return $user->cmatriculas;
         $cursos = ($user->cmatriculas->pluck('modalidad.curso'));
         $grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
-        $grupos = PaginateCollection::paginate($grupos, 3);
+        $grupos = PaginateCollection::paginate($grupos, 2);
         return view('silicon-front.estudiantes.mycursos', compact('grupos', 'cursos'));
     })->name('mycursos')->middleware('role:Estudiante');
 
     Route::get('/dashboard', function () {
-        $grupos = Grupo::paginate(12);
+        $user = User::with('cmatriculas.modalidad.curso.categoria', 'cmatriculas.modalidad.curso.grupos')->find(auth()->user()->id);
+        //return $user->cmatriculas;
+        $cursos = ($user->cmatriculas->pluck('modalidad.curso'));
+        $grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
+        $grupos = PaginateCollection::paginate($grupos, 2);
         return view('silicon-front.estudiantes.dashboard', compact('grupos'));
     })->name('dashboard')->middleware('role:Estudiante');
 });

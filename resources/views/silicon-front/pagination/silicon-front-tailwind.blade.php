@@ -1,7 +1,7 @@
 @if ($paginator->hasPages())
-    <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex items-center justify-between">
+    <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4 mt-sm-3">
         <div>
-            <p class="text-sm text-gray-700 leading-5">
+            <p class="text-sm text-gray-700 leading-5 text-center">
                 {!! __('Showing') !!}
                 @if ($paginator->firstItem())
                     <span class="font-medium">{{ $paginator->firstItem() }}</span>

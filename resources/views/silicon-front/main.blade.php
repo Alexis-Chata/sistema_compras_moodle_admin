@@ -107,7 +107,10 @@
         Cart::setGlobalTax(0);
     @endphp
 
-    @vite('resources/css/app.css')
+    @if (in_array(request()->route()->getName(),
+            ['mycursos', 'dashboard']))
+        @vite('resources/css/app.css')
+    @endif
     @livewireStyles
 </head>
 
@@ -141,7 +144,9 @@
         <script src="{{ asset('silicon-front/silicon/purecounter_vanilla.js') }}"></script>
     @endif
 
-    @if (Route::currentRouteName() == 'index' or in_array(request()->route()->getName(), ['curso']))
+    @if (Route::currentRouteName() == 'index' or
+            in_array(request()->route()->getName(),
+                ['curso']))
         <script src="{{ asset('silicon-front/silicon/tiny-slider.js') }}"></script>
         <script src="{{ asset('silicon-front/silicon/glightbox.js') }}"></script>
     @endif
