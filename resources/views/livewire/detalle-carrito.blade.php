@@ -12,7 +12,7 @@
                     <div class="d-lg-flex align-items-center">
                         <!-- Image -->
                         <div class="w-100px w-md-80px mb-2 mb-md-0">
-                            <img src="silicon-front/silicon/{{ isset($item->options) && $item->options->imagen != '' ? $item->options->imagen : '08.jpg' }}" class="rounded"
+                            <img src="{{ isset($item->options) && $item->options->imagen != '' ? $item->options->imagen : 'silicon-front/silicon/08.jpg' }}" class="rounded"
                                 alt="">
                         </div>
                         <!-- Title -->

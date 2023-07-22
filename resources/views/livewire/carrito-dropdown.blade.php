@@ -5,7 +5,7 @@
             <!-- Image -->
             <div class="col-3">
                 <img class="rounded-2"
-                    src="silicon-front/silicon/{{ isset($item->options) ? $item->options->imagen : 'cart-04.jpg' }}"
+                    src="{{ isset($item->options) ? $item->options->imagen : 'silicon-front/silicon/cart-04.jpg' }}"
                     alt="avatar">
             </div>
 

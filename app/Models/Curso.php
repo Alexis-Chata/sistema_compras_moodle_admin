@@ -57,4 +57,11 @@ class Curso extends Model
             get: fn () => 'yes',
         );
     }
+
+    protected function imagen(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => file_exists(public_path($value)) ? $value : '/silicon-front/assets/images/courses/4by3/05.jpg',
+        );
+    }
 }
