@@ -64,4 +64,11 @@ class Curso extends Model
             get: fn ($value) => file_exists(public_path($value)) ? $value : '/silicon-front/assets/images/courses/4by3/05.jpg',
         );
     }
+
+    protected function descripcion(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $value ?? 'Proposal indulged no do sociable he throwing settling.',
+        );
+    }
 }

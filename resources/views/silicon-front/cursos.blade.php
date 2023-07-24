@@ -16,8 +16,7 @@
                         <div class="d-flex justify-content-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-dots mb-0">
-                                    <li class="breadcrumb-item"><a
-                                            href="{{ env('APP_URL') }}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ env('APP_URL') }}">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Cursos</li>
                                 </ol>
                             </nav>
@@ -48,7 +47,8 @@
                         <div class="row g-3">
                             <!-- Select items -->
                             <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
-                                <select class="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
+                                <select class="form-select form-select-sm js-choice"
+                                    aria-label=".form-select-sm example">
                                     <option value="">Categories</option>
                                     <option>All</option>
                                     <option>Development</option>
@@ -65,7 +65,8 @@
 
                             <!-- Search item -->
                             <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
-                                <select class="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
+                                <select class="form-select form-select-sm js-choice"
+                                    aria-label=".form-select-sm example">
                                     <option value="">Price level</option>
                                     <option>All</option>
                                     <option>Free</option>
@@ -75,7 +76,8 @@
 
                             <!-- Search item -->
                             <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
-                                <select class="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
+                                <select class="form-select form-select-sm js-choice"
+                                    aria-label=".form-select-sm example">
                                     <option value="">Skill level</option>
                                     <option>All levels</option>
                                     <option>Beginner</option>
@@ -86,7 +88,8 @@
 
                             <!-- Search item -->
                             <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
-                                <select class="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
+                                <select class="form-select form-select-sm js-choice"
+                                    aria-label=".form-select-sm example">
                                     <option value="">Language</option>
                                     <option>English</option>
                                     <option>Francas</option>
@@ -100,7 +103,8 @@
                     </div>
                     <!-- Button -->
                     <div class="col-xl-1">
-                        <button type="button" class="btn btn-primary mb-0 rounded z-index-1 w-100"><i class="fas fa-search"></i></button>
+                        <button type="button" class="btn btn-primary mb-0 rounded z-index-1 w-100"><i
+                                class="fas fa-search"></i></button>
                     </div>
                 </div> <!-- Row END -->
             </form>
@@ -114,67 +118,9 @@
                     <div class="row g-4">
 
                         @foreach ($cursos as $curso)
-                            <!-- Card item START -->
-                            <div class="col-sm-6 col-lg-4 col-xl-3">
-                                <div class="card shadow h-100">
-                                    <!-- Image -->
-                                    <a href="{{ route('curso', $curso->id) }}">
-                                        <img src="{{ asset($curso->imagen) }}"
-                                            class="card-img-top" alt="course image"></a>
-                                    <!-- Card body -->
-                                    <div class="card-body pb-0">
-                                        <!-- Badge and favorite -->
-                                        {{-- <div class="d-flex justify-content-between mb-2">
-                                            <a href="#"
-                                                class="badge bg-purple bg-opacity-10 text-purple">All level</a>
-                                            <a href="#" class="h6 fw-light mb-0"><i
-                                                    class="far fa-heart"></i></a>
-                                        </div> --}}
-                                        <!--
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <a href="#" class="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                                            <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
-                                        </div>
-                                        -->
-                                        <!-- Title -->
-                                        <h5 class="card-title"><a href="{{ route('curso', $curso->id) }}">{{ $curso->name }}</a>
-                                        </h5>
-                                        <p class="mb-2 text-truncate-2">
-                                            {{ $curso->descripcion ?? 'Proposal indulged no do sociable he throwing settling.' }}
-                                        </p>
-                                        <!-- Rating star -->
-                                        {{-- <ul class="list-inline mb-0">
-                                            @for ($i = 1; $i <= 5; $i++)
-                                                @if ($i <= $curso->calificacion)
-                                                    <li class="list-inline-item me-0 small"><i
-                                                            class="fas fa-star text-warning"></i></li>
-                                                @elseif ($i >= $curso->calificacion && $i - 1 <= $curso->calificacion)
-                                                    <li class="list-inline-item me-0 small"><i
-                                                            class="fas fa-star-half-alt text-warning"></i></li>
-                                                @else
-                                                    <li class="list-inline-item me-0 small"><i
-                                                            class="far fa-star text-warning"></i></li>
-                                                @endif
-                                            @endfor
-                                            <li class="list-inline-item ms-2 h6 fw-light mb-0">
-                                                {{ $curso->calificacion }}/5.0</li>
-                                        </ul> --}}
-                                    </div>
-                                    <!-- Card footer -->
-                                    <div class="card-footer pt-0 pb-3">
-                                        {{-- <hr>
-                                        <div class="d-flex justify-content-between">
-                                            <span class="h6 fw-light mb-0"><i
-                                                    class="far fa-clock text-danger me-2"></i>{{ $curso->hora . 'h ' . $curso->min . 'm' }}</span>
-                                            <span class="h6 fw-light mb-0"><i
-                                                    class="fas fa-table text-orange me-2"></i>{{ $curso->lecturas . ' lecturas' }}</span>
-                                        </div>
-                                        <hr>
-                                        @livewire('additem', ['curso' => $curso]) --}}
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card item END -->
+                        <!-- Card item START -->
+                        @include('silicon-front.partes.card-item-curso')
+                        <!-- Card item END -->
                         @endforeach
                     </div>
                     <!-- Course Grid END -->
@@ -249,8 +195,7 @@
                                     <div class="input-group">
                                         <input class="form-control border-0 me-1" type="email"
                                             placeholder="Type your email here">
-                                        <button type="button"
-                                            class="btn btn-dark mb-0 rounded">Subscribe</button>
+                                        <button type="button" class="btn btn-dark mb-0 rounded">Subscribe</button>
                                     </div>
                                 </form>
                             </div>

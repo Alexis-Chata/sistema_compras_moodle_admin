@@ -14,31 +14,29 @@
                 <div class="list-group list-group-dark list-group-borderless collapse-list">
                     <a class="list-group-item {{ in_array(request()->route()->getName(),['dashboard'])? 'active': '' }}"
                         href="{{ route('dashboard') }}"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
+
                     <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"
                         href="student-subscription.html"><i class="bi bi-card-checklist fa-fw me-2"></i>My
                         Subscriptions</a>
+
                     <a class="list-group-item {{ in_array(request()->route()->getName(),['mycursos'])? 'active': '' }}"
                         href="{{ route('mycursos') }}"><i class="bi bi-basket fa-fw me-2"></i>Mis Cursos</a>
-                    <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"
-                        href="student-course-resume.html"><i class="far fa-fw fa-file-alt me-2"></i>Course Resume</a>
-                    <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"
-                        href="student-quiz.html"><i class="bi bi-question-diamond fa-fw me-2"></i>Quiz</a>
-                    <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"
-                        href="student-payment-info.html"><i class="bi bi-credit-card-2-front fa-fw me-2"></i>Payment
+
+                    <a class="list-group-item {{ in_array(request()->route()->getName(),['historial-pagos'])? 'active': '' }}"
+                        href="{{ route('historial-pagos') }}"><i class="bi bi-credit-card-2-front fa-fw me-2"></i>Payment
                         Info</a>
-                    <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"
-                        href="student-bookmark.html"><i class="bi bi-cart-check fa-fw me-2"></i>Wishlist</a>
-                    <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"
-                        href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit
-                        Profile</a>
-                    <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"
-                        href="instructor-setting.html"><i class="bi bi-gear fa-fw me-2"></i>Settings</a>
-                    <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"
-                        href="instructor-delete-account.html"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
+
+                    <a class="list-group-item {{ in_array(request()->route()->getName(),['lista-deseos'])? 'active': '' }}"
+                        href="{{ route('lista-deseos') }}"><i class="bi bi-cart-check fa-fw me-2"></i>Lista de deseos</a>
+
+                    <a class="list-group-item {{ in_array(request()->route()->getName(),['profile.show'])? 'active': '' }}"
+                        href="{{ route('profile.show') }}"><i class="bi bi-pencil-square fa-fw me-2"></i>Editar
+                        Perfil</a>
+
                     <form method="POST" action="{{ route('logout') }}" x-data>
                         @csrf
                         <a class="list-group-item text-danger bg-danger-soft-hover" href="#"
-                            onclick="this.parentElement.submit()"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Sign Out</a>
+                            onclick="this.parentElement.submit()"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Cerrar Session</a>
                     </form>
                     <!-- Collapse menu -->
                     <a class="list-group-item" data-bs-toggle="collapse" href="#collapseauthentication" role="button"

@@ -1,13 +1,10 @@
 <?php
 
 use App\Models\Categoria;
-use App\Models\Cuota;
 use App\Models\Curso;
-use App\Models\Grupo;
 use App\Models\Modalidad;
 use App\Models\User;
 use App\Utils\PaginateCollection;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +23,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    //return Cart::content();
-    //$categorias = null;
     $categorias = categoria::latest()->take(5)->get();
 
     $categorias->each(function ($item, $key) {
@@ -57,7 +52,6 @@ Route::get('/cursos', function () {
 
 Route::get('/curso/{id}', function ($id) {
     $modalidads = Modalidad::with('curso.categoria', 'curso.grupos', 'cuotas', 'gcuotas.grupo')->has('gcuotas', '>', 0)->whereCursoId($id)->get();
-    // return $modalidads;
     return view('silicon-front.curso', compact('modalidads'));
 })->name('curso');
 
@@ -72,7 +66,6 @@ Route::middleware([
 
     Route::get('/mycursos', function () {
         $user = User::with('cmatriculas.modalidad.curso.categoria', 'cmatriculas.modalidad.curso.grupos')->find(auth()->user()->id);
-        //return $user->cmatriculas;
         $cursos = ($user->cmatriculas->pluck('modalidad.curso'));
         $grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
         $grupos = PaginateCollection::paginate($grupos, 3);
@@ -81,10 +74,17 @@ Route::middleware([
 
     Route::get('/dashboard', function () {
         $user = User::with('cmatriculas.modalidad.curso.categoria', 'cmatriculas.modalidad.curso.grupos')->find(auth()->user()->id);
-        //return $user->cmatriculas;
         $cursos = ($user->cmatriculas->pluck('modalidad.curso'));
         $grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
         $grupos = PaginateCollection::paginate($grupos, 3);
         return view('silicon-front.estudiantes.dashboard', compact('grupos'));
     })->name('dashboard')->middleware('role:Estudiante');
+
+    Route::get('/historial-pagos', function () {
+        return view('silicon-front.estudiantes.historial-pagos');
+    })->name('historial-pagos')->middleware('role:Estudiante');
+
+    Route::get('/lista-deseos', function () {
+        return view('silicon-front.estudiantes.lista-deseos');
+    })->name('lista-deseos')->middleware('role:Estudiante');
 });
