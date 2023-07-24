@@ -43,6 +43,7 @@ class Additem extends Component
             ]]);
             $this->buscaEnCarrito();
         }
+        cart::instance('carrito')->store(Auth::user()->id);
         //Cart::instance('carrito')->destroy();
         $this->emit('actualizar');
     }

@@ -105,8 +105,13 @@
     <style></style>
     @php
         Cart::setGlobalTax(0);
-        cart::instance('carrito')->restore(3)
     @endphp
+
+    @auth
+        @php
+            cart::instance('carrito')->restore(Auth::user()->id);
+        @endphp
+    @endauth
 
     @livewireStyles
 </head>
