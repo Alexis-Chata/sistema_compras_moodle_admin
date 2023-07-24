@@ -37,8 +37,9 @@ class Additem extends Component
             Cart::update($this->rowId, [
                 'price' => $this->modalidad->cuotas->first()->monto,
                 'options'  => [
-                'modalidad' => $this->modalidad->name,
-                'modalidad_id' => $this->modalidad->id
+                    'imagen' => $this->curso->imagen,
+                    'modalidad' => $this->modalidad->name,
+                    'modalidad_id' => $this->modalidad->id
             ]]);
             $this->buscaEnCarrito();
         }
