@@ -105,12 +105,9 @@
     <style></style>
     @php
         Cart::setGlobalTax(0);
+
     @endphp
 
-    @if (in_array(request()->route()->getName(),
-            ['mycursos', 'dashboard']))
-        @vite('resources/css/app.css')
-    @endif
     @livewireStyles
 </head>
 

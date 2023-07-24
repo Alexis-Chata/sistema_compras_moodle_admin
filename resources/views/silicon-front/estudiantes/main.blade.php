@@ -21,9 +21,16 @@
                                 <div class="col-auto">
                                     <div class="avatar avatar-xxl position-relative mt-n3">
                                         <img class="avatar-img rounded-circle border border-white border-3 shadow"
-                                            src="{{ asset('silicon-front/assets/images/avatar/09.jpg') }}" alt="">
+                                        src="{{ 'https://ui-avatars.com/api/' .
+                                        implode('/', [
+                                            //IMPORTANT: Do not change this order
+                                            urlencode(auth()->user()->name), // name
+                                            200, // image size
+                                            'EBF4FF', // background color
+                                            '7F9CF5', // font color
+                                        ]) }}" alt="avatar">
                                         <span
-                                            class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
+                                            class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3"><i class="bi bi-person fa-fw"></i></span>
                                     </div>
                                 </div>
                                 <!-- Profile info -->

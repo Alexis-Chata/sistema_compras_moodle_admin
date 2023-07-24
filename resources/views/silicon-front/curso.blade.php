@@ -177,7 +177,7 @@
                                                 <h4 class="mb-0">{{ $modalidad->name }}</h4>
 
                                                 <!-- Buttons -->
-                                                @livewire('additem', ['curso' => $modalidad->curso, 'modalidad' => $modalidad->name])
+                                                @livewire('additem', ['curso' => $modalidad->curso, 'modalidad' => $modalidad])
                                             </div>
                                         </div>
 

@@ -7,6 +7,7 @@ use App\Models\Grupo;
 use App\Models\Modalidad;
 use App\Models\User;
 use App\Utils\PaginateCollection;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
+    //return Cart::content();
     //$categorias = null;
     $categorias = categoria::latest()->take(5)->get();
 
@@ -73,7 +75,7 @@ Route::middleware([
         //return $user->cmatriculas;
         $cursos = ($user->cmatriculas->pluck('modalidad.curso'));
         $grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
-        $grupos = PaginateCollection::paginate($grupos, 2);
+        $grupos = PaginateCollection::paginate($grupos, 3);
         return view('silicon-front.estudiantes.mycursos', compact('grupos', 'cursos'));
     })->name('mycursos')->middleware('role:Estudiante');
 
@@ -82,7 +84,7 @@ Route::middleware([
         //return $user->cmatriculas;
         $cursos = ($user->cmatriculas->pluck('modalidad.curso'));
         $grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
-        $grupos = PaginateCollection::paginate($grupos, 2);
+        $grupos = PaginateCollection::paginate($grupos, 3);
         return view('silicon-front.estudiantes.dashboard', compact('grupos'));
     })->name('dashboard')->middleware('role:Estudiante');
 });
