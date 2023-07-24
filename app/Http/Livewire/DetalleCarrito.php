@@ -10,9 +10,9 @@ class DetalleCarrito extends Component
     protected $listeners = ['actualizar'=>'render'];
 
     public function eliminar_producto($rowId){
-        Cart::remove($rowId);
+        Cart::instance('carrito')->remove($rowId);
         $this->emit('actualizar');
-        if (!Cart::count()) {
+        if (!Cart::instance('carrito')->count()) {
             $this->emit('actualizarContenido');
         }
     }

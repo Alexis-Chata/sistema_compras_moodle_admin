@@ -10,16 +10,16 @@
                 <span class="h6 fw-light mb-0" _msttexthash="258544" _msthash="136">Precio
                     original</span>
                 <span class="h6 fw-light mb-0 fw-bold" _msttexthash="20644" _msthash="137">$
-                    {{ Cart::subtotal() }}</span>
+                    {{ Cart::instance('carrito')->subtotal() }}</span>
             </li>
             <li class="list-group-item px-0 d-flex justify-content-between">
                 <span class="h6 fw-light mb-0" _msttexthash="358956" _msthash="138">Descuento de
                     cupón</span>
-                <span class="text-danger" _msttexthash="19929" _msthash="139">{{ Cart::discount() }}</span>
+                <span class="text-danger" _msttexthash="19929" _msthash="139">{{ Cart::instance('carrito')->discount() }}</span>
             </li>
             <li class="list-group-item px-0 d-flex justify-content-between">
                 <span class="h5 mb-0" _msttexthash="60814" _msthash="140">Total</span>
-                <span class="h5 mb-0" _msttexthash="21476" _msthash="141">$ {{ Cart::total() }}</span>
+                <span class="h5 mb-0" _msttexthash="21476" _msthash="141">$ {{ Cart::instance('carrito')->total() }}</span>
             </li>
         </ul>
 

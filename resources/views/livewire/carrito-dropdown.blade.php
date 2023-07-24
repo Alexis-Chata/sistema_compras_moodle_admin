@@ -1,5 +1,5 @@
 <div class="card-body p-0">
-    @forelse (Cart::content() as $item)
+    @forelse (Cart::instance('carrito')->content() as $item)
         <!-- Cart item START -->
         <div class="row p-3 g-2">
             <!-- Image -->

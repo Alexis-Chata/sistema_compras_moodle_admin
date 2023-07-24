@@ -105,7 +105,7 @@
     <style></style>
     @php
         Cart::setGlobalTax(0);
-
+        cart::instance('carrito')->restore(3)
     @endphp
 
     @livewireStyles

@@ -20,7 +20,7 @@ class Additem extends Component
     public function addItem()
     {
         if (!$this->buscaEnCarrito()) {
-            Cart::add([
+            Cart::instance('carrito')->add([
                 'id' => $this->curso->id,
                 'name' => $this->curso->name,
                 'qty' => 1,
@@ -34,7 +34,7 @@ class Additem extends Component
             ]);
             $this->buscaEnCarrito();
         }else{
-            Cart::update($this->rowId, [
+            Cart::instance('carrito')->update($this->rowId, [
                 'price' => $this->modalidad->cuotas->first()->monto,
                 'options'  => [
                     'imagen' => $this->curso->imagen,
@@ -43,14 +43,14 @@ class Additem extends Component
             ]]);
             $this->buscaEnCarrito();
         }
-        //Cart::destroy();
+        //Cart::instance('carrito')->destroy();
         $this->emit('actualizar');
     }
 
     public function buscaEnCarrito()
     {
         $this->encarrito = false;
-        if (Cart::search(function ($cartItem, $rowId) {
+        if (Cart::instance('carrito')->search(function ($cartItem, $rowId) {
             if ($cartItem->id === $this->curso->id) {
                 $this->rowId = $rowId;
             }

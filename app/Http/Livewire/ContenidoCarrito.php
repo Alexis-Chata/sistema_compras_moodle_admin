@@ -11,7 +11,7 @@ class ContenidoCarrito extends Component
 
     public function render()
     {
-        if (Cart::count()){
+        if (Cart::instance('carrito')->count()){
             return view('livewire.contenido-carrito');
         }
         return view('livewire.contenido-carrito2');

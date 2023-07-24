@@ -4,7 +4,7 @@
         <!-- Table head -->
         <!-- Table body START -->
         <tbody class="border-top-0">
-            @foreach (Cart::content() as $item)
+            @foreach (Cart::instance('carrito')->content() as $item)
             <!-- Table item -->
             <tr>
                 <!-- Course item -->
