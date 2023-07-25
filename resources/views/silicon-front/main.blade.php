@@ -104,12 +104,13 @@
 
     <style></style>
     @php
-        Cart::setGlobalTax(0);
+        Cart::instance('carrito')->setGlobalTax(0);
     @endphp
 
     @auth
         @php
             cart::instance('carrito')->restore(Auth::user()->id);
+            cart::instance('carrito')->store(Auth::user()->id);
         @endphp
     @endauth
 

@@ -19,6 +19,7 @@ class Additem extends Component
 
     public function addItem()
     {
+        if(Auth::check()) { Cart::instance('carrito')->erase(Auth::user()->id); }
         if (!$this->buscaEnCarrito()) {
             Cart::instance('carrito')->add([
                 'id' => $this->curso->id,
@@ -43,7 +44,7 @@ class Additem extends Component
             ]]);
             $this->buscaEnCarrito();
         }
-        cart::instance('carrito')->store(Auth::user()->id);
+        if(Auth::check()) { cart::instance('carrito')->store(Auth::user()->id); }
         //Cart::instance('carrito')->destroy();
         $this->emit('actualizar');
     }
@@ -69,7 +70,7 @@ class Additem extends Component
 
     public function render()
     {
-        Cart::setGlobalTax(0);
+        Cart::instance('carrito')->setGlobalTax(0);
         return view('livewire.additem');
     }
 }

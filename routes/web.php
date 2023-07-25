@@ -5,6 +5,7 @@ use App\Models\Curso;
 use App\Models\Modalidad;
 use App\Models\User;
 use App\Utils\PaginateCollection;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
+    return Cart::instance('carrito')->content()->pluck('id');
     $categorias = categoria::latest()->take(5)->get();
 
     $categorias->each(function ($item, $key) {
