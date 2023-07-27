@@ -25,8 +25,8 @@
 
         <!-- Button -->
         <div class="d-grid">
-            <a href="checkout.html" class="btn btn-lg btn-success" _msttexthash="567736"
-                _msthash="142">Proceder al proceso de pago</a>
+            <a href="#" class="btn btn-lg btn-success" _msttexthash="567736"
+                _msthash="142" wire:click="pago">Proceder al proceso de pago</a>
         </div>
 
         <!-- Content -->

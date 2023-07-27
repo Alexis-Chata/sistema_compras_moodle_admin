@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    //return Cart::instance('carrito')->content()->pluck('id');
+    //return Cart::instance('carrito')->content()->pluck('options.modalidad_id');
     $categorias = categoria::latest()->take(5)->get();
 
     $categorias->each(function ($item, $key) {
