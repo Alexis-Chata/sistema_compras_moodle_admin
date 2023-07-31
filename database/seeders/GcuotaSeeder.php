@@ -200,5 +200,181 @@ class GcuotaSeeder extends Seeder
         $n_gcuota->cuota_id = 30;
         $n_gcuota->grupo_id = 24;
         $n_gcuota->save();
+
+        #curso 3
+        #plan 1
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 31;
+        $n_gcuota->grupo_id = 25;
+        $n_gcuota->save();
+        #plan 2
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 32;
+        $n_gcuota->grupo_id = 25;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 33;
+        $n_gcuota->grupo_id = 26;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 34;
+        $n_gcuota->grupo_id = 27;
+        $n_gcuota->save();
+
+        #curso 4
+        #plan 1
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 35;
+        $n_gcuota->grupo_id = 28;
+        $n_gcuota->save();
+        #plan 2
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 36;
+        $n_gcuota->grupo_id = 28;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 37;
+        $n_gcuota->grupo_id = 29;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 38;
+        $n_gcuota->grupo_id = 30;
+        $n_gcuota->save();
+
+        #curso 5
+        #plan 1
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 39;
+        $n_gcuota->grupo_id = 31;
+        $n_gcuota->save();
+        #plan 2
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 40;
+        $n_gcuota->grupo_id = 31;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 41;
+        $n_gcuota->grupo_id = 32;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 42;
+        $n_gcuota->grupo_id = 33;
+        $n_gcuota->save();
+
+        #curso 6
+        #plan 1
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 43;
+        $n_gcuota->grupo_id = 34;
+        $n_gcuota->save();
+        #plan 2
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 44;
+        $n_gcuota->grupo_id = 34;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 45;
+        $n_gcuota->grupo_id = 35;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 46;
+        $n_gcuota->grupo_id = 36;
+        $n_gcuota->save();
+
+        #curso 7
+        #plan 1
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 47;
+        $n_gcuota->grupo_id = 37;
+        $n_gcuota->save();
+        #plan 2
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 48;
+        $n_gcuota->grupo_id = 37;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 49;
+        $n_gcuota->grupo_id = 38;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 50;
+        $n_gcuota->grupo_id = 39;
+        $n_gcuota->save();
+
+        #curso 8
+        #plan 1
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 51;
+        $n_gcuota->grupo_id = 40;
+        $n_gcuota->save();
+        #plan 2
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 52;
+        $n_gcuota->grupo_id = 40;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 53;
+        $n_gcuota->grupo_id = 41;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 54;
+        $n_gcuota->grupo_id = 42;
+        $n_gcuota->save();
+
+        #curso 9
+        #plan 1
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 55;
+        $n_gcuota->grupo_id = 43;
+        $n_gcuota->save();
+        #plan 2
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 56;
+        $n_gcuota->grupo_id = 43;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 57;
+        $n_gcuota->grupo_id = 44;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 58;
+        $n_gcuota->grupo_id = 45;
+        $n_gcuota->save();
+
+        #curso 9
+        #plan 1
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 59;
+        $n_gcuota->grupo_id = 46;
+        $n_gcuota->save();
+        #plan 2
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 60;
+        $n_gcuota->grupo_id = 46;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 61;
+        $n_gcuota->grupo_id = 47;
+        $n_gcuota->save();
+
+        $n_gcuota = new Gcuota();
+        $n_gcuota->cuota_id = 62;
+        $n_gcuota->grupo_id = 48;
+        $n_gcuota->save();
     }
 }

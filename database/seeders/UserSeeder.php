@@ -40,5 +40,10 @@ class UserSeeder extends Seeder
         $estudiante->id_moodle_user = 472;
         $estudiante->save();
         $estudiante->assignRole('Estudiante');
+
+        $usuarios = User::factory(15)->create();
+        foreach ($usuarios as $usuario) {
+            $usuario->assignRole('Estudiante');
+        }
     }
 }
