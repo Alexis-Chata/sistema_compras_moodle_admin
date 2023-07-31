@@ -17,10 +17,6 @@ return new class extends Migration
             $table->char('id_moodle_group')->unique()->nullable();
             $table->string('descripcion')->nullable();
             $table->string("imagen")->nullable();
-            $table->string("calificacion")->nullable();
-            $table->string("hora");
-            $table->string("min");
-            $table->string("lecturas");
             $table->unsignedBigInteger('curso_id');
             $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
             $table->softDeletes();

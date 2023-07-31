@@ -11,6 +11,7 @@ use App\Models\Gcuota;
 use App\Models\Grupo;
 use App\Models\Modalidad;
 use App\Models\Mpago;
+use App\Rules\ValidarCuotas;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -26,6 +27,7 @@ class GestionarCursos extends Component
     public Modalidad $modalidad;
     public Cuota $cuota;
     public Gcuota $gcuota;
+    public $curso_imagen;
     public $scuota;
     public $scurso;
     public $mensaje;
@@ -52,12 +54,14 @@ class GestionarCursos extends Component
         'curso.shortname' => '',
         'curso.descripcion' => '',
         'curso.categoria_id' => '',
+        'curso.resumen' => '',
+        'curso.imagen' => '',
+        'curso.link_video' => '',
+        'curso.duracion' => '',
+        'curso.idioma' => '',
+        'curso.certificado' =>'',
         'grupo.name' => '',
         'grupo.descripcion' => '',
-        'grupo.calificacion' => '',
-        'grupo.hora' => '',
-        'grupo.min' => '',
-        'grupo.lecturas' => '',
         'modalidad.name' => '',
         'modalidad.descripcion' => '',
         'cuota.name' => '',
@@ -74,10 +78,6 @@ class GestionarCursos extends Component
     protected $rules_grupo = [
         'grupo.name' => 'required|string',
         'grupo.descripcion' => 'required',
-        'grupo.calificacion' => 'required',
-        'grupo.hora' => 'required',
-        'grupo.min' => 'required',
-        'grupo.lecturas' => 'required',
     ];
 
     protected $rules_modalidad = [
@@ -134,12 +134,16 @@ class GestionarCursos extends Component
 
     public function modal($curso_id = null)
     {
+        $this->iteration++;
         if ($curso_id == null) {
             $this->curso = new Curso();
+           $this->curso->descripcion = '';
             $this->modal_titulo = 'Crear';
+            $this->emit('nuevo_editor');
         } else {
             $this->curso = Curso::find($curso_id);
             $this->modal_titulo = 'Modificar';
+            $this->emit('editar_editor',$this->curso->resumen);
         }
     }
 
@@ -150,9 +154,11 @@ class GestionarCursos extends Component
         if ($grupo_id == null) {
             $this->grupo = new Grupo();
             $this->modal_titulo_grupo = 'Crear';
+            $this->emit('nuevo_editor_grupo');
         } else {
             $this->grupo = Grupo::find($grupo_id);
             $this->modal_titulo_grupo = 'Modificar';
+            $this->emit('editar_editor_grupo',$this->grupo->descripcion);
         }
     }
 
@@ -196,11 +202,28 @@ class GestionarCursos extends Component
             $this->validate($this->rules_curso);
         } elseif ($this->modal_titulo == 'Modificar') {
             $this->validando($this->curso->id);
+
+            if($this->curso->certificado == false){
+                $this->curso->certificado = null;
+            }
+            else {
+                $this->curso->certificado = 1;
+            }
         }
         $this->curso->save();
+        #subir imagen
+
+        if($this->curso_imagen != null)
+        {
+            $extension =  $this->curso_imagen->extension();
+            $this->eliminar_imagen_curso();
+            $this->subir_imagen_curso($this->curso_imagen);
+        }
+
+
         #crear curso en  moodle o modificar curso de moodle
         if ($this->modal_titulo == 'Crear') {
-            //crear usuario moodle
+            //crear curso moodle
             $n_curso = new CourseMoodle();
             $n_curso->name = $this->curso->name;
             $n_curso->shortname = $this->curso->shortname;
@@ -209,7 +232,8 @@ class GestionarCursos extends Component
             $this->curso->id_moodle_course = $idcurso;
             $this->curso->estado = 1;
             $this->curso->save();
-        } elseif ($this->modal_titulo == 'Modificar') {
+        }
+        elseif ($this->modal_titulo == 'Modificar') {
             //modificar el curso en moodle
             $a_moodle = CourseMoodle::buscar($this->curso->id_course_moodle);
             $a_moodle->name = $this->curso->name;
@@ -229,6 +253,23 @@ class GestionarCursos extends Component
             $this->emit('notificar_creacion', 'se modifico el curso');
         }
     }
+
+    public function eliminar_imagen_curso()
+    {
+        if ($this->curso->imagen == true)
+        {
+        $eliminar = str_replace('storage', 'public', $this->curso->imagen);
+        Storage::delete([$eliminar]);
+        }
+    }
+
+    public function subir_imagen_curso($imagen){
+        $extension = $imagen->extension();
+        $imgcurso = $imagen->storeAs('public/cursos', 'curso-'.$this->curso->id."-".rand(100000,999999).".".$extension);
+        $this->curso->imagen = Storage::url($imgcurso);
+        $this->curso->save();
+    }
+
 
     public function save_grupo()
     {
@@ -299,9 +340,10 @@ class GestionarCursos extends Component
 
     public function save_gcuota()
     {
-        $this->validate($this->rules_gcuota);
+        $this->validate(['gcuota.grupo_id' => ['required',new ValidarCuotas($this->modalidad->id,$this->gcuota->grupo_id)]]);
         $this->gcuota->cuota_id = $this->scuota->id;
         $this->gcuota->save();
+        $this->modal_modalidad($this->modalidad->id);
         $this->agregar_gcuota($this->scuota->id);
     }
 
@@ -378,6 +420,9 @@ class GestionarCursos extends Component
 
     public function eliminar_gcuota(Gcuota $gcuota)
     {
+        $scuota = $gcuota->cuota->id;
         $gcuota->delete();
+        $this->modal_modalidad($this->modalidad->id);
+        $this->agregar_gcuota($scuota);
     }
 }

@@ -21,7 +21,7 @@ class CmatriculaSeeder extends Seeder
 
         $n_curso = new Cmatricula();
         $n_curso->user_id = 3;
-        $n_curso->modalidad_id = 6;
+        $n_curso->modalidad_id = 3;
         $n_curso->rol = 5;
         $n_curso->save();
 

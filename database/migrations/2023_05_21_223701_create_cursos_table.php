@@ -17,8 +17,14 @@ return new class extends Migration
             $table->string('shortname');
             $table->string('imagen')->nullable();
             $table->string('descripcion')->nullable();
+            $table->longText('resumen')->nullable();
+            $table->string('link_video')->nullable();
             $table->char('id_moodle_course')->nullable();
             $table->char('estado')->default(1)->nullable();
+            #datos adicionales
+            $table->string('idioma')->default('Español')->nullable();
+            $table->string('duracion')->nullable();
+            $table->char('certificado')->default(1)->nullable();
             $table->unsignedBigInteger('categoria_id')->nullable();
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('set null')->onUpdate('cascade');
             $table->softDeletes();

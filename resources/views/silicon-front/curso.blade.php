@@ -50,7 +50,7 @@
                                 <li class="nav-item me-2 me-sm-4" role="presentation">
                                     <button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-0"
                                         data-bs-toggle="pill" data-bs-target="#course-pills-0" type="button" role="tab"
-                                        aria-controls="course-pills-0" aria-selected="true">Overview</button>
+                                        aria-controls="course-pills-0" aria-selected="true">Resumen</button>
                                 </li>
                                 @foreach ($modalidads as $modalidad)
                                 <!-- Tab item -->
@@ -102,66 +102,7 @@
                                 <div class="tab-pane fade show active" id="course-pills-0" role="tabpanel"
                                     aria-labelledby="course-pills-tab-0">
                                     <!-- Course detail START -->
-                                    <h5 class="mb-3">Course Description</h5>
-                                    <p class="mb-3">Welcome to the <strong> Digital Marketing Ultimate Course Bundle -
-                                            12 Courses in 1 (Over 36 hours of content)</strong></p>
-                                    <p class="mb-3">In this practical hands-on training, you’re going to learn to
-                                        become a digital marketing expert with this <strong> ultimate course bundle that
-                                            includes 12 digital marketing courses in 1!</strong></p>
-                                    <p class="mb-3">If you wish to find out the skills that should be covered in a
-                                        basic digital marketing course syllabus in India or anywhere around the world,
-                                        then reading this blog will help. Before we delve into the advanced <strong><a
-                                                href="#" class="text-reset text-decoration-underline">digital
-                                                marketing course</a></strong> syllabus, let’s look at the scope of
-                                        digital marketing and what the future holds.</p>
-                                    <p class="mb-0">We focus a great deal on the understanding of behavioral
-                                        psychology and influence triggers which are crucial for becoming a well rounded
-                                        Digital Marketer. We understand that theory is important to build a solid
-                                        foundation, we understand that theory alone isn’t going to get the job done so
-                                        that’s why this course is packed with practical hands-on examples that you can
-                                        follow step by step.</p>
-
-                                    <!-- List content -->
-                                    <h5 class="mt-4">What you’ll learn</h5>
-                                    <ul class="list-group list-group-borderless mb-3">
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>Digital marketing
-                                            course introduction</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>Customer Life cycle
-                                        </li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>What is Search engine
-                                            optimization(SEO)</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>Facebook ADS</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>Facebook Messenger
-                                            Chatbot</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>Search engine
-                                            optimization tools</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>Why SEO</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>URL Structure</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>Featured Snippet</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>SEO tips and tricks
-                                        </li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>Google tag manager
-                                        </li>
-                                    </ul>
-
-                                    <p class="mb-0">As it so contrasted oh estimating instrument. Size like body
-                                        someone had. Are conduct viewing boy minutes warrant the expense? Tolerably
-                                        behavior may admit daughters offending her ask own. Praise effect wishes change
-                                        way and any wanted. Lively use looked latter regard had. Do he it part more last
-                                        in. </p>
-                                    <!-- Course detail END -->
-
+                                   <?php echo $modalidads->first()->curso->resumen ?>
                                 </div>
                                 <!-- Content END -->
 
@@ -195,7 +136,7 @@
                                                 <!-- Content -->
                                                 <div class="col-sm-10 col-xl-11">
                                                     <h5>{{ ($gcuota->grupo->name) }} - {{ $cuota->name }} <span>( $ {{ number_format($cuota->monto, 2) }} )</span></h5>
-                                                    <p>{{ ($gcuota->grupo->descripcion) }}</p>
+                                                    <p><?php echo ($gcuota->grupo->descripcion) ?></p>
                                                     <!-- Buttons -->
                                                     {{-- <div class="hstack gap-3 flex-wrap">
                                                         <a href="#" class="btn btn-sm btn-primary mb-0"><i
@@ -1828,18 +1769,32 @@
                             <!-- Video START -->
                             <div class="card shadow p-2 mb-4 z-index-9">
                                 <div class="overflow-hidden rounded-3">
+                                    @if ($modalidads->first()->curso->imagen)
+                                    <img src="{{asset($modalidads->first()->curso->imagen)}}"
+                                        class="card-img" alt="course image" id="imagen_video">
+                                    @else
                                     <img src="{{ asset('silicon-front/assets/images/courses/4by3/01.jpg') }}"
-                                        class="card-img" alt="course image">
+                                        class="card-img" alt="course image" >
+                                    @endif
                                     <!-- Overlay -->
                                     <div class="bg-overlay bg-dark opacity-6"></div>
                                     <div class="card-img-overlay d-flex align-items-start flex-column p-3">
                                         <!-- Video button and link -->
                                         <div class="m-auto">
-                                            <a href="https://www.youtube.com/embed/tXHviS-4ygo"
+                                            @if ($modalidads->first()->curso->link_video)
+                                            <a href="{{$modalidads->first()->curso->link_video}}"
                                                 class="btn btn-lg text-danger btn-round btn-white-shadow mb-0"
                                                 data-glightbox="" data-gallery="course-video">
                                                 <i class="fas fa-play"></i>
                                             </a>
+                                            @else
+                                            <a href="#"
+                                                class="btn btn-lg text-danger btn-round btn-white-shadow mb-0"
+                                                data-glightbox="" data-gallery="course-video">
+                                                <i class="fas fa-play"></i>
+                                            </a>
+                                            @endif
+
                                         </div>
                                     </div>
                                 </div>
@@ -1896,36 +1851,44 @@
                                 <!-- Title -->
                                 <h4 class="mb-3">Este curso incluye</h4>
                                 <ul class="list-group list-group-borderless">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <!--<li class="list-group-item d-flex justify-content-between align-items-center">
                                         <span class="h6 fw-light mb-0"><i
                                                 class="fas fa-fw fa-book-open text-primary"></i>Lectures</span>
                                         <span>30</span>
-                                    </li>
+                                    </li>-->
+                                    @if ($modalidads->first()->curso->duracion)
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         <span class="h6 fw-light mb-0"><i
-                                                class="fas fa-fw fa-clock text-primary"></i>Duration</span>
-                                        <span>4h 50m</span>
+                                                class="fas fa-fw fa-clock text-primary"></i>Duración</span>
+                                        <span>{{$modalidads->first()->curso->duracion}}</span>
                                     </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    @endif
+                                    <!--<li class="list-group-item d-flex justify-content-between align-items-center">
                                         <span class="h6 fw-light mb-0"><i
                                                 class="fas fa-fw fa-signal text-primary"></i>Skills</span>
                                         <span>Beginner</span>
-                                    </li>
+                                    </li>-->
+                                    @if ($modalidads->first()->curso->idioma)
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         <span class="h6 fw-light mb-0"><i
-                                                class="fas fa-fw fa-globe text-primary"></i>Language</span>
-                                        <span>English</span>
+                                                class="fas fa-fw fa-globe text-primary"></i>Lenguaje</span>
+                                        <span>{{$modalidads->first()->curso->idioma}}</span>
                                     </li>
+                                    @endif
+                                    <!--
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         <span class="h6 fw-light mb-0"><i
                                                 class="fas fa-fw fa-user-clock text-primary"></i>Deadline</span>
                                         <span>Nov 30 2021</span>
                                     </li>
+                                    -->
+                                    @if ($modalidads->first()->curso->certificado)
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         <span class="h6 fw-light mb-0"><i
-                                                class="fas fa-fw fa-medal text-primary"></i>Certificate</span>
-                                        <span>Yes</span>
+                                                class="fas fa-fw fa-medal text-primary"></i>Certificado</span>
+                                        <span>Si</span>
                                     </li>
+                                    @endif
                                 </ul>
                             </div>
                             <!-- Course info END -->

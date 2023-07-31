@@ -16,11 +16,15 @@ class CategoriaSeeder extends Seeder
     public function run()
     {
         $n_categoria = new Categoria();
-        $n_categoria->name = 'Categoría A';
+        $n_categoria->name = 'Maestrias';
         $n_categoria->save();
 
         $n_categoria = new Categoria();
-        $n_categoria->name = 'Categoría B';
+        $n_categoria->name = 'Diplomados';
+        $n_categoria->save();
+
+        $n_categoria = new Categoria();
+        $n_categoria->name = 'Cursos Intensivos';
         $n_categoria->save();
     }
 }

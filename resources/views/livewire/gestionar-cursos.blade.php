@@ -53,28 +53,28 @@
                         </tr>
                     </thead>
                     <tbody class="table-secondary">
-                        @foreach ($cursos as $key => $curso)
+                        @foreach ($cursos as $key => $lcurso)
                             <tr>
                                 <td class="text-center">{{ $key + 1 }}</td>
-                                <td class="text-center">{{$curso->name}}</td>
+                                <td class="text-center">{{$lcurso->name}}</td>
                                 <td class="text-center">
-                                    <button class="btn btn-success" id="grupos-{{ $curso->id }}"
-                                        wire:click="seleccionar_curso({{ $curso->id }})">{{$curso->grupos->count()}}
+                                    <button class="btn btn-success" id="grupos-{{ $lcurso->id }}"
+                                        wire:click="seleccionar_curso({{ $lcurso->id }})">{{$lcurso->grupos->count()}}
                                     </button>
                                 </td>
                                 <td class="text-center">
-                                    <button class="btn btn-success" id="modalidad-{{ $curso->id }}"
-                                        wire:click="seleccionar_curso({{ $curso->id }})">{{$curso->modalidads->count()}}
+                                    <button class="btn btn-success" id="modalidad-{{ $lcurso->id }}"
+                                        wire:click="seleccionar_curso({{ $lcurso->id }})">{{$lcurso->modalidads->count()}}
                                     </button>
                                 </td>
                                 <td class="text-center">
-                                    <button class="btn btn-success" id="editar-{{ $curso->id }}" data-bs-toggle="modal"
+                                    <button class="btn btn-success" id="editar-{{ $lcurso->id }}" data-bs-toggle="modal"
                                         data-bs-target="#curso_modal"
-                                        wire:click="modal({{ $curso->id }})"><i class="bi bi-pencil-square"></i>
+                                        wire:click="modal({{ $lcurso->id }})"><i class="bi bi-pencil-square"></i>
                                     </button>
 
-                                        <button class="btn btn-danger" id="eliminar-{{ $curso->id }}"
-                                        wire:click="$emit('eliminar_curso',{{ $curso->id }})"><i class="bi bi-trash-fill"></i></button>
+                                        <button class="btn btn-danger" id="eliminar-{{ $lcurso->id }}"
+                                        wire:click="$emit('eliminar_curso',{{ $lcurso->id }})"><i class="bi bi-trash-fill"></i></button>
                                 </td>
                             </tr>
                         @endforeach
@@ -118,7 +118,7 @@
                             <tr>
                                 <td class="text-center">{{ $key2 + 1 }}</td>
                                 <td class="text-center">{{ $grupo->name}}</td>
-                                <td class="text-center">Calificación : {{ $grupo->calificacion}}, Duración : {{$grupo->hora." ".$grupo->min}} y Lecturas : {{$grupo->lecturas}}</td>
+                                <td class="text-center">{{ $grupo->descripcion}}</td>
                                 <th class="text-center">
                                     <button data-bs-toggle="modal" data-bs-target="#grupo_modal"  id="editar-grupo-{{$grupo->id}}" class="btn btn-warning" wire:click="modal_grupo({{$grupo->id}})"><i class="fas fa-edit"></i></button>
                                     <button class="btn btn-danger" id='eliminar-grupo-{{$grupo->id}}' wire:click="eliminar_grupo({{$grupo->id}})"><i class="fas fa-trash"></i></button>
@@ -212,7 +212,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body p-inherit">
-                                        <div class="row m-4">
+                                        <div class="row m-1">
                                             <div class="col-12 col-sm-4">
                                                 <label for="curso_name" class="fw-bold">Nombre : <span
                                                     class="text-danger">(*)</span></label>
@@ -232,7 +232,7 @@
                                             <div class="col-12 col-sm-4">
                                                 <label for="curso_categoria_id" class="fw-bold">Elegir Categoria : <span
                                                     class="text-danger">(*)</span></label>
-                                                <select id="curso_categoria_id" class="form-control" wire:model="curso.categoria_id">
+                                                <select id="curso_categoria_id" class="form-select" wire:model="curso.categoria_id">
                                                     <option value="">Elegir</option>
                                                     @foreach ($categorias as $categoria)
                                                     <option value="{{$categoria->id}}">{{$categoria->name}}</option>
@@ -242,12 +242,77 @@
                                                     <div class="p-1"> {{ $message }}</div>
                                                 @enderror
                                             </div>
+                                        </div>
+                                        <div class="row m-1 align-items-end">
+                                            <div class="col-12 col-sm-6">
+                                                <label for="curso_link_video" class="fw-bold">Url del Video del Curso :</label>
+                                                <input type="text" id="curso_link_video" class="form-control" wire:model="curso.link_video">
+                                                @error('curso.link_video')
+                                                    <div class="p-1"> {{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12 col-sm-2">
+                                                <label for="curso_idioma" class="fw-bold">Idioma :</label>
+                                                <input type="text" id="curso_idioma" class="form-control" wire:model="curso.idioma">
+                                                @error('curso.idioma')
+                                                    <div class="p-1"> {{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12 col-sm-2">
+                                                <label for="curso_duracion" class="fw-bold">Horas Totales :</label>
+                                                <input type="text" id="curso_duracion" class="form-control" wire:model="curso.duracion">
+                                                @error('curso.duracion')
+                                                    <div class="p-1"> {{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12 col-sm-2 text-center">
+                                                <label for="curso_certificado" class="fw-bold">Certificado</label><br>
+                                                <input type="checkbox"   class="mr-1" wire:model='curso.certificado' value="1">
+                                            </div>
+                                        </div>
+                                        <div class="row m-1">
                                             <div class="col-12 col-sm-12">
-                                                <label for="curso_name" class="fw-bold">Descripción del Curso : </label>
-                                                <textarea  id="" class="form-control" wire:model="curso.descripcion"></textarea>
+                                                <label for="curso_descripcion" class="fw-bold">Descripción del Curso a: </label>
+                                                <textarea  id="curso_descripcion" class="form-control" wire:model="curso.descripcion"></textarea>
                                                 @error('curso.descripcion')
                                                     <div class="p-1"> {{ $message }}</div>
                                                 @enderror
+                                            </div>
+                                        </div>
+                                        <div class="row m-1">
+                                            <div class="col-12 col-sm-12" wire:ignore wire:key="mejorando">
+                                                <label for="curso_resumen" class="fw-bold">Resumen del Curso : </label>
+                                                <textarea  id="curso_resumen" class="form-control" wire:model="curso.resumen"></textarea>
+                                                @error('curso.resumen')
+                                                    <div class="p-1"> {{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="row m-1">
+                                            <div class="col-12 col-sm-12">
+                                                <label for="curso_link_video" class="fw-bold">Url del Video del Curso :</label>
+                                                <input type="text" id="curso_link_video" class="form-control" wire:model="curso.link_video">
+                                                @error('curso.link_video')
+                                                    <div class="p-1"> {{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="row m-1">
+                                            <div class="col-12">
+                                                <label for="curso_imagen" class="fw-bold">Imagen del Curso :</label>
+                                                <input type="file" id="curso_imagen-{{$iteration}}" class="form-control" wire:model="curso_imagen">
+                                                    @if ($curso_imagen)
+                                                    <div class="text-center"> Vista previa de la foto de perfil:<br>
+                                                    <img src="{{ $curso_imagen->temporaryUrl() }}" width="128px">
+                                                    </div>
+                                                    @endif
+                                                    @if ($curso->imagen)
+
+                                                    <div class="text-center"> Imagen del Curso<br>
+                                                    <img src="{{asset($curso->imagen)}}" width="128px">
+                                                    </div>
+                                                    @endif
+                                                @error('curso_imagen') <span class="error">{{ $message }}</span> @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -296,39 +361,7 @@
                                                     <div class="p-1"> {{ $message }}</div>
                                                 @enderror
                                             </div>
-                                            <div class="col-12 col-sm-4">
-                                                <label for="grupo_calificacion" class="fw-bold">Calificación : <span
-                                                    class="text-danger">(*)</span></label>
-                                                <input type="number" step="0.1" min="0.1" max="0.5" id="grupo_calificacion" class="form-control" wire:model="grupo.calificacion">
-                                                @error('grupo.calificacion')
-                                                    <div class="p-1"> {{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                            <div class="col-12 col-sm-4">
-                                                <label for="grupo_hora" class="fw-bold">Hora : <span
-                                                    class="text-danger">(*)</span></label>
-                                                <input type="number"  min="1" max="100" id="grupo_hora" class="form-control" wire:model="grupo.hora">
-                                                @error('grupo.hora')
-                                                    <div class="p-1"> {{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                            <div class="col-12 col-sm-4">
-                                                <label for="grupo_min" class="fw-bold">Minutos : <span
-                                                    class="text-danger">(*)</span></label>
-                                                <input type="number"  min="1" max="60" id="grupo_min" class="form-control" wire:model="grupo.min">
-                                                @error('grupo.min')
-                                                    <div class="p-1"> {{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                            <div class="col-12 col-sm-4">
-                                                <label for="grupo_lecturas" class="fw-bold">lecturas : <span
-                                                    class="text-danger">(*)</span></label>
-                                                <input type="number"  min="1" max="60" id="grupo_min" class="form-control" wire:model="grupo.lecturas">
-                                                @error('grupo.lecturas')
-                                                    <div class="p-1"> {{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                            <div class="col-12 col-sm-4">
+                                            <div class="col-12 col-sm-12" wire:ignore wire:key="mejorando2">
                                                 <label for="grupo_descripcion" class="fw-bold">Descripcion : <span
                                                     class="text-danger">(*)</span></label>
                                                     <textarea id="grupo_descripcion" class="form-control" wire:model="grupo.descripcion"  ></textarea>
@@ -517,4 +550,55 @@
             </div>
         </div>
     </div>
+    @push('js')
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js"></script>
+    <script>
+
+        let editor;
+        ClassicEditor
+            .create( document.querySelector( '#curso_resumen' ) )
+            .then(function(leditor){
+                editor = leditor;
+                leditor.model.document.on('change:data', () => {
+                    @this.set('curso.resumen',leditor.getData());
+                })
+            })
+            .catch( error => {
+                console.error( error );
+            } );
+
+        window.livewire.on('editar_editor', accion => {
+            editor.setData(accion);
+        });
+
+        window.livewire.on('nuevo_editor', accion => {
+            editor.setData('');
+        });
+    </script>
+    <script>
+
+        let editor2;
+        ClassicEditor
+            .create( document.querySelector( '#grupo_descripcion' ) )
+            .then(function(leditor2){
+                editor2 = leditor2;
+                leditor2.model.document.on('change:data', () => {
+                    @this.set('grupo.descripcion',leditor2.getData());
+                })
+            })
+            .catch( error => {
+                console.error( error );
+            } );
+
+        window.livewire.on('editar_editor_grupo', accion => {
+            editor2.setData(accion);
+        });
+
+        window.livewire.on('nuevo_editor_grupo', accion => {
+            editor2.setData('');
+        });
+    </script>
+
+    @endpush
+
 </div>
