@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('ap_paterno');
             $table->string('ap_materno');
+            $table->string('celular')->nullable();
             $table->string('id_moodle_user')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

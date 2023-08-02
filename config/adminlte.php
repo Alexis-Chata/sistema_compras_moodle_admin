@@ -304,6 +304,12 @@ return [
             'icon' => 'fas fa-user-graduate',
         ],
         [
+            'text' => 'Pagos',
+            'route'  => 'admin.recibos.index',
+            'can' => 'admin.usuarios.index',
+            'icon' => 'fas fa-pager',
+        ],
+        [
             'text' => 'Cursos',
             'route'  => 'admin.cursos.index',
             'can' => 'admin.usuarios.index',

@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('cmatricula_id');
             $table->unsignedBigInteger('cuota_id');
-            $table->unsignedBigInteger('comprobante_id');
+            $table->unsignedBigInteger('detalle_id');
             $table->foreign('cmatricula_id')->references('id')->on('cmatriculas')->onDelete('cascade');
             $table->foreign('cuota_id')->references('id')->on('cuotas')->onDelete('cascade');
-            $table->foreign('comprobante_id')->references('id')->on('comprobantes')->onDelete('cascade');
+            $table->foreign('detalle_id')->references('id')->on('detalles')->onDelete('cascade');
             $table->date('fpago');
             $table->timestamps();
         });

@@ -13,9 +13,15 @@ return new class extends Migration
     {
         Schema::create('detalles', function (Blueprint $table) {
             $table->id();
+            $table->longText('descripcion');
+            $table->integer('cantidad');
+            $table->double('precio');
+            $table->double('importe');
             $table->unsignedBigInteger('cuota_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('comprobante_id');
             $table->foreign('cuota_id')->references('id')->on('cuotas')->onDelete('set null');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->foreign('comprobante_id')->references('id')->on('comprobantes')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();

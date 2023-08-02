@@ -78,4 +78,9 @@ class User extends Authenticatable
         );
     }
 
+
+    public function comprobantes()
+    {
+        return $this->hasMany(Comprobante::class,'cliente_id');
+    }
 }
