@@ -22,6 +22,7 @@ class CarritoDropdown extends Component
 
     public function render()
     {
+        //dd(Cart::instance('carrito')->content());
         return view('livewire.carrito-dropdown');
     }
 }

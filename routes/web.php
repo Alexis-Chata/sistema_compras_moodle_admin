@@ -80,7 +80,7 @@ Route::middleware([
         $grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
         $grupos = PaginateCollection::paginate($grupos, 3);
         return view('silicon-front.estudiantes.dashboard', compact('grupos'));
-    })->name('dashboard')->middleware('role:Estudiante');
+    })->name('dashboard');
 
     Route::get('/historial-pagos', function () {
         return view('silicon-front.estudiantes.historial-pagos');

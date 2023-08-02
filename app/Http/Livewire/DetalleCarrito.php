@@ -22,6 +22,7 @@ class DetalleCarrito extends Component
 
     public function render()
     {
+        //dd(Cart::instance('carrito')->content());
         return view('livewire.detalle-carrito');
     }
 }

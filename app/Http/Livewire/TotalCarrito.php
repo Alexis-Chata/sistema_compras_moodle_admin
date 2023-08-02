@@ -13,19 +13,7 @@ class TotalCarrito extends Component
 
     public function pago()
     {
-        $modalidad_ids = Cart::instance('carrito')->content()->pluck('options.modalidad_id');
-        foreach ($modalidad_ids as $key => $modalidad_id) {
-            $matricula = [
-                "user_id" => Auth::user()->id,
-                "modalidad_id" => $modalidad_id,
-            ];
-            $rol = ["rol" =>4];
-            Cmatricula::firstorcreate($matricula,$rol);
-        }
-        Cart::instance('carrito')->erase(Auth::user()->id);
-        Cart::instance('carrito')->destroy();
-        $this->emit('actualizar');
-        redirect()->route('mycursos');
+
     }
 
     public function render()
