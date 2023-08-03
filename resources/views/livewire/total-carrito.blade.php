@@ -25,10 +25,10 @@
         <!-- Button -->
         <div class="d-grid">
             @auth
-                <a href="{{ url('/login?redirect_to=' . url()->current()) }}" class="btn btn-lg btn-success">Proceder al proceso de pago</a>
+                <a href="#" wire:click="pago" class="btn btn-lg btn-success">Proceder al proceso de pago</a>
             @endauth
             @guest
-                <a href="#" wire:click="pago" class="btn btn-lg btn-success">Proceder al proceso de pago</a>
+                <a href="{{ url('/login?redirect_to=' . url()->current()) }}" class="btn btn-lg btn-success">Proceder al proceso de pago</a>
             @endguest
         </div>
         <!-- Content -->
