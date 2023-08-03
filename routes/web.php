@@ -72,7 +72,7 @@ Route::middleware([
         $grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
         $grupos = PaginateCollection::paginate($grupos, 3);
         return view('silicon-front.estudiantes.mycursos', compact('grupos', 'cursos'));
-    })->name('mycursos')->middleware('role:Estudiante');
+    })->name('mycursos');
 
     Route::get('/dashboard', function () {
         $user = User::with('cmatriculas.modalidad.curso.categoria', 'cmatriculas.modalidad.curso.grupos')->find(auth()->user()->id);

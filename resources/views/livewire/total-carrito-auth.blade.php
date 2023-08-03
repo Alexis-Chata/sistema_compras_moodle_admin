@@ -24,12 +24,7 @@
 
         <!-- Button -->
         <div class="d-grid">
-            @auth
-                <a href="{{ url('/login?redirect_to=' . url()->current()) }}" class="btn btn-lg btn-success">Proceder al proceso de pago</a>
-            @endauth
-            @guest
-                <a href="#" wire:click="pago" class="btn btn-lg btn-success">Proceder al proceso de pago</a>
-            @endguest
+            <a href="#" class="btn btn-lg btn-success" wire:click="pago">Proceder al proceso de pago</a>
         </div>
         <!-- Content -->
         <p class="small mb-0 mt-2 text-center">Al completar su compra, usted acepta estos <a href="#" _istranslated="1"><strong _istranslated="1">Términos

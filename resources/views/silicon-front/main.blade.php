@@ -175,8 +175,8 @@
     @livewireScripts
     <script defer>
         window.onload = function () {
-            Livewire.emitTo('detalle-carrito', 'actualizar')
             Livewire.emitTo('total-carrito', 'actualizar')
+            Livewire.emitTo('detalle-carrito', 'actualizar')
         }
     </script>
 </body>

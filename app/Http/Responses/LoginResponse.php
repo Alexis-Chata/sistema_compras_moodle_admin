@@ -20,6 +20,6 @@ class LoginResponse implements LoginResponseContract
         if (in_array("Estudiante", Auth::user()->getRoleNames()->toArray())) {
             return redirect(route("dashboard"));
         }
-        return redirect(route("carrito"));
+        return redirect(route("mycursos"));
     }
 }

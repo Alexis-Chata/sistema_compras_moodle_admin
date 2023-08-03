@@ -13,7 +13,7 @@
                     disponibles y compra algunos cursos que satisfagan tus necesidades.</p>
                 <!-- Button -->
                 <a href="{{ route('cursos') }}" class="btn btn-primary mt-4 mb-0" _msttexthash="285155"
-                    _msthash="128">Volver a
+                    _msthash="128">Ir a
                     Cursos</a>
             </div>
         </div>
