@@ -19,7 +19,16 @@ class Additem extends Component
 
     public function addItem()
     {
-        if(Auth::check()) { Cart::instance('carrito')->erase(Auth::user()->id); }
+        if (Auth::check()) {
+            Cart::instance('carrito')->erase(Auth::user()->id);
+        }
+
+        $curso = [
+            'imagen' => $this->curso->imagen,
+            'curso' => $this->curso->name,
+            'curso_id' => $this->curso->id
+        ];
+
         if (!$this->buscaEnCarrito()) {
             // Cart::instance('carrito')->add([
             //     'id' => $this->curso->id,
@@ -33,22 +42,25 @@ class Additem extends Component
             //         'modalidad_id' => $this->modalidad->id
             //     ]
             // ]);
-            Cart::instance('carrito')->add($this->modalidad, 1, [
-                'imagen' => $this->curso->imagen,
-                'modalidad' => $this->curso->name,
-                'modalidad_id' => $this->curso->id]);
+            Cart::instance('carrito')->add($this->modalidad, 1, $curso);
             $this->buscaEnCarrito();
-        }else{
-            Cart::instance('carrito')->update($this->rowId, [
-                'price' => $this->modalidad->cuotas->first()->monto,
-                'options'  => [
-                    'imagen' => $this->curso->imagen,
-                    'modalidad' => $this->modalidad->name,
-                    'modalidad_id' => $this->modalidad->id
-            ]]);
+        } else {
+            // Cart::instance('carrito')->update($this->rowId, [
+            //     'price' => $this->modalidad->cuotas->first()->monto,
+            //     'options'  => [
+            //         'imagen' => $this->curso->imagen,
+            //         'modalidad' => $this->modalidad->name,
+            //         'modalidad_id' => $this->modalidad->id
+            //     ]
+            // ]);
+            Cart::instance('carrito')->update($this->rowId, $this->modalidad);
+            Cart::instance('carrito')->update($this->rowId, 1);
+            Cart::instance('carrito')->update($this->rowId, ['options'  => $curso]);
             $this->buscaEnCarrito();
         }
-        if(Auth::check()) { cart::instance('carrito')->store(Auth::user()->id); }
+        if (Auth::check()) {
+            cart::instance('carrito')->store(Auth::user()->id);
+        }
         //Cart::instance('carrito')->destroy();
         $this->emit('actualizar');
     }
@@ -57,10 +69,10 @@ class Additem extends Component
     {
         $this->encarrito = false;
         if (Cart::instance('carrito')->search(function ($cartItem, $rowId) {
-            if ($cartItem->id === $this->curso->id) {
+            if ($cartItem->options->curso_id === $this->curso->id) {
                 $this->rowId = $rowId;
             }
-            return $cartItem->id === $this->curso->id;
+            return $cartItem->options->curso_id === $this->curso->id;
         })->count() > 0) {
             $this->encarrito = true;
         }
