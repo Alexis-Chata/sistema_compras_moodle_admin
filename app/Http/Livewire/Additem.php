@@ -21,18 +21,22 @@ class Additem extends Component
     {
         if(Auth::check()) { Cart::instance('carrito')->erase(Auth::user()->id); }
         if (!$this->buscaEnCarrito()) {
-            Cart::instance('carrito')->add([
-                'id' => $this->curso->id,
-                'name' => $this->curso->name,
-                'qty' => 1,
-                'price' => $this->modalidad->cuotas->first()->monto,
-                'weight' => 550,
-                'options' => [
-                    'imagen' => $this->curso->imagen,
-                    'modalidad' => $this->modalidad->name,
-                    'modalidad_id' => $this->modalidad->id
-                ]
-            ]);
+            // Cart::instance('carrito')->add([
+            //     'id' => $this->curso->id,
+            //     'name' => $this->curso->name,
+            //     'qty' => 1,
+            //     'price' => $this->modalidad->cuotas->first()->monto,
+            //     'weight' => 550,
+            //     'options' => [
+            //         'imagen' => $this->curso->imagen,
+            //         'modalidad' => $this->modalidad->name,
+            //         'modalidad_id' => $this->modalidad->id
+            //     ]
+            // ]);
+            Cart::instance('carrito')->add($this->modalidad, 1, [
+                'imagen' => $this->curso->imagen,
+                'modalidad' => $this->curso->name,
+                'modalidad_id' => $this->curso->id]);
             $this->buscaEnCarrito();
         }else{
             Cart::instance('carrito')->update($this->rowId, [
