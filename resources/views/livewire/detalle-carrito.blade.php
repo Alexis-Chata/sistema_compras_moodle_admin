@@ -17,7 +17,7 @@
                         </div>
                         <!-- Title -->
                         <h6 class="mb-0 ms-lg-3 mt-2 mt-lg-0">
-                            <a href="#" _msttexthash="992043" _msthash="128">{{ $item->name }} - {{ $item->options->modalidad }}</a>
+                            <a href="#" _msttexthash="992043" _msthash="128">{{ $item->options->curso }} - {{ $item->name }}</a>
                         </h6>
                     </div>
                 </td>
