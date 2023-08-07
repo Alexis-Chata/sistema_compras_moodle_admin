@@ -29,9 +29,9 @@
                 </td>
                 <!-- Action item -->
                 <td>
-                    <a href="#"
+                    {{-- <a href="#"
                         class="btn btn-sm btn-success-soft px-2 me-1 mb-1 mb-md-0"><i
-                            class="far fa-fw fa-edit"></i>{{ $item->qty }}</a>
+                            class="far fa-fw fa-edit"></i>{{ $item->qty }}</a> --}}
                     <button class="btn btn-sm btn-danger-soft px-2 mb-0" wire:click="eliminar_producto('{{ $item->rowId }}')" wire:loading.attr="disabled"><i
                             class="fas fa-fw fa-times"></i></button>
                 </td>

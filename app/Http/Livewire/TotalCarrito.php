@@ -14,7 +14,7 @@ class TotalCarrito extends Component
     public function pago()
     {
         //if (Auth::check()) {
-            $modalidad_ids = Cart::instance('carrito')->content()->pluck('options.modalidad_id');
+            $modalidad_ids = Cart::instance('carrito')->content()->pluck('id');
             foreach ($modalidad_ids as $key => $modalidad_id) {
                 $matricula = [
                     "user_id" => Auth::user()->id,
@@ -25,6 +25,7 @@ class TotalCarrito extends Component
             }
             Cart::instance('carrito')->erase(Auth::user()->id);
             Cart::instance('carrito')->destroy();
+            Auth::user()->assignRole(['Estudiante']);
             $this->emit('actualizar');
             redirect()->route('mycursos');
         //}

@@ -44,7 +44,7 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::get('/carrito', function () {
-    dd(Cart::instance('carrito')->content());
+    //dd(Cart::instance('carrito')->content());
     return view('silicon-front.cart');
 })->name('carrito');
 
