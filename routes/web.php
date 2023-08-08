@@ -24,7 +24,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    //return Cart::instance('carrito')->content()->pluck('options.modalidad_id');
     $categorias = categoria::latest()->take(5)->get();
 
     $categorias->each(function ($item, $key) {
@@ -35,7 +34,6 @@ Route::get('/', function () {
         return $item->cursoslastlimit->count() > 0;
     });
 
-    //return $categorias;
     return view('silicon-front.index', compact('categorias'));
 })->name('index');
 
@@ -44,7 +42,6 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::get('/carrito', function () {
-    //dd(Cart::instance('carrito')->content());
     return view('silicon-front.cart');
 })->name('carrito');
 
@@ -55,7 +52,12 @@ Route::get('/cursos', function () {
 
 Route::get('/curso/{id}', function ($id) {
     $modalidads = Modalidad::with('curso.categoria', 'curso.grupos', 'cuotas', 'gcuotas.grupo')->has('gcuotas', '>', 0)->whereCursoId($id)->get();
-    return view('silicon-front.curso', compact('modalidads'));
+    $inscrito = false;
+    if(auth()->check() && auth()->user()->cmatriculas->pluck('modalidad')->contains('curso_id', $id)){
+        $inscrito = true;
+        $modalidads = $modalidads->whereIn('id', auth()->user()->cmatriculas->pluck('modalidad')->where('curso_id', $id)->pluck('id'));
+    }
+    return view('silicon-front.curso', compact('modalidads', 'inscrito'));
 })->name('curso');
 
 Route::middleware([
@@ -70,17 +72,17 @@ Route::middleware([
     Route::get('/mycursos', function () {
         $user = User::with('cmatriculas.modalidad.curso.categoria', 'cmatriculas.modalidad.curso.grupos')->find(auth()->user()->id);
         $cursos = ($user->cmatriculas->pluck('modalidad.curso'));
-        $grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
-        $grupos = PaginateCollection::paginate($grupos, 3);
-        return view('silicon-front.estudiantes.mycursos', compact('grupos', 'cursos'));
+        $cursos = PaginateCollection::paginate($cursos, 3);
+        //$grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
+        //$grupos = PaginateCollection::paginate($grupos, 3);
+        return view('silicon-front.estudiantes.mycursos', compact('cursos'));
     })->name('mycursos');
 
     Route::get('/dashboard', function () {
         $user = User::with('cmatriculas.modalidad.curso.categoria', 'cmatriculas.modalidad.curso.grupos')->find(auth()->user()->id);
         $cursos = ($user->cmatriculas->pluck('modalidad.curso'));
-        $grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
-        $grupos = PaginateCollection::paginate($grupos, 3);
-        return view('silicon-front.estudiantes.dashboard', compact('grupos'));
+        $cursos = PaginateCollection::paginate($cursos, 3);
+        return view('silicon-front.estudiantes.dashboard', compact('cursos'));
     })->name('dashboard');
 
     Route::get('/historial-pagos', function () {

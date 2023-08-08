@@ -38,12 +38,12 @@
                                     <div>
                                         <h1 class="my-1 fs-4">Lori Stevens</h1>
                                         <ul class="list-inline mb-0">
-                                            <li class="list-inline-item me-3 mb-1 mb-sm-0">
+                                            {{-- <li class="list-inline-item me-3 mb-1 mb-sm-0">
                                                 <span class="h6">255</span>
                                                 <span class="text-body fw-light">points</span>
-                                            </li>
+                                            </li> --}}
                                             <li class="list-inline-item me-3 mb-1 mb-sm-0">
-                                                <span class="h6">7</span>
+                                                <span class="h6">{{ auth()->user()->cmatriculas->pluck('modalidad.curso')->count() }}</span>
                                                 <span class="text-body fw-light">Completed courses</span>
                                             </li>
                                             <li class="list-inline-item me-3 mb-1 mb-sm-0">

@@ -90,12 +90,12 @@
     @endif
 
     @if (in_array(request()->route()->getName(),
-            ['mycursos', 'cursos', 'curso', 'carrito', 'dashboard']))
+            ['mycursos', 'cursos', 'curso', 'carrito', 'dashboard', 'historial-pagos']))
         <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/choices.min.css') }}">
     @endif
 
     @if (in_array(request()->route()->getName(),
-            ['mycursos', 'dashboard']))
+            ['mycursos', 'dashboard', 'historial-pagos']))
         <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/assets/vendor/aos/aos.css') }}">
     @endif
 
@@ -155,17 +155,17 @@
     @endif
 
     @if (in_array(request()->route()->getName(),
-            ['mycursos', 'curso', 'cursos', 'carrito', 'dashboard']))
+            ['mycursos', 'curso', 'cursos', 'carrito', 'dashboard', 'historial-pagos']))
         <script src="{{ asset('silicon-front/silicon/choices.min.js') }}"></script>
     @endif
 
     @if (in_array(request()->route()->getName(),
-            ['dashboard']))
+            ['dashboard', 'historial-pagos']))
         <script src="{{ asset('silicon-front/assets/vendor/purecounterjs/dist/purecounter_vanilla.js') }}"></script>
     @endif
 
     @if (in_array(request()->route()->getName(),
-            ['mycursos', 'dashboard']))
+            ['mycursos', 'dashboard', 'historial-pagos']))
         <script src="{{ asset('silicon-front/assets/vendor/aos/aos.js') }}"></script>
     @endif
 

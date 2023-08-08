@@ -1,7 +1,7 @@
 <div class="card bg-transparent border rounded-3">
     <!-- Card header START -->
     <div class="card-header bg-transparent border-bottom">
-        <h3 class="mb-0">My Courses List</h3>
+        <h3 class="mb-0">Mi Lista de Cursos</h3>
     </div>
     <!-- Card header END -->
 
@@ -24,32 +24,13 @@
             <div class="col-md-3">
                 <!-- Short by filter -->
                 <form>
-                    <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-                        <div class="choices__inner"><select class="form-select js-choice border-0 z-index-9 bg-transparent choices__input" aria-label=".form-select-sm" hidden="" tabindex="-1"
-                                data-choice="active">
-                                <option value="" data-custom-properties="[object Object]">Sort by</option>
-                            </select>
-                            <div class="choices__list choices__list--single">
-                                <div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]"
-                                    aria-selected="true">Sort by</div>
-                            </div>
-                        </div>
-                        <div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" name="search_terms" class="choices__input choices__input--cloned"
-                                autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="Sort by" placeholder="">
-                            <div class="choices__list" role="listbox">
-                                <div id="choices--7voe-item-choice-5" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted"
-                                    role="option" data-choice="" data-id="5" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">Sort by</div>
-                                <div id="choices--7voe-item-choice-1" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="1"
-                                    data-value="Free" data-select-text="Press to select" data-choice-selectable="">Free</div>
-                                <div id="choices--7voe-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2"
-                                    data-value="Most popular" data-select-text="Press to select" data-choice-selectable="">Most popular</div>
-                                <div id="choices--7voe-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3"
-                                    data-value="Most Viewed" data-select-text="Press to select" data-choice-selectable="">Most Viewed</div>
-                                <div id="choices--7voe-item-choice-4" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="4"
-                                    data-value="Newest" data-select-text="Press to select" data-choice-selectable="">Newest</div>
-                            </div>
-                        </div>
-                    </div>
+                    <select class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm">
+                        <option value="">Sort by</option>
+                        <option>Free</option>
+                        <option>Newest</option>
+                        <option>Most popular</option>
+                        <option>Most Viewed</option>
+                    </select>
                 </form>
             </div>
         </div>
@@ -61,7 +42,7 @@
                 <!-- Table head -->
                 <thead>
                     <tr>
-                        <th scope="col" class="border-0 rounded-start">Course Title</th>
+                        <th scope="col" class="border-0 rounded-start">Curso</th>
                         <th scope="col" class="border-0">Total Lectures</th>
                         <th scope="col" class="border-0">Completed Lecture</th>
                         <th scope="col" class="border-0 rounded-end">Action</th>
@@ -71,7 +52,7 @@
                 <!-- Table body START -->
                 <tbody>
 
-                    @forelse ($grupos as $grupo)
+                    @forelse ($cursos as $curso)
                         <!-- Table item -->
                         <tr>
                             <!-- Table data -->
@@ -79,11 +60,11 @@
                                 <div class="d-flex align-items-center">
                                     <!-- Image -->
                                     <div class="w-100px">
-                                        <img src="{{ asset($grupo->imagen) }}" class="rounded" alt="">
+                                        <img src="{{ asset($curso->imagen) }}" class="rounded" alt="">
                                     </div>
                                     <div class="mb-0 ms-2">
                                         <!-- Title -->
-                                        <h6 class="table-responsive-title"><a href="#">{{ $grupo->name }} - {{ $grupo->curso->name }}</a></h6>
+                                        <h6 class="table-responsive-title"><a href="{{ route('curso', $curso->id) }}">{{ $curso->name }}</a></h6>
                                         <!-- Info -->
                                         <div class="overflow-hidden">
                                             <h6 class="mb-0 text-end">60%</h6>
@@ -149,7 +130,6 @@
                                 <a href="#" class="btn btn-sm btn-light me-1"><i class="bi bi-arrow-repeat me-1"></i>Restart</a>
                             </td>
                         </tr>
-
                     @endforelse
 
                 </tbody>
@@ -160,7 +140,7 @@
 
         <!-- Pagination START -->
         <div class="col-12">
-            {{ $grupos->links('silicon-front.pagination.silicon-front-tailwind') }}
+            {{ $cursos->links('silicon-front.pagination.silicon-front-tailwind') }}
         </div>
         <!-- Pagination END -->
     </div>
