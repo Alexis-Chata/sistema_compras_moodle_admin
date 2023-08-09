@@ -10,4 +10,6 @@ class Gmatricula extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $guarded = [];
 }

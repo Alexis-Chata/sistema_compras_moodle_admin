@@ -12,6 +12,8 @@ class Grupo extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $guarded = [];
+
     #estudiantes - cursos
     public function gmatriculas()
     {

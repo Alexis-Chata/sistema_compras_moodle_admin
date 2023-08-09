@@ -78,6 +78,7 @@ class User extends Authenticatable
         );
     }
 
+    protected $guarded = [];
 
     public function comprobantes()
     {

@@ -10,4 +10,6 @@ class Cmoodle extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $guarded = [];
 }

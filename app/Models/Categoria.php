@@ -11,6 +11,8 @@ class Categoria extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $guarded = [];
+
     public function cursoslastlimit()
     {
         return $this->hasMany(Curso::class)->latest()->take(8);

@@ -10,5 +10,6 @@ class Detalle extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $guarded;
+
+    protected $guarded = [];
 }

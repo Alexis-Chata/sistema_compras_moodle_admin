@@ -11,6 +11,8 @@ class Cuota extends Model implements Buyable
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function gcuotas()
     {
         return $this->hasMany(Gcuota::class);

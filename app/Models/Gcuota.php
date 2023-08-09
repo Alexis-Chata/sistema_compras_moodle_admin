@@ -9,6 +9,8 @@ class Gcuota extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function cuota()
     {
         return $this->belongsTo(Cuota::class);

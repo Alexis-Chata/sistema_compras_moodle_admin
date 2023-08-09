@@ -11,6 +11,8 @@ class Comprobante extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $guarded = [];
+
     public function cliente(){
         return $this->belongsTo(User::class,'cliente_id');
     }

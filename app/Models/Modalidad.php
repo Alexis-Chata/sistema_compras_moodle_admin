@@ -10,6 +10,8 @@ class Modalidad extends Model //implements Buyable
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function cuotas()
     {
         return $this->hasMany(Cuota::class);
