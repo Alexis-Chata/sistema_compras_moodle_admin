@@ -23,39 +23,22 @@ class Additem extends Component
             Cart::instance('carrito')->erase(Auth::user()->id);
         }
 
-        $curso = [
+        $options = [
             'imagen' => $this->curso->imagen,
             'curso' => $this->curso->name,
-            'curso_id' => $this->curso->id
+            'curso_id' => $this->curso->id,
+            'modalidad' => $this->modalidad->name,
+            'modalidad_id' => $this->modalidad->id
         ];
 
         if (!$this->buscaEnCarrito()) {
-            // Cart::instance('carrito')->add([
-            //     'id' => $this->curso->id,
-            //     'name' => $this->curso->name,
-            //     'qty' => 1,
-            //     'price' => $this->modalidad->cuotas->first()->monto,
-            //     'weight' => 550,
-            //     'options' => [
-            //         'imagen' => $this->curso->imagen,
-            //         'modalidad' => $this->modalidad->name,
-            //         'modalidad_id' => $this->modalidad->id
-            //     ]
-            // ]);
-            Cart::instance('carrito')->add($this->modalidad, 1, $curso);
+
+            Cart::instance('carrito')->add($this->modalidad->cuotas()->first(), 1, $options);
             $this->buscaEnCarrito();
         } else {
-            // Cart::instance('carrito')->update($this->rowId, [
-            //     'price' => $this->modalidad->cuotas->first()->monto,
-            //     'options'  => [
-            //         'imagen' => $this->curso->imagen,
-            //         'modalidad' => $this->modalidad->name,
-            //         'modalidad_id' => $this->modalidad->id
-            //     ]
-            // ]);
-            Cart::instance('carrito')->update($this->rowId, $this->modalidad);
+            Cart::instance('carrito')->update($this->rowId, $this->modalidad->cuotas()->first(),);
             Cart::instance('carrito')->update($this->rowId, 1);
-            Cart::instance('carrito')->update($this->rowId, ['options'  => $curso]);
+            Cart::instance('carrito')->update($this->rowId, ['options'  => $options]);
             $this->buscaEnCarrito();
         }
         if (Auth::check()) {

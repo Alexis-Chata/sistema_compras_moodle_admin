@@ -13,6 +13,6 @@
         </button>
     </span>
     @if ($encarrito)
-        <span class="h6 fw-light mb-0">{{ Cart::instance('carrito')->get($rowId)->name; }} <a href="{{ route('carrito') }}">En Carrito</a></span>
+        <span class="h6 fw-light mb-0">{{ Cart::instance('carrito')->get($rowId)->name; }} / {{ Cart::instance('carrito')->get($rowId)->options->modalidad; }} - <a href="{{ route('carrito') }}">En Carrito</a></span>
     @endif
 </div>

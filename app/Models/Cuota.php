@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cuota extends Model
+class Cuota extends Model implements Buyable
 {
     use HasFactory;
 
@@ -14,7 +15,6 @@ class Cuota extends Model
     {
         return $this->hasMany(Gcuota::class);
     }
-
 
     public function modalidad()
     {
@@ -32,5 +32,18 @@ class Cuota extends Model
             get: fn ($value) => number_format($value, 2),
             set: fn ($value) => number_format($value, 2),
         );
+    }
+
+    public function getBuyableIdentifier($options = null) {
+        return $this->id;
+    }
+    public function getBuyableDescription($options = null) {
+        return $this->name;
+    }
+    public function getBuyablePrice($options = null) {
+        return $this->monto;
+    }
+    public function getBuyableWeight($options = null) {
+        return 1;
     }
 }
