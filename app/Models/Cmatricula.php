@@ -22,4 +22,9 @@ class Cmatricula extends Model
     {
         return $this->belongsTo(Modalidad::class);
     }
+
+    public function mpagos()
+    {
+        return $this->hasMany(Mpago::class);
+    }
 }

@@ -152,10 +152,15 @@
                                                                     @if ($inscrito)
                                                                         <!-- Buttons -->
                                                                         <div class="hstack gap-3 flex-wrap">
-                                                                            {{-- <a href="#" class="btn btn-sm btn-primary mb-0"><i
-                                                                            class="bi bi-play-fill me-2"></i>Play</a> --}}
-                                                                            <a href="#" class="text-success mb-0"><i class="bi bi-pencil-square me-2"></i>Pagado</a>
-                                                                            <a href="#" class="text-danger mb-0"><i class="bi bi-trash me-2"></i>Pendiente</a>
+                                                                            @if (auth()->user()->cmatriculas->firstWhere('modalidad_id', $modalidad->id)->mpagos->contains('cuota_id', $gcuota->cuota_id))
+
+                                                                                {{-- <a href="#" class="btn btn-sm btn-primary mb-0"><i
+                                                                                class="bi bi-play-fill me-2"></i>Play</a> --}}
+                                                                                <a href="#" class="text-success mb-0"><i class="bi bi-pencil-square me-2"></i>Pagado</a>
+
+                                                                                @else
+                                                                                <a href="#" class="text-danger mb-0"><i class="bi bi-trash me-2"></i>Pendiente</a>
+                                                                            @endif
                                                                         </div>
                                                                     @endif
                                                                 </div>
