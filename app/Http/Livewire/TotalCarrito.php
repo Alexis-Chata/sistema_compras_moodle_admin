@@ -18,22 +18,23 @@ class TotalCarrito extends Component
     {
         //if (Auth::check()) {
             $carrito = Cart::instance('carrito');
+            $user = Auth::user();
             $options = $carrito->content()->pluck('options', 'id');
-            $comprobante = Comprobante::create(['cliente_id' => Auth::user()->id, 'femision' => now() , 'termino' => 'termino', 'total' => $carrito->total()]);
+            $comprobante = Comprobante::create(['cliente_id' => $user->id, 'femision' => now() , 'termino' => 'termino', 'total' => $carrito->total()]);
             foreach ($carrito->content() as $key => $item) {
                 //dd($item->options);
                 $matricula = [
-                    "user_id" => Auth::user()->id,
+                    "user_id" => $user->id,
                     "modalidad_id" => $item->options->modalidad_id,
                     "rol" => 4
                 ];
-                $detalle = Detalle::create(['descripcion' => $item->curso.' '.$item->name, 'cantidad' => $item->qty, 'precio' => $item->price, 'importe' => $item->qty * $item->price, 'comprobante_id' => $comprobante->id]);
+                $detalle = Detalle::create(['descripcion' => $item->options->curso.' '.$item->name, 'cantidad' => $item->qty, 'precio' => $item->price, 'importe' => $item->qty * $item->price, 'cuota_id' => $item->id, 'user_id' => $user->id, 'comprobante_id' => $comprobante->id]);
                 $cmatricula = Cmatricula::create($matricula);
                 Mpago::create(['cmatricula_id' => $cmatricula->id, 'cuota_id' => $item->id , 'detalle_id' => $detalle->id, 'fpago' => now()]);
             }
-            $carrito->erase(Auth::user()->id);
+            $carrito->erase($user->id);
             $carrito->destroy();
-            Auth::user()->assignRole(['Estudiante']);
+            $user->assignRole(['Estudiante']);
             $this->emit('actualizar');
             redirect()->route('mycursos');
         //}

@@ -2,6 +2,7 @@
 
 use App\Models\Categoria;
 use App\Models\Curso;
+use App\Models\Detalle;
 use App\Models\Modalidad;
 use App\Models\User;
 use App\Utils\PaginateCollection;
@@ -86,7 +87,8 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/historial-pagos', function () {
-        return view('silicon-front.estudiantes.historial-pagos');
+        $detalles = Detalle::whereUserId(auth()->id())->get();
+        return view('silicon-front.estudiantes.historial-pagos', compact('detalles'));
     })->name('historial-pagos')->middleware('role:Estudiante');
 
     Route::get('/lista-deseos', function () {

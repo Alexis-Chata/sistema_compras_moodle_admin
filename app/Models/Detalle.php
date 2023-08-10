@@ -12,4 +12,9 @@ class Detalle extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function comprobante()
+    {
+        return $this->belongsTo(Comprobante::class);
+    }
 }

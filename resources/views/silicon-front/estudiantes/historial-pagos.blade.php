@@ -61,6 +61,37 @@
                     </thead>
                     <!-- Table body -->
                     <tbody>
+                        @forelse ( $detalles as $detalle )
+                        <!-- Table item -->
+                        <tr>
+                            <!-- Date item -->
+                            <td>{{ $detalle->comprobante->femision }}</td>
+
+                            <!-- Title item -->
+                            <td>
+                                <h6 class="mt-2 mt-lg-0 mb-0"><a href="#">{{ $detalle->descripcion }}</a></h6>
+                            </td>
+
+                            <!-- Payment method item -->
+                            <td><img src="assets/images/client/mastercard.svg" class="h-40px" alt=""><span
+                                    class="ms-2">****4568</span></td>
+
+                            <!-- Status item -->
+                            <td>
+                                <span class="badge bg-success bg-opacity-10 text-success">Paid</span>
+                            </td>
+
+                            <!-- total item -->
+                            <td>{{ $detalle->importe }}</td>
+
+                            <!-- Action item -->
+                            <td>
+                                <a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i
+                                        class="bi bi-download"></i></a>
+                            </td>
+                        </tr>
+                        @empty
                         <!-- Table item -->
                         <tr>
                             <!-- Date item -->
@@ -92,98 +123,7 @@
                             </td>
                         </tr>
 
-                        <!-- Table item -->
-                        <tr>
-                            <!-- Date item -->
-                            <td>10/1/2023</td>
-
-                            <!-- Title item -->
-                            <td>
-                                <h6 class="mt-2 mt-lg-0 mb-0"><a href="#">Create a Design System in
-                                        Figma</a></h6>
-                            </td>
-
-                            <!-- Payment method item -->
-                            <td><img src="assets/images/client/mastercard.svg" class="h-40px" alt=""><span
-                                    class="ms-2">****2588</span></td>
-
-                            <!-- Status item -->
-                            <td>
-                                <span class="badge bg-success bg-opacity-10 text-success">Paid</span>
-                            </td>
-
-                            <!-- total item -->
-                            <td>$242</td>
-
-                            <!-- Action item -->
-                            <td>
-                                <a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i
-                                        class="bi bi-download"></i></a>
-                            </td>
-                        </tr>
-
-                        <!-- Table item -->
-                        <tr>
-                            <!-- Date item -->
-                            <td>21/1/2023</td>
-
-                            <!-- Title item -->
-                            <td>
-                                <h6 class="mt-2 mt-lg-0 mb-0"><a href="#">The Complete Web
-                                        Development in python</a></h6>
-                            </td>
-
-                            <!-- Payment method item -->
-                            <td><img src="assets/images/client/paypal.svg" class="w-80px" alt="">
-                            </td>
-
-                            <!-- Status item -->
-                            <td>
-                                <span class="badge bg-orange bg-opacity-10 text-orange">Pending</span>
-                            </td>
-
-                            <!-- total item -->
-                            <td>$576</td>
-
-                            <!-- Action item -->
-                            <td>
-                                <a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i
-                                        class="bi bi-download"></i></a>
-                            </td>
-                        </tr>
-
-                        <!-- Table item -->
-                        <tr>
-                            <!-- Date item -->
-                            <td>18/1/2023</td>
-
-                            <!-- Title item -->
-                            <td>
-                                <h6 class="mt-2 mt-lg-0 mb-0"><a href="#">Deep Learning with
-                                        React-Native</a></h6>
-                            </td>
-
-                            <!-- Payment method item -->
-                            <td><img src="assets/images/client/mastercard.svg" class="h-40px" alt=""><span
-                                    class="ms-2">****2588</span></td>
-
-                            <!-- Status item -->
-                            <td>
-                                <span class="badge bg-danger bg-opacity-10 text-danger">Cancel</span>
-                            </td>
-
-                            <!-- total item -->
-                            <td>$425</td>
-
-                            <!-- Action item -->
-                            <td>
-                                <a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i
-                                        class="bi bi-download"></i></a>
-                            </td>
-                        </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
