@@ -28,7 +28,7 @@ class TotalCarrito extends Component
                     "modalidad_id" => $item->options->modalidad_id,
                     "rol" => 4
                 ];
-                $detalle = Detalle::create(['descripcion' => $item->options->curso.' '.$item->name, 'cantidad' => $item->qty, 'precio' => $item->price, 'importe' => $item->qty * $item->price, 'cuota_id' => $item->id, 'user_id' => $user->id, 'comprobante_id' => $comprobante->id]);
+                $detalle = Detalle::create(['descripcion' => $item->options->curso.' / '.$item->options->modalidad.' - '.$item->name, 'cantidad' => $item->qty, 'precio' => $item->price, 'importe' => $item->qty * $item->price, 'cuota_id' => $item->id, 'user_id' => $user->id, 'comprobante_id' => $comprobante->id]);
                 $cmatricula = Cmatricula::create($matricula);
                 Mpago::create(['cmatricula_id' => $cmatricula->id, 'cuota_id' => $item->id , 'detalle_id' => $detalle->id, 'fpago' => now()]);
             }
@@ -36,7 +36,7 @@ class TotalCarrito extends Component
             $carrito->destroy();
             $user->assignRole(['Estudiante']);
             $this->emit('actualizar');
-            redirect()->route('mycursos');
+            redirect()->route('dashboard');
         //}
     }
 

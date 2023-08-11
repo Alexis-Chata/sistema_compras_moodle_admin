@@ -12,6 +12,9 @@ class Comprobante extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+    protected $casts = [
+        'femision' => 'datetime:d-m-Y',
+    ];
 
     public function cliente(){
         return $this->belongsTo(User::class,'cliente_id');

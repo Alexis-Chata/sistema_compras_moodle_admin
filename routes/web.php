@@ -72,8 +72,8 @@ Route::middleware([
 
     Route::get('/mycursos', function () {
         $user = User::with('cmatriculas.modalidad.curso.categoria', 'cmatriculas.modalidad.curso.grupos')->find(auth()->user()->id);
-        $cursos = ($user->cmatriculas->pluck('modalidad.curso'));
-        $cursos = PaginateCollection::paginate($cursos, 3);
+        $cursos = ($user->cmatriculas->pluck('modalidad.curso')->reverse());
+        $cursos = PaginateCollection::paginate($cursos, 4);
         //$grupos = ($user->cmatriculas->pluck('modalidad.curso.grupos')->collapse());
         //$grupos = PaginateCollection::paginate($grupos, 3);
         return view('silicon-front.estudiantes.mycursos', compact('cursos'));
@@ -81,17 +81,18 @@ Route::middleware([
 
     Route::get('/dashboard', function () {
         $user = User::with('cmatriculas.modalidad.curso.categoria', 'cmatriculas.modalidad.curso.grupos')->find(auth()->user()->id);
-        $cursos = ($user->cmatriculas->pluck('modalidad.curso'));
+        $cursos = ($user->cmatriculas->pluck('modalidad.curso')->reverse());
         $cursos = PaginateCollection::paginate($cursos, 3);
         return view('silicon-front.estudiantes.dashboard', compact('cursos'));
     })->name('dashboard');
 
     Route::get('/historial-pagos', function () {
-        $detalles = Detalle::whereUserId(auth()->id())->get();
+        $detalles = Detalle::with('comprobante')->whereUserId(auth()->id())->get()->reverse();
+        $detalles = PaginateCollection::paginate($detalles, 4);
         return view('silicon-front.estudiantes.historial-pagos', compact('detalles'));
-    })->name('historial-pagos')->middleware('role:Estudiante');
+    })->name('historial-pagos');
 
     Route::get('/lista-deseos', function () {
         return view('silicon-front.estudiantes.lista-deseos');
-    })->name('lista-deseos')->middleware('role:Estudiante');
+    })->name('lista-deseos');
 });
