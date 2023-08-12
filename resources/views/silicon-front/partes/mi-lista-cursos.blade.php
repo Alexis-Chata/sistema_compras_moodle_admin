@@ -60,7 +60,7 @@
                                 <div class="d-flex align-items-center">
                                     <!-- Image -->
                                     <div class="w-100px">
-                                        <img src="{{ asset($curso->imagen) }}" class="rounded" alt="">
+                                        <img src="{{ asset($curso->imagen) }}" class="rounded" alt="" style="max-width: 100px !important;">
                                     </div>
                                     <div class="mb-0 ms-2">
                                         <!-- Title -->
