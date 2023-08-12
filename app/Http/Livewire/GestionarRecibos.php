@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Clases\ReciboClass;
 use App\Models\Categoria;
 use App\Models\Cmatricula;
 use App\Models\Comprobante;
@@ -227,6 +228,8 @@ class GestionarRecibos extends Component
         $this->reset('servicioSeleccionado');
         $this->mount($this->hcliente->id);
     }
+
+
     public function obtener_generar_cmatricula($estudiante_id,$modalidad_id){
         #buscar matricula del curso
         $bmatricula = Cmatricula::where('user_id',$estudiante_id)->where('modalidad_id',$modalidad_id)->first();
@@ -276,13 +279,13 @@ class GestionarRecibos extends Component
 
     public function generar_reciboPdf(Comprobante $comprobante)
     {
-        /*$r_recibo = new ReciboClass();
-        $r_recibo->generar_reciboPdf($recibo);*/
+        $r_recibo = new ReciboClass();
+        $r_recibo->generar_reciboPdf($comprobante);
     }
 
     public function descargar_recibo(Comprobante $comprobante){
-        /*$r_recibo = new ReciboClass();
-        return $r_recibo->descargar_recibo($comprobante);*/
+        $r_recibo = new ReciboClass();
+        return $r_recibo->descargar_recibo($comprobante);
     }
 
     public function editarComprobante(Comprobante $comprobante){
