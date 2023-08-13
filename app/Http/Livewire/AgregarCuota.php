@@ -2,21 +2,23 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Cuota;
 use App\Models\Curso;
 use App\Models\Modalidad;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
 
-class Additem extends Component
+class AgregarCuota extends Component
 {
     public Modalidad $modalidad;
     public Curso $curso;
+    public Cuota $cuota;
     public bool $encarrito;
     public String $rowId;
 
-    protected $listeners = ['actualizar' => 'mount'];
+    protected $listeners = ['actualizarcuota' => 'mount'];
 
-    public function addItem()
+    public function agregarCuota()
     {
         $carrito = Cart::instance('carrito');
         $user = auth()->user();
@@ -31,18 +33,20 @@ class Additem extends Component
             'curso' => $this->curso->name,
             'curso_id' => $this->curso->id,
             'modalidad' => $this->modalidad->name,
-            'modalidad_id' => $this->modalidad->id
+            'modalidad_id' => $this->modalidad->id,
+            'cuota' => $this->cuota->name,
+            'cuota_id' => $this->cuota->id
         ];
 
-        if (!$this->buscaEnCarrito()) {
+        if (!$this->buscaCuotaEnCarrito()) {
 
-            $carrito->add($this->modalidad->cuotas()->first(), 1, $options);
-            $this->buscaEnCarrito();
+            $carrito->add($this->cuota, 1, $options);
+            $this->buscaCuotaEnCarrito();
         } else {
-            $carrito->update($this->rowId, $this->modalidad->cuotas()->first(),);
+            $carrito->update($this->rowId, $this->cuota);
             $carrito->update($this->rowId, 1);
             $carrito->update($this->rowId, ['options'  => $options]);
-            $this->buscaEnCarrito();
+            $this->buscaCuotaEnCarrito();
         }
         if ($userCheck) {
             $carrito->store($user->id);
@@ -51,15 +55,15 @@ class Additem extends Component
         $this->emit('actualizar');
     }
 
-    public function buscaEnCarrito()
+    public function buscaCuotaEnCarrito()
     {
         $carrito = Cart::instance('carrito');
         $this->encarrito = false;
         if ($carrito->search(function ($cartItem, $rowId) {
-            if ($cartItem->options->curso_id === $this->curso->id) {
+            if ($cartItem->id === $this->cuota->id) {
                 $this->rowId = $rowId;
             }
-            return $cartItem->options->curso_id === $this->curso->id;
+            return $cartItem->id === $this->cuota->id;
         })->count() > 0) {
             $this->encarrito = true;
         }
@@ -68,13 +72,13 @@ class Additem extends Component
 
     public function mount()
     {
-        $this->buscaEnCarrito();
+        $this->buscaCuotaEnCarrito();
     }
 
     public function render()
     {
         $carrito = Cart::instance('carrito');
         $carrito->setGlobalTax(0);
-        return view('livewire.additem');
+        return view('livewire.agregar-cuota');
     }
 }

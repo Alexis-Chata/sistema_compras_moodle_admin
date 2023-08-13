@@ -24,7 +24,7 @@
 
                 <!-- Amount item -->
                 <td class="text-center">
-                    <h5 class="text-success mb-0" _msttexthash="21021" _msthash="129">S/. {{ $item->price }}
+                    <h5 class="text-success mb-0" _msttexthash="21021" _msthash="129">S/. {{ number_format($item->price, 2, '.', ',') }}
                     </h5>
                 </td>
                 <!-- Action item -->

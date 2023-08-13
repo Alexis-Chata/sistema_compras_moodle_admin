@@ -12,7 +12,7 @@
             <div class="col-9">
                 <!-- Title -->
                 <div class="d-flex justify-content-between">
-                    <h6 class="m-0">{{ $item->options->curso }} - {{ $item->options->modalidad }}</h6>
+                    <h6 class="m-0">{{ $item->options->curso }} - {{ $item->options->cuota??$item->options->modalidad }}</h6>
                     <a href="#" class="small text-primary-hover rowId"
                         wire:click="eliminar_producto('{{ $item->rowId }}')" wire:loading.attr="disabled"><i class="bi bi-x-lg"></i></a>
                 </div>

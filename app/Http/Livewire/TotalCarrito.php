@@ -7,7 +7,6 @@ use App\Models\Comprobante;
 use App\Models\Detalle;
 use App\Models\Mpago;
 use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class TotalCarrito extends Component
@@ -16,10 +15,9 @@ class TotalCarrito extends Component
 
     public function pago()
     {
-        //if (Auth::check()) {
+        //if (auth()->check()) {
             $carrito = Cart::instance('carrito');
-            $user = Auth::user();
-            $options = $carrito->content()->pluck('options', 'id');
+            $user = auth()->user();
             $comprobante = Comprobante::create(['cliente_id' => $user->id, 'femision' => now() , 'termino' => 'termino', 'total' => $carrito->total()]);
             foreach ($carrito->content() as $key => $item) {
                 //dd($item->options);
@@ -29,7 +27,7 @@ class TotalCarrito extends Component
                     "rol" => 4
                 ];
                 $detalle = Detalle::create(['descripcion' => $item->options->curso.' / '.$item->options->modalidad.' - '.$item->name, 'cantidad' => $item->qty, 'precio' => $item->price, 'importe' => $item->qty * $item->price, 'cuota_id' => $item->id, 'user_id' => $user->id, 'comprobante_id' => $comprobante->id]);
-                $cmatricula = Cmatricula::create($matricula);
+                $cmatricula = Cmatricula::firstOrCreate($matricula);
                 Mpago::create(['cmatricula_id' => $cmatricula->id, 'cuota_id' => $item->id , 'detalle_id' => $detalle->id, 'fpago' => now()]);
             }
             $carrito->erase($user->id);

@@ -3,9 +3,8 @@
 @section('main-content')
 
     <main>
-
         <!-- =======================
-                Page intro START -->
+                    Page intro START -->
         <section class="bg-light py-0 py-sm-5">
             <div class="container">
                 <div class="row py-5">
@@ -27,11 +26,8 @@
                 </div>
             </div>
         </section>
-        <!-- =======================
-                Page intro END -->
-
-        <!-- =======================
-                Page content START -->
+        <!-- ======================= Page intro END -->
+        <!-- ======================= Page content START -->
         <section class="pb-0 py-lg-5">
             <div class="container">
                 <div class="row">
@@ -53,37 +49,6 @@
                                                 type="button" role="tab" aria-controls="course-pills-{{ $modalidad->id }}" aria-selected="false">{{ $modalidad->name }}</button>
                                         </li>
                                     @endforeach
-                                    {{--
-                                <!-- Tab item -->
-                                <li class="nav-item me-2 me-sm-4" role="presentation">
-                                    <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-2" data-bs-toggle="pill"
-                                        data-bs-target="#course-pills-2" type="button" role="tab"
-                                        aria-controls="course-pills-2" aria-selected="false">Curriculum</button>
-                                </li>
-                                <!-- Tab item -->
-                                <li class="nav-item me-2 me-sm-4" role="presentation">
-                                    <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-3" data-bs-toggle="pill"
-                                        data-bs-target="#course-pills-3" type="button" role="tab"
-                                        aria-controls="course-pills-3" aria-selected="false">Instructor</button>
-                                </li>
-                                <!-- Tab item -->
-                                <li class="nav-item me-2 me-sm-4" role="presentation">
-                                    <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-4" data-bs-toggle="pill"
-                                        data-bs-target="#course-pills-4" type="button" role="tab"
-                                        aria-controls="course-pills-4" aria-selected="false">Reviews</button>
-                                </li>
-                                <!-- Tab item -->
-                                <li class="nav-item me-2 me-sm-4" role="presentation">
-                                    <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-5" data-bs-toggle="pill"
-                                        data-bs-target="#course-pills-5" type="button" role="tab"
-                                        aria-controls="course-pills-5" aria-selected="false">FAQs </button>
-                                </li>
-                                <!-- Tab item -->
-                                <li class="nav-item me-2 me-sm-4" role="presentation">
-                                    <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-6" data-bs-toggle="pill"
-                                        data-bs-target="#course-pills-6" type="button" role="tab"
-                                        aria-controls="course-pills-6" aria-selected="false">Comment</button>
-                                </li> --}}
                                 </ul>
                             </div>
                             <!-- Tabs END -->
@@ -145,7 +110,7 @@
                                                                 </div>
                                                                 <!-- Content -->
                                                                 <div class="col-sm-10 col-xl-11">
-                                                                    <h5>{{ $gcuota->grupo->name }} - {{ $cuota->name }} <span>( $ {{ number_format($cuota->monto, 2) }} )</span></h5>
+                                                                    <h5>{{ $gcuota->grupo->name }} - {{ $cuota->name }}<span>( $ {{ number_format($cuota->monto, 2) }} )</span></h5>
                                                                     <p>
                                                                         <?php echo $gcuota->grupo->descripcion; ?>
                                                                     </p>
@@ -153,13 +118,12 @@
                                                                         <!-- Buttons -->
                                                                         <div class="hstack gap-3 flex-wrap">
                                                                             @if (auth()->user()->cmatriculas->firstWhere('modalidad_id', $modalidad->id)->mpagos->contains('cuota_id', $gcuota->cuota_id))
-
                                                                                 {{-- <a href="#" class="btn btn-sm btn-primary mb-0"><i
                                                                                 class="bi bi-play-fill me-2"></i>Play</a> --}}
-                                                                                <a href="#" class="text-success mb-0"><i class="bi bi-pencil-square me-2"></i>Pagado</a>
-
-                                                                                @else
-                                                                                <a href="#" class="text-danger mb-0"><i class="bi bi-trash me-2"></i>Pendiente</a>
+                                                                                <p class="text-success mb-0"><i class="bi bi-pencil-square me-2"></i>Pagado</p>
+                                                                            @else
+                                                                                <p class="text-danger mb-0"><i class="bi bi-trash me-2"></i>Pendiente</p>
+                                                                                @livewire('agregar-cuota', ['curso' => $modalidad->curso, 'modalidad' => $modalidad, 'cuota' => $cuota])
                                                                             @endif
                                                                         </div>
                                                                     @endif
@@ -1634,10 +1598,10 @@
                                     <h4 class="mb-3">Este curso incluye</h4>
                                     <ul class="list-group list-group-borderless">
                                         <!--<li class="list-group-item d-flex justify-content-between align-items-center">
-                                                    <span class="h6 fw-light mb-0"><i
-                                                            class="fas fa-fw fa-book-open text-primary"></i>Lectures</span>
-                                                    <span>30</span>
-                                                </li>-->
+                                                        <span class="h6 fw-light mb-0"><i
+                                                                class="fas fa-fw fa-book-open text-primary"></i>Lectures</span>
+                                                        <span>30</span>
+                                                    </li>-->
                                         @if ($modalidads->first()->curso->duracion)
                                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                                 <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-clock text-primary"></i>Duración</span>
@@ -1645,10 +1609,10 @@
                                             </li>
                                         @endif
                                         <!--<li class="list-group-item d-flex justify-content-between align-items-center">
-                                                    <span class="h6 fw-light mb-0"><i
-                                                            class="fas fa-fw fa-signal text-primary"></i>Skills</span>
-                                                    <span>Beginner</span>
-                                                </li>-->
+                                                        <span class="h6 fw-light mb-0"><i
+                                                                class="fas fa-fw fa-signal text-primary"></i>Skills</span>
+                                                        <span>Beginner</span>
+                                                    </li>-->
                                         @if ($modalidads->first()->curso->idioma)
                                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                                 <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-globe text-primary"></i>Lenguaje</span>
@@ -1656,12 +1620,12 @@
                                             </li>
                                         @endif
                                         <!--
-                                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                    <span class="h6 fw-light mb-0"><i
-                                                            class="fas fa-fw fa-user-clock text-primary"></i>Deadline</span>
-                                                    <span>Nov 30 2021</span>
-                                                </li>
-                                                -->
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        <span class="h6 fw-light mb-0"><i
+                                                                class="fas fa-fw fa-user-clock text-primary"></i>Deadline</span>
+                                                        <span>Nov 30 2021</span>
+                                                    </li>
+                                                    -->
                                         @if ($modalidads->first()->curso->certificado)
                                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                                 <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-medal text-primary"></i>Certificado</span>
@@ -1752,10 +1716,10 @@
             </div>
         </section>
         <!-- =======================
-                Page content END -->
+                    Page content END -->
 
         <!-- =======================
-                Listed courses START -->
+                    Listed courses START -->
         <section class="pt-0">
             <div class="container">
                 <!-- Title -->
@@ -2002,7 +1966,7 @@
             </div>
         </section>
         <!-- =======================
-                Listed courses END -->
+                    Listed courses END -->
 
     </main>
 

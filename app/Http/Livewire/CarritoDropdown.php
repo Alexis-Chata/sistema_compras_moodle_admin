@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class CarritoDropdown extends Component
@@ -11,18 +10,23 @@ class CarritoDropdown extends Component
     protected $listeners = ['actualizar'=>'render'];
 
     public function eliminar_producto($rowId){
-        if(Auth::check()) { Cart::instance('carrito')->erase(Auth::user()->id); }
-        Cart::instance('carrito')->remove($rowId);
+        $carrito = Cart::instance('carrito');
+        $user = auth()->user();
+        $userCheck = auth()->check();
+
+        if($userCheck) { $carrito->erase($user->id); }
+        $carrito->remove($rowId);
         $this->emit('actualizar');
-        if (!Cart::instance('carrito')->count()) {
+        $this->emit('actualizarcuota');
+        if (!$carrito->count()) {
             $this->emit('actualizarContenido');
         }
-        if(Auth::check()) { cart::instance('carrito')->store(Auth::user()->id); }
+        if($userCheck) { $carrito->store($user->id); }
     }
 
     public function render()
     {
-        //dd(Cart::instance('carrito')->content());
+        //dd($carrito->content());
         return view('livewire.carrito-dropdown');
     }
 }
