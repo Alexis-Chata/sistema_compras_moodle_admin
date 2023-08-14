@@ -29,6 +29,7 @@ class GestionarRecibos extends Component
     public $editandoItem, $card_header_servicio, $card_body_btn_servicio, $card_header_recibo;
     protected $listeners = ['clienteIdToRecibo','eliminar_comprobante','actualizar_servicios'];
 
+
     public function actualizar_servicios(){
       $this->listaServicios = ['producto a','producto b'];
     }
@@ -39,11 +40,13 @@ class GestionarRecibos extends Component
             return $r_recibo->descargar_historial_cliente($this->hcliente);
         }*/
     }
+
     public function UpdatedBcurso(){
         $this->bmodalidad = '';
         $this->obtener_modalidad();
     }
     public function UpdatedBestudiante(){
+        $this->emit('activar_buscador');
         $this->obtener_modalidad();
     }
 
@@ -60,12 +63,15 @@ class GestionarRecibos extends Component
                 });
             }
 
+            #verificar si el cliente ya pago la cuota en otro comprobante
+
             $this->cuotas= $this->cuotas->get();
         }
         else {
             $this->cuotas = [];
         }
     }
+
     public function obtener_modalidad(){
         $estudiante = User::where('email',$this->bestudiante)->first();
         $curso = User::where('id',$this->bcurso)->first();
@@ -127,8 +133,6 @@ class GestionarRecibos extends Component
         $this->updatedCantidad();
     }
 
-
-
     /**
      * Recibe id del cliente para cargar sus datos y generar comprobante
      *
@@ -169,7 +173,7 @@ class GestionarRecibos extends Component
         $lcuota = Cuota::find($this->bcuota);
         $luser  = User::where('email',$this->bestudiante)->first();
 
-        $newItem->descripcion = substr($lcuota->modalidad->curso->name,0,20)."-".$lcuota->modalidad->name."-".$lcuota->name;
+        $newItem->descripcion = substr($luser->ap_paterno." ".$luser->ap_materno." ".$luser->name,0,20)."-".substr($lcuota->modalidad->curso->name,0,20)."-".substr($lcuota->modalidad->name,0,10)."-".substr($lcuota->name,0,10);
         $newItem->cantidad = 1;
         $newItem->precio = $lcuota->monto;
         $newItem->importe = $newItem->cantidad*$newItem->precio;
@@ -228,7 +232,6 @@ class GestionarRecibos extends Component
         $this->reset('servicioSeleccionado');
         $this->mount($this->hcliente->id);
     }
-
 
     public function obtener_generar_cmatricula($estudiante_id,$modalidad_id){
         #buscar matricula del curso

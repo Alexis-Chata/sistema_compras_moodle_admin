@@ -51,7 +51,7 @@
                             <div class="col-sm-3 col-md">
                                 <div wire:self.defer>
                                     <label for="bestudiante">Buscar Usuario</label>
-                                    <input type="text" class="form-control" id="bestudiante" wire:model='bestudiante'>
+                                    <input type="text" id='bestudiante1' class="form-control" wire:model='bestudiante'>
                                 </div>
                             </div>
                             <div class="col-sm-3 col-md">
