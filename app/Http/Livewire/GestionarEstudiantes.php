@@ -53,7 +53,6 @@ class GestionarEstudiantes extends Component
         $this->user = new User();
     }
 
-
     #validar
     public function validando($id = null){
         $this->validate([

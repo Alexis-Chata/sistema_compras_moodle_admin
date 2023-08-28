@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\File;
 use Maatwebsite\Excel\Facades\Excel;
 
+
 class ReciboClass {
     public function __construct(){}
 
@@ -58,7 +59,11 @@ class ReciboClass {
 
     public function generar_reciboPdf(Comprobante $recibo)
     {
+        $recibo = Comprobante::find($recibo->id);
         $formatter = new NumeroALetras();
+        $nombreticketpdf ='recibospdf/rec-'.strtotime(date("F j, Y, g:i a"))."-".$recibo->correlativo.'.pdf';
+        $recibo->path_pdf = $nombreticketpdf;
+        $recibo->save();
         $total_letra = $formatter->toMoney($recibo->total, 2, 'QUETZALES', 'CENTAVOS');
         $consultapdf = FacadePdf::loadView('administrador.recibos.comprobante_pdf', compact('recibo', 'total_letra'));
         $consultapdf->setOption(['defaultFont'=>'gothic']);
@@ -66,10 +71,7 @@ class ReciboClass {
         {
             File::makeDirectory(storage_path('app/public/') . 'recibospdf/');
         }
-        $nombreticketpdf ='recibospdf/rec-'.strtotime(date("F j, Y, g:i a"))."-".$recibo->correlativo.'.pdf';
         $consultapdf->save(storage_path('app/public/') . $nombreticketpdf);
-        $recibo->path_pdf = $nombreticketpdf;
-        $recibo->save();
     }
 }
 

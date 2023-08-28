@@ -147,13 +147,19 @@
             <tr>
                 <td class="bg-gris color-white p-2 fw-900">DATOS DEL CLIENTE</td>
                 <td class="w-10 p-2"></td>
-                <td class="w-20 bg-gris color-white p-2 fw-900 text-center">N° DE RECIBO</td>
+                <td class="w-20 bg-gris color-white p-2 fw-900 text-center">
+                    @if ($recibo->tipo_comprobante == 1)
+                    N° DE RECIBO
+                    @elseif($recibo->tipo_comprobante == 2)
+                    N° DE DEV
+                    @endif
+                </td>
                 <td class="w-18 bg-gris color-white p-2 fw-900 text-center">FECHA</td>
             </tr>
             <tr>
                 <td class="p-2 fw-900">{{$recibo->cliente->paterno." ".$recibo->cliente->materno." ".$recibo->cliente->name}}</td>
                 <td class="w-10 p-2"></td>
-                <td class="p-2 fw-900 text-center">{{$recibo->id}}</td>
+                <td class="p-2 fw-900 text-center">{{$recibo->correlativo}}</td>
                 <td class="p-2 fw-900 text-center">{{date("d-m-Y", strtotime($recibo->femision))}}</td>
             </tr>
             <tr class="p-2">
@@ -182,7 +188,8 @@
             <tr class="bg-gris border-s-gris">
                 <th class="bg-gris color-white p-2 fw-900 w-60">DESCRIPCIÓN</th>
                 <th class="bg-gris color-white p-2 fw-900">CANT.</th>
-                <th class="bg-gris color-white p-2 fw-900">PRECIO UNITARIO</th>
+                <th class="bg-gris color-white p-2 fw-900">P. UNITARIO</th>
+                <th class="bg-gris color-white p-2 fw-900">T</th>
                 <th class="bg-gris color-white p-2 fw-900">IMPORTE</th>
             </tr>
         </thead>
@@ -192,12 +199,15 @@
             @endphp
             @foreach ($recibo->detalles as $detalle)
             @php
-                $subtotal = $subtotal +$detalle->precio*$detalle->cantidad;
+            if($detalle->tipo == "+"){$subtotal = $subtotal + $detalle->precio*$detalle->cantidad;}
+            elseif($detalle->tipo == "-") {$subtotal = $subtotal - $detalle->precio*$detalle->cantidad;}
+
             @endphp
             <tr>
                 <td class="border-1">{{$detalle->descripcion}}</td>
                 <td class="border-1 text-center">{{$detalle->cantidad}}</td>
                 <td class="border-1 text-center">Q {{$detalle->precio}}</td>
+                <td class="border-1 text-center">{{$detalle->tipo}}</td>
                 <td class="border-1 text-center">Q {{$detalle->precio*$detalle->cantidad}}</td>
             </tr>
             @endforeach
@@ -216,40 +226,41 @@
                 <td class="border-1"></td>
                 <td class="border-1 text-center"></td>
                 <td class="border-1 text-center"></td>
+                <td class="border-1 text-center"></td>
                 <td class="border-1 text-center">-</td>
             </tr>
             @endfor
             <tr>
                 <td class="p-2 bg-gris-a color-rojo text-center">Estatus : Cancelado</td>
-                <td class="p-2 bg-gris-b" colspan="2">SUBTOTAL</td>
+                <td class="p-2 bg-gris-b" colspan="3">SUBTOTAL</td>
                 <td class="p-2 bg-gris-a text-center">Q {{$subtotal}}</td>
             </tr>
             <tr>
                 <td class="p-2">Nota: Este no es un documento contable.</td>
-                <td class="p-2 bg-gris-b text-center" colspan="2"></td>
+                <td class="p-2 bg-gris-b text-center" colspan="3"></td>
                 <td class="p-2 bg-gris-a text-center"></td>
             </tr>
             <tr>
                 <td class="p-2"></td>
-                <td class="p-2 bg-gris-b" colspan="2">IMPUESTOS</td>
+                <td class="p-2 bg-gris-b" colspan="3">IMPUESTOS</td>
                 <td class="p-2 bg-gris-a text-center">-</td>
             </tr>
             <tr>
                 <td class="p-2"></td>
-                <td class="p-2 bg-gris-b     color-gris" colspan="2">TOTAL</td>
+                <td class="p-2 bg-gris-b color-gris" colspan="3">TOTAL</td>
                 <td class="p-2 bg-gris-a text-center">Q {{$subtotal}}</td>
             </tr>
             <tr>
-                <td colspan="4" class="">Total en Letras :</td>
+                <td colspan="5" class="">Total en Letras :</td>
             </tr>
             <tr>
-                <td colspan="4" class="text-center p-2 border-s">{{ $total_letra }}</td>
+                <td colspan="5" class="text-center p-2 border-s">{{ $total_letra }}</td>
             </tr>
             <tr>
-                <td colspan="4" class="text-center p-2">Si tiene alguna duda sobre este recibo, póngase en contacto con</td>
+                <td colspan="5" class="text-center p-2">Si tiene alguna duda sobre este recibo, póngase en contacto con</td>
             </tr>
             <tr>
-                <td colspan="4" class="text-center p-2">Admin Mad Mid, Móvil: 999 999 999, aprendiendo@hotmail.es</td>
+                <td colspan="5" class="text-center p-2">Admin Mad Mid, Móvil: 999 999 999, aprendiendo@hotmail.es</td>
             </tr>
         </tbody>
     </table>

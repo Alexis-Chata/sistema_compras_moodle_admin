@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('cantidad');
             $table->double('precio');
             $table->double('importe');
+            $table->char('tipo')->default('+');
             $table->unsignedBigInteger('cuota_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('comprobante_id');

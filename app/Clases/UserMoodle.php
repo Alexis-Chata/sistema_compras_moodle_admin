@@ -3,6 +3,7 @@ namespace App\Clases;
 use App\Models\Cmoodle;
 use App\Models\User;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Support\Facades\Http;
 
 class UserMoodle {
@@ -17,19 +18,22 @@ class UserMoodle {
 
     public function crear_usuario()
     {
-        if ($this->usuario->id_moodle_user != null or $this->usuario->id_moodle_user == 0) {
             $functionname = 'core_user_create_users';
             $consulta = $this->cmoodle->dominio
                 . '?wstoken=' . $this->cmoodle->token
                 . '&wsfunction=' . $functionname
-                . '&moodlewsrestformat=json&users[0][username]=' . $this->usuario->email
-                . '&users[0][password]=' .$this->usuario->email
-                . '&users[0][firstname]=' .$this->usuario->name
-                . '&users[0][lastname]=' .$this->usuario->ap_paterno." ".$this->usuario->ap_materno
-                . '&users[0][email]=' . $this->usuario->email
+                . '&moodlewsrestformat=json&users[0][username]=' . trim($this->usuario->email)
+                . '&users[0][password]=' .trim($this->usuario->email)
+                . '&users[0][firstname]=' .trim($this->usuario->name)
+                . '&users[0][lastname]=' .trim($this->usuario->ap_paterno." ".$this->usuario->ap_materno)
+                . '&users[0][email]=' . trim($this->usuario->email)
                 . '&users[0][country]=MX';
                 $n_user = Http::get($consulta);
-            if(isset(json_decode($n_user)->exception)){ return false;}
+
+            if(isset(json_decode($n_user)->exception)){
+                $this->usuario->delete();
+                return false;
+            }
             else
             {
                 $this->id = json_decode($n_user)[0]->id;
@@ -37,11 +41,6 @@ class UserMoodle {
                 $this->usuario->save();
                 return json_decode($n_user)[0]->id;
             }
-        }
-        else {
-            $this->id = $this->usuario->id_moodle_user;
-            return $this->usuario->id_moodle_user;
-        }
     }
 
     public function modificar_usuario()
@@ -60,9 +59,10 @@ class UserMoodle {
 
     public static function buscar($user_id)
     {
+
         $usuario = User::find($user_id);
         $user = new UserMoodle($user_id);
-        $user->id = $usuario->id_user_moodle;
+        $user->id = $usuario->id_moodle_user;
         return $user;
     }
 
@@ -100,6 +100,7 @@ class UserMoodle {
 
     public function eliminar()
     {
+
         $this->cmoodle = Cmoodle::find(1);
         $functionname = 'core_user_delete_users';
             $serverurl = $this->cmoodle->dominio
@@ -151,7 +152,10 @@ class UserMoodle {
         . '?wstoken=' . $this->cmoodle->token
         . '&wsfunction='.$functionname2
         .'&moodlewsrestformat=json&enrolments[0][roleid]='.$role_id.'&enrolments[0][userid]='.$this->id.'&enrolments[0][courseid]='.$curso_id;
-        Http::get($serverurl2);
+        $matricula = Http::get($serverurl2);
+        if(isset(json_decode($matricula)->exception)){
+            throw new Exception('no se pudo realizar la matricula');
+        }
     }
 
     public function desmatricular($curso_id,$role_id)
@@ -162,6 +166,28 @@ class UserMoodle {
         . '&wsfunction='.$functionname2
         .'&moodlewsrestformat=json&enrolments[0][roleid]='.$role_id.'&enrolments[0][userid]='.$this->id.'&enrolments[0][courseid]='.$curso_id;
         Http::get($serverurl2);
+    }
+
+    public function matricular_grupo_estudiante($grupo_id){
+        $functionname = 'core_group_add_group_members';
+        $consulta = $this->cmoodle->dominio
+        . '?wstoken=' . $this->cmoodle->token
+        . '&wsfunction='.$functionname
+        .'&moodlewsrestformat=json&members[0][groupid]='.$grupo_id
+        .'&members[0][userid]='.$this->id;
+        $c_grupo = Http::get($consulta);
+        if(isset(json_decode($c_grupo)->exception)){
+            throw new Exception('no se pudo realizar la matricula del grupo');
+        }
+    }
+    public function desmatricular_grupo_estudiante($grupo_id){
+        $functionname = 'core_group_delete_group_members';
+        $consulta = $this->cmoodle->dominio
+        . '?wstoken=' . $this->cmoodle->token
+        . '&wsfunction='.$functionname
+        .'&moodlewsrestformat=json&members[0][groupid]='.$grupo_id
+        .'&members[0][userid]='.$this->id;
+        $c_grupo = Http::get($consulta);
     }
 }
 ?>

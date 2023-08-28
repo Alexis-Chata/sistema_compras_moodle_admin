@@ -15,7 +15,8 @@ class CmoodleSeeder extends Seeder
     {
         $n_cmoodle = new Cmoodle();
         $n_cmoodle->dominio = 'http://aprendiendo.jademlearning.com/webservice/rest/server.php';
-        $n_cmoodle->token = '3965c3e3228fac0de59b88b77c2625fb';
+        $n_cmoodle->url ="http://aprendiendo.jademlearning.com/";
+        $n_cmoodle->token = '2764438739e0fcc48fc2483814d8f0a8';
         $n_cmoodle->save();
     }
 }
