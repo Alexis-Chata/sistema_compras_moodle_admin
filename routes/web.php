@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BillingController;
 use App\Models\Categoria;
 use App\Models\Curso;
 use App\Models\Detalle;
@@ -95,4 +96,7 @@ Route::middleware([
     Route::get('/lista-deseos', function () {
         return view('silicon-front.estudiantes.lista-deseos');
     })->name('lista-deseos');
+
+    Route::get('billings', [BillingController::class, 'index'])->name('billings.index');
 });
+
