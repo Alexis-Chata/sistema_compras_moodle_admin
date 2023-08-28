@@ -4,6 +4,8 @@
 
 <div class="col-xl-9">
 
+    <livewire:payment-method>
+
     <!-- Billing history START -->
     <div class="card bg-transparent border rounded-3">
         <!-- Card header START -->

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('ap_paterno');
-            $table->string('ap_materno');
+            $table->string('ap_paterno')->default('ap_paterno');
+            $table->string('ap_materno')->default('ap_materno');
             $table->string('celular')->nullable();
             $table->string('id_moodle_user')->nullable();
             $table->string('email')->unique();

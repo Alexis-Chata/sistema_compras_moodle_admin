@@ -179,6 +179,8 @@
             Livewire.emitTo('detalle-carrito', 'actualizar')
         }
     </script>
+
+    @stack('billings')
 </body>
 
 </html>
