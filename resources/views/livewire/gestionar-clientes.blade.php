@@ -121,17 +121,10 @@
                                                                     <td class="text-center">{{ $gcliente->email }}</td>
                                                                     <td class="text-center">{{ $gcliente->comprobantes->count() }}</td>
                                                                     <td>
-                                                                            <button class="btn btn-success text-white"
-                                                                            id="generar-{{ $gcliente->id }}"
-                                                                            wire:click="$emit('clienteIdToRecibo', {{ $gcliente->id }})"><i class="fas fa-plus-circle"></i></button>
-                                                                            <button class="btn btn-secondary"
-                                                                            id="select-{{ $gcliente->id }}"
-                                                                            wire:click="obtener_datos('{{ $gcliente->id }}')"><i class="fas fa-edit"></i></button>
-                                                                            <button class="btn btn-danger"
-                                                                            id="eliminar-{{ $gcliente->id }}"
-                                                                            wire:click="eliminar('{{ $gcliente->id }}')"
-                                                                            wire:target="eliminar"
-                                                                            wire:loading.attr="disabled"><i class="fas fa-trash"></i></button>
+                                                                            <a href="{{$sdominio."user/profile.php?id=".$gcliente->id_moodle_user}}" id='ver-perfil-{{$gcliente->id}}' class="btn btn-dark text-white" target="_blank"><i class="fas fa-user"></i></a>
+                                                                            <button class="btn btn-success text-white" id="generar-{{ $gcliente->id }}" wire:click="$emit('clienteIdToRecibo', {{ $gcliente->id }})"><i class="fas fa-plus-circle"></i></button>
+                                                                            <button class="btn btn-secondary" id="select-{{ $gcliente->id }}" wire:click="obtener_datos('{{ $gcliente->id }}')"><i class="fas fa-edit"></i></button>
+                                                                            <button class="btn btn-danger" id="eliminar-{{ $gcliente->id }}" wire:click="eliminar('{{ $gcliente->id }}')" wire:target="eliminar" wire:loading.attr="disabled"><i class="fas fa-trash"></i></button>
                                                                     </td>
                                                                 </tr>
                                                             @endforeach

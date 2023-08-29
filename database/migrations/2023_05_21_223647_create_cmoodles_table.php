@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('cmoodles', function (Blueprint $table) {
             $table->id();
             $table->string('dominio')->nullable();
+            $table->string('url')->nullable();
             $table->string('token')->nullable();
             $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();

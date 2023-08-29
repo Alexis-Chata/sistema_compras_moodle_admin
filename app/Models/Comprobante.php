@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 
 class Comprobante extends Model
 {
@@ -27,5 +28,11 @@ class Comprobante extends Model
     public function detalles()
     {
         return $this->hasMany(Detalle::class);
+    }
+
+    public function subir_imagen($nombre,$imagen){
+        $ideposito = $imagen->storeAs('public/comprobantes/depositos', $nombre);
+        $this->imagen_deposito = Storage::url($ideposito);
+        $this->save();
     }
 }
