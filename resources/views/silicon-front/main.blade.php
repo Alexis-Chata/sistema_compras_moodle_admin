@@ -109,6 +109,7 @@
 
     @auth
         @php
+            auth()->user()->createOrGetStripeCustomer();
             cart::instance('carrito')->restore(Auth::user()->id);
             cart::instance('carrito')->store(Auth::user()->id);
         @endphp
@@ -184,3 +185,4 @@
 </body>
 
 </html>
+

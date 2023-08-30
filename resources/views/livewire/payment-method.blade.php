@@ -129,7 +129,7 @@
         <div class="card-body">
             @forelse ($PaymentMethods as $PaymentMethod)
                 <!-- Address 1 START -->
-                <div class="bg-body border border-1 p-3 rounded-3 d-sm-flex justify-content-sm-between align-items-center mb-4">
+                <div class="bg-body border border-1 p-3 rounded-3 d-sm-flex justify-content-sm-between align-items-center mb-4" wire:key="{{ $PaymentMethod->id }}">
 
                     <!-- Radio button button -->
                     <div class="form-check">
