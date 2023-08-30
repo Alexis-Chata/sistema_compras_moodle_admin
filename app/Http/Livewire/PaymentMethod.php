@@ -6,9 +6,14 @@ use Livewire\Component;
 
 class PaymentMethod extends Component
 {
-
+    public function getDefaultPaymentMethodProperty(){
+        return auth()->user()->defaultPaymentMethod();
+    }
     public function addPaymentMethod($paymentMethod){
         auth()->user()->addPaymentMethod($paymentMethod);
+        if(!auth()->user()->hasDefaultPaymentMethod()){
+            auth()->user()->updateDefaultPaymentMethod($paymentMethod);
+        }
     }
 
     public function deletePaymentMethod($paymentMethod){
@@ -21,6 +26,8 @@ class PaymentMethod extends Component
 
     public function render()
     {
+        //dd(auth()->user()->defaultPaymentMethod());
+        //dd(auth()->user()->hasDefaultPaymentMethod());
         return view('livewire.payment-method', [
             'intent' => auth()->user()->createSetupIntent(),
             'PaymentMethods' => auth()->user()->PaymentMethods(),

@@ -134,10 +134,14 @@
                     <!-- Radio button button -->
                     <div class="form-check">
                         <input class="form-check-input mb-1" type="radio" name="address" id="address{{ $PaymentMethod->id }}" checked>
-                        <label class="form-check-label mb-0 h5" for="address{{ $PaymentMethod->id }}">{{ ucwords($PaymentMethod->card->brand) }} - •••• {{ $PaymentMethod->card->last4 }} <a href="#" class="badge bg-info bg-opacity-10 text-info">Predeterminado</a></label>
+                        <label class="form-check-label mb-0 h5" for="address{{ $PaymentMethod->id }}">{{ ucwords($PaymentMethod->card->brand) }} - •••• {{ $PaymentMethod->card->last4 }}
+                            @if ($this->defaultPaymentMethod->id == $PaymentMethod->id)
+                                <a href="#" class="badge bg-info bg-opacity-10 text-info">Predeterminado</a>
+                            @endif
+                        </label>
                         <p class="mb-0">Caduca {{ \Carbon\Carbon::createFromDate($PaymentMethod->card->exp_year, $PaymentMethod->card->exp_month)->translatedFormat('M Y') }}</p>
                     </div>
-
+                    @if ($this->defaultPaymentMethod->id != $PaymentMethod->id)
                     <!-- Button -->
                     <div>
                         <button class="btn btn-sm btn-success mb-0" wire:click="defaultPaymentMethod('{{ $PaymentMethod->id }}')" wire:target="defaultPaymentMethod('{{ $PaymentMethod->id }}')"
@@ -145,7 +149,7 @@
                         <button class="btn btn-sm btn-danger mb-0" wire:click="deletePaymentMethod('{{ $PaymentMethod->id }}')" wire:target="deletePaymentMethod('{{ $PaymentMethod->id }}')"
                             wire:loading.attr='disabled'>Delete</button>
                     </div>
-
+                    @endif
                 </div>
                 <!-- Address 1 END -->
             @empty
