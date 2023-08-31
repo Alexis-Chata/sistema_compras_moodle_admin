@@ -11,17 +11,14 @@
             <div class="row">
                 <div class="col-12">
                     <div class="bg-light p-4 text-center rounded-3">
-                        <h1 class="m-0" _msttexthash="136708" _msthash="121">Mi carrito</h1>
+                        <h1 class="m-0">Mi carrito</h1>
                         <!-- Breadcrumb -->
                         <div class="d-flex justify-content-center">
-                            <nav aria-label="miga de pan" _mstaria-label="157144" _msthash="122">
+                            <nav aria-label="miga de pan">
                                 <ol class="breadcrumb breadcrumb-dots mb-0">
-                                    <li class="breadcrumb-item"><a href="{{ route('index') }}" _msttexthash="59059"
-                                            _msthash="123">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="{{ route('cursos') }}" _msttexthash="80366"
-                                            _msthash="124">Cursos</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page" _msttexthash="60216"
-                                        _msthash="125">Carro</li>
+                                    <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('cursos') }}">Cursos</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Carro</li>
                                 </ol>
                             </nav>
                         </div>

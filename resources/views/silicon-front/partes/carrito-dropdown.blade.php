@@ -20,7 +20,7 @@
             <div
                 class="card-footer bg-transparent border-top py-3 text-center d-flex justify-content-between position-relative">
                 <a href="{{ route('carrito') }}" class="btn btn-sm btn-light mb-0">Ver Carrito</a>
-                <a href="#" class="btn btn-sm btn-success mb-0">Checkout</a>
+                <a href="{{ route('checkout') }}" class="btn btn-sm btn-success mb-0">Checkout</a>
             </div>
         </div>
     </div>

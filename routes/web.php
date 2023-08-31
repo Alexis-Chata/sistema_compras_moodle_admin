@@ -47,6 +47,10 @@ Route::get('/carrito', function () {
     return view('silicon-front.cart');
 })->name('carrito');
 
+Route::get('/checkout', function () {
+    return view('silicon-front.checkout');
+})->name('checkout');
+
 Route::get('/cursos', function () {
     $cursos = Curso::paginate(12);
     return view('silicon-front.cursos', compact('cursos'));
