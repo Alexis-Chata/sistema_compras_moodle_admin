@@ -16,7 +16,7 @@
                     <h6 class="accordion-header font-base" id="heading-1">
                         <button class="accordion-button bg-white rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true"
                             aria-controls="collapse-1">
-                            Credit or Debit Card
+                            Tarjeta de crédito o débito
                         </button>
                     </h6>
                     <div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="heading-1" data-bs-parent="#accordioncircle">
@@ -109,7 +109,7 @@
     </div>
     <!-- Add Payment method END -->
 
-    <div class="mb-4 justify-content-center" wire:target='addPaymentMethod' wire:loading.flex>
+    <div class="mb-4 justify-content-center" wire:target='addPaymentMethod,defaultPaymentMethod,deletePaymentMethod' wire:loading.flex>
 
         <div class="spinner-border" role="status">
             <span class="sr-only">Loading...</span>
@@ -133,7 +133,7 @@
 
                     <!-- Radio button button -->
                     <div class="form-check">
-                        <input class="form-check-input mb-1" type="radio" name="address" id="address{{ $PaymentMethod->id }}" checked>
+                        <input class="form-check-input mb-1 d-none" type="radio" name="address" id="address{{ $PaymentMethod->id }}">
                         <label class="form-check-label mb-0 h5" for="address{{ $PaymentMethod->id }}">{{ ucwords($PaymentMethod->card->brand) }} - •••• {{ $PaymentMethod->card->last4 }}
                             @if ($this->defaultPaymentMethod->id == $PaymentMethod->id)
                                 <a href="#" class="badge bg-info bg-opacity-10 text-info">Predeterminado</a>
@@ -144,15 +144,20 @@
                     @if ($this->defaultPaymentMethod->id != $PaymentMethod->id)
                     <!-- Button -->
                     <div>
-                        <button class="btn btn-sm btn-success mb-0" wire:click="defaultPaymentMethod('{{ $PaymentMethod->id }}')" wire:target="defaultPaymentMethod('{{ $PaymentMethod->id }}')"
-                            wire:loading.attr='disabled'>Edit</button>
+                        <button class="btn btn-sm btn-warning-soft mb-0" wire:click="defaultPaymentMethod('{{ $PaymentMethod->id }}')" wire:target="defaultPaymentMethod('{{ $PaymentMethod->id }}')"
+                            wire:loading.attr='disabled'><i class="far fa-star text-warning"></i></button>
                         <button class="btn btn-sm btn-danger mb-0" wire:click="deletePaymentMethod('{{ $PaymentMethod->id }}')" wire:target="deletePaymentMethod('{{ $PaymentMethod->id }}')"
-                            wire:loading.attr='disabled'>Delete</button>
+                            wire:loading.attr='disabled'><i class="bi bi-trash"></i></button>
                     </div>
                     @endif
                 </div>
                 <!-- Address 1 END -->
             @empty
+            <div class="bg-body border border-1 p-3 rounded-3 d-sm-flex justify-content-sm-between align-items-center mb-4">
+                <div class="form-check">
+                    <label class="form-check-label mb-0 h5">Aun sin metodos de pago</label>
+                </div>
+            </div>
             @endforelse
         </div>
         <!-- Card body START -->

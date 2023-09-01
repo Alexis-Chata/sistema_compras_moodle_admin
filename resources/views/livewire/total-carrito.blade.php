@@ -1,4 +1,14 @@
 <div class="col-lg-4">
+    @guest
+        <!-- Alert -->
+        <div class="alert alert-danger alert-dismissible d-flex justify-content-between align-items-center fade show py-2 pe-2" role="alert">
+            <div>
+                <i class="bi bi-exclamation-octagon-fill me-2"></i>
+                ¿Ya tienes una cuenta? <a href="{{ url('/login?redirect_to=' . route('carrito')) }}" class="text-reset btn-link mb-0 fw-bold">Inicia sesión</a>
+            </div>
+            <button type="button" class="btn btn-link mb-0 text-primary-hover text-end" data-bs-dismiss="alert" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+    @endguest
     <!-- Card total START -->
     <div class="card card-body p-4 shadow">
         <!-- Title -->
@@ -25,11 +35,11 @@
         <!-- Button -->
         <div class="d-grid">
             @auth
-            <a href="#" wire:click="pago" class="btn btn-lg btn-success">Proceder al proceso de pago</a>
+                <a href="{{ route('checkout') }}" class="btn btn-lg btn-success">Proceder al proceso de pago</a>
             @endauth
             @guest
-            <a href="{{ url('/login?redirect_to=' . route('carrito')) }}" class="btn btn-lg btn-success">Proceder al
-                proceso de pago</a>
+                <a href="{{ url('/login?redirect_to=' . route('checkout')) }}" class="btn btn-lg btn-success">Proceder al
+                    proceso de pago</a>
             @endguest
         </div>
         <!-- Content -->
