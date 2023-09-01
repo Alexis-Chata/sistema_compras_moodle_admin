@@ -1,7 +1,6 @@
 <div class="me-2 me-md-3 dropdown">
     <!-- Cart button -->
-    <a class="btn btn-light btn-round mb-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-        data-bs-auto-close="outside">
+    <a class="btn btn-light btn-round mb-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
         <i class="bi bi-cart3 fa-fw"></i>
     </a>
     <!-- badge / bolsa -->
@@ -17,10 +16,11 @@
             @livewire('carrito-dropdown')
 
             <!-- Button -->
-            <div
-                class="card-footer bg-transparent border-top py-3 text-center d-flex justify-content-between position-relative">
+            <div class="card-footer bg-transparent border-top py-3 text-center d-flex justify-content-between position-relative">
                 <a href="{{ route('carrito') }}" class="btn btn-sm btn-light mb-0">Ver Carrito</a>
-                <a href="{{ route('checkout') }}" class="btn btn-sm btn-success mb-0">Checkout</a>
+                @if (Cart::instance('carrito')->count())
+                    <a href="{{ route('checkout') }}" class="btn btn-sm btn-success mb-0">Checkout</a>
+                @endif
             </div>
         </div>
     </div>

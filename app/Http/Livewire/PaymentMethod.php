@@ -33,6 +33,9 @@ class PaymentMethod extends Component
         if ($userCheck) {
             $carrito->store($user->id);
         }
+        if (!$carrito->count()) {
+            redirect()->route('carrito');
+        }
     }
 
     public function pago()
@@ -78,6 +81,9 @@ class PaymentMethod extends Component
     public function addPaymentMethodAndPago($paymentMethod)
     {
         $this->addPaymentMethod($paymentMethod);
+        if (auth()->user()->hasDefaultPaymentMethod()) {
+            $this->paymentMethodId = $this->paymentMethodId ?? $this->getDefaultPaymentMethodProperty()->id;
+        }
         $this->pago();
     }
 
