@@ -47,19 +47,16 @@ Route::get('/carrito', function () {
     return view('silicon-front.cart');
 })->name('carrito');
 
-Route::get('/checkout', function () {
-    return view('silicon-front.checkout');
-})->name('checkout');
-
 Route::get('/cursos', function () {
     $cursos = Curso::paginate(12);
-    return view('silicon-front.cursos', compact('cursos'));
+    $categorias = Categoria::all();
+    return view('silicon-front.cursos', compact('cursos', 'categorias'));
 })->name('cursos');
 
 Route::get('/curso/{id}', function ($id) {
     $modalidads = Modalidad::with('curso.categoria', 'curso.grupos', 'cuotas', 'gcuotas.grupo')->has('gcuotas', '>', 0)->whereCursoId($id)->get();
     $inscrito = false;
-    if(auth()->check() && auth()->user()->cmatriculas->pluck('modalidad')->contains('curso_id', $id)){
+    if (auth()->check() && auth()->user()->cmatriculas->pluck('modalidad')->contains('curso_id', $id)) {
         $inscrito = true;
         $modalidads = $modalidads->whereIn('id', auth()->user()->cmatriculas->pluck('modalidad')->where('curso_id', $id)->pluck('id'));
     }
@@ -86,6 +83,9 @@ Route::middleware([
 
     Route::get('/dashboard', function () {
         $user = User::with('cmatriculas.modalidad.curso.categoria', 'cmatriculas.modalidad.curso.grupos')->find(auth()->user()->id);
+        $invoices = auth()->user()->invoices();
+        $lastInvoice = $billable->invoices()->last();
+        dd($lastInvoice);
         $cursos = ($user->cmatriculas->pluck('modalidad.curso')->reverse());
         $cursos = PaginateCollection::paginate($cursos, 3);
         return view('silicon-front.estudiantes.dashboard', compact('cursos'));
@@ -97,10 +97,16 @@ Route::middleware([
         return view('silicon-front.estudiantes.historial-pagos', compact('detalles'));
     })->name('historial-pagos');
 
-    Route::get('/lista-deseos', function () {
-        return view('silicon-front.estudiantes.lista-deseos');
-    })->name('lista-deseos');
+    // Route::get('/lista-deseos', function () {
+    //     return view('silicon-front.estudiantes.lista-deseos');
+    // })->name('lista-deseos');
 
     Route::get('billings', [BillingController::class, 'index'])->name('billings.index');
-});
 
+    Route::get('/checkout', function () {
+        if(!Cart::instance('carrito')->count()){
+            return redirect()->route('carrito')->with('info', 'No hay productos en el carrito');
+        }
+        return view('silicon-front.checkout');
+    })->name('checkout');
+});

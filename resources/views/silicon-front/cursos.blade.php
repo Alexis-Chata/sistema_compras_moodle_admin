@@ -1,5 +1,13 @@
 @extends('silicon-front.main')
 
+@push('stilos')
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/choices.min.css') }}">
+@endpush
+
+@push('javascripts')
+    <script src="{{ asset('silicon-front/silicon/choices.min.js') }}"></script>
+@endpush
+
 @section('main-content')
 
 <main>
@@ -38,67 +46,24 @@
             <form class="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative">
                 <div class="row g-3">
                     <!-- Input -->
-                    <div class="col-xl-3">
+                    <div class="col-xl-8">
                         <input class="form-control me-1" type="search" placeholder="Enter keyword">
                     </div>
 
                     <!-- Select item -->
-                    <div class="col-xl-8">
+                    <div class="col-xl-3">
                         <div class="row g-3">
                             <!-- Select items -->
-                            <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
+                            <div class="col-sm-12 col-md-12 pb-2 pb-md-0">
                                 <select class="form-select form-select-sm js-choice"
-                                    aria-label=".form-select-sm example">
-                                    <option value="">Categories</option>
-                                    <option>All</option>
-                                    <option>Development</option>
-                                    <option>Design</option>
-                                    <option>Accounting</option>
-                                    <option>Translation</option>
-                                    <option>Finance</option>
-                                    <option>Legal</option>
-                                    <option>Photography</option>
-                                    <option>Writing</option>
-                                    <option>Marketing</option>
+                                    aria-label=".form-select-sm example" name="categorias">
+                                    <option value="">Categorias</option>
+                                    @foreach ($categorias as $categoria)
+                                        <option>{{ $categoria->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
-                            <!-- Search item -->
-                            <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
-                                <select class="form-select form-select-sm js-choice"
-                                    aria-label=".form-select-sm example">
-                                    <option value="">Price level</option>
-                                    <option>All</option>
-                                    <option>Free</option>
-                                    <option>Paid</option>
-                                </select>
-                            </div>
-
-                            <!-- Search item -->
-                            <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
-                                <select class="form-select form-select-sm js-choice"
-                                    aria-label=".form-select-sm example">
-                                    <option value="">Skill level</option>
-                                    <option>All levels</option>
-                                    <option>Beginner</option>
-                                    <option>Intermediate</option>
-                                    <option>Advanced</option>
-                                </select>
-                            </div>
-
-                            <!-- Search item -->
-                            <div class="col-sm-6 col-md-3 pb-2 pb-md-0">
-                                <select class="form-select form-select-sm js-choice"
-                                    aria-label=".form-select-sm example">
-                                    <option value="">Language</option>
-                                    <option>English</option>
-                                    <option>Francas</option>
-                                    <option>Russian</option>
-                                    <option>Hindi</option>
-                                    <option>Bengali</option>
-                                    <option>Spanish</option>
-                                </select>
-                            </div>
                         </div> <!-- Row END -->
                     </div>
                     <!-- Button -->

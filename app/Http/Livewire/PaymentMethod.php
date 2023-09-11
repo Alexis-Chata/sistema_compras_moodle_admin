@@ -7,6 +7,8 @@ use App\Models\Comprobante;
 use App\Models\Detalle;
 use App\Models\Mpago;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\DB;
+use Laravel\Cashier\Exceptions\IncompletePayment;
 use Livewire\Component;
 
 class PaymentMethod extends Component
@@ -40,28 +42,51 @@ class PaymentMethod extends Component
 
     public function pago()
     {
-        //if (auth()->check()) {
-        $carrito = Cart::instance('carrito');
-        $user = auth()->user();
-        $comprobante = Comprobante::create(['cliente_id' => $user->id, 'femision' => now(), 'termino' => 'termino', 'total' => $carrito->total()]);
-        foreach ($carrito->content() as $key => $item) {
-            //dd($item->options);
-            $matricula = [
-                "user_id" => $user->id,
-                "modalidad_id" => $item->options->modalidad_id,
-                "rol" => 4
-            ];
-            $detalle = Detalle::create(['descripcion' => $item->options->curso . ' / ' . $item->options->modalidad . ' - ' . $item->name, 'cantidad' => $item->qty, 'precio' => $item->price, 'importe' => $item->qty * $item->price, 'cuota_id' => $item->id, 'user_id' => $user->id, 'comprobante_id' => $comprobante->id]);
-            $cmatricula = Cmatricula::firstOrCreate($matricula);
-            Mpago::create(['cmatricula_id' => $cmatricula->id, 'cuota_id' => $item->id, 'detalle_id' => $detalle->id, 'fpago' => now()]);
+        DB::beginTransaction();
+        try {
+            //if (auth()->check()) {
+            $carrito = Cart::instance('carrito');
+            $user = auth()->user();
+            $comprobante = Comprobante::create(['cliente_id' => $user->id, 'femision' => now(), 'termino' => 'termino', 'total' => $carrito->total()]);
+            foreach ($carrito->content() as $key => $item) {
+                //dd($item->options);
+                $matricula = [
+                    "user_id" => $user->id,
+                    "modalidad_id" => $item->options->modalidad_id,
+                    "rol" => 4
+                ];
+                $detalle = Detalle::create(['descripcion' => $item->options->curso . ' / ' . $item->options->modalidad . ' - ' . $item->name, 'cantidad' => $item->qty, 'precio' => $item->price, 'importe' => $item->qty * $item->price, 'cuota_id' => $item->id, 'user_id' => $user->id, 'comprobante_id' => $comprobante->id]);
+                $cmatricula = Cmatricula::firstOrCreate($matricula);
+                Mpago::create(['cmatricula_id' => $cmatricula->id, 'cuota_id' => $item->id, 'detalle_id' => $detalle->id, 'fpago' => now()]);
+            }
+
+
+            try {
+                $payment = auth()->user()->charge($carrito->total() * 100, $this->paymentMethodId);
+            } catch (IncompletePayment $exception) {
+                // Get the payment intent status...
+                $exception->payment->status;
+
+                // Check specific conditions...
+                if ($exception->payment->requiresPaymentMethod()) {
+                    // ...
+                } elseif ($exception->payment->requiresConfirmation()) {
+                    // ...
+                }
+                DB::rollback();
+            }
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            return $e->getMessage();
         }
 
-        auth()->user()->charge($carrito->total() * 100, $this->paymentMethodId);
         $carrito->erase($user->id);
         $carrito->destroy();
+        //dd($payment);
         $user->assignRole(['Estudiante']);
         $this->emit('actualizar');
-        redirect()->route('dashboard');
+        redirect()->route('dashboard')->with('success', 'Pago realizado con éxito, gracias por su compra');
         //}
     }
 

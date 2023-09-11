@@ -242,10 +242,10 @@
                 <!-- Order summary START -->
                 <div class="card card-body shadow p-4 mb-4">
                     <!-- Title -->
-                    <h4 class="mb-4">Resumen del pedido</h4>
+                    <h4 class="mb-1">Resumen del pedido</h4>
 
                     <!-- Coupon START -->
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <span>Código de transacción</span>
                             <p class="mb-0 h6 fw-light">AB12365E</p>
@@ -255,7 +255,7 @@
                             <button type="button" class="btn btn-primary">Aplicar</button>
                         </div>
 
-                    </div>
+                    </div> --}}
                     <hr>
                     <!-- Coupon END -->
                     @forelse (Cart::instance('carrito')->content() as $item)
@@ -308,11 +308,17 @@
                     <!-- Button -->
                     <div class="d-grid">
                         @auth
-                            <a href="#" wire:click="pago" class="btn btn-lg btn-success">Proceder al proceso de pago</a>
+                            <button wire:click="pago" wire:loading.attr="disabled" class="btn btn-lg btn-success">Proceder a pagar</button>
                         @endauth
                         @guest
-                            <a href="{{ url('/login?redirect_to=' . route('carrito')) }}" class="btn btn-lg btn-success">Proceder al proceso de pago</a>
+                            <a href="{{ url('/login?redirect_to=' . route('carrito')) }}" class="btn btn-lg btn-success">Proceder a pagar</a>
                         @endguest
+                    </div>
+                    <div class="mb-4 justify-content-center" wire:target='pago' wire:loading.flex>
+
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
                     </div>
 
                     <!-- Content -->

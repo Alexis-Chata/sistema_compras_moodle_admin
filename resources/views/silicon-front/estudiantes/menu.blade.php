@@ -15,10 +15,6 @@
                     <a class="list-group-item {{ in_array(request()->route()->getName(),['dashboard'])? 'active': '' }}"
                         href="{{ route('dashboard') }}"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
 
-                    <a class="list-group-item {{ in_array(request()->route()->getName(),['cursos'])? 'active': '' }}"
-                        href="student-subscription.html"><i class="bi bi-card-checklist fa-fw me-2"></i>My
-                        Subscriptions</a>
-
                     <a class="list-group-item {{ in_array(request()->route()->getName(),['mycursos'])? 'active': '' }}"
                         href="{{ route('mycursos') }}"><i class="bi bi-basket fa-fw me-2"></i>Mis Cursos</a>
 
@@ -26,8 +22,8 @@
                         href="{{ route('historial-pagos') }}"><i class="bi bi-credit-card-2-front fa-fw me-2"></i>Payment
                         Info</a>
 
-                    <a class="list-group-item {{ in_array(request()->route()->getName(),['lista-deseos'])? 'active': '' }}"
-                        href="{{ route('lista-deseos') }}"><i class="bi bi-cart-check fa-fw me-2"></i>Lista de deseos</a>
+                    {{-- <a class="list-group-item {{ in_array(request()->route()->getName(),['lista-deseos'])? 'active': '' }}"
+                        href="{{ route('lista-deseos') }}"><i class="bi bi-cart-check fa-fw me-2"></i>Lista de deseos</a> --}}
 
                     <a class="list-group-item {{ in_array(request()->route()->getName(),['profile.show'])? 'active': '' }}"
                         href="{{ route('profile.show') }}"><i class="bi bi-pencil-square fa-fw me-2"></i>Editar
@@ -39,17 +35,17 @@
                             onclick="this.parentElement.submit()"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Cerrar Session</a>
                     </form>
                     <!-- Collapse menu -->
-                    <a class="list-group-item" data-bs-toggle="collapse" href="#collapseauthentication" role="button"
+                    {{-- <a class="list-group-item" data-bs-toggle="collapse" href="#collapseauthentication" role="button"
                         aria-expanded="false" aria-controls="collapseauthentication">
                         <i class="bi bi-lock fa-fw me-2"></i>Dropdown level
-                    </a>
+                    </a> --}}
                     <!-- Submenu -->
-                    <ul class="nav collapse flex-column" id="collapseauthentication" data-bs-parent="#navbar-sidebar">
+                    {{-- <ul class="nav collapse flex-column" id="collapseauthentication" data-bs-parent="#navbar-sidebar">
                         <li class="nav-item"> <a class="nav-link" href="#">Dropdown item</a>
                         </li>
                         <li class="nav-item"> <a class="nav-link" href="#">Dropdown item</a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </div>

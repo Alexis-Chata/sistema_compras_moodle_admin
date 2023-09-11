@@ -1,50 +1,31 @@
 @extends('silicon-front.estudiantes.main')
 
+@push('stilos')
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/choices.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/assets/vendor/aos/aos.css') }}">
+@endpush
+
+@push('javascripts')
+    <script src="{{ asset('silicon-front/silicon/choices.min.js') }}"></script>
+    <script src="{{ asset('silicon-front/assets/vendor/purecounterjs/dist/purecounter_vanilla.js') }}"></script>
+    <script src="{{ asset('silicon-front/assets/vendor/aos/aos.js') }}"></script>
+@endpush
+
 @section('main-content-estudiantes')
 
 <div class="col-xl-9">
-
-    <livewire:payment-method>
 
     <!-- Billing history START -->
     <div class="card bg-transparent border rounded-3">
         <!-- Card header START -->
         <div class="card-header bg-transparent border-bottom">
-            <h3 class="mb-0">Billing history</h3>
+            <h3 class="mb-0">Historial de Pagos</h3>
         </div>
         <!-- Card header END -->
 
         <!-- Card body START -->
         <div class="card-body">
 
-            <!-- Title and select START -->
-            <div class="row g-3 align-items-center justify-content-between mb-4">
-                <!-- Content -->
-                <div class="col-md-8">
-                    <form class="rounded position-relative">
-                        <input class="form-control pe-5 bg-transparent" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <button
-                            class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
-                            type="submit">
-                            <i class="fas fa-search fs-6 "></i>
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Select option -->
-                <div class="col-md-3">
-                    <!-- Short by filter -->
-                    <form>
-                        <select class="form-select js-choice border-0 z-index-9 bg-transparent"
-                            aria-label=".form-select-sm">
-                            <option value="">Sort by</option>
-                            <option>Newest</option>
-                            <option>Oldest</option>
-                        </select>
-                    </form>
-                </div>
-            </div>
             <!-- Title and select END -->
 
             <!-- Student list table START -->
@@ -97,12 +78,11 @@
                         <!-- Table item -->
                         <tr>
                             <!-- Date item -->
-                            <td>4/2/2023</td>
+                            <td>0/0/2023</td>
 
                             <!-- Title item -->
                             <td>
-                                <h6 class="mt-2 mt-lg-0 mb-0"><a href="#">Sketch from A to Z: for
-                                        app designer</a></h6>
+                                <h6 class="mt-2 mt-lg-0 mb-0"><a href="#">app designer</a></h6>
                             </td>
 
                             <!-- Payment method item -->
@@ -115,7 +95,7 @@
                             </td>
 
                             <!-- total item -->
-                            <td>$350</td>
+                            <td>$000</td>
 
                             <!-- Action item -->
                             <td>
@@ -140,6 +120,8 @@
         <!-- Card body START -->
     </div>
     <!-- Billing history END -->
+
+    <livewire:payment-method>
 
     <!-- Main content END -->
 </div><!-- Row END -->

@@ -1,11 +1,21 @@
 @extends('silicon-front.main')
 
+@push('stilos')
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/tiny-slider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/glightbox.css') }}">
+@endpush
+
+@push('javascripts')
+    <script src="{{ asset('silicon-front/silicon/purecounter_vanilla.js') }}"></script>
+    <script src="{{ asset('silicon-front/silicon/tiny-slider.js') }}"></script>
+    <script src="{{ asset('silicon-front/silicon/glightbox.js') }}"></script>
+@endpush
+
 @section('main-content')
 
     <main>
 
-        <!-- =======================
-                                        Main Banner START -->
+        <!-- ======================= Main Banner START -->
         <section class="position-relative overflow-hidden pt-5 pt-lg-3">
             <!-- SVG START -->
             <figure class="position-absolute top-50 start-0 translate-middle-y ms-n7 d-none d-xxl-block">
@@ -393,10 +403,10 @@
             <!-- Content END -->
         </section>
         <!-- =======================
-                                        Main Banner END -->
+                                                Main Banner END -->
 
         <!-- =======================
-                                        Counter START -->
+                                                Counter START -->
         <section class="py-0 py-xl-5">
             <div class="container">
                 <div class="row g-4">
@@ -456,10 +466,10 @@
             </div>
         </section>
         <!-- =======================
-                                        Counter END -->
+                                                Counter END -->
 
         <!-- =======================
-                                        Popular course START -->
+                                                Popular course START -->
         <section>
             <div class="container">
                 <!-- Title -->
@@ -475,8 +485,8 @@
                     @foreach ($categorias as $key => $categoria)
                         <!-- Tab item -->
                         <li class="nav-item me-2 me-sm-5" role="presentation">
-                            <button class="nav-link mb-2 mb-md-0 {{ $key == array_key_first($categorias->toArray()) ? 'active' : '' }}" id="course-pills-tab-{{ $categoria->id }}" data-bs-toggle="pill"
-                                data-bs-target="#course-pills-tabs-{{ $categoria->id }}" type="button" role="tab" aria-controls="course-pills-tabs-{{ $categoria->id }}"
+                            <button class="nav-link mb-2 mb-md-0 {{ $key == array_key_first($categorias->toArray()) ? 'active' : '' }}" id="course-pills-tab-{{ $categoria->id }}"
+                                data-bs-toggle="pill" data-bs-target="#course-pills-tabs-{{ $categoria->id }}" type="button" role="tab" aria-controls="course-pills-tabs-{{ $categoria->id }}"
                                 aria-selected="true">{{ $categoria->name }}
                             </button>
                         </li>
@@ -508,10 +518,10 @@
             </div>
         </section>
         <!-- =======================
-                                        Popular course END -->
+                                                Popular course END -->
 
         <!-- =======================
-                                        Action box START -->
+                                                Action box START -->
         <section class="pt-0 pt-lg-5">
             <div class="container position-relative">
                 <!-- SVG decoration START -->
@@ -567,10 +577,10 @@
             </div>
         </section>
         <!-- =======================
-                                        Action box END -->
+                                                Action box END -->
 
         <!-- =======================
-                                        Trending courses START -->
+                                                Trending courses START -->
         <section class="pb-5 pt-0 pt-lg-5">
             <div class="container">
                 <!-- Title -->
@@ -820,10 +830,10 @@
             </div>
         </section>
         <!-- =======================
-                                        Trending courses END -->
+                                                Trending courses END -->
 
         <!-- =======================
-                                        Reviews START -->
+                                                Reviews START -->
         {{-- <section class="bg-light">
         <div class="container">
             <div class="row g-4 g-lg-5 align-items-center">
@@ -1137,7 +1147,7 @@
         </div>
     </section> --}}
         <!-- =======================
-                                        Reviews END -->
+                                                Reviews END -->
 
     </main>
 @stop

@@ -11,7 +11,7 @@
         <!-- Search and select START -->
         <div class="row g-3 align-items-center justify-content-between mb-4">
             <!-- Content -->
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <form class="rounded position-relative">
                     <input class="form-control pe-5 bg-transparent" type="search" placeholder="Search" aria-label="Search">
                     <button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
@@ -21,7 +21,7 @@
             </div>
 
             <!-- Select option -->
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <!-- Short by filter -->
                 <form>
                     <select class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm">
@@ -32,7 +32,7 @@
                         <option>Most Viewed</option>
                     </select>
                 </form>
-            </div>
+            </div> --}}
         </div>
         <!-- Search and select END -->
 

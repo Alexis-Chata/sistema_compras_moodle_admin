@@ -66,7 +66,7 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
-        'is_admin'
+        'fullname'
     ];
 
     #estudiantes - cursos
@@ -75,10 +75,10 @@ class User extends Authenticatable
         return $this->hasMany(Cmatricula::class);
     }
 
-    protected function isAdmin(): Attribute
+    protected function fullname(): Attribute
     {
         return new Attribute(
-            get: fn () => 'yes',
+            get: fn () => $this->name.' '.$this->ap_paterno.' '.$this->ap_materno,
         );
     }
 

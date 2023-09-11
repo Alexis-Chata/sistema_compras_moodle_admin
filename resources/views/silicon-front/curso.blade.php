@@ -1,10 +1,22 @@
 @extends('silicon-front.main')
 
+@push('stilos')
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/tiny-slider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/glightbox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/choices.min.css') }}">
+@endpush
+
+@push('javascripts')
+    <script src="{{ asset('silicon-front/silicon/tiny-slider.js') }}"></script>
+    <script src="{{ asset('silicon-front/silicon/glightbox.js') }}"></script>
+    <script src="{{ asset('silicon-front/silicon/choices.min.js') }}"></script>
+@endpush
+
 @section('main-content')
 
     <main>
         <!-- =======================
-                    Page intro START -->
+                        Page intro START -->
         <section class="bg-light py-0 py-sm-5">
             <div class="container">
                 <div class="row py-5">
@@ -1598,10 +1610,10 @@
                                     <h4 class="mb-3">Este curso incluye</h4>
                                     <ul class="list-group list-group-borderless">
                                         <!--<li class="list-group-item d-flex justify-content-between align-items-center">
-                                                        <span class="h6 fw-light mb-0"><i
-                                                                class="fas fa-fw fa-book-open text-primary"></i>Lectures</span>
-                                                        <span>30</span>
-                                                    </li>-->
+                                                            <span class="h6 fw-light mb-0"><i
+                                                                    class="fas fa-fw fa-book-open text-primary"></i>Lectures</span>
+                                                            <span>30</span>
+                                                        </li>-->
                                         @if ($modalidads->first()->curso->duracion)
                                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                                 <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-clock text-primary"></i>Duración</span>
@@ -1609,10 +1621,10 @@
                                             </li>
                                         @endif
                                         <!--<li class="list-group-item d-flex justify-content-between align-items-center">
-                                                        <span class="h6 fw-light mb-0"><i
-                                                                class="fas fa-fw fa-signal text-primary"></i>Skills</span>
-                                                        <span>Beginner</span>
-                                                    </li>-->
+                                                            <span class="h6 fw-light mb-0"><i
+                                                                    class="fas fa-fw fa-signal text-primary"></i>Skills</span>
+                                                            <span>Beginner</span>
+                                                        </li>-->
                                         @if ($modalidads->first()->curso->idioma)
                                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                                 <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-globe text-primary"></i>Lenguaje</span>
@@ -1620,12 +1632,12 @@
                                             </li>
                                         @endif
                                         <!--
-                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                        <span class="h6 fw-light mb-0"><i
-                                                                class="fas fa-fw fa-user-clock text-primary"></i>Deadline</span>
-                                                        <span>Nov 30 2021</span>
-                                                    </li>
-                                                    -->
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            <span class="h6 fw-light mb-0"><i
+                                                                    class="fas fa-fw fa-user-clock text-primary"></i>Deadline</span>
+                                                            <span>Nov 30 2021</span>
+                                                        </li>
+                                                        -->
                                         @if ($modalidads->first()->curso->certificado)
                                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                                 <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-medal text-primary"></i>Certificado</span>
@@ -1716,10 +1728,10 @@
             </div>
         </section>
         <!-- =======================
-                    Page content END -->
+                        Page content END -->
 
         <!-- =======================
-                    Listed courses START -->
+                        Listed courses START -->
         <section class="pt-0">
             <div class="container">
                 <!-- Title -->
@@ -1966,7 +1978,7 @@
             </div>
         </section>
         <!-- =======================
-                    Listed courses END -->
+                        Listed courses END -->
 
     </main>
 

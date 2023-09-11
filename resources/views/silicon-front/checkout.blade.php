@@ -1,5 +1,13 @@
 @extends('silicon-front.main')
 
+@push('stilos')
+    <link rel="stylesheet" type="text/css" href="{{ asset('silicon-front/silicon/choices.min.css') }}">
+@endpush
+
+@push('javascripts')
+    <script src="{{ asset('silicon-front/silicon/choices.min.js') }}"></script>
+@endpush
+
 @section('main-content')
 
     <main>

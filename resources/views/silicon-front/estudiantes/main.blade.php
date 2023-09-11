@@ -36,7 +36,7 @@
                                 <!-- Profile info -->
                                 <div class="col d-sm-flex justify-content-between align-items-center">
                                     <div>
-                                        <h1 class="my-1 fs-4">Lori Stevens</h1>
+                                        <h1 class="my-1 fs-4">{{ auth()->user()->fullname }}</h1>
                                         <ul class="list-inline mb-0">
                                             {{-- <li class="list-inline-item me-3 mb-1 mb-sm-0">
                                                 <span class="h6">255</span>
@@ -44,12 +44,12 @@
                                             </li> --}}
                                             <li class="list-inline-item me-3 mb-1 mb-sm-0">
                                                 <span class="h6">{{ auth()->user()->cmatriculas->pluck('modalidad.curso')->count() }}</span>
-                                                <span class="text-body fw-light">Completed courses</span>
+                                                <span class="text-body fw-light">Cursos</span>
                                             </li>
-                                            <li class="list-inline-item me-3 mb-1 mb-sm-0">
+                                            {{-- <li class="list-inline-item me-3 mb-1 mb-sm-0">
                                                 <span class="h6">52</span>
                                                 <span class="text-body fw-light">Completed lessons</span>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </div>
                                     <!-- Button -->

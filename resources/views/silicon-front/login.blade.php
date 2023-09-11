@@ -145,7 +145,7 @@
                             <div class="col-sm-10 col-xl-8 m-auto">
                                 <!-- Title -->
                                 <span class="mb-0 fs-1">👋</span>
-                                <h1 class="fs-2">¡Inicia sesión en Eduport!</h1>
+                                <h1 class="fs-2">¡Inicia sesión en <a href="{{ route('index') }}">Eduport!</a></h1>
                                 <p class="lead mb-4">¡Me alegro de verte! Inicie sesión con su cuenta.</p>
 
                                 <!-- Form START -->
