@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 
-use App\Http\Responses\LoginResponse;
-use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
+// use App\Http\Responses\LoginResponse;
+// use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -45,6 +45,6 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
 
-        $this->app->bind(LoginResponseContract::class, LoginResponse::class);
+        // $this->app->bind(LoginResponseContract::class, LoginResponse::class);
     }
 }

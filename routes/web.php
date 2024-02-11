@@ -21,27 +21,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function () {
-    $categorias = categoria::latest()->take(5)->get();
+    return view('welcome');
+});
 
-    $categorias->each(function ($item, $key) {
-        return $item->push($item->cursoslastlimit);
-    });
+// Route::get('/', function () {
+//     $categorias = categoria::latest()->take(5)->get();
 
-    $categorias = $categorias->filter(function ($item, $key) {
-        return $item->cursoslastlimit->count() > 0;
-    });
+//     $categorias->each(function ($item, $key) {
+//         return $item->push($item->cursoslastlimit);
+//     });
 
-    return view('silicon-front.index', compact('categorias'));
-})->name('index');
+//     $categorias = $categorias->filter(function ($item, $key) {
+//         return $item->cursoslastlimit->count() > 0;
+//     });
 
-Route::get('/login', function () {
-    return view('silicon-front.login');
-})->name('login');
+//     return view('silicon-front.index', compact('categorias'));
+// })->name('index');
+
+// Route::get('/login', function () {
+//     return view('silicon-front.login');
+// })->name('login');
 
 Route::get('/carrito', function () {
     return view('silicon-front.cart');
