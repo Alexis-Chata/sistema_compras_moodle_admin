@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Recibo</title>
     <style>
         body{
             font-family: "gothic";
@@ -31,13 +31,13 @@
             font-weight: 500;
         }
         .color-naranja {
-            color : #c65911;
+            color : #025A64;
         }
         .bg-naranja {
-            color : #c65911;
+            color : #025A64;
         }
         .color-gris {
-            color : #757171;
+            color : #000000;
         }
         .color-white{
             color: white;
@@ -54,7 +54,7 @@
         }
 
         .bg-gris {
-            background-color: #757171;
+            background-color: #025A64;
         }
         .bg-gris-a {
             background-color: #c3b8b8b9;
@@ -126,8 +126,8 @@
             <tr class="align-top">
                 <th class="w-15"><img src="{{public_path('imagenes/logo.jpg')}}" alt="" width="100%"></th>
                 <th>
-                    <h1 class="color-naranja family-impact">ESPACIO ARQUITECTURA</h1>
-                    <h3 class="color-gris family-impact">José Otoniel Calderón Avila, Nit: 3487448-8</h3>
+                    <h1 class="color-naranja family-impact">NAVIERO</h1>
+                    <h3 class="color-gris family-impact">Instituto de Ciencias y Desarrollo de Competencias Profesionales</h3>
                     <h5 class="color-gris">5a. Avenida y 1a. Calle 5-50, Zona 6, Huehuetenango</h5>
                     <h5 class="color-gris">Móvil : 4729 6758</h5>
                 </th>
@@ -231,7 +231,7 @@
             </tr>
             @endfor
             <tr>
-                <td class="p-2 bg-gris-a color-rojo text-center">Estatus : Cancelado</td>
+                <td class="p-2 bg-gris-a color-rojo text-center">Estatus : Emitido</td>
                 <td class="p-2 bg-gris-b" colspan="3">SUBTOTAL</td>
                 <td class="p-2 bg-gris-a text-center">Q {{$subtotal}}</td>
             </tr>

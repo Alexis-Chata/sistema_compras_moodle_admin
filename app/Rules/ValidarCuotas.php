@@ -57,6 +57,6 @@ class ValidarCuotas implements Rule
      */
     public function message()
     {
-        return 'no se puede agregar este grupo a esta cuota por que ya se le asigno en otra cuota del plan';
+        return 'no se puede agregar este grupo a esta cuota porque ya se le asigno en otra cuota del plan';
     }
 }

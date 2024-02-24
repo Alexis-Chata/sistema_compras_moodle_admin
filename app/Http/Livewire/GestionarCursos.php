@@ -135,6 +135,7 @@ class GestionarCursos extends Component
     public function modal($curso_id = null)
     {
         $this->iteration++;
+        $this->reset('curso_imagen');
         if ($curso_id == null) {
             $this->curso = new Curso();
            $this->curso->descripcion = '';
@@ -163,6 +164,7 @@ class GestionarCursos extends Component
     }
 
     public function modal_modalidad($modalidad_id = null ){
+        $this->reset('scuota');
         #reiniciar cuotoa
         $this->cuota = new Cuota();
         $this->modal_titulo_cuota = 'Crear';
@@ -187,6 +189,7 @@ class GestionarCursos extends Component
         $this->scuota = Cuota::find($cuota_id);
         $this->gcuota = new Gcuota();
         $this->gcuota->cuota_id = $cuota_id;
+        $this->gcuota->grupo_id = '';
         $this->lista_grupos = Grupo::where('curso_id',$this->scurso->id)->whereNotExists(function ($query)  {
             $query->select()
                   ->from('gcuotas')
@@ -344,7 +347,7 @@ class GestionarCursos extends Component
         $this->gcuota->cuota_id = $this->scuota->id;
         $this->gcuota->save();
         $this->modal_modalidad($this->modalidad->id);
-        $this->agregar_gcuota($this->scuota->id);
+        //$this->agregar_gcuota($this->scuota->id);
     }
 
     public function seleccionar_curso(Curso $curso){

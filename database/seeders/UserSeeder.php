@@ -41,9 +41,9 @@ class UserSeeder extends Seeder
         $estudiante->save();
         $estudiante->assignRole('Estudiante');
 
-        $usuarios = User::factory(15)->create();
+        /*$usuarios = User::factory(15)->create();
         foreach ($usuarios as $usuario) {
             $usuario->assignRole('Estudiante');
-        }
+        }*/
     }
 }

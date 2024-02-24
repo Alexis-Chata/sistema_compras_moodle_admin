@@ -99,12 +99,16 @@
                     <thead class="table table-dark">
                         <tr>
                             <th class="text-center">N°</th>
+                            <th class="text-center">Modalidad</th>
+                            <th class="text-center">Curso</th>
                         </tr>
                     </thead>
                     <tbody class="table-secondary">
                         @foreach ($suser->cmatriculas as $key2 => $cmatricula   )
                             <tr>
                                 <td class="text-center">{{ $key2 + 1 }}</td>
+                                <td class="text-center">{{ $cmatricula->modalidad->name}}</td>
+                                <td class="text-center">{{ $cmatricula->modalidad->curso->name}}</td>
                             </tr>
                         @endforeach
                     </tbody>

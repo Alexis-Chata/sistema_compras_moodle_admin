@@ -63,7 +63,7 @@
                     </div>
                     <div class="card-body p-inherit table-responsive">
                         <form>
-                            <div class="row align-items-center g-2">
+                            <div class="row align-items-end g-2">
                                 <div class="col-sm-3 col-md">
                                     <div wire:self.defer>
                                         <label for="bestudiante">Buscar Usuario</label>

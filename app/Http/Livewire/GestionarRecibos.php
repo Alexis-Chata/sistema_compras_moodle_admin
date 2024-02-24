@@ -159,15 +159,12 @@ class GestionarRecibos extends Component
         }
     }
 
-    public function obtener_modalidad(){
+    public function obtener_modalidad()
+    {
         $estudiante = User::where('email',$this->bestudiante)->first();
-        $curso = User::where('id',$this->bcurso)->first();
-        if ($estudiante && $curso) {
-            $this->modalidades = Modalidad::where('curso_id',$curso->id)->get();
-        }
-        else {
-            $this->modalidades = [];
-        }
+        $curso = Curso::where('id',$this->bcurso)->first();
+        if ($estudiante && $curso) { $this->modalidades = Modalidad::where('curso_id',$curso->id)->get();}
+        else {$this->modalidades = [];}
     }
 
     public function  mount($cliente_id=null){

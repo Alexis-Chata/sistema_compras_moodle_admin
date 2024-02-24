@@ -218,7 +218,7 @@
                                                     class="text-danger">(*)</span></label>
                                                 <input type="text" id="curso_name" class="form-control" wire:model="curso.name">
                                                 @error('curso.name')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="col-12 col-sm-4">
@@ -226,7 +226,7 @@
                                                     class="text-danger">(*)</span></label>
                                                 <input type="text" id="curso_shortname" class="form-control" wire:model="curso.shortname">
                                                 @error('curso.shortname')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="col-12 col-sm-4">
@@ -239,7 +239,7 @@
                                                     @endforeach
                                                 </select>
                                                 @error('curso.categoria_id')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
@@ -248,21 +248,21 @@
                                                 <label for="curso_link_video" class="fw-bold">Url del Video del Curso :</label>
                                                 <input type="text" id="curso_link_video" class="form-control" wire:model="curso.link_video">
                                                 @error('curso.link_video')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="col-12 col-sm-2">
                                                 <label for="curso_idioma" class="fw-bold">Idioma :</label>
                                                 <input type="text" id="curso_idioma" class="form-control" wire:model="curso.idioma">
                                                 @error('curso.idioma')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="col-12 col-sm-2">
                                                 <label for="curso_duracion" class="fw-bold">Horas Totales :</label>
                                                 <input type="text" id="curso_duracion" class="form-control" wire:model="curso.duracion">
                                                 @error('curso.duracion')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="col-12 col-sm-2 text-center">
@@ -275,7 +275,7 @@
                                                 <label for="curso_descripcion" class="fw-bold">Descripción del Curso a: </label>
                                                 <textarea  id="curso_descripcion" class="form-control" wire:model="curso.descripcion"></textarea>
                                                 @error('curso.descripcion')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
@@ -284,7 +284,7 @@
                                                 <label for="curso_resumen" class="fw-bold">Resumen del Curso : </label>
                                                 <textarea  id="curso_resumen" class="form-control" wire:model="curso.resumen"></textarea>
                                                 @error('curso.resumen')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
@@ -293,7 +293,7 @@
                                                 <label for="curso_link_video" class="fw-bold">Url del Video del Curso :</label>
                                                 <input type="text" id="curso_link_video" class="form-control" wire:model="curso.link_video">
                                                 @error('curso.link_video')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
@@ -322,7 +322,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     <button type="button" class="btn btn-primary" wire:target="perfil_imagen, save" wire:click="save"
                         wire:loading.attr="disabled">{{ $modal_titulo }} Curso</button>
                 </div>
@@ -358,7 +358,7 @@
                                                     class="text-danger">(*)</span></label>
                                                 <input type="text" id="grupo_name" class="form-control" wire:model="grupo.name">
                                                 @error('grupo.name')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="col-12 col-sm-12" wire:ignore wire:key="mejorando2">
@@ -366,7 +366,7 @@
                                                     class="text-danger">(*)</span></label>
                                                     <textarea id="grupo_descripcion" class="form-control" wire:model="grupo.descripcion"  ></textarea>
                                                 @error('grupo.descripcion')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="col-12">
@@ -430,7 +430,7 @@
                                                     class="text-danger">(*)</span></label>
                                                 <input type="text" id="modalidad_name" class="form-control" wire:model="modalidad.name">
                                                 @error('modalidad.name')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                             <div class="col-12 col-sm-4">
@@ -438,7 +438,7 @@
                                                     class="text-danger">(*)</span></label>
                                                 <input type="text" id="modalidad_descripcion" class="form-control" wire:model="modalidad.descripcion">
                                                 @error('modalidad.descripcion')
-                                                    <div class="p-1"> {{ $message }}</div>
+                                                    <div class="p-1" style='color :red;'> {{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
@@ -452,13 +452,41 @@
                                     <div class="card-header" style="background: #0b4d87">
                                         <div class="row align-items-center p-1">
                                             <div class="col col-md-6">
-                                                <h5>Cuotas del Plan - {{$modalidad->name}}</h5>
+                                                <h5>{{$modal_titulo_cuota}}  Cuota</h5>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card-body p-inherit">
-                                         <!--tabla de cuotas-->
-                                        <div class="row m-4">
+                                        <div class="row">
+                                            <div class="row mb-4 align-items-end">
+                                                <div class="col-12 col-sm-3">
+                                                    <label for="cuota_name">Nombre</label>
+                                                    <input type="text"   class="form-control" id="cuota_name" wire:model='cuota.name'>
+                                                    @error('cuota.name')<div class="p-1" style='color :red;'> {{ $message }}</div>@enderror
+                                                </div>
+                                                <div class="col-12 col-sm-3">
+                                                    <label for="cuota_name" >Monto</label>
+                                                    <input type="number" class="form-control" step="0.01" id="cuota_monto" wire:model.defer='cuota.monto'>
+                                                    @error('cuota.monto')<div class="p-1" style='color :red;'> {{ $message }}</div>@enderror
+                                                </div>
+                                                <div class="col-12 col-sm-3">
+                                                    <label for="cuota_fecha" >Fecha Vencimiento</label>
+                                                    <input type="date"  class="form-control"  id="cuota_fecha" wire:model='cuota.fvencimiento'>
+                                                    @error('cuota.fvencimiento')<div class="p-1" style='color :red;'> {{ $message }}</div>@enderror
+                                                </div>
+                                                <div class="col-12 col-sm-3">
+                                                    <button class="btn btn-primary" wire:target="save_cuota" wire:loading.attr="disabled" wire:click='save_cuota()'>
+                                                        {{$modal_titulo_cuota}} Cuota
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 fs-3">
+                                            :::::::::::::::::Lista de Cuotas:::::::::::::::::
+                                            </div>
+                                        </div>
+                                        <div class="row">
                                             <div class="col-12">
                                                 <table class="table table-dark">
                                                     <thead>
@@ -492,29 +520,20 @@
                                                 </table>
                                             </div>
                                         </div>
-                                         <!--crear editar cutoas-->
-                                        <div class="row m-4 align-items-end">
-                                            <div class="col-12 col-sm-3">
-                                                <label for="cuota_name">Nombre</label>
-                                                <input type="text"   class="form-control" id="cuota_name" wire:model='cuota.name'>
-                                                @error('cuota.name')<div class="p-1"> {{ $message }}</div>@enderror
-                                            </div>
-                                            <div class="col-12 col-sm-3">
-                                                <label for="cuota_name" >Monto</label>
-                                                <input type="number" class="form-control" step="0.01" id="cuota_monto" wire:model='cuota.monto'>
-                                                @error('cuota.monto')<div class="p-1"> {{ $message }}</div>@enderror
-                                            </div>
-                                            <div class="col-12 col-sm-3">
-                                                <label for="cuota_fecha" >Fecha Vencimiento</label>
-                                                <input type="date"  class="form-control"  id="cuota_fecha" wire:model='cuota.fvencimiento'>
-                                                @error('cuota.fvencimiento')<div class="p-1"> {{ $message }}</div>@enderror
-                                            </div>
-                                            <div class="col-12 col-sm-3">
-                                                <button class="btn btn-primary" wire:target="save_cuota" wire:loading.attr="disabled" wire:click='save_cuota()'>
-                                                    {{$modal_titulo_cuota}} Cuota
-                                                </button>
+                                    </div>
+                                </div>
+                            </div>
+                            @if (isset($scuota))
+                            <div class="col-12">
+                                <div class="card card-secondary">
+                                    <div class="card-header" style="background: #0b4d87">
+                                        <div class="row align-items-center p-1">
+                                            <div class="col col-md-6">
+                                                <h5>Agregar Grupo - {{$scuota->name}} - {{$modalidad->name}}</h5>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="card-body p-inherit">
                                         @if ($lista_grupos)
                                         <div class="row m-4 align-items-end">
                                             <div class="col-12 col-sm-3">
@@ -526,18 +545,20 @@
                                                     <option value="{{$grupo->id}}">{{$grupo->name}}</option>
                                                     @endforeach
                                                 </select>
-                                                @error('gcuota.grupo_id')
-                                                    <div class="p-1"> {{ $message }}</div>
-                                                @enderror
+
                                             </div>
                                             <div class="col-12 col-sm-3">
                                                 <button class="btn btn-primary" wire:click='save_gcuota()'>Agregar Grupo</button>
+                                            </div>
+                                            <div class="col-12">
+                                                @error('gcuota.grupo_id')<div class="p-1" style='color :red;'> {{ $message }}</div>@enderror
                                             </div>
                                         </div>
                                         @endif
                                     </div>
                                 </div>
                             </div>
+                            @endif
                             @endif
                         </div>
                     </div>
