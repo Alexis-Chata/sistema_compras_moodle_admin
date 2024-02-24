@@ -33,7 +33,7 @@ class ReciboClass {
     {
         $recibo = $comprobante;
         $formatter = new NumeroALetras();
-        $total_letra = $formatter->toMoney($comprobante->total, 2, 'QUETZALES', 'CENTAVOS');
+        $total_letra = $formatter->toMoney($comprobante->total, 2, 'PESOS', 'CENTAVOS');
         $consultapdf = FacadePdf::loadView('administrador.recibos.comprobante_pdf', compact('recibo', 'total_letra'));
         $consultapdf->setOption(['defaultFont'=>'gothic']);
         $pdfContent = $consultapdf->output();
@@ -46,7 +46,7 @@ class ReciboClass {
 
     public function reenviar(Comprobante $recibo,$semail){
         $formatter = new NumeroALetras();
-        $total_letra = $formatter->toMoney($recibo->total, 2, 'QUETZALES', 'CENTAVOS');
+        $total_letra = $formatter->toMoney($recibo->total, 2, 'PESOS', 'CENTAVOS');
         $consultapdf = FacadePdf::loadView('recibos.comprobante_pdf', compact('recibo','total_letra'));
         $consultapdf->setOption(['defaultFont'=>'gothic']);
         Mail::send('recibos.comprobante_pdf_correo', compact('recibo','total_letra'), function ($mail) use ($consultapdf, $recibo,$semail) {
@@ -64,7 +64,7 @@ class ReciboClass {
         $nombreticketpdf ='recibospdf/rec-'.strtotime(date("F j, Y, g:i a"))."-".$recibo->correlativo.'.pdf';
         $recibo->path_pdf = $nombreticketpdf;
         $recibo->save();
-        $total_letra = $formatter->toMoney($recibo->total, 2, 'QUETZALES', 'CENTAVOS');
+        $total_letra = $formatter->toMoney($recibo->total, 2, 'PESOS', 'CENTAVOS');
         $consultapdf = FacadePdf::loadView('administrador.recibos.comprobante_pdf', compact('recibo', 'total_letra'));
         $consultapdf->setOption(['defaultFont'=>'gothic']);
         if (! File::exists(storage_path('app/public/') . 'recibospdf/'))

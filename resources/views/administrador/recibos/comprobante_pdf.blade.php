@@ -124,17 +124,17 @@
     <table>
         <thead>
             <tr class="align-top">
-                <th class="w-15"><img src="{{public_path('imagenes/logo.jpg')}}" alt="" width="100%"></th>
+                <th class="w-15"><img src="{{public_path('imagenes/logolargo.jpg')}}" alt="" width="180px"></th>
                 <th>
                     <h1 class="color-naranja family-impact">NAVIERO</h1>
                     <h3 class="color-gris family-impact">Instituto de Ciencias y Desarrollo de Competencias Profesionales</h3>
-                    <h5 class="color-gris">5a. Avenida y 1a. Calle 5-50, Zona 6, Huehuetenango</h5>
-                    <h5 class="color-gris">Móvil : 4729 6758</h5>
+                    <h5 class="color-gris">C/ Almte. Cosme Damián Churruca 4A, Costa Azul, 39850 Acapulco de Juárez, Gro</h5>
+                    <h5 class="color-gris">Móvil :+52 222 527 1928</h5>
                 </th>
                 <th class="w-15">
                     <div>
                     @if ($recibo->path_pdf)
-                        {!! DNS2D::getBarcodeHTML(asset("storage/".$recibo->path_pdf), 'QRCODE',4.5,4.5) !!}
+                        {!! DNS2D::getBarcodeHTML(asset("storage/".$recibo->path_pdf), 'QRCODE',3.5,3.5) !!}
                     @endif
                      </div>
                     <div class="text-center color-naranja fw-900 fs-23 ">RECIBO</div>
@@ -260,7 +260,7 @@
                 <td colspan="5" class="text-center p-2">Si tiene alguna duda sobre este recibo, póngase en contacto con</td>
             </tr>
             <tr>
-                <td colspan="5" class="text-center p-2">Admin Mad Mid, Móvil: 999 999 999, aprendiendo@hotmail.es</td>
+                <td colspan="5" class="text-center p-2">Consulta Naviero, Móvil: +52 222 527 1928, pagos@naviero.com.mx</td>
             </tr>
         </tbody>
     </table>
