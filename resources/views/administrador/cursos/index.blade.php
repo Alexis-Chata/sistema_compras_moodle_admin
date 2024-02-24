@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <style>
         .page-item.active .page-link {
-        z-index: 3;
+        z-index: 3;ee
         color: #fff;
         background-color: #0b4d87;
         border-color: #0b4d87;
