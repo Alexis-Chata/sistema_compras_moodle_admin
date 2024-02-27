@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('cliente_id');
             $table->unsignedBigInteger('cajero_id')->nullable();
+            $table->unsignedBigInteger('moneda_id');
             $table->char('tipo_comprobante')->default(1);
             $table->date('femision');
             $table->string('correlativo')->nullable();
@@ -27,6 +28,7 @@ return new class extends Migration
             #recibo con deposito
             $table->string('imagen_deposito')->nullable();
             $table->string('path_pdf')->nullable();
+            $table->foreign('moneda_id')->references('id')->on('monedas');
             $table->foreign('cajero_id')->references('id')->on('users')->onDelete('set null');
             $table->foreign('cliente_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('comprobante_ref_id')->references('id')->on('comprobantes')->onDelete('cascade');
